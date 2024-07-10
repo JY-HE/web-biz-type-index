@@ -112,7 +112,8 @@
           "key": "records",
           "type": "array",
           "description": "记录",
-          "required": false
+          "required": false,
+          "typeNameMap": "OperationCommonType"
         }
       ],
       "requestBody": null
@@ -229,7 +230,8 @@
           "key": "records",
           "type": "array",
           "description": "记录",
-          "required": false
+          "required": false,
+          "typeNameMap": "OperationCommonType"
         }
       ],
       "requestBody": null
