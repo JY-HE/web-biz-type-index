@@ -5,10 +5,11 @@
         <link rel="stylesheet" href="./assets/index.css" />
         <link href="./assets/tailwind.min.css" rel="stylesheet" />
         <link href="./assets/style.css" rel="stylesheet" />
-        <script src="./assets/vue.global.js"></script>
-        <script src="./assets/index.full.js"></script>
-        <title>web-biz-service请求库方法汇总</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.2.36/dist/vue.global.prod.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/element-plus@2.2.17"></script>
+        <title>web-biz-type接口类型定义汇总</title>
     </head>
+
     <body>
         <div id="app">
             <el-container style="height: 100vh">
@@ -26,14 +27,15 @@
                     <el-header class="flex justify-center items-center relative">
                         <div class="w-1/3 flex justify-center items-center">
                             <div class="absolute top-1/2 left-10 transform -translate-y-2/4">
-                                <el-tag class="version" type="danger">版本:1.8.12</el-tag>
+                                <el-tag class="version" type="danger">版本:1.0.7</el-tag>
                             </div>
                             <el-input v-model="searchValue" placeholder="请输入" class="input-with-select" clearable @change="search" @clear="search">
                                 <template #prepend>
-                                    <el-select v-model="searchType" placeholder="Select" style="width: 115px">
-                                        <el-option label="请求名称" value="1"></el-option>
-                                        <el-option label="请求URL" value="2"></el-option>
-                                        <el-option label="请求描述" value="3"></el-option>
+                                    <el-select v-model="searchType" placeholder="Select" style="width: 140px">
+                                        <el-option label="请求类型名称" value="1"></el-option>
+                                        <el-option label="响应类型名称" value="2"></el-option>
+                                        <el-option label="请求URL" value="3"></el-option>
+                                        <el-option label="请求描述" value="4"></el-option>
                                     </el-select>
                                 </template>
                                 <template #append>
@@ -47,54 +49,52 @@
                             <el-switch v-model="dark" inline-prompt active-text="☀️" inactive-text="🌙" @change="setDefaultShowType" />
                         </div>
                     </el-header>
-                    <el-main>
-                        <el-table :data="tableData" row-key="methodName" :expand-row-keys="expands" @row-click="clickRowHandle" v-loading="loading">
+                    <el-main class="overflow-hidden">
+                        <el-table ref="tableRef" stripe height="100%" :data="tableData" @row-click="clickRowHandle" v-loading="loading">
                             <el-table-column type="expand">
                                 <template v-slot="props">
                                     <el-row class="px-10 py-5">
                                         <el-col :span="24" class="mb-3">
-                                            <h3 class="font-bold text-md mb-1">请求示例</h3>
+                                            <h3 class="font-bold text-md mb-4">使用示例</h3>
                                             <code> {{getExample(props.row)}} </code>
-                                        </el-col>
-                                        <el-col :span="12">
-                                            <el-descriptions title="请求参数" :column="1">
-                                                <el-descriptions-item :label="key" v-for="(value, key) in getParams(props.row)">{{value || ''}}</el-descriptions-item>
-                                            </el-descriptions>
-                                        </el-col>
-                                        <el-col :span="12">
-                                            <el-descriptions title="请求结果" :column="1">
-                                                <el-descriptions-item :label="key" v-for="(value, key) in getResponse(props.row)">{{value || ''}}</el-descriptions-item>
-                                            </el-descriptions>
                                         </el-col>
                                     </el-row>
                                 </template>
                             </el-table-column>
                             <el-table-column label="请求URL" prop="url"> </el-table-column>
-                            <!-- <el-table-column label="请求名称" prop="methodName"> </el-table-column> -->
-                            <el-table-column label="请求类型名称" prop="requestTypeName"> </el-table-column>
-                            <el-table-column label="响应类型名称" prop="responsesTypeName"> </el-table-column>
-                            <el-table-column label="所属模块" prop="bizName" width="280px">
+                            <el-table-column label="请求类型名称" prop="requestTypeName">
+                                <template #default="scope">
+                                    <el-button title="点击复制" type="primary" size="small" v-if="scope.row.requestTypeName" @click.stop="copyName(scope.row.requestTypeName)">{{scope.row.requestTypeName}}</el-button>
+                                    <el-tag v-else type="danger" effect="dark">无</el-tag>
+                                </template>
+                            </el-table-column>
+                            <el-table-column label="响应类型名称" prop="responsesTypeName">
+                                <template #default="scope">
+                                    <el-button title="点击复制" type="primary" size="small" v-if="scope.row.responsesTypeName" @click.stop="copyName(scope.row.responsesTypeName)">{{scope.row.responsesTypeName}}</el-button>
+                                    <el-tag v-else type="danger" effect="dark">无</el-tag>
+                                </template>
+                            </el-table-column>
+                            <el-table-column label="所属模块" prop="bizName">
                                 <template #default="scope">
                                     <el-tag>{{scope.row.subBiz || scope.row.bizName}}</el-tag> -
                                     <span class="text-sm muduleLabel">{{descMap[scope.row.subBiz || scope.row.bizName]?.desc || ''}}</span>
                                 </template>
                             </el-table-column>
                             <el-table-column label="请求描述" prop="summary"> </el-table-column>
-                            <el-table-column label="请求类型" prop="method" width="100px">
+                            <el-table-column label="请求类型" prop="method" width="100px" align="center">
                                 <template #default="scope">
                                     <el-tag size="small" :type="methodColorType[scope.row.method]" effect="dark">{{scope.row.method.toUpperCase()}}</el-tag>
                                 </template>
                             </el-table-column>
-
                             <el-table-column label="请求版本" align="center" width="100px">
                                 <template #default="scope">
                                     <el-tag>{{scope.row.version}}</el-tag>
                                 </template>
                             </el-table-column>
-                            <el-table-column label="操作" align="center" width="150px">
+                            <el-table-column label="操作" align="center" width="100px">
                                 <template #default="scope">
-                                    <el-button size="small" type="primary" @click.stop="skipSwagger(scope.row)" v-if="descMap[scope.row.bizName]?.doc">查看</el-button>
-                                    <el-button size="small" type="warning" @click.stop="copyName(scope.row)" v-if="descMap[scope.row.bizName]?.doc">复制</el-button>
+                                    <!-- <el-button size="small" type="primary" @click.stop="skipSwagger(scope.row)" v-if="descMap[scope.row.bizName]?.doc">查看</el-button> -->
+                                    <el-button size="small" type="warning" @click.stop="copyName(getExample(scope.row))" v-if="getExample(scope.row)">复制</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
@@ -111,7 +111,6 @@
                         .then((res) => {
                             this.bizData = res;
                             this.search();
-                            this.loading = false;
                         });
                     document.querySelector('html').setAttribute('data-theme', this.dark ? 'dark' : 'light');
                 },
@@ -127,8 +126,6 @@
                         searchValue: '',
                         // 最终展示结果
                         tableData: [],
-                        // 要展开的行，数值的元素是row的key值
-                        expands: [],
                         // 加载
                         loading: true,
                         // 暗黑模式
@@ -172,7 +169,7 @@
                     },
                     // 搜索关系映射
                     searchKeyMap() {
-                        return { 1: 'methodName', 2: 'url', 3: 'summary' }[this.searchType];
+                        return { 1: 'requestTypeName', 2: 'responsesTypeName', 3: 'url', 4: 'summary' }[this.searchType];
                     },
                     // 请求类型演示映射
                     methodColorType: () => ({ get: 'info', post: 'success', put: 'warning', delete: 'danger' }),
@@ -181,7 +178,7 @@
                 methods: {
                     // 搜索
                     search() {
-                        this.expands = [];
+                        this.loading = true;
                         const specialBiz = ['preplanBiz', 'taskBiz', 'associatedBiz', 'eventBiz'];
                         let list = Object.entries(this.bizData).reduce((pre, [bizName, fnList]) => pre.concat(fnList?.map((i) => ({ ...i, bizName }))), []);
                         if (this.activeBizName) {
@@ -196,30 +193,26 @@
                                 .sort((a, b) => b.compatTotal - a.compatTotal);
                         }
                         this.tableData = list;
+                        this.loading = false;
                     },
                     // 重置
                     reset() {
                         this.searchValue = '';
                         this.search();
                     },
-                    // 参数格式化
-                    getParams(data) {
-                        const formatParamsData = data.method === 'get' ? data.parameters || [] : [].concat(data.parameters || [], data.requestBody || []) || [];
-                        return formatParamsData.reduce((obj, i) => {
-                            let str = `参数类型：${i?.in === 'header' ? 'headers' : i.type} 参数说明：${i?.description || '空'} ${i?.default ? ' 默认值：' + i?.default : ''} ${i?.required ? '（必填）' : ''}`;
-                            return { ...obj, [i.key]: str };
-                        }, {});
-                    },
-                    // 响应格式化
-                    getResponse(data) {
-                        if (!data.responses) return {};
-                        return data.responses.reduce((pre, i) => ({ ...pre, [i.key]: i.description }), {});
-                    },
-                    // 请求示例生成
+                    // 使用示例生成
                     getExample(data) {
-                        const formatParamsData = data.method === 'get' ? data.parameters || [] : [].concat(data.parameters || [], data.requestBody || []) || [];
-                        const requiredParams = formatParamsData.filter((i) => i.required);
-                        return `this.${data.subBiz || data.bizName}.${data.methodName}(${!formatParamsData.length ? '' : requiredParams.length === 1 ? requiredParams?.[0]?.key : 'params'})`;
+                        let str = '';
+                        if (data.requestTypeName) {
+                            str = `${data.requestTypeName}`;
+                        }
+                        if (data.responsesTypeName) {
+                            if (str) {
+                                str += ', ';
+                            }
+                            str += `${data.responsesTypeName}`;
+                        }
+                        return str ? `import { ${str} } from '@rdapp/web-biz-type/${data.bizName}'` : '';
                     },
                     // 跳转文档地址
                     skipSwagger(data) {
@@ -270,18 +263,13 @@
                         this.search();
                     },
                     // 表格行点击
-                    clickRowHandle(row, column, event) {
-                        if (column.label === '文档地址') return;
-                        if (this.expands.includes(row.methodName)) {
-                            this.expands = this.expands.filter((val) => val !== row.methodName);
-                        } else {
-                            this.expands.push(row.methodName);
-                        }
+                    clickRowHandle(row) {
+                        this.$refs.tableRef.toggleRowExpansion(row);
                     },
                     // 复制函数名
-                    async copyName({ bizName, methodName }) {
+                    async copyName(name) {
                         try {
-                            await navigator.clipboard.writeText(bizName + '.' + methodName + '()');
+                            await navigator.clipboard.writeText(name);
                             this.$message({
                                 type: 'success',
                                 message: '复制成功',

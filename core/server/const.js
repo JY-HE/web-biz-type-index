@@ -8,7 +8,7 @@ module.exports = {
     /** API管理模板地址 */
     ADMIN_HTML_PATH: path.join(__dirname, '../dist/admin.html'),
     /** 脚本执行根目录 */
-    SCRIPT_PATH: path.join(__dirname, '/'),
+    SCRIPT_PATH: path.join(__dirname, '../../'),
     /** api资源存储路径  */
     API_RESOURCE_PATH: path.join(__dirname, '../dist/biz.json'),
     /** 忽略API存储路径 */
@@ -18,9 +18,9 @@ module.exports = {
     /** changelog文档路径 */
     CHANGELOG_PATH: path.join(__dirname, '../dist/changeLog.md'),
     /** 远端仓库 */
-    DOC_CODE_STORE: path.join(__dirname, '/'),
+    DOC_CODE_STORE: path.join(__dirname, '../../../web-biz-type-index'),
     /** 远端API路径 */
-    DOC_CODE_STORE_BIZ: path.join(__dirname, '/biz.json'),
+    DOC_CODE_STORE_BIZ: path.join(__dirname, '../../../web-biz-type-index/biz.json'),
     /** 远端文档路径 */
-    DOC_CODE_STORE_HTML: path.join(__dirname, '/index.html'),
+    DOC_CODE_STORE_HTML: path.join(__dirname, '../../../web-biz-type-index/index.html'),
 };

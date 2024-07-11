@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const { readJson } = require('fs-extra');
 const { argv } = require('process');
-const { swaggerJSON, staticRequest } = require('./config');
+const { swaggerJSON } = require('./config');
 
 // biz请求配置
 let requestConfig = {};
@@ -53,10 +53,11 @@ async function init(buildType = 0) {
     res.forEach((item) => console.log(item.config.url, item.status === 200 ? `success` : 'fail'));
     // 过滤忽略的接口
     const ignorePaths = await readJson(path.join(__dirname, './ignoreTypes.json'));
+    let newSchemaDataJson = {};
     /**
      * 解析swagger文档接口数据
      */
-    res.map((bizRes, index) => {
+    res.map(async (bizRes, index) => {
         try {
             const {
                 paths,
@@ -82,19 +83,28 @@ async function init(buildType = 0) {
                     const { type, properties = {}, description = '', required = [] } = schemaData;
                     // 解析接口响应参数
                     const params = Object.entries(properties).map(([key, value]) => {
-                        if (value.$ref || value.allOf) {
+                        if (value.$ref || value.allOf || value.items?.$ref) {
                             // 存在 $ref 说明是引用了常量字段参数
-                            const refName = value.$ref ? value.$ref.split('/')?.at(-1) : value?.allOf?.at(0)?.$ref.split('/')?.at(-1);
+                            let refName = '';
+                            if (value.$ref) {
+                                refName = value.$ref.split('/')?.at(-1);
+                            } else if (value.allOf) {
+                                refName = value.allOf.at(0)?.$ref.split('/')?.at(-1);
+                            } else if (value.items?.$ref) {
+                                refName = value.items.$ref.split('/')?.at(-1);
+                            }
                             // 在常量字段参数对象中查找
                             const refObj = pre[refName] || {};
-                            // 如果常量字段是一个对象，包含多个字段，则解析字段
-                            const details = refObj.properties ? Object.keys(refObj.properties)?.map((i) => ({ key: i, type: refObj[i]?.type, description: refObj[i]?.description })) : null;
+                            // 如果常量字段是一个对象或者数组对象
+                            const details = refObj.properties ? [...refObj.properties] : null;
                             return {
                                 key,
-                                type: refObj.type,
-                                description: refObj.description ? refObj.description.replace(descReg, '') : '',
+                                type: value.type || refObj.type,
+                                description: value.description ? value.description.replace(descReg, '') : refObj.description ? refObj.description.replace(descReg, '') : '',
                                 required: required.includes(key),
-                                details: details,
+                                // details: details,
+                                // 映射的公共type名称
+                                typeNameMap: refObj.commonTypeName || refName ? `${refName.split('.')?.at(-1)}CommonType` : '',
                             };
                         } else {
                             return {
@@ -105,11 +115,12 @@ async function init(buildType = 0) {
                             };
                         }
                     });
-                    return { ...pre, [schemaName]: { type, description: description.replace(descReg, ''), properties: params } };
+                    return { ...pre, [schemaName]: { type, description: description.replace(descReg, ''), properties: params, commonTypeName: `${schemaName.split('.')?.at(-1)}CommonType` } };
                 } else {
-                    return { ...pre, [schemaName]: schemaData };
+                    return { ...pre, [schemaName]: { ...schemaData, commonTypeName: `${schemaName.split('.')?.at(-1)}CommonType` } };
                 }
             }, {});
+            newSchemaDataJson = { ...newSchemaDataJson, [bizName]: schemaData };
 
             /**
              * 处理 path 请求
@@ -185,13 +196,11 @@ async function init(buildType = 0) {
                             requestConfig[bizName].push({
                                 url,
                                 tag,
-                                // subBiz,
                                 method,
                                 summary,
                                 version,
-                                // methodName,
-                                requestTypeName: '',
-                                responsesTypeName: '',
+                                requestTypeName: warehouseTypesDataInfo?.requestTypeName || '',
+                                responsesTypeName: warehouseTypesDataInfo?.responsesTypeName || '',
                                 operationId,
                                 parameters: transformParams,
                                 responses: transformResponses,
@@ -205,13 +214,10 @@ async function init(buildType = 0) {
     });
 
     // 将 schemaData 写入json文件
-    await fs.writeFileSync(path.join(__dirname, `/dist/schema.json`), JSON.stringify(schemaData, null, '\t'), 'utf8');
+    await fs.writeFileSync(path.join(__dirname, `/dist/schema.json`), JSON.stringify(newSchemaDataJson, null, '\t'), 'utf8');
 
     // 对空的biz模块进行移除
-    // console.log('🚀 ~ index.js:210 ~ requestConfig:', requestConfig);
     Reflect.ownKeys(requestConfig).forEach((key) => {
-        console.log('🚀 ~ index.js:211 ~ key:', key);
-        console.log('🚀 ~ index.js:216 ~ buildType:', buildType);
         if (requestConfig[key].length === 0 || key === 'facilityBiz') {
             Reflect.deleteProperty(requestConfig, key);
         } else {

@@ -9,7 +9,64 @@
     "eventBiz": {},
     "viscsBiz": {},
     "alarmBiz": {},
-    "quartzBiz": {},
+    "quartzBiz": {
+        "get&/api/Jobs": {
+            "requestTypeName": "GetJobsReqType",
+            "responsesTypeName": "GetJobsResType"
+        },
+        "post&/api/Jobs": {
+            "requestTypeName": "AddJobsReqType",
+            "responsesTypeName": "AddJobsResType"
+        },
+        "get&/api/Jobs/{id}": {
+            "requestTypeName": "GetJobsByIdReqType",
+            "responsesTypeName": "GetJobsByIdResType"
+        },
+        "put&/api/Jobs/{id}": {
+            "requestTypeName": "UpdateJobsByIdReqType",
+            "responsesTypeName": ""
+        },
+        "delete&/api/Jobs/{id}": {
+            "requestTypeName": "DeleteJobsByIdReqType",
+            "responsesTypeName": ""
+        },
+        "put&/api/Jobs/{id}/immediate_execute": {
+            "requestTypeName": "ExecuteJobsByIdReqType",
+            "responsesTypeName": ""
+        },
+        "put&/api/Jobs/{id}/pause": {
+            "requestTypeName": "PauseJobsByIdReqType",
+            "responsesTypeName": ""
+        },
+        "put&/api/Jobs/{id}/resume": {
+            "requestTypeName": "ResumeJobsByIdReqType",
+            "responsesTypeName": ""
+        },
+        "post&/api/Jobs/multiple": {
+            "requestTypeName": "AddMultipleReqType",
+            "responsesTypeName": "AddMultipleResType"
+        },
+        "get&/api/Jobs/multiple": {
+            "requestTypeName": "GetMultipleReqType",
+            "responsesTypeName": "GetMultipleResType"
+        },
+        "get&/api/Jobs/multiple/{id}": {
+            "requestTypeName": "GetMultipleByIdReqType",
+            "responsesTypeName": "GetMultipleByIdResType"
+        },
+        "put&/api/Jobs/multiple/{id}": {
+            "requestTypeName": "UpdateMultipleByIdReqType",
+            "responsesTypeName": ""
+        },
+        "delete&/api/Jobs/multiple/{id}": {
+            "requestTypeName": "DeleteMultipleByIdReqType",
+            "responsesTypeName": ""
+        },
+        "get&/api/node": {
+            "requestTypeName": "",
+            "responsesTypeName": ""
+        }
+    },
     "geoDataBiz": {},
     "fileStorageBiz": {},
     "geoAnalysisBiz": {},
@@ -17,12 +74,106 @@
     "modelAnalysisBiz": {},
     "videoFusionServiceBiz": {},
     "vcsBiz": {},
-    "auditBiz": {},
+    "auditBiz": {
+        "get&/api/Operation": {
+            "requestTypeName": "GetOperationReqType",
+            "responsesTypeName": "GetOperationResType"
+        },
+        "post&/api/Operation": {
+            "requestTypeName": "SearchOperationReqType",
+            "responsesTypeName": "SearchOperationResType"
+        },
+        "get&/api/Record/{id}": {
+            "requestTypeName": "GetRecordByIdReqType",
+            "responsesTypeName": "GetRecordByIdResType"
+        }
+    },
     "assetBiz": {},
     "alertsPlatformBiz": {},
     "facilityBiz": {},
     "scheduleBiz": {},
-    "rrsBiz": {},
+    "rrsBiz": {
+        "get&/api/MainResources": {
+            "requestTypeName": "GetMainResourcesReqType",
+            "responsesTypeName": "GetMainResourcesResType"
+        },
+        "post&/api/MainResources": {
+            "requestTypeName": "AddMainResourcesReqType",
+            "responsesTypeName": "AddMainResourcesResType"
+        },
+        "get&/api/MainResources/{id}": {
+            "requestTypeName": "GetMainResByIdReqType",
+            "responsesTypeName": "GetMainResByIdResType"
+        },
+        "put&/api/MainResources/{id}": {
+            "requestTypeName": "UpdateMainResByIdReqType",
+            "responsesTypeName": ""
+        },
+        "delete&/api/MainResources/{id}": {
+            "requestTypeName": "DeleteMainResByIdReqType",
+            "responsesTypeName": ""
+        },
+        "post&/api/ResourceRelationships/resource": {
+            "requestTypeName": "SearchAllResourceReqType",
+            "responsesTypeName": "SearchAllResourceResType"
+        },
+        "put&/api/ResourceRelationships/resource": {
+            "requestTypeName": "UpdateAllResourceReqType",
+            "responsesTypeName": "UpdateAllResourceResType"
+        },
+        "post&/api/ResourceRelationships/resource/single": {
+            "requestTypeName": "SearchSingleResourceReqType",
+            "responsesTypeName": "SearchSingleResourceResType"
+        },
+        "post&/api/ResourceRelationships/resource/details": {
+            "requestTypeName": "GetResourceDetailsReqType",
+            "responsesTypeName": "GetResourceDetailsResType"
+        },
+        "post&/api/ResourceRelationships/main/details": {
+            "requestTypeName": "BatchMainDetailsReqType",
+            "responsesTypeName": "BatchMainDetailsResType"
+        },
+        "put&/api/ResourceRelationships": {
+            "requestTypeName": "BatchResRelationshipsReqType",
+            "responsesTypeName": ""
+        },
+        "post&/api/ResourceRelationships": {
+            "requestTypeName": "UntieResRelationshipsReqType",
+            "responsesTypeName": ""
+        },
+        "get&/api/Resources": {
+            "requestTypeName": "GetResourcesReqType",
+            "responsesTypeName": "GetResourcesResType"
+        },
+        "post&/api/Resources": {
+            "requestTypeName": "AddResourcesReqType",
+            "responsesTypeName": "AddResourcesResType"
+        },
+        "get&/api/Resources/{id}": {
+            "requestTypeName": "GetResourcesByIdReqType",
+            "responsesTypeName": "GetResourcesByIdResType"
+        },
+        "put&/api/Resources/{id}": {
+            "requestTypeName": "UpdateResourcesByIdReqType",
+            "responsesTypeName": ""
+        },
+        "delete&/api/Resources/{id}": {
+            "requestTypeName": "DeleteResourcesByIdReqType",
+            "responsesTypeName": ""
+        },
+        "get&/api/ResourceTypes": {
+            "requestTypeName": "GetResourceTypesReqType",
+            "responsesTypeName": "GetResourceTypesResType"
+        },
+        "post&/api/ResourceTypes": {
+            "requestTypeName": "AddResourceTypesReqType",
+            "responsesTypeName": "AddResourceTypesResType"
+        },
+        "get&/api/ResourceTypes/{id}": {
+            "requestTypeName": "GetResourceTypesByIdReqType",
+            "responsesTypeName": "GetResourceTypesByIdResType"
+        }
+    },
     "dcsBiz": {},
     "ntsBiz": {}
 }

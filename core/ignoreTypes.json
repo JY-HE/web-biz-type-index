@@ -1,4 +1,5 @@
 {
-    "common": [],
-    "auditBiz": ["/api/Analysis/Instruction", "/api/BusinessMetrics", "/BusinessMetrics", "/api/node"]
+    "common": ["/api/BusinessMetrics", "/BusinessMetrics", "/api/node"],
+    "auditBiz": ["/api/Analysis/Instruction", "/api/BusinessMetrics", "/BusinessMetrics"],
+    "rrsBiz": ["/api/BusinessMetrics", "/api/node", "/api/ResourceRelationships/Cache"]
 }

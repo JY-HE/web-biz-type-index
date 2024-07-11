@@ -5,10 +5,14 @@
         <link rel="stylesheet" href="./assets/index.css" />
         <link href="./assets/tailwind.min.css" rel="stylesheet" />
         <link href="./assets/style.css" rel="stylesheet" />
-        <script src="./assets/vue.global.js"></script>
-        <script src="./assets/index.full.js"></script>
+        <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/element-plus/dist/index.css" /> -->
+        <!-- <script src="./assets/vue.global.js"></script> -->
+        <!-- <script src="./assets/index.full.js"></script> -->
         <script src="./assets/axios.min.js"></script>
-        <title>web-biz-service请求库管理</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.2.36/dist/vue.global.prod.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/element-plus"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+        <title>web-biz-type接口类型定义管理</title>
     </head>
     <body>
         <div id="admin">
@@ -20,7 +24,7 @@
                     </div>
                 </el-header>
                 <el-main v-loading="loading">
-                    <div class="addContainer" v-if="['add','manage','preview'].includes(activeName)">
+                    <div class="addContainer" v-if="['add','manage'].includes(activeName)">
                         <div class="tableContainer" v-if="step === 0">
                             <div class="bizItem" v-for="(list, name) in newApi" :key="name">
                                 <h4 class="bizName">{{name}}</h4>
@@ -51,11 +55,6 @@
                                     </el-table-column>
                                     <el-table-column prop="tag" label="标签" width="160"></el-table-column>
                                     <el-table-column prop="version" label="version" width="100"> </el-table-column>
-                                    <!-- <el-table-column prop="methodName" label="方法名" width="250">
-                                        <template #default="scope">
-                                            <el-input v-model.trim="scope.row.methodName" placeholder="请输入" />
-                                        </template>
-                                    </el-table-column> -->
                                     <el-table-column prop="requestTypeName" label="请求参数类型定义名称" width="250">
                                         <template #default="scope">
                                             <el-input v-model.trim="scope.row.requestTypeName" placeholder="请输入" :disabled="!scope.row.parameters && !scope.row.requestBody" />
@@ -96,8 +95,8 @@
                             <div class="dataItem" v-for="(value, key) in newApi" :key="key">
                                 <h4>{{key}}</h4>
                                 <div class="btnList">
-                                    <el-button type="primary" @click="copyData('api', key)">复制Api内容</el-button>
-                                    <el-button type="primary" plain @click="copyData('biz', key)">复制Biz内容</el-button>
+                                    <el-button type="primary" @click="copyData('api', key)">复制公共Type内容</el-button>
+                                    <el-button type="primary" plain @click="copyData('biz', key)">复制接口Type内容</el-button>
                                 </div>
                             </div>
                         </div>
@@ -135,6 +134,14 @@
                     },
                     // 请求类型演示映射
                     methodColorType: () => ({ get: 'info', post: 'success', put: 'warning', delete: 'danger' }),
+                    // 请求和响应参数类型定义名称集合
+                    warehouseApiTypeNames() {
+                        return Object.values(this.warehouseApi)
+                            .filter((item) => item.length)
+                            .reduce((pre, list) => {
+                                return [...pre, ...list.map((i) => i.requestTypeName), ...list.map((i) => i.responsesTypeName)].filter(Boolean);
+                            }, []);
+                    },
                 },
                 methods: {
                     handleMenuClick({ name }) {
@@ -151,7 +158,6 @@
                             .then((res) => res.json())
                             .then((res) => {
                                 this.newApi = res.data || {};
-                                console.log('🚀 ~ admin.html:154 ~ this.newApi:', this.newApi);
                             })
                             .finally(() => {
                                 this.loading = false;
@@ -202,6 +208,7 @@
                     },
                     // 配置保存
                     async save() {
+                        await this.checkName();
                         if (this.step === 0) {
                             if (this.activeName === 'manage') {
                                 this.step += 1;
@@ -219,8 +226,6 @@
                                     if (item.responses) {
                                         return item.responsesTypeName === '';
                                     }
-                                    // 重复名
-                                    return this.warehouseApi[bizName].some((i) => i.requestTypeName === item.requestTypeName || i.responsesTypeName === item.responsesTypeName);
                                 });
                                 return errorItem ? { ...errorItem, bizName } : null;
                             }, null);
@@ -235,14 +240,6 @@
                                     if (errorData.responses) {
                                         this.$message.warning(`🤖${errorData.bizName} 接口 ${errorData.summary} 未填写响应类型定义名称`);
                                         this.copy(errorData.summary);
-                                    }
-                                } else {
-                                    if (this.warehouseApi[bizName].some((i) => i.requestTypeName === errorData.requestTypeName)) {
-                                        this.$message.warning(`🤖${errorData.bizName} 请求类型定义名称 ${errorData.requestTypeName} 重复`);
-                                        this.copy(errorData.requestTypeName);
-                                    } else {
-                                        this.$message.warning(`🤖${errorData.bizName} 响应类型定义名称 ${errorData.responsesTypeName} 重复`);
-                                        this.copy(errorData.responsesTypeName);
                                     }
                                 }
                                 return;
@@ -268,6 +265,41 @@
                         } else {
                             this.updateDoc();
                         }
+                    },
+                    // 检查是否有重名
+                    checkName() {
+                        return new Promise((resolved, rejected) => {
+                            const newApiNameArr = Object.entries(this.newApi).reduce((pre, [bizName, list]) => {
+                                return [...pre, ...list.map((i) => i.requestTypeName), ...list.map((i) => i.responsesTypeName)].filter(Boolean);
+                            }, []);
+                            // 判断newApiNameArr是否有重复项
+                            const { duplicates } = newApiNameArr.reduce(
+                                (acc, item) => {
+                                    if (acc.seen.has(item)) {
+                                        acc.duplicates.add(item);
+                                    } else {
+                                        acc.seen.add(item);
+                                    }
+                                    return acc;
+                                },
+                                { seen: new Set(), duplicates: new Set() }
+                            );
+                            if (duplicates.size) {
+                                const duplicateArray = [...duplicates];
+                                this.$message.error(`🤖 ${duplicateArray[0]} 名称重复`);
+                                this.copy(duplicateArray[0]);
+                                rejected();
+                            }
+                            // 判断newApiNameArr和warehouseApi比较是否有重复项
+                            const warehouseApiTypeNamesSet = new Set(this.warehouseApiTypeNames);
+                            const equalArr = newApiNameArr.filter((item) => warehouseApiTypeNamesSet.has(item));
+                            if (equalArr.length) {
+                                this.$message.error(`🤖 ${equalArr[0]} 名称与已有接口类型定义名称重复`);
+                                this.copy(equalArr[0]);
+                                rejected();
+                            }
+                            resolved();
+                        });
                     },
                     // 更新文档
                     updateDoc() {
