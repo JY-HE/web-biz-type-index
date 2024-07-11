@@ -182,11 +182,11 @@ module.exports = {
     //     address: '10.8.109.235',
     //     port: '3079',
     // },
-    // ntsBiz: {
-    //     label: '通知服务',
-    //     url: 'http://newdev.rdapp.com:53839/docs/v1/NotificationService-API.json',
-    //     primaryName: 'NotificationService',
-    //     address: '10.8.109.235',
-    //     port: '50078',
-    // },
+    ntsBiz: {
+        label: '通知服务',
+        url: 'http://newdev.rdapp.com:53839/docs/v1/NotificationService-API.json',
+        primaryName: 'NotificationService',
+        address: '10.8.109.235',
+        port: '50078',
+    },
 };

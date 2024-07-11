@@ -1,179 +1,332 @@
 {
-    "gcsBiz": {},
-    "cgsBiz": {},
-    "mmtBiz": {},
-    "aggsBiz": {},
-    "authBiz": {},
-    "edmsBiz": {},
-    "orgsBiz": {},
-    "eventBiz": {},
-    "viscsBiz": {},
-    "alarmBiz": {},
-    "quartzBiz": {
-        "get&/api/Jobs": {
-            "requestTypeName": "GetJobsReqType",
-            "responsesTypeName": "GetJobsResType"
-        },
-        "post&/api/Jobs": {
-            "requestTypeName": "AddJobsReqType",
-            "responsesTypeName": "AddJobsResType"
-        },
-        "get&/api/Jobs/{id}": {
-            "requestTypeName": "GetJobsByIdReqType",
-            "responsesTypeName": "GetJobsByIdResType"
-        },
-        "put&/api/Jobs/{id}": {
-            "requestTypeName": "UpdateJobsByIdReqType",
-            "responsesTypeName": ""
-        },
-        "delete&/api/Jobs/{id}": {
-            "requestTypeName": "DeleteJobsByIdReqType",
-            "responsesTypeName": ""
-        },
-        "put&/api/Jobs/{id}/immediate_execute": {
-            "requestTypeName": "ExecuteJobsByIdReqType",
-            "responsesTypeName": ""
-        },
-        "put&/api/Jobs/{id}/pause": {
-            "requestTypeName": "PauseJobsByIdReqType",
-            "responsesTypeName": ""
-        },
-        "put&/api/Jobs/{id}/resume": {
-            "requestTypeName": "ResumeJobsByIdReqType",
-            "responsesTypeName": ""
-        },
-        "post&/api/Jobs/multiple": {
-            "requestTypeName": "AddMultipleReqType",
-            "responsesTypeName": "AddMultipleResType"
-        },
-        "get&/api/Jobs/multiple": {
-            "requestTypeName": "GetMultipleReqType",
-            "responsesTypeName": "GetMultipleResType"
-        },
-        "get&/api/Jobs/multiple/{id}": {
-            "requestTypeName": "GetMultipleByIdReqType",
-            "responsesTypeName": "GetMultipleByIdResType"
-        },
-        "put&/api/Jobs/multiple/{id}": {
-            "requestTypeName": "UpdateMultipleByIdReqType",
-            "responsesTypeName": ""
-        },
-        "delete&/api/Jobs/multiple/{id}": {
-            "requestTypeName": "DeleteMultipleByIdReqType",
-            "responsesTypeName": ""
-        },
-        "get&/api/node": {
-            "requestTypeName": "",
-            "responsesTypeName": ""
-        }
+  "gcsBiz": {},
+  "cgsBiz": {},
+  "mmtBiz": {},
+  "aggsBiz": {},
+  "authBiz": {},
+  "edmsBiz": {},
+  "orgsBiz": {},
+  "eventBiz": {},
+  "viscsBiz": {},
+  "alarmBiz": {},
+  "quartzBiz": {
+    "get&/api/Jobs": {
+      "requestTypeName": "GetJobsReqType",
+      "responsesTypeName": "GetJobsResType"
     },
-    "geoDataBiz": {},
-    "fileStorageBiz": {},
-    "geoAnalysisBiz": {},
-    "preplanAnalysisBiz": {},
-    "modelAnalysisBiz": {},
-    "videoFusionServiceBiz": {},
-    "vcsBiz": {},
-    "auditBiz": {
-        "get&/api/Operation": {
-            "requestTypeName": "GetOperationReqType",
-            "responsesTypeName": "GetOperationResType"
-        },
-        "post&/api/Operation": {
-            "requestTypeName": "SearchOperationReqType",
-            "responsesTypeName": "SearchOperationResType"
-        },
-        "get&/api/Record/{id}": {
-            "requestTypeName": "GetRecordByIdReqType",
-            "responsesTypeName": "GetRecordByIdResType"
-        }
+    "post&/api/Jobs": {
+      "requestTypeName": "AddJobsReqType",
+      "responsesTypeName": "AddJobsResType"
     },
-    "assetBiz": {},
-    "alertsPlatformBiz": {},
-    "facilityBiz": {},
-    "scheduleBiz": {},
-    "rrsBiz": {
-        "get&/api/MainResources": {
-            "requestTypeName": "GetMainResourcesReqType",
-            "responsesTypeName": "GetMainResourcesResType"
-        },
-        "post&/api/MainResources": {
-            "requestTypeName": "AddMainResourcesReqType",
-            "responsesTypeName": "AddMainResourcesResType"
-        },
-        "get&/api/MainResources/{id}": {
-            "requestTypeName": "GetMainResByIdReqType",
-            "responsesTypeName": "GetMainResByIdResType"
-        },
-        "put&/api/MainResources/{id}": {
-            "requestTypeName": "UpdateMainResByIdReqType",
-            "responsesTypeName": ""
-        },
-        "delete&/api/MainResources/{id}": {
-            "requestTypeName": "DeleteMainResByIdReqType",
-            "responsesTypeName": ""
-        },
-        "post&/api/ResourceRelationships/resource": {
-            "requestTypeName": "SearchAllResourceReqType",
-            "responsesTypeName": "SearchAllResourceResType"
-        },
-        "put&/api/ResourceRelationships/resource": {
-            "requestTypeName": "UpdateAllResourceReqType",
-            "responsesTypeName": "UpdateAllResourceResType"
-        },
-        "post&/api/ResourceRelationships/resource/single": {
-            "requestTypeName": "SearchSingleResourceReqType",
-            "responsesTypeName": "SearchSingleResourceResType"
-        },
-        "post&/api/ResourceRelationships/resource/details": {
-            "requestTypeName": "GetResourceDetailsReqType",
-            "responsesTypeName": "GetResourceDetailsResType"
-        },
-        "post&/api/ResourceRelationships/main/details": {
-            "requestTypeName": "BatchMainDetailsReqType",
-            "responsesTypeName": "BatchMainDetailsResType"
-        },
-        "put&/api/ResourceRelationships": {
-            "requestTypeName": "BatchResRelationshipsReqType",
-            "responsesTypeName": ""
-        },
-        "post&/api/ResourceRelationships": {
-            "requestTypeName": "UntieResRelationshipsReqType",
-            "responsesTypeName": ""
-        },
-        "get&/api/Resources": {
-            "requestTypeName": "GetResourcesReqType",
-            "responsesTypeName": "GetResourcesResType"
-        },
-        "post&/api/Resources": {
-            "requestTypeName": "AddResourcesReqType",
-            "responsesTypeName": "AddResourcesResType"
-        },
-        "get&/api/Resources/{id}": {
-            "requestTypeName": "GetResourcesByIdReqType",
-            "responsesTypeName": "GetResourcesByIdResType"
-        },
-        "put&/api/Resources/{id}": {
-            "requestTypeName": "UpdateResourcesByIdReqType",
-            "responsesTypeName": ""
-        },
-        "delete&/api/Resources/{id}": {
-            "requestTypeName": "DeleteResourcesByIdReqType",
-            "responsesTypeName": ""
-        },
-        "get&/api/ResourceTypes": {
-            "requestTypeName": "GetResourceTypesReqType",
-            "responsesTypeName": "GetResourceTypesResType"
-        },
-        "post&/api/ResourceTypes": {
-            "requestTypeName": "AddResourceTypesReqType",
-            "responsesTypeName": "AddResourceTypesResType"
-        },
-        "get&/api/ResourceTypes/{id}": {
-            "requestTypeName": "GetResourceTypesByIdReqType",
-            "responsesTypeName": "GetResourceTypesByIdResType"
-        }
+    "get&/api/Jobs/{id}": {
+      "requestTypeName": "GetJobsByIdReqType",
+      "responsesTypeName": "GetJobsByIdResType"
     },
-    "dcsBiz": {},
-    "ntsBiz": {}
+    "put&/api/Jobs/{id}": {
+      "requestTypeName": "UpdateJobsByIdReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/Jobs/{id}": {
+      "requestTypeName": "DeleteJobsByIdReqType",
+      "responsesTypeName": ""
+    },
+    "put&/api/Jobs/{id}/immediate_execute": {
+      "requestTypeName": "ExecuteJobsByIdReqType",
+      "responsesTypeName": ""
+    },
+    "put&/api/Jobs/{id}/pause": {
+      "requestTypeName": "PauseJobsByIdReqType",
+      "responsesTypeName": ""
+    },
+    "put&/api/Jobs/{id}/resume": {
+      "requestTypeName": "ResumeJobsByIdReqType",
+      "responsesTypeName": ""
+    },
+    "post&/api/Jobs/multiple": {
+      "requestTypeName": "AddMultipleReqType",
+      "responsesTypeName": "AddMultipleResType"
+    },
+    "get&/api/Jobs/multiple": {
+      "requestTypeName": "GetMultipleReqType",
+      "responsesTypeName": "GetMultipleResType"
+    },
+    "get&/api/Jobs/multiple/{id}": {
+      "requestTypeName": "GetMultipleByIdReqType",
+      "responsesTypeName": "GetMultipleByIdResType"
+    },
+    "put&/api/Jobs/multiple/{id}": {
+      "requestTypeName": "UpdateMultipleByIdReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/Jobs/multiple/{id}": {
+      "requestTypeName": "DeleteMultipleByIdReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/node": {
+      "requestTypeName": "",
+      "responsesTypeName": ""
+    }
+  },
+  "geoDataBiz": {},
+  "fileStorageBiz": {},
+  "geoAnalysisBiz": {},
+  "preplanAnalysisBiz": {},
+  "modelAnalysisBiz": {},
+  "videoFusionServiceBiz": {},
+  "vcsBiz": {},
+  "auditBiz": {
+    "get&/api/Operation": {
+      "requestTypeName": "GetOperationReqType",
+      "responsesTypeName": "GetOperationResType"
+    },
+    "post&/api/Operation": {
+      "requestTypeName": "SearchOperationReqType",
+      "responsesTypeName": "SearchOperationResType"
+    },
+    "get&/api/Record/{id}": {
+      "requestTypeName": "GetRecordByIdReqType",
+      "responsesTypeName": "GetRecordByIdResType"
+    }
+  },
+  "assetBiz": {},
+  "alertsPlatformBiz": {},
+  "facilityBiz": {},
+  "scheduleBiz": {},
+  "rrsBiz": {
+    "get&/api/MainResources": {
+      "requestTypeName": "GetMainResourcesReqType",
+      "responsesTypeName": "GetMainResourcesResType"
+    },
+    "post&/api/MainResources": {
+      "requestTypeName": "AddMainResourcesReqType",
+      "responsesTypeName": "AddMainResourcesResType"
+    },
+    "get&/api/MainResources/{id}": {
+      "requestTypeName": "GetMainResByIdReqType",
+      "responsesTypeName": "GetMainResByIdResType"
+    },
+    "put&/api/MainResources/{id}": {
+      "requestTypeName": "UpdateMainResByIdReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/MainResources/{id}": {
+      "requestTypeName": "DeleteMainResByIdReqType",
+      "responsesTypeName": ""
+    },
+    "post&/api/ResourceRelationships/resource": {
+      "requestTypeName": "SearchAllResourceReqType",
+      "responsesTypeName": "SearchAllResourceResType"
+    },
+    "put&/api/ResourceRelationships/resource": {
+      "requestTypeName": "UpdateAllResourceReqType",
+      "responsesTypeName": "UpdateAllResourceResType"
+    },
+    "post&/api/ResourceRelationships/resource/single": {
+      "requestTypeName": "SearchSingleResourceReqType",
+      "responsesTypeName": "SearchSingleResourceResType"
+    },
+    "post&/api/ResourceRelationships/resource/details": {
+      "requestTypeName": "GetResourceDetailsReqType",
+      "responsesTypeName": "GetResourceDetailsResType"
+    },
+    "post&/api/ResourceRelationships/main/details": {
+      "requestTypeName": "BatchMainDetailsReqType",
+      "responsesTypeName": "BatchMainDetailsResType"
+    },
+    "put&/api/ResourceRelationships": {
+      "requestTypeName": "BatchResRelationshipsReqType",
+      "responsesTypeName": ""
+    },
+    "post&/api/ResourceRelationships": {
+      "requestTypeName": "UntieResRelationshipsReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/Resources": {
+      "requestTypeName": "GetResourcesReqType",
+      "responsesTypeName": "GetResourcesResType"
+    },
+    "post&/api/Resources": {
+      "requestTypeName": "AddResourcesReqType",
+      "responsesTypeName": "AddResourcesResType"
+    },
+    "get&/api/Resources/{id}": {
+      "requestTypeName": "GetResourcesByIdReqType",
+      "responsesTypeName": "GetResourcesByIdResType"
+    },
+    "put&/api/Resources/{id}": {
+      "requestTypeName": "UpdateResourcesByIdReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/Resources/{id}": {
+      "requestTypeName": "DeleteResourcesByIdReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/ResourceTypes": {
+      "requestTypeName": "GetResourceTypesReqType",
+      "responsesTypeName": "GetResourceTypesResType"
+    },
+    "post&/api/ResourceTypes": {
+      "requestTypeName": "AddResourceTypesReqType",
+      "responsesTypeName": "AddResourceTypesResType"
+    },
+    "get&/api/ResourceTypes/{id}": {
+      "requestTypeName": "GetResourceTypesByIdReqType",
+      "responsesTypeName": "GetResourceTypesByIdResType"
+    }
+  },
+  "dcsBiz": {},
+  "ntsBiz": {
+    "get&/api/ConditionTemplates/{id}": {
+      "requestTypeName": "GetConTemByIdReqType",
+      "responsesTypeName": "GetConTemByIdResType"
+    },
+    "put&/api/ConditionTemplates/{id}": {
+      "requestTypeName": "UpdateConfTemByIdReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/ConditionTemplates/{id}": {
+      "requestTypeName": "DeleteConfTemByIdReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/ConditionTemplates": {
+      "requestTypeName": "GetConfTemReqType",
+      "responsesTypeName": "GetConfTemResType"
+    },
+    "post&/api/ConditionTemplates": {
+      "requestTypeName": "AddConfTemReqType",
+      "responsesTypeName": "AddConfTemResType"
+    },
+    "get&/api/I18NConfigs/{id}": {
+      "requestTypeName": "GetI18NConfByIdReqType",
+      "responsesTypeName": "GetI18NConfByIdResType"
+    },
+    "put&/api/I18NConfigs/{id}": {
+      "requestTypeName": "UpdateI18NConfByIdReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/I18NConfigs/{id}": {
+      "requestTypeName": "DeleteI18NConfByIdReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/I18NConfigs": {
+      "requestTypeName": "GetI18NConfReqType",
+      "responsesTypeName": "GetI18NConfResType"
+    },
+    "post&/api/I18NConfigs": {
+      "requestTypeName": "AddI18NConfReqType",
+      "responsesTypeName": "AddI18NConfResType"
+    },
+    "get&/api/NotifyConfigs/{id}": {
+      "requestTypeName": "GetNotifyConfByIdReqType",
+      "responsesTypeName": "GetNotifyConfByIdResType"
+    },
+    "put&/api/NotifyConfigs/{id}": {
+      "requestTypeName": "UpdateNotifyConfByIdReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/NotifyConfigs/{id}": {
+      "requestTypeName": "DeleteNotifyConfByIdReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/NotifyConfigs": {
+      "requestTypeName": "GetNotifyConfReqType",
+      "responsesTypeName": "GetNotifyConfResType"
+    },
+    "post&/api/NotifyConfigs": {
+      "requestTypeName": "AddNotifyConfReqType",
+      "responsesTypeName": "AddNotifyConfResType"
+    },
+    "get&/api/NotifyConfigs/types": {
+      "requestTypeName": "",
+      "responsesTypeName": "GetNotifyConfTypesResType"
+    },
+    "put&/api/NotifyConfigs/{id}/enable": {
+      "requestTypeName": "EnableNotifyConfByIdReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/NotifyRecords/{id}": {
+      "requestTypeName": "GetNotifyRecordByIdReqType",
+      "responsesTypeName": "GetNotifyRecordByIdResType"
+    },
+    "get&/api/NotifyRecords": {
+      "requestTypeName": "GetNotifyRecordReqType",
+      "responsesTypeName": "GetNotifyRecordResType"
+    },
+    "get&/api/Placeholders/{id}": {
+      "requestTypeName": "GetPlaceholderByIdReqType",
+      "responsesTypeName": "GetPlaceholderByIdResType"
+    },
+    "put&/api/Placeholders/{id}": {
+      "requestTypeName": "UpdatePlaceholderByIdReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/Placeholders/{id}": {
+      "requestTypeName": "DeletePlaceholderByIdReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/Placeholders": {
+      "requestTypeName": "GetPlaceholdersReqType",
+      "responsesTypeName": "GetPlaceholdersResType"
+    },
+    "post&/api/Placeholders": {
+      "requestTypeName": "AddPlaceholdersReqType",
+      "responsesTypeName": "AddPlaceholdersResType"
+    },
+    "get&/api/Scenes/{id}": {
+      "requestTypeName": "GetSceneByIdReqType",
+      "responsesTypeName": "GetSceneByIdResType"
+    },
+    "get&/api/Scenes": {
+      "requestTypeName": "",
+      "responsesTypeName": "GetScenesResType"
+    },
+    "post&/api/Scenes": {
+      "requestTypeName": "AddScenesReqType",
+      "responsesTypeName": "AddScenesResType"
+    },
+    "get&/api/Schemes/{id}": {
+      "requestTypeName": "GetSchemeByIdReqType",
+      "responsesTypeName": "GetSchemeByIdResType"
+    },
+    "put&/api/Schemes/{id}": {
+      "requestTypeName": "UpdateSchemeByIdReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/Schemes/{id}": {
+      "requestTypeName": "DeleteSchemeByIdReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/Schemes": {
+      "requestTypeName": "GetSchemesReqType",
+      "responsesTypeName": "GetSchemesResType"
+    },
+    "post&/api/Schemes": {
+      "requestTypeName": "AddSchemesReqType",
+      "responsesTypeName": "AddSchemesResType"
+    },
+    "get&/api/Templates/{id}": {
+      "requestTypeName": "GetTemplateByIdReqType",
+      "responsesTypeName": "GetTemplateByIdResType"
+    },
+    "put&/api/Templates/{id}": {
+      "requestTypeName": "UpdateTemplateByIdReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/Templates/{id}": {
+      "requestTypeName": "DeleteTemplateByIdReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/Templates": {
+      "requestTypeName": "GetTemplatesReqType",
+      "responsesTypeName": "GetTemplatesResType"
+    },
+    "post&/api/Templates": {
+      "requestTypeName": "AddTemplatesReqType",
+      "responsesTypeName": "AddTemplatesResType"
+    },
+    "post&/api/WebHooks": {
+      "requestTypeName": "WebHooksReqType",
+      "responsesTypeName": "WebHooksResType"
+    }
+  }
 }

@@ -2075,5 +2075,2489 @@
 			],
 			"requestBody": null
 		}
+	],
+	"ntsBiz": [
+		{
+			"url": "/api/ConditionTemplates/{id}",
+			"tag": "ConditionTemplates",
+			"method": "get",
+			"summary": "获取条件配置",
+			"version": "v1",
+			"requestTypeName": "GetConTemByIdReqType",
+			"responsesTypeName": "GetConTemByIdResType",
+			"operationId": "GetConditionTemplate",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType"
+				},
+				{
+					"key": "templateIds",
+					"type": "array",
+					"description": "模板id（逗号分割的多个ID）",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/ConditionTemplates/{id}",
+			"tag": "ConditionTemplates",
+			"method": "put",
+			"summary": "更新条件配置",
+			"version": "v1",
+			"requestTypeName": "UpdateConfTemByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "templateIds",
+					"type": "array",
+					"description": "模板id（逗号分割的多个ID）",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ConditionTemplates/{id}",
+			"tag": "ConditionTemplates",
+			"method": "delete",
+			"summary": "删除条件配置",
+			"version": "v1",
+			"requestTypeName": "DeleteConfTemByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/ConditionTemplates",
+			"tag": "ConditionTemplates",
+			"method": "get",
+			"summary": "搜索条件配置",
+			"version": "v1",
+			"requestTypeName": "GetConfTemReqType",
+			"responsesTypeName": "GetConfTemResType",
+			"operationId": "GetConditionTemplates",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "模糊匹配关键字",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "ConditionTemplateOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/ConditionTemplates",
+			"tag": "ConditionTemplates",
+			"method": "post",
+			"summary": "新增条件配置",
+			"version": "v1",
+			"requestTypeName": "AddConfTemReqType",
+			"responsesTypeName": "AddConfTemResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType"
+				},
+				{
+					"key": "templateIds",
+					"type": "array",
+					"description": "模板id（逗号分割的多个ID）",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "templateIds",
+					"type": "array",
+					"description": "模板id（逗号分割的多个ID）",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/I18NConfigs/{id}",
+			"tag": "I18NConfigs",
+			"method": "get",
+			"summary": "获取i18n",
+			"version": "v1",
+			"requestTypeName": "GetI18NConfByIdReqType",
+			"responsesTypeName": "GetI18NConfByIdResType",
+			"operationId": "GetI18NConfig",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false
+				},
+				{
+					"key": "languageType",
+					"type": "integer",
+					"description": "语言类型",
+					"required": false,
+					"typeNameMap": "LanguageTypeCommonType"
+				},
+				{
+					"key": "value",
+					"type": "object",
+					"description": "值对象",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/I18NConfigs/{id}",
+			"tag": "I18NConfigs",
+			"method": "put",
+			"summary": "更新i18n",
+			"version": "v1",
+			"requestTypeName": "UpdateI18NConfByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "languageType",
+					"type": "integer",
+					"description": "语言类型",
+					"required": false,
+					"typeNameMap": "LanguageTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "value",
+					"type": "object",
+					"description": "值对象",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/I18NConfigs/{id}",
+			"tag": "I18NConfigs",
+			"method": "delete",
+			"summary": "删除i18n",
+			"version": "v1",
+			"requestTypeName": "DeleteI18NConfByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/I18NConfigs",
+			"tag": "I18NConfigs",
+			"method": "get",
+			"summary": "搜索i18n",
+			"version": "v1",
+			"requestTypeName": "GetI18NConfReqType",
+			"responsesTypeName": "GetI18NConfResType",
+			"operationId": "GetI18NConfigs",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "模糊匹配关键字",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "I18NConfigOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/I18NConfigs",
+			"tag": "I18NConfigs",
+			"method": "post",
+			"summary": "新增i18n",
+			"version": "v1",
+			"requestTypeName": "AddI18NConfReqType",
+			"responsesTypeName": "AddI18NConfResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false
+				},
+				{
+					"key": "languageType",
+					"type": "integer",
+					"description": "语言类型",
+					"required": false,
+					"typeNameMap": "LanguageTypeCommonType"
+				},
+				{
+					"key": "value",
+					"type": "object",
+					"description": "值对象",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "languageType",
+					"type": "integer",
+					"description": "语言类型",
+					"required": false,
+					"typeNameMap": "LanguageTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "value",
+					"type": "object",
+					"description": "值对象",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/NotifyConfigs/{id}",
+			"tag": "NotifyConfigs",
+			"method": "get",
+			"summary": "获取通知配置",
+			"version": "v1",
+			"requestTypeName": "GetNotifyConfByIdReqType",
+			"responsesTypeName": "GetNotifyConfByIdResType",
+			"operationId": "GetNotifyConfig",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType"
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否启用",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建时间",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "更新时间",
+					"required": false
+				},
+				{
+					"key": "notifyTypes",
+					"type": "array",
+					"description": "通知方式",
+					"required": false,
+					"typeNameMap": "NotifyTypeInfoCommonType"
+				},
+				{
+					"key": "templates",
+					"type": "array",
+					"description": "模版",
+					"required": false,
+					"typeNameMap": "TemplateContentOutCommonType"
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/NotifyConfigs/{id}",
+			"tag": "NotifyConfigs",
+			"method": "put",
+			"summary": "更新通知配置",
+			"version": "v1",
+			"requestTypeName": "UpdateNotifyConfByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "通知策略名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否启用",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "templates",
+					"type": "array",
+					"description": "模版",
+					"required": false,
+					"typeNameMap": "TemplateContentInCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/NotifyConfigs/{id}",
+			"tag": "NotifyConfigs",
+			"method": "delete",
+			"summary": "删除通知配置",
+			"version": "v1",
+			"requestTypeName": "DeleteNotifyConfByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/NotifyConfigs",
+			"tag": "NotifyConfigs",
+			"method": "get",
+			"summary": "搜索通知配置",
+			"version": "v1",
+			"requestTypeName": "GetNotifyConfReqType",
+			"responsesTypeName": "GetNotifyConfResType",
+			"operationId": "GetNotifyConfigs",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "模糊匹配关键字",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "NotifyConfigOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/NotifyConfigs",
+			"tag": "NotifyConfigs",
+			"method": "post",
+			"summary": "新增通知配置",
+			"version": "v1",
+			"requestTypeName": "AddNotifyConfReqType",
+			"responsesTypeName": "AddNotifyConfResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType"
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否启用",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建时间",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "更新时间",
+					"required": false
+				},
+				{
+					"key": "notifyTypes",
+					"type": "array",
+					"description": "通知方式",
+					"required": false,
+					"typeNameMap": "NotifyTypeInfoCommonType"
+				},
+				{
+					"key": "templates",
+					"type": "array",
+					"description": "模版",
+					"required": false,
+					"typeNameMap": "TemplateContentOutCommonType"
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "通知策略名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否启用",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "templates",
+					"type": "array",
+					"description": "模版",
+					"required": false,
+					"typeNameMap": "TemplateContentInCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/NotifyConfigs/types",
+			"tag": "NotifyConfigs",
+			"method": "get",
+			"summary": "获取全部通知类型",
+			"version": "v1",
+			"requestTypeName": "",
+			"responsesTypeName": "GetNotifyConfTypesResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "NotifyTypeInfoCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/NotifyConfigs/{id}/enable",
+			"tag": "NotifyConfigs",
+			"method": "put",
+			"summary": "启用通知配置",
+			"version": "v1",
+			"requestTypeName": "EnableNotifyConfByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否启用",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/NotifyRecords/{id}",
+			"tag": "NotifyRecords",
+			"method": "get",
+			"summary": "获取通知记录",
+			"version": "v1",
+			"requestTypeName": "GetNotifyRecordByIdReqType",
+			"responsesTypeName": "GetNotifyRecordByIdResType",
+			"operationId": "GetNotifyRecord",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "content",
+					"type": "string",
+					"description": "发送内容",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "sender",
+					"type": "string",
+					"description": "发送者",
+					"required": false
+				},
+				{
+					"key": "webHookUrl",
+					"type": "string",
+					"description": "发送地址",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "主题",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "recipient",
+					"type": "string",
+					"description": "接收人",
+					"required": false
+				},
+				{
+					"key": "traceId",
+					"type": "string",
+					"description": "流水号",
+					"required": false
+				},
+				{
+					"key": "resultDescription",
+					"type": "string",
+					"description": "结果描述",
+					"required": false
+				},
+				{
+					"key": "status",
+					"type": "integer",
+					"description": "发送状态",
+					"required": false,
+					"typeNameMap": "NotifyStatusCommonType"
+				},
+				{
+					"key": "arrivalTime",
+					"type": "string",
+					"description": "送达时间",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建时间",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/NotifyRecords",
+			"tag": "NotifyRecords",
+			"method": "get",
+			"summary": "搜索通知记录",
+			"version": "v1",
+			"requestTypeName": "GetNotifyRecordReqType",
+			"responsesTypeName": "GetNotifyRecordResType",
+			"operationId": "GetNotifyRecords",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "模糊匹配关键字",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "NotifyRecordOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Placeholders/{id}",
+			"tag": "Placeholders",
+			"method": "get",
+			"summary": "获取占位符",
+			"version": "v1",
+			"requestTypeName": "GetPlaceholderByIdReqType",
+			"responsesTypeName": "GetPlaceholderByIdResType",
+			"operationId": "GetPlaceholder",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "占位符Id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "类型",
+					"required": false,
+					"typeNameMap": "PlaceHolderTypeCommonType"
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false
+				},
+				{
+					"key": "value",
+					"type": "string",
+					"description": "值",
+					"required": false
+				},
+				{
+					"key": "isEnableExpression",
+					"type": "boolean",
+					"description": "是否启用表达式替换",
+					"required": false
+				},
+				{
+					"key": "replaceExpressions",
+					"type": "array",
+					"description": "替换表达式",
+					"required": false,
+					"typeNameMap": "ReplaceExpressionCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Placeholders/{id}",
+			"tag": "Placeholders",
+			"method": "put",
+			"summary": "更新占位符",
+			"version": "v1",
+			"requestTypeName": "UpdatePlaceholderByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "占位符名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "类型",
+					"required": false,
+					"typeNameMap": "PlaceHolderTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "value",
+					"type": "string",
+					"description": "值",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "isEnableExpression",
+					"type": "boolean",
+					"description": "是否启用表达式替换",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "replaceExpressions",
+					"type": "array",
+					"description": "替换表达式",
+					"required": false,
+					"typeNameMap": "ReplaceExpressionCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Placeholders/{id}",
+			"tag": "Placeholders",
+			"method": "delete",
+			"summary": "删除占位符",
+			"version": "v1",
+			"requestTypeName": "DeletePlaceholderByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/Placeholders",
+			"tag": "Placeholders",
+			"method": "get",
+			"summary": "搜索占位符",
+			"version": "v1",
+			"requestTypeName": "GetPlaceholdersReqType",
+			"responsesTypeName": "GetPlaceholdersResType",
+			"operationId": "GetPlaceholders",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "模糊匹配关键字",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "PlaceholderOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Placeholders",
+			"tag": "Placeholders",
+			"method": "post",
+			"summary": "新增占位符",
+			"version": "v1",
+			"requestTypeName": "AddPlaceholdersReqType",
+			"responsesTypeName": "AddPlaceholdersResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "占位符Id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "类型",
+					"required": false,
+					"typeNameMap": "PlaceHolderTypeCommonType"
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false
+				},
+				{
+					"key": "value",
+					"type": "string",
+					"description": "值",
+					"required": false
+				},
+				{
+					"key": "isEnableExpression",
+					"type": "boolean",
+					"description": "是否启用表达式替换",
+					"required": false
+				},
+				{
+					"key": "replaceExpressions",
+					"type": "array",
+					"description": "替换表达式",
+					"required": false,
+					"typeNameMap": "ReplaceExpressionCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "占位符名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "类型",
+					"required": false,
+					"typeNameMap": "PlaceHolderTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "value",
+					"type": "string",
+					"description": "值",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "isEnableExpression",
+					"type": "boolean",
+					"description": "是否启用表达式替换",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "replaceExpressions",
+					"type": "array",
+					"description": "替换表达式",
+					"required": false,
+					"typeNameMap": "ReplaceExpressionCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Scenes/{id}",
+			"tag": "Scenes",
+			"method": "get",
+			"summary": "获取Scene",
+			"version": "v1",
+			"requestTypeName": "GetSceneByIdReqType",
+			"responsesTypeName": "GetSceneByIdResType",
+			"operationId": "GetScene",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "tips",
+					"type": "string",
+					"description": "提示：若未设置触发条件，则发生告警时自动通知",
+					"required": false
+				},
+				{
+					"key": "recipientTips",
+					"type": "string",
+					"description": "接收对象提示：设备联系人",
+					"required": false
+				},
+				{
+					"key": "notifyExample",
+					"type": "string",
+					"description": "通知样例",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Scenes",
+			"tag": "Scenes",
+			"method": "get",
+			"summary": "获取场景",
+			"version": "v1",
+			"requestTypeName": "",
+			"responsesTypeName": "GetScenesResType",
+			"operationId": "GetScenes",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "SceneOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Scenes",
+			"tag": "Scenes",
+			"method": "post",
+			"summary": "新增场景",
+			"version": "v1",
+			"requestTypeName": "AddScenesReqType",
+			"responsesTypeName": "AddScenesResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "tips",
+					"type": "string",
+					"description": "提示：若未设置触发条件，则发生告警时自动通知",
+					"required": false
+				},
+				{
+					"key": "recipientTips",
+					"type": "string",
+					"description": "接收对象提示：设备联系人",
+					"required": false
+				},
+				{
+					"key": "notifyExample",
+					"type": "string",
+					"description": "通知样例",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "ID",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "tips",
+					"type": "string",
+					"description": "提示：若未设置触发条件，则发生告警时自动通知",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "recipientTips",
+					"type": "string",
+					"description": "接收对象提示：设备联系人",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "notifyExample",
+					"type": "string",
+					"description": "通知样例",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Schemes/{id}",
+			"tag": "Schemes",
+			"method": "get",
+			"summary": "获取scheme",
+			"version": "v1",
+			"requestTypeName": "GetSchemeByIdReqType",
+			"responsesTypeName": "GetSchemeByIdResType",
+			"operationId": "GetScheme",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "支持字段键名",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "字段类型",
+					"required": false,
+					"typeNameMap": "FieldTypeCommonType"
+				},
+				{
+					"key": "allowNull",
+					"type": "boolean",
+					"description": "是否允许为空",
+					"required": false
+				},
+				{
+					"key": "example",
+					"type": "string",
+					"description": "样例数据",
+					"required": false
+				},
+				{
+					"key": "operator",
+					"type": "integer",
+					"description": "过滤操作符",
+					"required": false,
+					"typeNameMap": "OperatorTypeCommonType"
+				},
+				{
+					"key": "analysisType",
+					"type": "integer",
+					"description": "解析类型",
+					"required": false,
+					"typeNameMap": "AnalysisTypeCommonType"
+				},
+				{
+					"key": "isDynamicRangeValue",
+					"type": "boolean",
+					"description": "是否动态的值范围",
+					"required": false
+				},
+				{
+					"key": "rangeValues",
+					"type": "array",
+					"description": "静态值范围-动态从对应接口获取",
+					"required": false,
+					"typeNameMap": "RangeValueCommonType"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Schemes/{id}",
+			"tag": "Schemes",
+			"method": "put",
+			"summary": "更新scheme",
+			"version": "v1",
+			"requestTypeName": "UpdateSchemeByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "支持字段键名",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "字段类型",
+					"required": false,
+					"typeNameMap": "FieldTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "allowNull",
+					"type": "boolean",
+					"description": "是否允许为空",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "example",
+					"type": "string",
+					"description": "样例数据",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "operator",
+					"type": "integer",
+					"description": "过滤操作符",
+					"required": false,
+					"typeNameMap": "OperatorTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "isDynamicRangeValue",
+					"type": "boolean",
+					"description": "是否动态的值范围",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "rangeValue",
+					"description": "静态值范围-动态从对应接口获取",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Schemes/{id}",
+			"tag": "Schemes",
+			"method": "delete",
+			"summary": "删除scheme",
+			"version": "v1",
+			"requestTypeName": "DeleteSchemeByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/Schemes",
+			"tag": "Schemes",
+			"method": "get",
+			"summary": "搜索scheme",
+			"version": "v1",
+			"requestTypeName": "GetSchemesReqType",
+			"responsesTypeName": "GetSchemesResType",
+			"operationId": "GetSchemes",
+			"parameters": [
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "SchemeOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Schemes",
+			"tag": "Schemes",
+			"method": "post",
+			"summary": "新增scheme",
+			"version": "v1",
+			"requestTypeName": "AddSchemesReqType",
+			"responsesTypeName": "AddSchemesResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "支持字段键名",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "字段类型",
+					"required": false,
+					"typeNameMap": "FieldTypeCommonType"
+				},
+				{
+					"key": "allowNull",
+					"type": "boolean",
+					"description": "是否允许为空",
+					"required": false
+				},
+				{
+					"key": "example",
+					"type": "string",
+					"description": "样例数据",
+					"required": false
+				},
+				{
+					"key": "operator",
+					"type": "integer",
+					"description": "过滤操作符",
+					"required": false,
+					"typeNameMap": "OperatorTypeCommonType"
+				},
+				{
+					"key": "analysisType",
+					"type": "integer",
+					"description": "解析类型",
+					"required": false,
+					"typeNameMap": "AnalysisTypeCommonType"
+				},
+				{
+					"key": "isDynamicRangeValue",
+					"type": "boolean",
+					"description": "是否动态的值范围",
+					"required": false
+				},
+				{
+					"key": "rangeValues",
+					"type": "array",
+					"description": "静态值范围-动态从对应接口获取",
+					"required": false,
+					"typeNameMap": "RangeValueCommonType"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "支持字段键名",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "字段类型",
+					"required": false,
+					"typeNameMap": "FieldTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "allowNull",
+					"type": "boolean",
+					"description": "是否允许为空",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "example",
+					"type": "string",
+					"description": "样例数据",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "operator",
+					"type": "integer",
+					"description": "过滤操作符",
+					"required": false,
+					"typeNameMap": "OperatorTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "isDynamicRangeValue",
+					"type": "boolean",
+					"description": "是否动态的值范围",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "rangeValue",
+					"description": "静态值范围-动态从对应接口获取",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Templates/{id}",
+			"tag": "Templates",
+			"method": "get",
+			"summary": "获取模板",
+			"version": "v1",
+			"requestTypeName": "GetTemplateByIdReqType",
+			"responsesTypeName": "GetTemplateByIdResType",
+			"operationId": "GetTemplate",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "模板ID",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "notifyType",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "content",
+					"type": "string",
+					"description": "通知内容模板",
+					"required": false
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否可用",
+					"required": false
+				},
+				{
+					"key": "isDefault",
+					"type": "boolean",
+					"description": "是否默认通知模板",
+					"required": false
+				},
+				{
+					"key": "sender",
+					"type": "string",
+					"description": "发送者",
+					"required": false
+				},
+				{
+					"key": "defaultWebHookUrl",
+					"type": "string",
+					"description": "默认webHookUrl",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题(主题)",
+					"required": false
+				},
+				{
+					"key": "secondTitle",
+					"type": "string",
+					"description": "副标题（第二标题）",
+					"required": false
+				},
+				{
+					"key": "jumpUrl",
+					"type": "string",
+					"description": "跳转地址",
+					"required": false
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType"
+				},
+				{
+					"key": "priorityPhoneType",
+					"type": "string",
+					"description": "优先电话类型",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Templates/{id}",
+			"tag": "Templates",
+			"method": "put",
+			"summary": "更新模板",
+			"version": "v1",
+			"requestTypeName": "UpdateTemplateByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "notifyType",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "content",
+					"type": "string",
+					"description": "通知内容模板",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否可用",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "isDefault",
+					"type": "boolean",
+					"description": "是否默认通知模板",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "sender",
+					"type": "string",
+					"description": "发送者",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "defaultWebHookUrl",
+					"type": "string",
+					"description": "默认webHookUrl",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题(主题)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "secondTitle",
+					"type": "string",
+					"description": "副标题（第二标题）",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "jumpUrl",
+					"type": "string",
+					"description": "跳转地址",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "priorityPhoneType",
+					"type": "string",
+					"description": "优先电话类型",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Templates/{id}",
+			"tag": "Templates",
+			"method": "delete",
+			"summary": "删除模板",
+			"version": "v1",
+			"requestTypeName": "DeleteTemplateByIdReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/Templates",
+			"tag": "Templates",
+			"method": "get",
+			"summary": "搜索模板",
+			"version": "v1",
+			"requestTypeName": "GetTemplatesReqType",
+			"responsesTypeName": "GetTemplatesResType",
+			"operationId": "GetTemplates",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "模糊匹配关键字",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "TemplateOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Templates",
+			"tag": "Templates",
+			"method": "post",
+			"summary": "新增模板",
+			"version": "v1",
+			"requestTypeName": "AddTemplatesReqType",
+			"responsesTypeName": "AddTemplatesResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "模板ID",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "notifyType",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "content",
+					"type": "string",
+					"description": "通知内容模板",
+					"required": false
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否可用",
+					"required": false
+				},
+				{
+					"key": "isDefault",
+					"type": "boolean",
+					"description": "是否默认通知模板",
+					"required": false
+				},
+				{
+					"key": "sender",
+					"type": "string",
+					"description": "发送者",
+					"required": false
+				},
+				{
+					"key": "defaultWebHookUrl",
+					"type": "string",
+					"description": "默认webHookUrl",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题(主题)",
+					"required": false
+				},
+				{
+					"key": "secondTitle",
+					"type": "string",
+					"description": "副标题（第二标题）",
+					"required": false
+				},
+				{
+					"key": "jumpUrl",
+					"type": "string",
+					"description": "跳转地址",
+					"required": false
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType"
+				},
+				{
+					"key": "priorityPhoneType",
+					"type": "string",
+					"description": "优先电话类型",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "notifyType",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "content",
+					"type": "string",
+					"description": "通知内容模板",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否可用",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "isDefault",
+					"type": "boolean",
+					"description": "是否默认通知模板",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "sender",
+					"type": "string",
+					"description": "发送者",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "defaultWebHookUrl",
+					"type": "string",
+					"description": "默认webHookUrl",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题(主题)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "secondTitle",
+					"type": "string",
+					"description": "副标题（第二标题）",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "jumpUrl",
+					"type": "string",
+					"description": "跳转地址",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "priorityPhoneType",
+					"type": "string",
+					"description": "优先电话类型",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/WebHooks",
+			"tag": "WebHooks",
+			"method": "post",
+			"summary": "通知",
+			"version": "v1",
+			"requestTypeName": "WebHooksReqType",
+			"responsesTypeName": "WebHooksResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "taskId",
+					"type": "string",
+					"description": "任务id",
+					"required": false
+				},
+				{
+					"key": "message",
+					"type": "string",
+					"description": "Message",
+					"required": false
+				},
+				{
+					"key": "success",
+					"type": "boolean",
+					"description": "是否成功",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "运用场景",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "notifyType",
+					"type": "integer",
+					"description": "通知类型，支持多种类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "notifyContent",
+					"type": "object",
+					"description": "通知内容",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "jumpUrl",
+					"type": "string",
+					"description": "跳转地址",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "data",
+					"type": "object",
+					"description": "业务对象",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "id",
+					"type": "string",
+					"description": "标识ID",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "source",
+					"type": "string",
+					"description": "业务来源",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		}
 	]
 }

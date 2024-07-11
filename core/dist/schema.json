@@ -1331,5 +1331,1534 @@
 			],
 			"commonTypeName": "SimpleResourceOutCommonType"
 		}
+	},
+	"ntsBiz": {
+		"Microsoft.AspNetCore.Mvc.ProblemDetails": {
+			"type": "object",
+			"description": "",
+			"properties": [
+				{
+					"key": "type",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "status",
+					"type": "integer",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "detail",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "instance",
+					"type": "string",
+					"description": "",
+					"required": false
+				}
+			],
+			"commonTypeName": "ProblemDetailsCommonType"
+		},
+		"Newtonsoft.Json.Linq.JToken": {
+			"type": "array",
+			"items": {
+				"$ref": "#/components/schemas/Newtonsoft.Json.Linq.JToken"
+			},
+			"commonTypeName": "JTokenCommonType"
+		},
+		"NotificationService.Models.Common.Condition": {
+			"type": "object",
+			"description": "筛选条件",
+			"properties": [
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false
+				},
+				{
+					"key": "value",
+					"type": "string",
+					"description": "值",
+					"required": false
+				},
+				{
+					"key": "operator",
+					"description": "操作类型",
+					"required": false,
+					"typeNameMap": "OperatorTypeCommonType"
+				}
+			],
+			"commonTypeName": "ConditionCommonType"
+		},
+		"NotificationService.Models.Common.NotifyResult": {
+			"type": "object",
+			"description": "通知结果",
+			"properties": [
+				{
+					"key": "taskId",
+					"type": "string",
+					"description": "任务id",
+					"required": false
+				},
+				{
+					"key": "message",
+					"type": "string",
+					"description": "Message",
+					"required": false
+				},
+				{
+					"key": "success",
+					"type": "boolean",
+					"description": "是否成功",
+					"required": false
+				}
+			],
+			"commonTypeName": "NotifyResultCommonType"
+		},
+		"NotificationService.Models.Common.RangeValue": {
+			"type": "object",
+			"description": "值范围",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				}
+			],
+			"commonTypeName": "RangeValueCommonType"
+		},
+		"NotificationService.Models.Common.ReplaceExpression": {
+			"type": "object",
+			"description": "替换表达式",
+			"properties": [
+				{
+					"key": "operator",
+					"description": "操作类型",
+					"required": false,
+					"typeNameMap": "OperatorTypeCommonType"
+				},
+				{
+					"key": "value",
+					"type": "string",
+					"description": "比较值",
+					"required": false
+				},
+				{
+					"key": "replaceValue",
+					"type": "string",
+					"description": "替换值",
+					"required": false
+				}
+			],
+			"commonTypeName": "ReplaceExpressionCommonType"
+		},
+		"NotificationService.Models.Database.PageableQueryResult`1[NotificationService.Models.Response.ConditionTemplateOut]": {
+			"type": "object",
+			"description": "分页查询结果",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "ConditionTemplateOutCommonType"
+				}
+			],
+			"commonTypeName": "ConditionTemplateOut]CommonType"
+		},
+		"NotificationService.Models.Database.PageableQueryResult`1[NotificationService.Models.Response.I18NConfigOut]": {
+			"type": "object",
+			"description": "分页查询结果",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "I18NConfigOutCommonType"
+				}
+			],
+			"commonTypeName": "I18NConfigOut]CommonType"
+		},
+		"NotificationService.Models.Database.PageableQueryResult`1[NotificationService.Models.Response.NotifyConfigOut]": {
+			"type": "object",
+			"description": "分页查询结果",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "NotifyConfigOutCommonType"
+				}
+			],
+			"commonTypeName": "NotifyConfigOut]CommonType"
+		},
+		"NotificationService.Models.Database.PageableQueryResult`1[NotificationService.Models.Response.NotifyRecordOut]": {
+			"type": "object",
+			"description": "分页查询结果",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "NotifyRecordOutCommonType"
+				}
+			],
+			"commonTypeName": "NotifyRecordOut]CommonType"
+		},
+		"NotificationService.Models.Database.PageableQueryResult`1[NotificationService.Models.Response.NotifyTypeInfo]": {
+			"type": "object",
+			"description": "分页查询结果",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "NotifyTypeInfoCommonType"
+				}
+			],
+			"commonTypeName": "NotifyTypeInfo]CommonType"
+		},
+		"NotificationService.Models.Database.PageableQueryResult`1[NotificationService.Models.Response.PlaceholderOut]": {
+			"type": "object",
+			"description": "分页查询结果",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "PlaceholderOutCommonType"
+				}
+			],
+			"commonTypeName": "PlaceholderOut]CommonType"
+		},
+		"NotificationService.Models.Database.PageableQueryResult`1[NotificationService.Models.Response.SceneOut]": {
+			"type": "object",
+			"description": "分页查询结果",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "SceneOutCommonType"
+				}
+			],
+			"commonTypeName": "SceneOut]CommonType"
+		},
+		"NotificationService.Models.Database.PageableQueryResult`1[NotificationService.Models.Response.SchemeOut]": {
+			"type": "object",
+			"description": "分页查询结果",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "SchemeOutCommonType"
+				}
+			],
+			"commonTypeName": "SchemeOut]CommonType"
+		},
+		"NotificationService.Models.Database.PageableQueryResult`1[NotificationService.Models.Response.TemplateOut]": {
+			"type": "object",
+			"description": "分页查询结果",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "TemplateOutCommonType"
+				}
+			],
+			"commonTypeName": "TemplateOut]CommonType"
+		},
+		"NotificationService.Models.Enum.AnalysisType": {
+			"enum": [
+				0,
+				1
+			],
+			"type": "integer",
+			"description": "解析类型",
+			"format": "int32",
+			"commonTypeName": "AnalysisTypeCommonType"
+		},
+		"NotificationService.Models.Enum.FieldType": {
+			"enum": [
+				0,
+				1,
+				2
+			],
+			"type": "integer",
+			"description": "字段类型【int,string,dateTime】",
+			"format": "int32",
+			"commonTypeName": "FieldTypeCommonType"
+		},
+		"NotificationService.Models.Enum.LanguageType": {
+			"enum": [
+				0,
+				1
+			],
+			"type": "integer",
+			"description": "i18n支持语言类型",
+			"format": "int32",
+			"commonTypeName": "LanguageTypeCommonType"
+		},
+		"NotificationService.Models.Enum.NotifyStatus": {
+			"enum": [
+				0,
+				1,
+				2
+			],
+			"type": "integer",
+			"description": "发送状态",
+			"format": "int32",
+			"commonTypeName": "NotifyStatusCommonType"
+		},
+		"NotificationService.Models.Enum.NotifyTypes": {
+			"enum": [
+				1,
+				2,
+				4,
+				8,
+				16,
+				32
+			],
+			"type": "integer",
+			"description": "通知类型",
+			"format": "int32",
+			"commonTypeName": "NotifyTypesCommonType"
+		},
+		"NotificationService.Models.Enum.OperatorType": {
+			"enum": [
+				1,
+				2,
+				4,
+				8,
+				16,
+				32,
+				64,
+				128,
+				256,
+				512
+			],
+			"type": "integer",
+			"description": "操作符类型",
+			"format": "int32",
+			"commonTypeName": "OperatorTypeCommonType"
+		},
+		"NotificationService.Models.Enum.PlaceHolderType": {
+			"enum": [
+				0
+			],
+			"type": "integer",
+			"description": "占位符类型",
+			"format": "int32",
+			"commonTypeName": "PlaceHolderTypeCommonType"
+		},
+		"NotificationService.Models.NotifySource": {
+			"type": "object",
+			"description": "通知源(新)",
+			"properties": [
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "运用场景",
+					"required": false
+				},
+				{
+					"key": "notifyType",
+					"type": "integer",
+					"description": "通知类型，支持多种类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "notifyContent",
+					"type": "object",
+					"description": "通知内容",
+					"required": false
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType"
+				},
+				{
+					"key": "jumpUrl",
+					"type": "string",
+					"description": "跳转地址",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题",
+					"required": false
+				},
+				{
+					"key": "data",
+					"type": "object",
+					"description": "业务对象",
+					"required": false
+				},
+				{
+					"key": "id",
+					"type": "string",
+					"description": "标识ID",
+					"required": false
+				},
+				{
+					"key": "source",
+					"type": "string",
+					"description": "业务来源",
+					"required": false
+				}
+			],
+			"commonTypeName": "NotifySourceCommonType"
+		},
+		"NotificationService.Models.Recipient": {
+			"type": "object",
+			"description": "通知接收人",
+			"properties": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "通知对象名称",
+					"required": false
+				},
+				{
+					"key": "userId",
+					"type": "string",
+					"description": "用户id",
+					"required": false
+				},
+				{
+					"key": "mobile",
+					"type": "string",
+					"description": "电话",
+					"required": false
+				},
+				{
+					"key": "mail",
+					"type": "string",
+					"description": "邮件",
+					"required": false
+				},
+				{
+					"key": "groupId",
+					"type": "string",
+					"description": "组ID",
+					"required": false
+				}
+			],
+			"commonTypeName": "RecipientCommonType"
+		},
+		"NotificationService.Models.Request.ConditionTemplateIn": {
+			"type": "object",
+			"description": "条件模板输入",
+			"properties": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType"
+				},
+				{
+					"key": "templateIds",
+					"type": "array",
+					"description": "模板id（逗号分割的多个ID）",
+					"required": false
+				}
+			],
+			"commonTypeName": "ConditionTemplateInCommonType"
+		},
+		"NotificationService.Models.Request.EnableNotifyConfigIn": {
+			"type": "object",
+			"description": "是否启用更新",
+			"properties": [
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否启用",
+					"required": false
+				}
+			],
+			"commonTypeName": "EnableNotifyConfigInCommonType"
+		},
+		"NotificationService.Models.Request.I18NConfigIn": {
+			"type": "object",
+			"description": "i18n配置",
+			"properties": [
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false
+				},
+				{
+					"key": "languageType",
+					"type": "integer",
+					"description": "语言类型",
+					"required": false,
+					"typeNameMap": "LanguageTypeCommonType"
+				},
+				{
+					"key": "value",
+					"type": "object",
+					"description": "值对象",
+					"required": false
+				}
+			],
+			"commonTypeName": "I18NConfigInCommonType"
+		},
+		"NotificationService.Models.Request.NotifyConfigIn": {
+			"type": "object",
+			"description": "通知配置",
+			"properties": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "通知策略名称",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType"
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否启用",
+					"required": false
+				},
+				{
+					"key": "templates",
+					"type": "array",
+					"description": "模版",
+					"required": false,
+					"typeNameMap": "TemplateContentInCommonType"
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType"
+				}
+			],
+			"commonTypeName": "NotifyConfigInCommonType"
+		},
+		"NotificationService.Models.Request.PlaceholderIn": {
+			"type": "object",
+			"description": "占位符",
+			"properties": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "占位符名称",
+					"required": true
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "类型",
+					"required": false,
+					"typeNameMap": "PlaceHolderTypeCommonType"
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false
+				},
+				{
+					"key": "value",
+					"type": "string",
+					"description": "值",
+					"required": false
+				},
+				{
+					"key": "isEnableExpression",
+					"type": "boolean",
+					"description": "是否启用表达式替换",
+					"required": false
+				},
+				{
+					"key": "replaceExpressions",
+					"type": "array",
+					"description": "替换表达式",
+					"required": false,
+					"typeNameMap": "ReplaceExpressionCommonType"
+				}
+			],
+			"commonTypeName": "PlaceholderInCommonType"
+		},
+		"NotificationService.Models.Request.SceneIn": {
+			"type": "object",
+			"description": "场景",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "tips",
+					"type": "string",
+					"description": "提示：若未设置触发条件，则发生告警时自动通知",
+					"required": false
+				},
+				{
+					"key": "recipientTips",
+					"type": "string",
+					"description": "接收对象提示：设备联系人",
+					"required": false
+				},
+				{
+					"key": "notifyExample",
+					"type": "string",
+					"description": "通知样例",
+					"required": false
+				}
+			],
+			"commonTypeName": "SceneInCommonType"
+		},
+		"NotificationService.Models.Request.SchemeIn": {
+			"type": "object",
+			"description": "SchemeIn",
+			"properties": [
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "支持字段键名",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "字段类型",
+					"required": false,
+					"typeNameMap": "FieldTypeCommonType"
+				},
+				{
+					"key": "allowNull",
+					"type": "boolean",
+					"description": "是否允许为空",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false
+				},
+				{
+					"key": "example",
+					"type": "string",
+					"description": "样例数据",
+					"required": false
+				},
+				{
+					"key": "operator",
+					"type": "integer",
+					"description": "过滤操作符",
+					"required": false,
+					"typeNameMap": "OperatorTypeCommonType"
+				},
+				{
+					"key": "isDynamicRangeValue",
+					"type": "boolean",
+					"description": "是否动态的值范围",
+					"required": false
+				},
+				{
+					"key": "rangeValue",
+					"description": "静态值范围-动态从对应接口获取",
+					"required": false
+				}
+			],
+			"commonTypeName": "SchemeInCommonType"
+		},
+		"NotificationService.Models.Request.TemplateContentIn": {
+			"type": "object",
+			"description": "模版内容",
+			"properties": [
+				{
+					"key": "notifyType",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "content",
+					"type": "string",
+					"description": "通知内容模板",
+					"required": true
+				},
+				{
+					"key": "defaultWebHookUrl",
+					"type": "string",
+					"description": "默认webHookUrl",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题(主题)",
+					"required": false
+				},
+				{
+					"key": "secondTitle",
+					"type": "string",
+					"description": "副标题（第二标题）",
+					"required": false
+				},
+				{
+					"key": "jumpUrl",
+					"type": "string",
+					"description": "跳转地址",
+					"required": false
+				},
+				{
+					"key": "priorityPhoneType",
+					"type": "string",
+					"description": "优先电话类型",
+					"required": false
+				}
+			],
+			"commonTypeName": "TemplateContentInCommonType"
+		},
+		"NotificationService.Models.Request.TemplateIn": {
+			"type": "object",
+			"description": "模板入参",
+			"properties": [
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": true
+				},
+				{
+					"key": "notifyType",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "content",
+					"type": "string",
+					"description": "通知内容模板",
+					"required": true
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否可用",
+					"required": false
+				},
+				{
+					"key": "isDefault",
+					"type": "boolean",
+					"description": "是否默认通知模板",
+					"required": false
+				},
+				{
+					"key": "sender",
+					"type": "string",
+					"description": "发送者",
+					"required": false
+				},
+				{
+					"key": "defaultWebHookUrl",
+					"type": "string",
+					"description": "默认webHookUrl",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题(主题)",
+					"required": false
+				},
+				{
+					"key": "secondTitle",
+					"type": "string",
+					"description": "副标题（第二标题）",
+					"required": false
+				},
+				{
+					"key": "jumpUrl",
+					"type": "string",
+					"description": "跳转地址",
+					"required": false
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType"
+				},
+				{
+					"key": "priorityPhoneType",
+					"type": "string",
+					"description": "优先电话类型",
+					"required": false
+				}
+			],
+			"commonTypeName": "TemplateInCommonType"
+		},
+		"NotificationService.Models.Response.ConditionTemplateOut": {
+			"type": "object",
+			"description": "条件模板",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType"
+				},
+				{
+					"key": "templateIds",
+					"type": "array",
+					"description": "模板id（逗号分割的多个ID）",
+					"required": false
+				}
+			],
+			"commonTypeName": "ConditionTemplateOutCommonType"
+		},
+		"NotificationService.Models.Response.I18NConfigOut": {
+			"type": "object",
+			"description": "i18n配置",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false
+				},
+				{
+					"key": "languageType",
+					"type": "integer",
+					"description": "语言类型",
+					"required": false,
+					"typeNameMap": "LanguageTypeCommonType"
+				},
+				{
+					"key": "value",
+					"type": "object",
+					"description": "值对象",
+					"required": false
+				}
+			],
+			"commonTypeName": "I18NConfigOutCommonType"
+		},
+		"NotificationService.Models.Response.NotifyConfigDetailOut": {
+			"type": "object",
+			"description": "通知配置",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType"
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否启用",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建时间",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "更新时间",
+					"required": false
+				},
+				{
+					"key": "notifyTypes",
+					"type": "array",
+					"description": "通知方式",
+					"required": false,
+					"typeNameMap": "NotifyTypeInfoCommonType"
+				},
+				{
+					"key": "templates",
+					"type": "array",
+					"description": "模版",
+					"required": false,
+					"typeNameMap": "TemplateContentOutCommonType"
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType"
+				}
+			],
+			"commonTypeName": "NotifyConfigDetailOutCommonType"
+		},
+		"NotificationService.Models.Response.NotifyConfigOut": {
+			"type": "object",
+			"description": "通知配置",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "conditions",
+					"type": "array",
+					"description": "筛选条件",
+					"required": false,
+					"typeNameMap": "ConditionCommonType"
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否启用",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建时间",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "更新时间",
+					"required": false
+				},
+				{
+					"key": "notifyTypes",
+					"type": "array",
+					"description": "通知方式",
+					"required": false,
+					"typeNameMap": "NotifyTypeInfoCommonType"
+				}
+			],
+			"commonTypeName": "NotifyConfigOutCommonType"
+		},
+		"NotificationService.Models.Response.NotifyRecordOut": {
+			"type": "object",
+			"description": "通知记录",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "content",
+					"type": "string",
+					"description": "发送内容",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "sender",
+					"type": "string",
+					"description": "发送者",
+					"required": false
+				},
+				{
+					"key": "webHookUrl",
+					"type": "string",
+					"description": "发送地址",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "主题",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "recipient",
+					"type": "string",
+					"description": "接收人",
+					"required": false
+				},
+				{
+					"key": "traceId",
+					"type": "string",
+					"description": "流水号",
+					"required": false
+				},
+				{
+					"key": "resultDescription",
+					"type": "string",
+					"description": "结果描述",
+					"required": false
+				},
+				{
+					"key": "status",
+					"type": "integer",
+					"description": "发送状态",
+					"required": false,
+					"typeNameMap": "NotifyStatusCommonType"
+				},
+				{
+					"key": "arrivalTime",
+					"type": "string",
+					"description": "送达时间",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建时间",
+					"required": false
+				}
+			],
+			"commonTypeName": "NotifyRecordOutCommonType"
+		},
+		"NotificationService.Models.Response.NotifyTypeInfo": {
+			"type": "object",
+			"description": "通知类型信息",
+			"properties": [
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				}
+			],
+			"commonTypeName": "NotifyTypeInfoCommonType"
+		},
+		"NotificationService.Models.Response.PlaceholderOut": {
+			"type": "object",
+			"description": "占位符",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "占位符Id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "类型",
+					"required": false,
+					"typeNameMap": "PlaceHolderTypeCommonType"
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "键",
+					"required": false
+				},
+				{
+					"key": "value",
+					"type": "string",
+					"description": "值",
+					"required": false
+				},
+				{
+					"key": "isEnableExpression",
+					"type": "boolean",
+					"description": "是否启用表达式替换",
+					"required": false
+				},
+				{
+					"key": "replaceExpressions",
+					"type": "array",
+					"description": "替换表达式",
+					"required": false,
+					"typeNameMap": "ReplaceExpressionCommonType"
+				}
+			],
+			"commonTypeName": "PlaceholderOutCommonType"
+		},
+		"NotificationService.Models.Response.SceneOut": {
+			"type": "object",
+			"description": "场景",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "tips",
+					"type": "string",
+					"description": "提示：若未设置触发条件，则发生告警时自动通知",
+					"required": false
+				},
+				{
+					"key": "recipientTips",
+					"type": "string",
+					"description": "接收对象提示：设备联系人",
+					"required": false
+				},
+				{
+					"key": "notifyExample",
+					"type": "string",
+					"description": "通知样例",
+					"required": false
+				}
+			],
+			"commonTypeName": "SceneOutCommonType"
+		},
+		"NotificationService.Models.Response.SchemeOut": {
+			"type": "object",
+			"description": "SchemeOut",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "key",
+					"type": "string",
+					"description": "支持字段键名",
+					"required": false
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "字段类型",
+					"required": false,
+					"typeNameMap": "FieldTypeCommonType"
+				},
+				{
+					"key": "allowNull",
+					"type": "boolean",
+					"description": "是否允许为空",
+					"required": false
+				},
+				{
+					"key": "example",
+					"type": "string",
+					"description": "样例数据",
+					"required": false
+				},
+				{
+					"key": "operator",
+					"type": "integer",
+					"description": "过滤操作符",
+					"required": false,
+					"typeNameMap": "OperatorTypeCommonType"
+				},
+				{
+					"key": "analysisType",
+					"type": "integer",
+					"description": "解析类型",
+					"required": false,
+					"typeNameMap": "AnalysisTypeCommonType"
+				},
+				{
+					"key": "isDynamicRangeValue",
+					"type": "boolean",
+					"description": "是否动态的值范围",
+					"required": false
+				},
+				{
+					"key": "rangeValues",
+					"type": "array",
+					"description": "静态值范围-动态从对应接口获取",
+					"required": false,
+					"typeNameMap": "RangeValueCommonType"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false
+				}
+			],
+			"commonTypeName": "SchemeOutCommonType"
+		},
+		"NotificationService.Models.Response.TemplateContentOut": {
+			"type": "object",
+			"description": "模版内容",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "模版ID",
+					"required": false
+				},
+				{
+					"key": "notifyType",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "content",
+					"type": "string",
+					"description": "通知内容模板",
+					"required": false
+				},
+				{
+					"key": "defaultWebHookUrl",
+					"type": "string",
+					"description": "默认webHookUrl",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题(主题)",
+					"required": false
+				},
+				{
+					"key": "secondTitle",
+					"type": "string",
+					"description": "副标题（第二标题）",
+					"required": false
+				},
+				{
+					"key": "jumpUrl",
+					"type": "string",
+					"description": "跳转地址",
+					"required": false
+				},
+				{
+					"key": "priorityPhoneType",
+					"type": "string",
+					"description": "优先电话类型",
+					"required": false
+				}
+			],
+			"commonTypeName": "TemplateContentOutCommonType"
+		},
+		"NotificationService.Models.Response.TemplateOut": {
+			"type": "object",
+			"description": "模板",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "模板ID",
+					"required": false
+				},
+				{
+					"key": "scene",
+					"type": "string",
+					"description": "场景",
+					"required": false
+				},
+				{
+					"key": "notifyType",
+					"type": "integer",
+					"description": "通知类型",
+					"required": false,
+					"typeNameMap": "NotifyTypesCommonType"
+				},
+				{
+					"key": "content",
+					"type": "string",
+					"description": "通知内容模板",
+					"required": false
+				},
+				{
+					"key": "isEnable",
+					"type": "boolean",
+					"description": "是否可用",
+					"required": false
+				},
+				{
+					"key": "isDefault",
+					"type": "boolean",
+					"description": "是否默认通知模板",
+					"required": false
+				},
+				{
+					"key": "sender",
+					"type": "string",
+					"description": "发送者",
+					"required": false
+				},
+				{
+					"key": "defaultWebHookUrl",
+					"type": "string",
+					"description": "默认webHookUrl",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题(主题)",
+					"required": false
+				},
+				{
+					"key": "secondTitle",
+					"type": "string",
+					"description": "副标题（第二标题）",
+					"required": false
+				},
+				{
+					"key": "jumpUrl",
+					"type": "string",
+					"description": "跳转地址",
+					"required": false
+				},
+				{
+					"key": "recipients",
+					"type": "array",
+					"description": "模板默认接收人",
+					"required": false,
+					"typeNameMap": "RecipientCommonType"
+				},
+				{
+					"key": "priorityPhoneType",
+					"type": "string",
+					"description": "优先电话类型",
+					"required": false
+				}
+			],
+			"commonTypeName": "TemplateOutCommonType"
+		}
 	}
 }
