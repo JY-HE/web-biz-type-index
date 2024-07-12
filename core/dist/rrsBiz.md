@@ -1,14 +1,14 @@
 
 /**
  * 
- * type {string} 
- * title {string} 
- * status {number} 
- * detail {string} 
- * instance {string} 
+ * @params type {string} 
+ * @params title {string} 
+ * @params status {number} 
+ * @params detail {string} 
+ * @params instance {string} 
 */
 type ProblemDetailsCommonType = {
-       type?: string;
+      type?: string;
       title?: string;
       status?: number;
       detail?: string;
@@ -18,66 +18,66 @@ type ProblemDetailsCommonType = {
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {MainResourceDetailOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {MainResourceDetailOutCommonType[]} 记录
 */
-type MainResourceDetailOut]CommonType = {
-       totalCount?: number;
+type MainResourceDetailOutResultCommonType = {
+      totalCount?: number;
       records?: MainResourceDetailOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {MainResourceOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {MainResourceOutCommonType[]} 记录
 */
-type MainResourceOut]CommonType = {
-       totalCount?: number;
+type MainResourceOutResultCommonType = {
+      totalCount?: number;
       records?: MainResourceOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {ResourceDetailOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {ResourceDetailOutCommonType[]} 记录
 */
-type ResourceDetailOut]CommonType = {
-       totalCount?: number;
+type ResourceDetailOutResultCommonType = {
+      totalCount?: number;
       records?: ResourceDetailOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {ResourceOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {ResourceOutCommonType[]} 记录
 */
-type ResourceOut]CommonType = {
-       totalCount?: number;
+type ResourceOutResultCommonType = {
+      totalCount?: number;
       records?: ResourceOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {ResourceTypeOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {ResourceTypeOutCommonType[]} 记录
 */
-type ResourceTypeOut]CommonType = {
-       totalCount?: number;
+type ResourceTypeOutResultCommonType = {
+      totalCount?: number;
       records?: ResourceTypeOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {SimpleResourceOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {SimpleResourceOutCommonType[]} 记录
 */
-type SimpleResourceOut]CommonType = {
-       totalCount?: number;
+type SimpleResourceOutResultCommonType = {
+      totalCount?: number;
       records?: SimpleResourceOutCommonType[];
 }
 
@@ -96,12 +96,12 @@ type SupportSourcesCommonType =  1 | 2 | 3 ;
 
 /**
  * 所有资源关系查询
- * pageIndex {number} 页码, 从1开始
- * pageSize {number} 页容量, [1, 128]
- * mainResource {ResourceInfoCommonType} 主体资源
+ * @params pageIndex {number} 页码, 从1开始
+ * @params pageSize {number} 页容量, [1, 128]
+ * @params mainResource {ResourceInfoCommonType} 主体资源
 */
 type AllResourceQueryRequestCommonType = {
-       pageIndex?: number;
+      pageIndex?: number;
       pageSize?: number;
       mainResource: ResourceInfoCommonType;
 }
@@ -109,91 +109,91 @@ type AllResourceQueryRequestCommonType = {
 
 /**
  * 批量主体详情查询
- * mainResources {ResourceInfoCommonType[]} 批量主体
- * type {string} 目标资源类型【不传默认查全部挂载资源】
+ * @params mainResources {ResourceInfoCommonType[]} 批量主体
+ * @params type {string} 目标资源类型【不传默认查全部挂载资源】
 */
 type MainDetailsQueryRequestCommonType = {
-       mainResources?: ResourceInfoCommonType[];
+      mainResources?: ResourceInfoCommonType[];
       type?: string;
 }
 
 
 /**
  * 主资源
- * type {string} 资源类型
- * resourceId {string} 资源ID
+ * @params type {string} 资源类型
+ * @params resourceId {string} 资源ID
 */
 type MainResourceInCommonType = {
-       type: string;
+      type: string;
       resourceId: string;
 }
 
 
 /**
  * 关联资源
- * type {string} 类型
- * resourceIds {any[]} 资源id集合
+ * @params type {string} 类型
+ * @params resourceIds {any[]} 资源id集合
 */
 type RelationshipResourceInCommonType = {
-       type: string;
+      type: string;
       resourceIds: any[];
 }
 
 
 /**
  * 资源关系查询
- * resources {ResourceInfoCommonType[]} 资源ID
- * type {string} 目标资源类型【不传默认查全部主体资源】
+ * @params resources {ResourceInfoCommonType[]} 资源ID
+ * @params type {string} 目标资源类型【不传默认查全部主体资源】
 */
 type ResourceDetailsQueryRequestCommonType = {
-       resources: ResourceInfoCommonType[];
+      resources: ResourceInfoCommonType[];
       type?: string;
 }
 
 
 /**
  * 资源
- * type {string} 资源类型【不存在类型会自动创建】
- * resourceId {string} 资源ID
+ * @params type {string} 资源类型【不存在类型会自动创建】
+ * @params resourceId {string} 资源ID
 */
 type ResourceInCommonType = {
-       type: string;
+      type: string;
       resourceId: string;
 }
 
 
 /**
  * 资源信息
- * resourceId {string} 资源ID
- * type {string} 主体资源类型
+ * @params resourceId {string} 资源ID
+ * @params type {string} 主体资源类型
 */
 type ResourceInfoCommonType = {
-       resourceId: string;
+      resourceId: string;
       type?: string;
 }
 
 
 /**
  * 资源关系
- * resources {RelationshipResourceInCommonType[]} 资源【不存在资源会自动创建】
- * mainResource {MainResourceInCommonType} 主体资源【不存在主体资源会自动创建】
+ * @params resources {RelationshipResourceInCommonType[]} 资源【不存在资源会自动创建】
+ * @params mainResource {MainResourceInCommonType} 主体资源【不存在主体资源会自动创建】
 */
 type ResourceRelationshipInCommonType = {
-       resources: RelationshipResourceInCommonType[];
+      resources: RelationshipResourceInCommonType[];
       mainResource: MainResourceInCommonType;
 }
 
 
 /**
  * 资源查询
- * pageIndex {number} 页码, 从1开始
- * pageSize {number} 页容量, [1, 128]
- * mainResources {ResourceInfoCommonType[]} 主体资源集合
- * type {string} 资源类型
- * dataHandleType {DataHandleTypeCommonType} 数据处理类型
+ * @params pageIndex {number} 页码, 从1开始
+ * @params pageSize {number} 页容量, [1, 128]
+ * @params mainResources {ResourceInfoCommonType[]} 主体资源集合
+ * @params type {string} 资源类型
+ * @params dataHandleType {DataHandleTypeCommonType} 数据处理类型
 */
 type ResourceRelationshipQueryRequestCommonType = {
-       pageIndex?: number;
+      pageIndex?: number;
       pageSize?: number;
       mainResources: ResourceInfoCommonType[];
       type: string;
@@ -203,23 +203,23 @@ type ResourceRelationshipQueryRequestCommonType = {
 
 /**
  * 资源类型
- * type {string} Type
- * source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】
+ * @params type {string} Type
+ * @params source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】
 */
 type ResourceTypeInCommonType = {
-       type: string;
+      type: string;
       source: SupportSourcesCommonType;
 }
 
 
 /**
  * 主体资源详情(带关联资源)
- * type {string} 资源类型
- * resourceId {string} 主体资源ID
- * resources {ResourceBaseOutCommonType[]} 资源
+ * @params type {string} 资源类型
+ * @params resourceId {string} 主体资源ID
+ * @params resources {ResourceBaseOutCommonType[]} 资源
 */
 type MainResourceDetailOutCommonType = {
-       type?: string;
+      type?: string;
       resourceId?: string;
       resources?: ResourceBaseOutCommonType[];
 }
@@ -227,12 +227,12 @@ type MainResourceDetailOutCommonType = {
 
 /**
  * 主资源
- * id {string} ID
- * type {string} 资源类型
- * resourceId {string} 资源ID
+ * @params id {string} ID
+ * @params type {string} 资源类型
+ * @params resourceId {string} 资源ID
 */
 type MainResourceOutCommonType = {
-       id?: string;
+      id?: string;
       type?: string;
       resourceId?: string;
 }
@@ -240,23 +240,23 @@ type MainResourceOutCommonType = {
 
 /**
  * 资源基础信息
- * resourceId {string} 资源ID
- * type {string} 资源类型
+ * @params resourceId {string} 资源ID
+ * @params type {string} 资源类型
 */
 type ResourceBaseOutCommonType = {
-       resourceId?: string;
+      resourceId?: string;
       type?: string;
 }
 
 
 /**
  * 资源详情out
- * type {string} 资源类型
- * resourceId {string} 资源ID
- * mainResources {ResourceBaseOutCommonType[]} 主体资源
+ * @params type {string} 资源类型
+ * @params resourceId {string} 资源ID
+ * @params mainResources {ResourceBaseOutCommonType[]} 主体资源
 */
 type ResourceDetailOutCommonType = {
-       type?: string;
+      type?: string;
       resourceId?: string;
       mainResources?: ResourceBaseOutCommonType[];
 }
@@ -264,12 +264,12 @@ type ResourceDetailOutCommonType = {
 
 /**
  * 资源输出
- * id {string} ID
- * resourceId {string} 资源ID
- * type {string} 资源类型ID
+ * @params id {string} ID
+ * @params resourceId {string} 资源ID
+ * @params type {string} 资源类型ID
 */
 type ResourceOutCommonType = {
-       id?: string;
+      id?: string;
       resourceId?: string;
       type?: string;
 }
@@ -277,12 +277,12 @@ type ResourceOutCommonType = {
 
 /**
  * 资源类型
- * id {string} 资源类型ID
- * type {string} 资源类型
- * source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】
+ * @params id {string} 资源类型ID
+ * @params type {string} 资源类型
+ * @params source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】
 */
 type ResourceTypeOutCommonType = {
-       id?: string;
+      id?: string;
       type?: string;
       source?: SupportSourcesCommonType;
 }
@@ -290,11 +290,11 @@ type ResourceTypeOutCommonType = {
 
 /**
  * 简单资源
- * id {string} ID
- * resourceId {string} 资源ID
+ * @params id {string} ID
+ * @params resourceId {string} 资源ID
 */
 type SimpleResourceOutCommonType = {
-       id?: string;
+      id?: string;
       resourceId?: string;
 }
 
@@ -316,8 +316,8 @@ export type GetMainResourcesReqType = {
 
 /**
  * 按条件查询主资源——响应参数类型定义
- * totalCount {number} 总数
- * records {MainResourceOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {MainResourceOutCommonType[]} 记录
 */
 export type GetMainResourcesResType = {
       totalCount: number;
@@ -338,9 +338,9 @@ export type AddMainResourcesReqType = {
 
 /**
  * 创建主资源——响应参数类型定义
- * id {string} ID
- * type {string} 资源类型
- * resourceId {string} 资源ID
+ * @params id {string} ID
+ * @params type {string} 资源类型
+ * @params resourceId {string} 资源ID
 */
 export type AddMainResourcesResType = {
       id: string;
@@ -360,9 +360,9 @@ export type GetMainResByIdReqType = {
 
 /**
  * 通过主资源ID获取主资源——响应参数类型定义
- * id {string} ID
- * type {string} 资源类型
- * resourceId {string} 资源ID
+ * @params id {string} ID
+ * @params type {string} 资源类型
+ * @params resourceId {string} 资源ID
 */
 export type GetMainResByIdResType = {
       id: string;
@@ -408,8 +408,8 @@ export type SearchAllResourceReqType = {
 
 /**
  * 获取主体下所有资源——响应参数类型定义
- * totalCount {number} 总数
- * records {ResourceOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {ResourceOutCommonType[]} 记录
 */
 export type SearchAllResourceResType = {
       totalCount: number;
@@ -430,8 +430,8 @@ export type UpdateAllResourceReqType = {
 
 /**
  * 更新主体下资源关系——响应参数类型定义
- * totalCount {number} 总数
- * records {ResourceOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {ResourceOutCommonType[]} 记录
 */
 export type UpdateAllResourceResType = {
       totalCount: number;
@@ -458,8 +458,8 @@ export type SearchSingleResourceReqType = {
 
 /**
  * 资源查询——响应参数类型定义
- * totalCount {number} 总数
- * records {SimpleResourceOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {SimpleResourceOutCommonType[]} 记录
 */
 export type SearchSingleResourceResType = {
       totalCount: number;
@@ -480,8 +480,8 @@ export type GetResourceDetailsReqType = {
 
 /**
  * 批量获取资源详情（带关联主体）——响应参数类型定义
- * totalCount {number} 总数
- * records {ResourceDetailOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {ResourceDetailOutCommonType[]} 记录
 */
 export type GetResourceDetailsResType = {
       totalCount: number;
@@ -502,8 +502,8 @@ export type BatchMainDetailsReqType = {
 
 /**
  * 批量获取主体资源详情（带关联下资源）——响应参数类型定义
- * totalCount {number} 总数
- * records {MainResourceDetailOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {MainResourceDetailOutCommonType[]} 记录
 */
 export type BatchMainDetailsResType = {
       totalCount: number;
@@ -548,8 +548,8 @@ export type GetResourcesReqType = {
 
 /**
  * 按条件查询资源——响应参数类型定义
- * totalCount {number} 总数
- * records {ResourceOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {ResourceOutCommonType[]} 记录
 */
 export type GetResourcesResType = {
       totalCount: number;
@@ -570,9 +570,9 @@ export type AddResourcesReqType = {
 
 /**
  * 创建资源——响应参数类型定义
- * id {string} ID
- * resourceId {string} 资源ID
- * type {string} 资源类型ID
+ * @params id {string} ID
+ * @params resourceId {string} 资源ID
+ * @params type {string} 资源类型ID
 */
 export type AddResourcesResType = {
       id: string;
@@ -592,9 +592,9 @@ export type GetResourcesByIdReqType = {
 
 /**
  * 通过资源ID获取资源——响应参数类型定义
- * id {string} ID
- * resourceId {string} 资源ID
- * type {string} 资源类型ID
+ * @params id {string} ID
+ * @params resourceId {string} 资源ID
+ * @params type {string} 资源类型ID
 */
 export type GetResourcesByIdResType = {
       id: string;
@@ -640,8 +640,8 @@ export type GetResourceTypesReqType = {
 
 /**
  * 按条件查询资源类型——响应参数类型定义
- * totalCount {number} 总数
- * records {ResourceTypeOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {ResourceTypeOutCommonType[]} 记录
 */
 export type GetResourceTypesResType = {
       totalCount: number;
@@ -662,9 +662,9 @@ export type AddResourceTypesReqType = {
 
 /**
  * 创建资源类型——响应参数类型定义
- * id {string} 资源类型ID
- * type {string} 资源类型
- * source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】
+ * @params id {string} 资源类型ID
+ * @params type {string} 资源类型
+ * @params source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】
 */
 export type AddResourceTypesResType = {
       id: string;
@@ -684,9 +684,9 @@ export type GetResourceTypesByIdReqType = {
 
 /**
  * 通过资源类型ID获取资源类型——响应参数类型定义
- * id {string} 资源类型ID
- * type {string} 资源类型
- * source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】
+ * @params id {string} 资源类型ID
+ * @params type {string} 资源类型
+ * @params source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】
 */
 export type GetResourceTypesByIdResType = {
       id: string;

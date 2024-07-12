@@ -7,21 +7,21 @@ type RequestResultCommonType =  0 | 1 | 2 ;
 
 /**
  * 操作日志
- * id {string} 操作id
- * userId {string} 用户信息
- * account {string} 用户账户
- * dateTime {string} 时间
- * remoteAddress {string} 客户端地址
- * application {string} 应用
- * uri {string} 操作说明
- * method {string} 操作
- * type {string} 操作类型
- * status {number} 请求状态
- * result {string} 操作结果
- * product {number} 产品端口号
+ * @params id {string} 操作id
+ * @params userId {string} 用户信息
+ * @params account {string} 用户账户
+ * @params dateTime {string} 时间
+ * @params remoteAddress {string} 客户端地址
+ * @params application {string} 应用
+ * @params uri {string} 操作说明
+ * @params method {string} 操作
+ * @params type {string} 操作类型
+ * @params status {number} 请求状态
+ * @params result {string} 操作结果
+ * @params product {number} 产品端口号
 */
 type OperationCommonType = {
-       id?: string;
+      id?: string;
       userId?: string;
       account?: string;
       dateTime?: string;
@@ -38,32 +38,32 @@ type OperationCommonType = {
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {OperationCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {OperationCommonType[]} 记录
 */
-type Operation]CommonType = {
-       totalCount?: number;
+type OperationResultCommonType = {
+      totalCount?: number;
       records?: OperationCommonType[];
 }
 
 
 /**
  * 预案数据
- * id {string} 预案ID
- * userId {string} 用户id
- * account {string} 用户账户
- * userAgent {string} 用户浏览器
- * dateTime {string} 时间
- * remoteAddress {string} 远端地址
- * upAddress {string} 后台地址
- * requestTime {string} 请求时间
- * responseTime {string} 上游响应时间
- * application {string} 前端服务
- * method {string} 操作
- * status {number} 操作结果
+ * @params id {string} 预案ID
+ * @params userId {string} 用户id
+ * @params account {string} 用户账户
+ * @params userAgent {string} 用户浏览器
+ * @params dateTime {string} 时间
+ * @params remoteAddress {string} 远端地址
+ * @params upAddress {string} 后台地址
+ * @params requestTime {string} 请求时间
+ * @params responseTime {string} 上游响应时间
+ * @params application {string} 前端服务
+ * @params method {string} 操作
+ * @params status {number} 操作结果
 */
 type RecordCommonType = {
-       id?: string;
+      id?: string;
       userId?: string;
       account?: string;
       userAgent?: string;
@@ -115,8 +115,8 @@ export type GetOperationReqType = {
 
 /**
  * 按条件查询操作——响应参数类型定义
- * totalCount {number} 总数
- * records {OperationCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {OperationCommonType[]} 记录
 */
 export type GetOperationResType = {
       totalCount: number;
@@ -159,8 +159,8 @@ export type SearchOperationReqType = {
 
 /**
  * 按条件查询操作——响应参数类型定义
- * totalCount {number} 总数
- * records {OperationCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {OperationCommonType[]} 记录
 */
 export type SearchOperationResType = {
       totalCount: number;
@@ -181,18 +181,18 @@ export type GetRecordByIdReqType = {
 
 /**
  * 通过操作记录ID获取详细操作记录——响应参数类型定义
- * id {string} 预案ID
- * userId {string} 用户id
- * account {string} 用户账户
- * userAgent {string} 用户浏览器
- * dateTime {string} 时间
- * remoteAddress {string} 远端地址
- * upAddress {string} 后台地址
- * requestTime {string} 请求时间
- * responseTime {string} 上游响应时间
- * application {string} 前端服务
- * method {string} 操作
- * status {number} 操作结果
+ * @params id {string} 预案ID
+ * @params userId {string} 用户id
+ * @params account {string} 用户账户
+ * @params userAgent {string} 用户浏览器
+ * @params dateTime {string} 时间
+ * @params remoteAddress {string} 远端地址
+ * @params upAddress {string} 后台地址
+ * @params requestTime {string} 请求时间
+ * @params responseTime {string} 上游响应时间
+ * @params application {string} 前端服务
+ * @params method {string} 操作
+ * @params status {number} 操作结果
 */
 export type GetRecordByIdResType = {
       id: string;

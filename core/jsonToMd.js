@@ -23,12 +23,12 @@ async function createMarkdown(bizName, data) {
         let formatTypesStr = '';
         if (data.type === 'object') {
             formatParamsStr = data.properties.reduce((str, i) => {
-                return `${str} * ${i.key} {${getType(i)}} ${i.description}\n`;
+                return `${str} * @params ${i.key} {${getType(i)}} ${i.description}\n`;
             }, '');
             formatTypesStr = data.properties.reduce((str, i) => {
                 return `${str}      ${i.key}${!i.required ? '?:' : ':'} ${getType(i)};\n`;
             }, '');
-            formatTypesStr = `type ${data.commonTypeName} = {\n ${formatTypesStr}}`;
+            formatTypesStr = `type ${data.commonTypeName} = {\n${formatTypesStr}}`;
         } else {
             if (data.type === 'integer' && data.enum) {
                 for (let i = 0; i < data.enum.length; i += 1) {
@@ -62,7 +62,7 @@ async function createMarkdown(bizName, data) {
          */
         const formatResponsesData = item.responses || [];
         const formatResponsesParamsStr = formatResponsesData.reduce((str, i) => {
-            return `${str} * ${i.key} {${getType(i)}} ${i.description}\n`;
+            return `${str} * @params ${i.key} {${getType(i)}} ${i.description}\n`;
         }, '');
         const formatResponsesTypeStr = formatResponsesData.reduce((str, i) => {
             return `${str}      ${i.key}: ${getType(i)};\n`;

@@ -1,14 +1,14 @@
 
 /**
  * 
- * type {string} 
- * title {string} 
- * status {number} 
- * detail {string} 
- * instance {string} 
+ * @params type {string} 
+ * @params title {string} 
+ * @params status {number} 
+ * @params detail {string} 
+ * @params instance {string} 
 */
 type ProblemDetailsCommonType = {
-       type?: string;
+      type?: string;
       title?: string;
       status?: number;
       detail?: string;
@@ -19,18 +19,18 @@ type ProblemDetailsCommonType = {
 /**
  * undefined
 */
-type JTokenCommonType = array
+type JTokenCommonType = 'array'
 
 
 
 /**
  * 筛选条件
- * key {string} 键
- * value {string} 值
- * operator {OperatorTypeCommonType} 操作类型
+ * @params key {string} 键
+ * @params value {string} 值
+ * @params operator {OperatorTypeCommonType} 操作类型
 */
 type ConditionCommonType = {
-       key?: string;
+      key?: string;
       value?: string;
       operator?: OperatorTypeCommonType;
 }
@@ -38,12 +38,12 @@ type ConditionCommonType = {
 
 /**
  * 通知结果
- * taskId {string} 任务id
- * message {string} Message
- * success {boolean} 是否成功
+ * @params taskId {string} 任务id
+ * @params message {string} Message
+ * @params success {boolean} 是否成功
 */
 type NotifyResultCommonType = {
-       taskId?: string;
+      taskId?: string;
       message?: string;
       success?: boolean;
 }
@@ -51,23 +51,23 @@ type NotifyResultCommonType = {
 
 /**
  * 值范围
- * id {string} ID
- * name {string} 名称
+ * @params id {string} ID
+ * @params name {string} 名称
 */
 type RangeValueCommonType = {
-       id?: string;
+      id?: string;
       name?: string;
 }
 
 
 /**
  * 替换表达式
- * operator {OperatorTypeCommonType} 操作类型
- * value {string} 比较值
- * replaceValue {string} 替换值
+ * @params operator {OperatorTypeCommonType} 操作类型
+ * @params value {string} 比较值
+ * @params replaceValue {string} 替换值
 */
 type ReplaceExpressionCommonType = {
-       operator?: OperatorTypeCommonType;
+      operator?: OperatorTypeCommonType;
       value?: string;
       replaceValue?: string;
 }
@@ -75,99 +75,99 @@ type ReplaceExpressionCommonType = {
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {ConditionTemplateOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {ConditionTemplateOutCommonType[]} 记录
 */
-type ConditionTemplateOut]CommonType = {
-       totalCount?: number;
+type ConditionTemplateOutResultCommonType = {
+      totalCount?: number;
       records?: ConditionTemplateOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {I18NConfigOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {I18NConfigOutCommonType[]} 记录
 */
-type I18NConfigOut]CommonType = {
-       totalCount?: number;
+type I18NConfigOutResultCommonType = {
+      totalCount?: number;
       records?: I18NConfigOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {NotifyConfigOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {NotifyConfigOutCommonType[]} 记录
 */
-type NotifyConfigOut]CommonType = {
-       totalCount?: number;
+type NotifyConfigOutResultCommonType = {
+      totalCount?: number;
       records?: NotifyConfigOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {NotifyRecordOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {NotifyRecordOutCommonType[]} 记录
 */
-type NotifyRecordOut]CommonType = {
-       totalCount?: number;
+type NotifyRecordOutResultCommonType = {
+      totalCount?: number;
       records?: NotifyRecordOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {NotifyTypeInfoCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {NotifyTypeInfoCommonType[]} 记录
 */
-type NotifyTypeInfo]CommonType = {
-       totalCount?: number;
+type NotifyTypeInfoResultCommonType = {
+      totalCount?: number;
       records?: NotifyTypeInfoCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {PlaceholderOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {PlaceholderOutCommonType[]} 记录
 */
-type PlaceholderOut]CommonType = {
-       totalCount?: number;
+type PlaceholderOutResultCommonType = {
+      totalCount?: number;
       records?: PlaceholderOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {SceneOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {SceneOutCommonType[]} 记录
 */
-type SceneOut]CommonType = {
-       totalCount?: number;
+type SceneOutResultCommonType = {
+      totalCount?: number;
       records?: SceneOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {SchemeOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {SchemeOutCommonType[]} 记录
 */
-type SchemeOut]CommonType = {
-       totalCount?: number;
+type SchemeOutResultCommonType = {
+      totalCount?: number;
       records?: SchemeOutCommonType[];
 }
 
 
 /**
  * 分页查询结果
- * totalCount {number} 总数
- * records {TemplateOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {TemplateOutCommonType[]} 记录
 */
-type TemplateOut]CommonType = {
-       totalCount?: number;
+type TemplateOutResultCommonType = {
+      totalCount?: number;
       records?: TemplateOutCommonType[];
 }
 
@@ -216,18 +216,18 @@ type PlaceHolderTypeCommonType =  0 ;
 
 /**
  * 通知源(新)
- * scene {string} 运用场景
- * notifyType {NotifyTypesCommonType} 通知类型，支持多种类型
- * notifyContent {any} 通知内容
- * recipients {RecipientCommonType[]} 接收人
- * jumpUrl {string} 跳转地址
- * title {string} 标题
- * data {any} 业务对象
- * id {string} 标识ID
- * source {string} 业务来源
+ * @params scene {string} 运用场景
+ * @params notifyType {NotifyTypesCommonType} 通知类型，支持多种类型
+ * @params notifyContent {any} 通知内容
+ * @params recipients {RecipientCommonType[]} 接收人
+ * @params jumpUrl {string} 跳转地址
+ * @params title {string} 标题
+ * @params data {any} 业务对象
+ * @params id {string} 标识ID
+ * @params source {string} 业务来源
 */
 type NotifySourceCommonType = {
-       scene?: string;
+      scene?: string;
       notifyType?: NotifyTypesCommonType;
       notifyContent?: any;
       recipients?: RecipientCommonType[];
@@ -241,14 +241,14 @@ type NotifySourceCommonType = {
 
 /**
  * 通知接收人
- * name {string} 通知对象名称
- * userId {string} 用户id
- * mobile {string} 电话
- * mail {string} 邮件
- * groupId {string} 组ID
+ * @params name {string} 通知对象名称
+ * @params userId {string} 用户id
+ * @params mobile {string} 电话
+ * @params mail {string} 邮件
+ * @params groupId {string} 组ID
 */
 type RecipientCommonType = {
-       name?: string;
+      name?: string;
       userId?: string;
       mobile?: string;
       mail?: string;
@@ -258,13 +258,13 @@ type RecipientCommonType = {
 
 /**
  * 条件模板输入
- * name {string} 名称
- * scene {string} 场景
- * conditions {ConditionCommonType[]} 筛选条件
- * templateIds {any[]} 模板id（逗号分割的多个ID）
+ * @params name {string} 名称
+ * @params scene {string} 场景
+ * @params conditions {ConditionCommonType[]} 筛选条件
+ * @params templateIds {any[]} 模板id（逗号分割的多个ID）
 */
 type ConditionTemplateInCommonType = {
-       name?: string;
+      name?: string;
       scene?: string;
       conditions?: ConditionCommonType[];
       templateIds?: any[];
@@ -273,21 +273,21 @@ type ConditionTemplateInCommonType = {
 
 /**
  * 是否启用更新
- * isEnable {boolean} 是否启用
+ * @params isEnable {boolean} 是否启用
 */
 type EnableNotifyConfigInCommonType = {
-       isEnable?: boolean;
+      isEnable?: boolean;
 }
 
 
 /**
  * i18n配置
- * key {string} 键
- * languageType {LanguageTypeCommonType} 语言类型
- * value {any} 值对象
+ * @params key {string} 键
+ * @params languageType {LanguageTypeCommonType} 语言类型
+ * @params value {any} 值对象
 */
 type I18NConfigInCommonType = {
-       key?: string;
+      key?: string;
       languageType?: LanguageTypeCommonType;
       value?: any;
 }
@@ -295,16 +295,16 @@ type I18NConfigInCommonType = {
 
 /**
  * 通知配置
- * name {string} 通知策略名称
- * scene {string} 场景
- * type {NotifyTypesCommonType} 通知类型
- * conditions {ConditionCommonType[]} 筛选条件
- * isEnable {boolean} 是否启用
- * templates {TemplateContentInCommonType[]} 模版
- * recipients {RecipientCommonType[]} 模板默认接收人
+ * @params name {string} 通知策略名称
+ * @params scene {string} 场景
+ * @params type {NotifyTypesCommonType} 通知类型
+ * @params conditions {ConditionCommonType[]} 筛选条件
+ * @params isEnable {boolean} 是否启用
+ * @params templates {TemplateContentInCommonType[]} 模版
+ * @params recipients {RecipientCommonType[]} 模板默认接收人
 */
 type NotifyConfigInCommonType = {
-       name?: string;
+      name?: string;
       scene?: string;
       type?: NotifyTypesCommonType;
       conditions?: ConditionCommonType[];
@@ -316,15 +316,15 @@ type NotifyConfigInCommonType = {
 
 /**
  * 占位符
- * name {string} 占位符名称
- * type {PlaceHolderTypeCommonType} 类型
- * key {string} 键
- * value {string} 值
- * isEnableExpression {boolean} 是否启用表达式替换
- * replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式
+ * @params name {string} 占位符名称
+ * @params type {PlaceHolderTypeCommonType} 类型
+ * @params key {string} 键
+ * @params value {string} 值
+ * @params isEnableExpression {boolean} 是否启用表达式替换
+ * @params replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式
 */
 type PlaceholderInCommonType = {
-       name: string;
+      name: string;
       type?: PlaceHolderTypeCommonType;
       key?: string;
       value?: string;
@@ -335,14 +335,14 @@ type PlaceholderInCommonType = {
 
 /**
  * 场景
- * id {string} ID
- * name {string} 名称
- * tips {string} 提示：若未设置触发条件，则发生告警时自动通知
- * recipientTips {string} 接收对象提示：设备联系人
- * notifyExample {string} 通知样例
+ * @params id {string} ID
+ * @params name {string} 名称
+ * @params tips {string} 提示：若未设置触发条件，则发生告警时自动通知
+ * @params recipientTips {string} 接收对象提示：设备联系人
+ * @params notifyExample {string} 通知样例
 */
 type SceneInCommonType = {
-       id?: string;
+      id?: string;
       name?: string;
       tips?: string;
       recipientTips?: string;
@@ -352,18 +352,18 @@ type SceneInCommonType = {
 
 /**
  * SchemeIn
- * scene {string} 场景
- * key {string} 支持字段键名
- * type {FieldTypeCommonType} 字段类型
- * allowNull {boolean} 是否允许为空
- * description {string} 描述
- * example {string} 样例数据
- * operator {OperatorTypeCommonType} 过滤操作符
- * isDynamicRangeValue {boolean} 是否动态的值范围
- * rangeValue {undefined} 静态值范围-动态从对应接口获取
+ * @params scene {string} 场景
+ * @params key {string} 支持字段键名
+ * @params type {FieldTypeCommonType} 字段类型
+ * @params allowNull {boolean} 是否允许为空
+ * @params description {string} 描述
+ * @params example {string} 样例数据
+ * @params operator {OperatorTypeCommonType} 过滤操作符
+ * @params isDynamicRangeValue {boolean} 是否动态的值范围
+ * @params rangeValue {undefined} 静态值范围-动态从对应接口获取
 */
 type SchemeInCommonType = {
-       scene?: string;
+      scene?: string;
       key?: string;
       type?: FieldTypeCommonType;
       allowNull?: boolean;
@@ -377,16 +377,16 @@ type SchemeInCommonType = {
 
 /**
  * 模版内容
- * notifyType {NotifyTypesCommonType} 通知类型
- * content {string} 通知内容模板
- * defaultWebHookUrl {string} 默认webHookUrl
- * title {string} 标题(主题)
- * secondTitle {string} 副标题（第二标题）
- * jumpUrl {string} 跳转地址
- * priorityPhoneType {string} 优先电话类型
+ * @params notifyType {NotifyTypesCommonType} 通知类型
+ * @params content {string} 通知内容模板
+ * @params defaultWebHookUrl {string} 默认webHookUrl
+ * @params title {string} 标题(主题)
+ * @params secondTitle {string} 副标题（第二标题）
+ * @params jumpUrl {string} 跳转地址
+ * @params priorityPhoneType {string} 优先电话类型
 */
 type TemplateContentInCommonType = {
-       notifyType?: NotifyTypesCommonType;
+      notifyType?: NotifyTypesCommonType;
       content: string;
       defaultWebHookUrl?: string;
       title?: string;
@@ -398,21 +398,21 @@ type TemplateContentInCommonType = {
 
 /**
  * 模板入参
- * scene {string} 场景
- * notifyType {NotifyTypesCommonType} 通知类型
- * content {string} 通知内容模板
- * isEnable {boolean} 是否可用
- * isDefault {boolean} 是否默认通知模板
- * sender {string} 发送者
- * defaultWebHookUrl {string} 默认webHookUrl
- * title {string} 标题(主题)
- * secondTitle {string} 副标题（第二标题）
- * jumpUrl {string} 跳转地址
- * recipients {RecipientCommonType[]} 模板默认接收人
- * priorityPhoneType {string} 优先电话类型
+ * @params scene {string} 场景
+ * @params notifyType {NotifyTypesCommonType} 通知类型
+ * @params content {string} 通知内容模板
+ * @params isEnable {boolean} 是否可用
+ * @params isDefault {boolean} 是否默认通知模板
+ * @params sender {string} 发送者
+ * @params defaultWebHookUrl {string} 默认webHookUrl
+ * @params title {string} 标题(主题)
+ * @params secondTitle {string} 副标题（第二标题）
+ * @params jumpUrl {string} 跳转地址
+ * @params recipients {RecipientCommonType[]} 模板默认接收人
+ * @params priorityPhoneType {string} 优先电话类型
 */
 type TemplateInCommonType = {
-       scene: string;
+      scene: string;
       notifyType?: NotifyTypesCommonType;
       content: string;
       isEnable?: boolean;
@@ -429,14 +429,14 @@ type TemplateInCommonType = {
 
 /**
  * 条件模板
- * id {string} id
- * name {string} 名称
- * scene {string} 场景
- * conditions {ConditionCommonType[]} 筛选条件
- * templateIds {any[]} 模板id（逗号分割的多个ID）
+ * @params id {string} id
+ * @params name {string} 名称
+ * @params scene {string} 场景
+ * @params conditions {ConditionCommonType[]} 筛选条件
+ * @params templateIds {any[]} 模板id（逗号分割的多个ID）
 */
 type ConditionTemplateOutCommonType = {
-       id?: string;
+      id?: string;
       name?: string;
       scene?: string;
       conditions?: ConditionCommonType[];
@@ -446,13 +446,13 @@ type ConditionTemplateOutCommonType = {
 
 /**
  * i18n配置
- * id {string} id
- * key {string} 键
- * languageType {LanguageTypeCommonType} 语言类型
- * value {any} 值对象
+ * @params id {string} id
+ * @params key {string} 键
+ * @params languageType {LanguageTypeCommonType} 语言类型
+ * @params value {any} 值对象
 */
 type I18NConfigOutCommonType = {
-       id?: string;
+      id?: string;
       key?: string;
       languageType?: LanguageTypeCommonType;
       value?: any;
@@ -461,20 +461,20 @@ type I18NConfigOutCommonType = {
 
 /**
  * 通知配置
- * id {string} id
- * name {string} 名称
- * scene {string} 场景
- * type {NotifyTypesCommonType} 通知类型
- * conditions {ConditionCommonType[]} 筛选条件
- * isEnable {boolean} 是否启用
- * createTime {string} 创建时间
- * updateTime {string} 更新时间
- * notifyTypes {NotifyTypeInfoCommonType[]} 通知方式
- * templates {TemplateContentOutCommonType[]} 模版
- * recipients {RecipientCommonType[]} 模板默认接收人
+ * @params id {string} id
+ * @params name {string} 名称
+ * @params scene {string} 场景
+ * @params type {NotifyTypesCommonType} 通知类型
+ * @params conditions {ConditionCommonType[]} 筛选条件
+ * @params isEnable {boolean} 是否启用
+ * @params createTime {string} 创建时间
+ * @params updateTime {string} 更新时间
+ * @params notifyTypes {NotifyTypeInfoCommonType[]} 通知方式
+ * @params templates {TemplateContentOutCommonType[]} 模版
+ * @params recipients {RecipientCommonType[]} 模板默认接收人
 */
 type NotifyConfigDetailOutCommonType = {
-       id?: string;
+      id?: string;
       name?: string;
       scene?: string;
       type?: NotifyTypesCommonType;
@@ -490,18 +490,18 @@ type NotifyConfigDetailOutCommonType = {
 
 /**
  * 通知配置
- * id {string} id
- * name {string} 名称
- * scene {string} 场景
- * type {NotifyTypesCommonType} 通知类型
- * conditions {ConditionCommonType[]} 筛选条件
- * isEnable {boolean} 是否启用
- * createTime {string} 创建时间
- * updateTime {string} 更新时间
- * notifyTypes {NotifyTypeInfoCommonType[]} 通知方式
+ * @params id {string} id
+ * @params name {string} 名称
+ * @params scene {string} 场景
+ * @params type {NotifyTypesCommonType} 通知类型
+ * @params conditions {ConditionCommonType[]} 筛选条件
+ * @params isEnable {boolean} 是否启用
+ * @params createTime {string} 创建时间
+ * @params updateTime {string} 更新时间
+ * @params notifyTypes {NotifyTypeInfoCommonType[]} 通知方式
 */
 type NotifyConfigOutCommonType = {
-       id?: string;
+      id?: string;
       name?: string;
       scene?: string;
       type?: NotifyTypesCommonType;
@@ -515,22 +515,22 @@ type NotifyConfigOutCommonType = {
 
 /**
  * 通知记录
- * id {string} id
- * content {string} 发送内容
- * type {NotifyTypesCommonType} 类型
- * sender {string} 发送者
- * webHookUrl {string} 发送地址
- * title {string} 主题
- * scene {string} 场景
- * recipient {string} 接收人
- * traceId {string} 流水号
- * resultDescription {string} 结果描述
- * status {NotifyStatusCommonType} 发送状态
- * arrivalTime {string} 送达时间
- * createTime {string} 创建时间
+ * @params id {string} id
+ * @params content {string} 发送内容
+ * @params type {NotifyTypesCommonType} 类型
+ * @params sender {string} 发送者
+ * @params webHookUrl {string} 发送地址
+ * @params title {string} 主题
+ * @params scene {string} 场景
+ * @params recipient {string} 接收人
+ * @params traceId {string} 流水号
+ * @params resultDescription {string} 结果描述
+ * @params status {NotifyStatusCommonType} 发送状态
+ * @params arrivalTime {string} 送达时间
+ * @params createTime {string} 创建时间
 */
 type NotifyRecordOutCommonType = {
-       id?: string;
+      id?: string;
       content?: string;
       type?: NotifyTypesCommonType;
       sender?: string;
@@ -548,27 +548,27 @@ type NotifyRecordOutCommonType = {
 
 /**
  * 通知类型信息
- * type {NotifyTypesCommonType} 类型
- * name {string} 名称
+ * @params type {NotifyTypesCommonType} 类型
+ * @params name {string} 名称
 */
 type NotifyTypeInfoCommonType = {
-       type?: NotifyTypesCommonType;
+      type?: NotifyTypesCommonType;
       name?: string;
 }
 
 
 /**
  * 占位符
- * id {string} 占位符Id
- * name {string} 名称
- * type {PlaceHolderTypeCommonType} 类型
- * key {string} 键
- * value {string} 值
- * isEnableExpression {boolean} 是否启用表达式替换
- * replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式
+ * @params id {string} 占位符Id
+ * @params name {string} 名称
+ * @params type {PlaceHolderTypeCommonType} 类型
+ * @params key {string} 键
+ * @params value {string} 值
+ * @params isEnableExpression {boolean} 是否启用表达式替换
+ * @params replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式
 */
 type PlaceholderOutCommonType = {
-       id?: string;
+      id?: string;
       name?: string;
       type?: PlaceHolderTypeCommonType;
       key?: string;
@@ -580,14 +580,14 @@ type PlaceholderOutCommonType = {
 
 /**
  * 场景
- * id {string} ID
- * name {string} 名称
- * tips {string} 提示：若未设置触发条件，则发生告警时自动通知
- * recipientTips {string} 接收对象提示：设备联系人
- * notifyExample {string} 通知样例
+ * @params id {string} ID
+ * @params name {string} 名称
+ * @params tips {string} 提示：若未设置触发条件，则发生告警时自动通知
+ * @params recipientTips {string} 接收对象提示：设备联系人
+ * @params notifyExample {string} 通知样例
 */
 type SceneOutCommonType = {
-       id?: string;
+      id?: string;
       name?: string;
       tips?: string;
       recipientTips?: string;
@@ -597,20 +597,20 @@ type SceneOutCommonType = {
 
 /**
  * SchemeOut
- * id {string} id
- * scene {string} 场景
- * key {string} 支持字段键名
- * type {FieldTypeCommonType} 字段类型
- * allowNull {boolean} 是否允许为空
- * example {string} 样例数据
- * operator {OperatorTypeCommonType} 过滤操作符
- * analysisType {AnalysisTypeCommonType} 解析类型
- * isDynamicRangeValue {boolean} 是否动态的值范围
- * rangeValues {RangeValueCommonType[]} 静态值范围-动态从对应接口获取
- * description {string} 描述
+ * @params id {string} id
+ * @params scene {string} 场景
+ * @params key {string} 支持字段键名
+ * @params type {FieldTypeCommonType} 字段类型
+ * @params allowNull {boolean} 是否允许为空
+ * @params example {string} 样例数据
+ * @params operator {OperatorTypeCommonType} 过滤操作符
+ * @params analysisType {AnalysisTypeCommonType} 解析类型
+ * @params isDynamicRangeValue {boolean} 是否动态的值范围
+ * @params rangeValues {RangeValueCommonType[]} 静态值范围-动态从对应接口获取
+ * @params description {string} 描述
 */
 type SchemeOutCommonType = {
-       id?: string;
+      id?: string;
       scene?: string;
       key?: string;
       type?: FieldTypeCommonType;
@@ -626,17 +626,17 @@ type SchemeOutCommonType = {
 
 /**
  * 模版内容
- * id {string} 模版ID
- * notifyType {NotifyTypesCommonType} 通知类型
- * content {string} 通知内容模板
- * defaultWebHookUrl {string} 默认webHookUrl
- * title {string} 标题(主题)
- * secondTitle {string} 副标题（第二标题）
- * jumpUrl {string} 跳转地址
- * priorityPhoneType {string} 优先电话类型
+ * @params id {string} 模版ID
+ * @params notifyType {NotifyTypesCommonType} 通知类型
+ * @params content {string} 通知内容模板
+ * @params defaultWebHookUrl {string} 默认webHookUrl
+ * @params title {string} 标题(主题)
+ * @params secondTitle {string} 副标题（第二标题）
+ * @params jumpUrl {string} 跳转地址
+ * @params priorityPhoneType {string} 优先电话类型
 */
 type TemplateContentOutCommonType = {
-       id?: string;
+      id?: string;
       notifyType?: NotifyTypesCommonType;
       content?: string;
       defaultWebHookUrl?: string;
@@ -649,22 +649,22 @@ type TemplateContentOutCommonType = {
 
 /**
  * 模板
- * id {string} 模板ID
- * scene {string} 场景
- * notifyType {NotifyTypesCommonType} 通知类型
- * content {string} 通知内容模板
- * isEnable {boolean} 是否可用
- * isDefault {boolean} 是否默认通知模板
- * sender {string} 发送者
- * defaultWebHookUrl {string} 默认webHookUrl
- * title {string} 标题(主题)
- * secondTitle {string} 副标题（第二标题）
- * jumpUrl {string} 跳转地址
- * recipients {RecipientCommonType[]} 模板默认接收人
- * priorityPhoneType {string} 优先电话类型
+ * @params id {string} 模板ID
+ * @params scene {string} 场景
+ * @params notifyType {NotifyTypesCommonType} 通知类型
+ * @params content {string} 通知内容模板
+ * @params isEnable {boolean} 是否可用
+ * @params isDefault {boolean} 是否默认通知模板
+ * @params sender {string} 发送者
+ * @params defaultWebHookUrl {string} 默认webHookUrl
+ * @params title {string} 标题(主题)
+ * @params secondTitle {string} 副标题（第二标题）
+ * @params jumpUrl {string} 跳转地址
+ * @params recipients {RecipientCommonType[]} 模板默认接收人
+ * @params priorityPhoneType {string} 优先电话类型
 */
 type TemplateOutCommonType = {
-       id?: string;
+      id?: string;
       scene?: string;
       notifyType?: NotifyTypesCommonType;
       content?: string;
@@ -693,11 +693,11 @@ export type GetConTemByIdReqType = {
 
 /**
  * 获取条件配置——响应参数类型定义
- * id {string} id
- * name {string} 名称
- * scene {string} 场景
- * conditions {ConditionCommonType[]} 筛选条件
- * templateIds {any[]} 模板id（逗号分割的多个ID）
+ * @params id {string} id
+ * @params name {string} 名称
+ * @params scene {string} 场景
+ * @params conditions {ConditionCommonType[]} 筛选条件
+ * @params templateIds {any[]} 模板id（逗号分割的多个ID）
 */
 export type GetConTemByIdResType = {
       id: string;
@@ -749,8 +749,8 @@ export type GetConfTemReqType = {
 
 /**
  * 搜索条件配置——响应参数类型定义
- * totalCount {number} 总数
- * records {ConditionTemplateOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {ConditionTemplateOutCommonType[]} 记录
 */
 export type GetConfTemResType = {
       totalCount: number;
@@ -775,11 +775,11 @@ export type AddConfTemReqType = {
 
 /**
  * 新增条件配置——响应参数类型定义
- * id {string} id
- * name {string} 名称
- * scene {string} 场景
- * conditions {ConditionCommonType[]} 筛选条件
- * templateIds {any[]} 模板id（逗号分割的多个ID）
+ * @params id {string} id
+ * @params name {string} 名称
+ * @params scene {string} 场景
+ * @params conditions {ConditionCommonType[]} 筛选条件
+ * @params templateIds {any[]} 模板id（逗号分割的多个ID）
 */
 export type AddConfTemResType = {
       id: string;
@@ -801,10 +801,10 @@ export type GetI18NConfByIdReqType = {
 
 /**
  * 获取i18n——响应参数类型定义
- * id {string} id
- * key {string} 键
- * languageType {LanguageTypeCommonType} 语言类型
- * value {any} 值对象
+ * @params id {string} id
+ * @params key {string} 键
+ * @params languageType {LanguageTypeCommonType} 语言类型
+ * @params value {any} 值对象
 */
 export type GetI18NConfByIdResType = {
       id: string;
@@ -853,8 +853,8 @@ export type GetI18NConfReqType = {
 
 /**
  * 搜索i18n——响应参数类型定义
- * totalCount {number} 总数
- * records {I18NConfigOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {I18NConfigOutCommonType[]} 记录
 */
 export type GetI18NConfResType = {
       totalCount: number;
@@ -877,10 +877,10 @@ export type AddI18NConfReqType = {
 
 /**
  * 新增i18n——响应参数类型定义
- * id {string} id
- * key {string} 键
- * languageType {LanguageTypeCommonType} 语言类型
- * value {any} 值对象
+ * @params id {string} id
+ * @params key {string} 键
+ * @params languageType {LanguageTypeCommonType} 语言类型
+ * @params value {any} 值对象
 */
 export type AddI18NConfResType = {
       id: string;
@@ -901,17 +901,17 @@ export type GetNotifyConfByIdReqType = {
 
 /**
  * 获取通知配置——响应参数类型定义
- * id {string} id
- * name {string} 名称
- * scene {string} 场景
- * type {NotifyTypesCommonType} 通知类型
- * conditions {ConditionCommonType[]} 筛选条件
- * isEnable {boolean} 是否启用
- * createTime {string} 创建时间
- * updateTime {string} 更新时间
- * notifyTypes {NotifyTypeInfoCommonType[]} 通知方式
- * templates {TemplateContentOutCommonType[]} 模版
- * recipients {RecipientCommonType[]} 模板默认接收人
+ * @params id {string} id
+ * @params name {string} 名称
+ * @params scene {string} 场景
+ * @params type {NotifyTypesCommonType} 通知类型
+ * @params conditions {ConditionCommonType[]} 筛选条件
+ * @params isEnable {boolean} 是否启用
+ * @params createTime {string} 创建时间
+ * @params updateTime {string} 更新时间
+ * @params notifyTypes {NotifyTypeInfoCommonType[]} 通知方式
+ * @params templates {TemplateContentOutCommonType[]} 模版
+ * @params recipients {RecipientCommonType[]} 模板默认接收人
 */
 export type GetNotifyConfByIdResType = {
       id: string;
@@ -977,8 +977,8 @@ export type GetNotifyConfReqType = {
 
 /**
  * 搜索通知配置——响应参数类型定义
- * totalCount {number} 总数
- * records {NotifyConfigOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {NotifyConfigOutCommonType[]} 记录
 */
 export type GetNotifyConfResType = {
       totalCount: number;
@@ -1009,17 +1009,17 @@ export type AddNotifyConfReqType = {
 
 /**
  * 新增通知配置——响应参数类型定义
- * id {string} id
- * name {string} 名称
- * scene {string} 场景
- * type {NotifyTypesCommonType} 通知类型
- * conditions {ConditionCommonType[]} 筛选条件
- * isEnable {boolean} 是否启用
- * createTime {string} 创建时间
- * updateTime {string} 更新时间
- * notifyTypes {NotifyTypeInfoCommonType[]} 通知方式
- * templates {TemplateContentOutCommonType[]} 模版
- * recipients {RecipientCommonType[]} 模板默认接收人
+ * @params id {string} id
+ * @params name {string} 名称
+ * @params scene {string} 场景
+ * @params type {NotifyTypesCommonType} 通知类型
+ * @params conditions {ConditionCommonType[]} 筛选条件
+ * @params isEnable {boolean} 是否启用
+ * @params createTime {string} 创建时间
+ * @params updateTime {string} 更新时间
+ * @params notifyTypes {NotifyTypeInfoCommonType[]} 通知方式
+ * @params templates {TemplateContentOutCommonType[]} 模版
+ * @params recipients {RecipientCommonType[]} 模板默认接收人
 */
 export type AddNotifyConfResType = {
       id: string;
@@ -1038,8 +1038,8 @@ export type AddNotifyConfResType = {
 
 /**
  * 获取全部通知类型——响应参数类型定义
- * totalCount {number} 总数
- * records {NotifyTypeInfoCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {NotifyTypeInfoCommonType[]} 记录
 */
 export type GetNotifyConfTypesResType = {
       totalCount: number;
@@ -1069,19 +1069,19 @@ export type GetNotifyRecordByIdReqType = {
 
 /**
  * 获取通知记录——响应参数类型定义
- * id {string} id
- * content {string} 发送内容
- * type {NotifyTypesCommonType} 类型
- * sender {string} 发送者
- * webHookUrl {string} 发送地址
- * title {string} 主题
- * scene {string} 场景
- * recipient {string} 接收人
- * traceId {string} 流水号
- * resultDescription {string} 结果描述
- * status {NotifyStatusCommonType} 发送状态
- * arrivalTime {string} 送达时间
- * createTime {string} 创建时间
+ * @params id {string} id
+ * @params content {string} 发送内容
+ * @params type {NotifyTypesCommonType} 类型
+ * @params sender {string} 发送者
+ * @params webHookUrl {string} 发送地址
+ * @params title {string} 主题
+ * @params scene {string} 场景
+ * @params recipient {string} 接收人
+ * @params traceId {string} 流水号
+ * @params resultDescription {string} 结果描述
+ * @params status {NotifyStatusCommonType} 发送状态
+ * @params arrivalTime {string} 送达时间
+ * @params createTime {string} 创建时间
 */
 export type GetNotifyRecordByIdResType = {
       id: string;
@@ -1115,8 +1115,8 @@ export type GetNotifyRecordReqType = {
 
 /**
  * 搜索通知记录——响应参数类型定义
- * totalCount {number} 总数
- * records {NotifyRecordOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {NotifyRecordOutCommonType[]} 记录
 */
 export type GetNotifyRecordResType = {
       totalCount: number;
@@ -1135,13 +1135,13 @@ export type GetPlaceholderByIdReqType = {
 
 /**
  * 获取占位符——响应参数类型定义
- * id {string} 占位符Id
- * name {string} 名称
- * type {PlaceHolderTypeCommonType} 类型
- * key {string} 键
- * value {string} 值
- * isEnableExpression {boolean} 是否启用表达式替换
- * replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式
+ * @params id {string} 占位符Id
+ * @params name {string} 名称
+ * @params type {PlaceHolderTypeCommonType} 类型
+ * @params key {string} 键
+ * @params value {string} 值
+ * @params isEnableExpression {boolean} 是否启用表达式替换
+ * @params replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式
 */
 export type GetPlaceholderByIdResType = {
       id: string;
@@ -1199,8 +1199,8 @@ export type GetPlaceholdersReqType = {
 
 /**
  * 搜索占位符——响应参数类型定义
- * totalCount {number} 总数
- * records {PlaceholderOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {PlaceholderOutCommonType[]} 记录
 */
 export type GetPlaceholdersResType = {
       totalCount: number;
@@ -1229,13 +1229,13 @@ export type AddPlaceholdersReqType = {
 
 /**
  * 新增占位符——响应参数类型定义
- * id {string} 占位符Id
- * name {string} 名称
- * type {PlaceHolderTypeCommonType} 类型
- * key {string} 键
- * value {string} 值
- * isEnableExpression {boolean} 是否启用表达式替换
- * replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式
+ * @params id {string} 占位符Id
+ * @params name {string} 名称
+ * @params type {PlaceHolderTypeCommonType} 类型
+ * @params key {string} 键
+ * @params value {string} 值
+ * @params isEnableExpression {boolean} 是否启用表达式替换
+ * @params replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式
 */
 export type AddPlaceholdersResType = {
       id: string;
@@ -1259,11 +1259,11 @@ export type GetSceneByIdReqType = {
 
 /**
  * 获取Scene——响应参数类型定义
- * id {string} ID
- * name {string} 名称
- * tips {string} 提示：若未设置触发条件，则发生告警时自动通知
- * recipientTips {string} 接收对象提示：设备联系人
- * notifyExample {string} 通知样例
+ * @params id {string} ID
+ * @params name {string} 名称
+ * @params tips {string} 提示：若未设置触发条件，则发生告警时自动通知
+ * @params recipientTips {string} 接收对象提示：设备联系人
+ * @params notifyExample {string} 通知样例
 */
 export type GetSceneByIdResType = {
       id: string;
@@ -1276,8 +1276,8 @@ export type GetSceneByIdResType = {
 
 /**
  * 获取场景——响应参数类型定义
- * totalCount {number} 总数
- * records {SceneOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {SceneOutCommonType[]} 记录
 */
 export type GetScenesResType = {
       totalCount: number;
@@ -1304,11 +1304,11 @@ export type AddScenesReqType = {
 
 /**
  * 新增场景——响应参数类型定义
- * id {string} ID
- * name {string} 名称
- * tips {string} 提示：若未设置触发条件，则发生告警时自动通知
- * recipientTips {string} 接收对象提示：设备联系人
- * notifyExample {string} 通知样例
+ * @params id {string} ID
+ * @params name {string} 名称
+ * @params tips {string} 提示：若未设置触发条件，则发生告警时自动通知
+ * @params recipientTips {string} 接收对象提示：设备联系人
+ * @params notifyExample {string} 通知样例
 */
 export type AddScenesResType = {
       id: string;
@@ -1330,17 +1330,17 @@ export type GetSchemeByIdReqType = {
 
 /**
  * 获取scheme——响应参数类型定义
- * id {string} id
- * scene {string} 场景
- * key {string} 支持字段键名
- * type {FieldTypeCommonType} 字段类型
- * allowNull {boolean} 是否允许为空
- * example {string} 样例数据
- * operator {OperatorTypeCommonType} 过滤操作符
- * analysisType {AnalysisTypeCommonType} 解析类型
- * isDynamicRangeValue {boolean} 是否动态的值范围
- * rangeValues {RangeValueCommonType[]} 静态值范围-动态从对应接口获取
- * description {string} 描述
+ * @params id {string} id
+ * @params scene {string} 场景
+ * @params key {string} 支持字段键名
+ * @params type {FieldTypeCommonType} 字段类型
+ * @params allowNull {boolean} 是否允许为空
+ * @params example {string} 样例数据
+ * @params operator {OperatorTypeCommonType} 过滤操作符
+ * @params analysisType {AnalysisTypeCommonType} 解析类型
+ * @params isDynamicRangeValue {boolean} 是否动态的值范围
+ * @params rangeValues {RangeValueCommonType[]} 静态值范围-动态从对应接口获取
+ * @params description {string} 描述
 */
 export type GetSchemeByIdResType = {
       id: string;
@@ -1408,8 +1408,8 @@ export type GetSchemesReqType = {
 
 /**
  * 搜索scheme——响应参数类型定义
- * totalCount {number} 总数
- * records {SchemeOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {SchemeOutCommonType[]} 记录
 */
 export type GetSchemesResType = {
       totalCount: number;
@@ -1444,17 +1444,17 @@ export type AddSchemesReqType = {
 
 /**
  * 新增scheme——响应参数类型定义
- * id {string} id
- * scene {string} 场景
- * key {string} 支持字段键名
- * type {FieldTypeCommonType} 字段类型
- * allowNull {boolean} 是否允许为空
- * example {string} 样例数据
- * operator {OperatorTypeCommonType} 过滤操作符
- * analysisType {AnalysisTypeCommonType} 解析类型
- * isDynamicRangeValue {boolean} 是否动态的值范围
- * rangeValues {RangeValueCommonType[]} 静态值范围-动态从对应接口获取
- * description {string} 描述
+ * @params id {string} id
+ * @params scene {string} 场景
+ * @params key {string} 支持字段键名
+ * @params type {FieldTypeCommonType} 字段类型
+ * @params allowNull {boolean} 是否允许为空
+ * @params example {string} 样例数据
+ * @params operator {OperatorTypeCommonType} 过滤操作符
+ * @params analysisType {AnalysisTypeCommonType} 解析类型
+ * @params isDynamicRangeValue {boolean} 是否动态的值范围
+ * @params rangeValues {RangeValueCommonType[]} 静态值范围-动态从对应接口获取
+ * @params description {string} 描述
 */
 export type AddSchemesResType = {
       id: string;
@@ -1482,19 +1482,19 @@ export type GetTemplateByIdReqType = {
 
 /**
  * 获取模板——响应参数类型定义
- * id {string} 模板ID
- * scene {string} 场景
- * notifyType {NotifyTypesCommonType} 通知类型
- * content {string} 通知内容模板
- * isEnable {boolean} 是否可用
- * isDefault {boolean} 是否默认通知模板
- * sender {string} 发送者
- * defaultWebHookUrl {string} 默认webHookUrl
- * title {string} 标题(主题)
- * secondTitle {string} 副标题（第二标题）
- * jumpUrl {string} 跳转地址
- * recipients {RecipientCommonType[]} 模板默认接收人
- * priorityPhoneType {string} 优先电话类型
+ * @params id {string} 模板ID
+ * @params scene {string} 场景
+ * @params notifyType {NotifyTypesCommonType} 通知类型
+ * @params content {string} 通知内容模板
+ * @params isEnable {boolean} 是否可用
+ * @params isDefault {boolean} 是否默认通知模板
+ * @params sender {string} 发送者
+ * @params defaultWebHookUrl {string} 默认webHookUrl
+ * @params title {string} 标题(主题)
+ * @params secondTitle {string} 副标题（第二标题）
+ * @params jumpUrl {string} 跳转地址
+ * @params recipients {RecipientCommonType[]} 模板默认接收人
+ * @params priorityPhoneType {string} 优先电话类型
 */
 export type GetTemplateByIdResType = {
       id: string;
@@ -1570,8 +1570,8 @@ export type GetTemplatesReqType = {
 
 /**
  * 搜索模板——响应参数类型定义
- * totalCount {number} 总数
- * records {TemplateOutCommonType[]} 记录
+ * @params totalCount {number} 总数
+ * @params records {TemplateOutCommonType[]} 记录
 */
 export type GetTemplatesResType = {
       totalCount: number;
@@ -1612,19 +1612,19 @@ export type AddTemplatesReqType = {
 
 /**
  * 新增模板——响应参数类型定义
- * id {string} 模板ID
- * scene {string} 场景
- * notifyType {NotifyTypesCommonType} 通知类型
- * content {string} 通知内容模板
- * isEnable {boolean} 是否可用
- * isDefault {boolean} 是否默认通知模板
- * sender {string} 发送者
- * defaultWebHookUrl {string} 默认webHookUrl
- * title {string} 标题(主题)
- * secondTitle {string} 副标题（第二标题）
- * jumpUrl {string} 跳转地址
- * recipients {RecipientCommonType[]} 模板默认接收人
- * priorityPhoneType {string} 优先电话类型
+ * @params id {string} 模板ID
+ * @params scene {string} 场景
+ * @params notifyType {NotifyTypesCommonType} 通知类型
+ * @params content {string} 通知内容模板
+ * @params isEnable {boolean} 是否可用
+ * @params isDefault {boolean} 是否默认通知模板
+ * @params sender {string} 发送者
+ * @params defaultWebHookUrl {string} 默认webHookUrl
+ * @params title {string} 标题(主题)
+ * @params secondTitle {string} 副标题（第二标题）
+ * @params jumpUrl {string} 跳转地址
+ * @params recipients {RecipientCommonType[]} 模板默认接收人
+ * @params priorityPhoneType {string} 优先电话类型
 */
 export type AddTemplatesResType = {
       id: string;
@@ -1670,9 +1670,9 @@ export type WebHooksReqType = {
 
 /**
  * 通知——响应参数类型定义
- * taskId {string} 任务id
- * message {string} Message
- * success {boolean} 是否成功
+ * @params taskId {string} 任务id
+ * @params message {string} Message
+ * @params success {boolean} 是否成功
 */
 export type WebHooksResType = {
       taskId: string;
