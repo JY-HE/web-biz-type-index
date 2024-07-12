@@ -70,8 +70,8 @@ async function createMarkdown(bizName, data) {
 
         return (
             pre +
-            `${formatParamsData.length > 0 ? `\n/**\n * ${item.summary}——请求参数类型定义\n${formatRequestParamsStr}*/\n type ${item.requestTypeName} = {\n${formatRequestTypeStr}}\n\n` : ''}` +
-            `${item.responses ? `\n/**\n * ${item.summary}——响应参数类型定义\n${formatResponsesParamsStr}*/\n type ${item.responsesTypeName} = {\n${formatResponsesTypeStr}}\n\n` : ''}`
+            `${formatParamsData.length > 0 ? `\n/**\n * ${item.summary}——请求参数类型定义\n${formatRequestParamsStr}*/\nexport type ${item.requestTypeName} = {\n${formatRequestTypeStr}}\n\n` : ''}` +
+            `${item.responses ? `\n/**\n * ${item.summary}——响应参数类型定义\n${formatResponsesParamsStr}*/\nexport type ${item.responsesTypeName} = {\n${formatResponsesTypeStr}}\n\n` : ''}`
         );
     }, '');
 

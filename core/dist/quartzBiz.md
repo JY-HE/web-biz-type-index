@@ -246,7 +246,7 @@ type JobsUpdateInCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetJobsReqType = {
+export type GetJobsReqType = {
       Keyword?: string;
       BizName?: string;
       page?: number;
@@ -259,7 +259,7 @@ type JobsUpdateInCommonType = {
  * totalCount {number} 总数
  * records {JobEntityOutCommonType[]} 记录
 */
- type GetJobsResType = {
+export type GetJobsResType = {
       totalCount: number;
       records: JobEntityOutCommonType[];
 }
@@ -276,7 +276,7 @@ type JobsUpdateInCommonType = {
  * @params bizName {string} 业务名 （必填）
  * @params bizData {any} 业务所需的参数，用于传到 RabbitMq 上 （必填）
 */
- type AddJobsReqType = {
+export type AddJobsReqType = {
       beginTime: string;
       endTime?: string;
       cron?: string;
@@ -304,7 +304,7 @@ type JobsUpdateInCommonType = {
  * bizData {any} 业务数据
  * createTime {string} 创建时间
 */
- type AddJobsResType = {
+export type AddJobsResType = {
       id: string;
       name: string;
       groupName: string;
@@ -325,7 +325,7 @@ type JobsUpdateInCommonType = {
  * 查询指定定时任务——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetJobsByIdReqType = {
+export type GetJobsByIdReqType = {
       id: string;
 }
 
@@ -346,7 +346,7 @@ type JobsUpdateInCommonType = {
  * bizData {any} 业务数据
  * createTime {string} 创建时间
 */
- type GetJobsByIdResType = {
+export type GetJobsByIdResType = {
       id: string;
       name: string;
       groupName: string;
@@ -375,7 +375,7 @@ type JobsUpdateInCommonType = {
  * @params bizName {string} 业务名 （必填）
  * @params bizData {any} 业务所需的参数，用于传到 RabbitMq 上 （必填）
 */
- type UpdateJobsByIdReqType = {
+export type UpdateJobsByIdReqType = {
       id: string;
       beginTime: string;
       endTime?: string;
@@ -392,7 +392,7 @@ type JobsUpdateInCommonType = {
  * 删除定时任务——请求参数类型定义
  * @params id {string} id （必填）
 */
- type DeleteJobsByIdReqType = {
+export type DeleteJobsByIdReqType = {
       id: string;
 }
 
@@ -401,7 +401,7 @@ type JobsUpdateInCommonType = {
  * 立刻执行任务一次——请求参数类型定义
  * @params id {string} id （必填）
 */
- type ExecuteJobsByIdReqType = {
+export type ExecuteJobsByIdReqType = {
       id: string;
 }
 
@@ -410,7 +410,7 @@ type JobsUpdateInCommonType = {
  * 停止指定任务——请求参数类型定义
  * @params id {string} id （必填）
 */
- type PauseJobsByIdReqType = {
+export type PauseJobsByIdReqType = {
       id: string;
 }
 
@@ -419,7 +419,7 @@ type JobsUpdateInCommonType = {
  * 恢复指定任务——请求参数类型定义
  * @params id {string} id （必填）
 */
- type ResumeJobsByIdReqType = {
+export type ResumeJobsByIdReqType = {
       id: string;
 }
 
@@ -437,7 +437,7 @@ type JobsUpdateInCommonType = {
  * @params bizName {string} 业务名 （必填）
  * @params bizData {any} 业务所需的参数，用于传到 RabbitMq 上 （必填）
 */
- type AddMultipleReqType = {
+export type AddMultipleReqType = {
       subJobs?: SubJobEntityInCommonType[];
       parentJobId?: string;
       beginTime: string;
@@ -468,7 +468,7 @@ type JobsUpdateInCommonType = {
  * bizData {any} 业务数据
  * createTime {string} 创建时间
 */
- type AddMultipleResType = {
+export type AddMultipleResType = {
       subJobs: JobEntityOutCommonType[];
       id: string;
       name: string;
@@ -492,7 +492,7 @@ type JobsUpdateInCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetMultipleReqType = {
+export type GetMultipleReqType = {
       BizName: string;
       page?: number;
       per_page?: number;
@@ -504,7 +504,7 @@ type JobsUpdateInCommonType = {
  * totalCount {number} 总数
  * records {JobsEntityOutCommonType[]} 记录
 */
- type GetMultipleResType = {
+export type GetMultipleResType = {
       totalCount: number;
       records: JobsEntityOutCommonType[];
 }
@@ -514,7 +514,7 @@ type JobsUpdateInCommonType = {
  * 获取作业，包含子作业——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetMultipleByIdReqType = {
+export type GetMultipleByIdReqType = {
       id: string;
 }
 
@@ -536,7 +536,7 @@ type JobsUpdateInCommonType = {
  * bizData {any} 业务数据
  * createTime {string} 创建时间
 */
- type GetMultipleByIdResType = {
+export type GetMultipleByIdResType = {
       subJobs: JobEntityOutCommonType[];
       id: string;
       name: string;
@@ -567,7 +567,7 @@ type JobsUpdateInCommonType = {
  * @params bizName {string} 业务名 （必填）
  * @params bizData {any} 业务所需的参数，用于传到 RabbitMq 上 （必填）
 */
- type UpdateMultipleByIdReqType = {
+export type UpdateMultipleByIdReqType = {
       id: string;
       subJobs?: SubJobUpdateInCommonType[];
       beginTime: string;
@@ -585,7 +585,7 @@ type JobsUpdateInCommonType = {
  * 删除作业，包含子作业——请求参数类型定义
  * @params id {string} id （必填）
 */
- type DeleteMultipleByIdReqType = {
+export type DeleteMultipleByIdReqType = {
       id: string;
 }
 

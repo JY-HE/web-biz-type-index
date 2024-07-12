@@ -96,7 +96,7 @@ type RecordCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetOperationReqType = {
+export type GetOperationReqType = {
       key?: string;
       product?: number;
       platformId?: string;
@@ -118,7 +118,7 @@ type RecordCommonType = {
  * totalCount {number} 总数
  * records {OperationCommonType[]} 记录
 */
- type GetOperationResType = {
+export type GetOperationResType = {
       totalCount: number;
       records: OperationCommonType[];
 }
@@ -140,7 +140,7 @@ type RecordCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type SearchOperationReqType = {
+export type SearchOperationReqType = {
       key?: string;
       product?: number;
       platformId?: string;
@@ -162,7 +162,7 @@ type RecordCommonType = {
  * totalCount {number} 总数
  * records {OperationCommonType[]} 记录
 */
- type SearchOperationResType = {
+export type SearchOperationResType = {
       totalCount: number;
       records: OperationCommonType[];
 }
@@ -173,7 +173,7 @@ type RecordCommonType = {
  * @params id {string} id （必填）
  * @params service {string} 操作日志归属的服务，默认为网关 
 */
- type GetRecordByIdReqType = {
+export type GetRecordByIdReqType = {
       id: string;
       service?: string;
 }
@@ -194,7 +194,7 @@ type RecordCommonType = {
  * method {string} 操作
  * status {number} 操作结果
 */
- type GetRecordByIdResType = {
+export type GetRecordByIdResType = {
       id: string;
       userId: string;
       account: string;

@@ -307,7 +307,7 @@ type SimpleResourceOutCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetMainResourcesReqType = {
+export type GetMainResourcesReqType = {
       type?: string;
       page?: number;
       per_page?: number;
@@ -319,7 +319,7 @@ type SimpleResourceOutCommonType = {
  * totalCount {number} 总数
  * records {MainResourceOutCommonType[]} 记录
 */
- type GetMainResourcesResType = {
+export type GetMainResourcesResType = {
       totalCount: number;
       records: MainResourceOutCommonType[];
 }
@@ -330,7 +330,7 @@ type SimpleResourceOutCommonType = {
  * @params type {string} 资源类型 （必填）
  * @params resourceId {string} 资源ID （必填）
 */
- type AddMainResourcesReqType = {
+export type AddMainResourcesReqType = {
       type: string;
       resourceId: string;
 }
@@ -342,7 +342,7 @@ type SimpleResourceOutCommonType = {
  * type {string} 资源类型
  * resourceId {string} 资源ID
 */
- type AddMainResourcesResType = {
+export type AddMainResourcesResType = {
       id: string;
       type: string;
       resourceId: string;
@@ -353,7 +353,7 @@ type SimpleResourceOutCommonType = {
  * 通过主资源ID获取主资源——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetMainResByIdReqType = {
+export type GetMainResByIdReqType = {
       id: string;
 }
 
@@ -364,7 +364,7 @@ type SimpleResourceOutCommonType = {
  * type {string} 资源类型
  * resourceId {string} 资源ID
 */
- type GetMainResByIdResType = {
+export type GetMainResByIdResType = {
       id: string;
       type: string;
       resourceId: string;
@@ -377,7 +377,7 @@ type SimpleResourceOutCommonType = {
  * @params type {string} 资源类型 （必填）
  * @params resourceId {string} 资源ID （必填）
 */
- type UpdateMainResByIdReqType = {
+export type UpdateMainResByIdReqType = {
       id: string;
       type: string;
       resourceId: string;
@@ -388,7 +388,7 @@ type SimpleResourceOutCommonType = {
  * 删除主资源——请求参数类型定义
  * @params id {string} id （必填）
 */
- type DeleteMainResByIdReqType = {
+export type DeleteMainResByIdReqType = {
       id: string;
 }
 
@@ -399,7 +399,7 @@ type SimpleResourceOutCommonType = {
  * @params pageSize {number} 页容量, [1, 128] 
  * @params mainResource {ResourceInfoCommonType} 主体资源 （必填）
 */
- type SearchAllResourceReqType = {
+export type SearchAllResourceReqType = {
       pageIndex?: number;
       pageSize?: number;
       mainResource: ResourceInfoCommonType;
@@ -411,7 +411,7 @@ type SimpleResourceOutCommonType = {
  * totalCount {number} 总数
  * records {ResourceOutCommonType[]} 记录
 */
- type SearchAllResourceResType = {
+export type SearchAllResourceResType = {
       totalCount: number;
       records: ResourceOutCommonType[];
 }
@@ -422,7 +422,7 @@ type SimpleResourceOutCommonType = {
  * @params resources {RelationshipResourceInCommonType[]} 资源【不存在资源会自动创建】 （必填）
  * @params mainResource {MainResourceInCommonType} 主体资源【不存在主体资源会自动创建】 （必填）
 */
- type UpdateAllResourceReqType = {
+export type UpdateAllResourceReqType = {
       resources: RelationshipResourceInCommonType[];
       mainResource: MainResourceInCommonType;
 }
@@ -433,7 +433,7 @@ type SimpleResourceOutCommonType = {
  * totalCount {number} 总数
  * records {ResourceOutCommonType[]} 记录
 */
- type UpdateAllResourceResType = {
+export type UpdateAllResourceResType = {
       totalCount: number;
       records: ResourceOutCommonType[];
 }
@@ -447,7 +447,7 @@ type SimpleResourceOutCommonType = {
  * @params type {string} 资源类型 （必填）
  * @params dataHandleType {DataHandleTypeCommonType} 数据处理类型 
 */
- type SearchSingleResourceReqType = {
+export type SearchSingleResourceReqType = {
       pageIndex?: number;
       pageSize?: number;
       mainResources: ResourceInfoCommonType[];
@@ -461,7 +461,7 @@ type SimpleResourceOutCommonType = {
  * totalCount {number} 总数
  * records {SimpleResourceOutCommonType[]} 记录
 */
- type SearchSingleResourceResType = {
+export type SearchSingleResourceResType = {
       totalCount: number;
       records: SimpleResourceOutCommonType[];
 }
@@ -472,7 +472,7 @@ type SimpleResourceOutCommonType = {
  * @params resources {ResourceInfoCommonType[]} 资源ID （必填）
  * @params type {string} 目标资源类型【不传默认查全部主体资源】 
 */
- type GetResourceDetailsReqType = {
+export type GetResourceDetailsReqType = {
       resources: ResourceInfoCommonType[];
       type?: string;
 }
@@ -483,7 +483,7 @@ type SimpleResourceOutCommonType = {
  * totalCount {number} 总数
  * records {ResourceDetailOutCommonType[]} 记录
 */
- type GetResourceDetailsResType = {
+export type GetResourceDetailsResType = {
       totalCount: number;
       records: ResourceDetailOutCommonType[];
 }
@@ -494,7 +494,7 @@ type SimpleResourceOutCommonType = {
  * @params mainResources {ResourceInfoCommonType[]} 批量主体 
  * @params type {string} 目标资源类型【不传默认查全部挂载资源】 
 */
- type BatchMainDetailsReqType = {
+export type BatchMainDetailsReqType = {
       mainResources?: ResourceInfoCommonType[];
       type?: string;
 }
@@ -505,7 +505,7 @@ type SimpleResourceOutCommonType = {
  * totalCount {number} 总数
  * records {MainResourceDetailOutCommonType[]} 记录
 */
- type BatchMainDetailsResType = {
+export type BatchMainDetailsResType = {
       totalCount: number;
       records: MainResourceDetailOutCommonType[];
 }
@@ -516,7 +516,7 @@ type SimpleResourceOutCommonType = {
  * @params resources {RelationshipResourceInCommonType[]} 资源【不存在资源会自动创建】 （必填）
  * @params mainResource {MainResourceInCommonType} 主体资源【不存在主体资源会自动创建】 （必填）
 */
- type BatchResRelationshipsReqType = {
+export type BatchResRelationshipsReqType = {
       resources: RelationshipResourceInCommonType[];
       mainResource: MainResourceInCommonType;
 }
@@ -527,7 +527,7 @@ type SimpleResourceOutCommonType = {
  * @params resources {RelationshipResourceInCommonType[]} 资源【不存在资源会自动创建】 （必填）
  * @params mainResource {MainResourceInCommonType} 主体资源【不存在主体资源会自动创建】 （必填）
 */
- type UntieResRelationshipsReqType = {
+export type UntieResRelationshipsReqType = {
       resources: RelationshipResourceInCommonType[];
       mainResource: MainResourceInCommonType;
 }
@@ -539,7 +539,7 @@ type SimpleResourceOutCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetResourcesReqType = {
+export type GetResourcesReqType = {
       type?: string;
       page?: number;
       per_page?: number;
@@ -551,7 +551,7 @@ type SimpleResourceOutCommonType = {
  * totalCount {number} 总数
  * records {ResourceOutCommonType[]} 记录
 */
- type GetResourcesResType = {
+export type GetResourcesResType = {
       totalCount: number;
       records: ResourceOutCommonType[];
 }
@@ -562,7 +562,7 @@ type SimpleResourceOutCommonType = {
  * @params type {string} 资源类型【不存在类型会自动创建】 （必填）
  * @params resourceId {string} 资源ID （必填）
 */
- type AddResourcesReqType = {
+export type AddResourcesReqType = {
       type: string;
       resourceId: string;
 }
@@ -574,7 +574,7 @@ type SimpleResourceOutCommonType = {
  * resourceId {string} 资源ID
  * type {string} 资源类型ID
 */
- type AddResourcesResType = {
+export type AddResourcesResType = {
       id: string;
       resourceId: string;
       type: string;
@@ -585,7 +585,7 @@ type SimpleResourceOutCommonType = {
  * 通过资源ID获取资源——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetResourcesByIdReqType = {
+export type GetResourcesByIdReqType = {
       id: string;
 }
 
@@ -596,7 +596,7 @@ type SimpleResourceOutCommonType = {
  * resourceId {string} 资源ID
  * type {string} 资源类型ID
 */
- type GetResourcesByIdResType = {
+export type GetResourcesByIdResType = {
       id: string;
       resourceId: string;
       type: string;
@@ -609,7 +609,7 @@ type SimpleResourceOutCommonType = {
  * @params type {string} 资源类型【不存在类型会自动创建】 （必填）
  * @params resourceId {string} 资源ID （必填）
 */
- type UpdateResourcesByIdReqType = {
+export type UpdateResourcesByIdReqType = {
       id: string;
       type: string;
       resourceId: string;
@@ -620,7 +620,7 @@ type SimpleResourceOutCommonType = {
  * 删除资源——请求参数类型定义
  * @params id {string} id （必填）
 */
- type DeleteResourcesByIdReqType = {
+export type DeleteResourcesByIdReqType = {
       id: string;
 }
 
@@ -631,7 +631,7 @@ type SimpleResourceOutCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetResourceTypesReqType = {
+export type GetResourceTypesReqType = {
       keyword?: string;
       page?: number;
       per_page?: number;
@@ -643,7 +643,7 @@ type SimpleResourceOutCommonType = {
  * totalCount {number} 总数
  * records {ResourceTypeOutCommonType[]} 记录
 */
- type GetResourceTypesResType = {
+export type GetResourceTypesResType = {
       totalCount: number;
       records: ResourceTypeOutCommonType[];
 }
@@ -654,7 +654,7 @@ type SimpleResourceOutCommonType = {
  * @params type {string} Type （必填）
  * @params source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】 （必填）
 */
- type AddResourceTypesReqType = {
+export type AddResourceTypesReqType = {
       type: string;
       source: SupportSourcesCommonType;
 }
@@ -666,7 +666,7 @@ type SimpleResourceOutCommonType = {
  * type {string} 资源类型
  * source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】
 */
- type AddResourceTypesResType = {
+export type AddResourceTypesResType = {
       id: string;
       type: string;
       source: SupportSourcesCommonType;
@@ -677,7 +677,7 @@ type SimpleResourceOutCommonType = {
  * 通过资源类型ID获取资源类型——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetResourceTypesByIdReqType = {
+export type GetResourceTypesByIdReqType = {
       id: string;
 }
 
@@ -688,7 +688,7 @@ type SimpleResourceOutCommonType = {
  * type {string} 资源类型
  * source {SupportSourcesCommonType} 支持资源【1支持主体资源，2支持资源，3主体+资源】
 */
- type GetResourceTypesByIdResType = {
+export type GetResourceTypesByIdResType = {
       id: string;
       type: string;
       source: SupportSourcesCommonType;

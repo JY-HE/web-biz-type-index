@@ -686,7 +686,7 @@ type TemplateOutCommonType = {
  * 获取条件配置——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetConTemByIdReqType = {
+export type GetConTemByIdReqType = {
       id: string;
 }
 
@@ -699,7 +699,7 @@ type TemplateOutCommonType = {
  * conditions {ConditionCommonType[]} 筛选条件
  * templateIds {any[]} 模板id（逗号分割的多个ID）
 */
- type GetConTemByIdResType = {
+export type GetConTemByIdResType = {
       id: string;
       name: string;
       scene: string;
@@ -716,7 +716,7 @@ type TemplateOutCommonType = {
  * @params conditions {ConditionCommonType[]} 筛选条件 
  * @params templateIds {any[]} 模板id（逗号分割的多个ID） 
 */
- type UpdateConfTemByIdReqType = {
+export type UpdateConfTemByIdReqType = {
       id: string;
       name?: string;
       scene?: string;
@@ -729,7 +729,7 @@ type TemplateOutCommonType = {
  * 删除条件配置——请求参数类型定义
  * @params id {string} id （必填）
 */
- type DeleteConfTemByIdReqType = {
+export type DeleteConfTemByIdReqType = {
       id: string;
 }
 
@@ -740,7 +740,7 @@ type TemplateOutCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetConfTemReqType = {
+export type GetConfTemReqType = {
       keyword?: string;
       page?: number;
       per_page?: number;
@@ -752,7 +752,7 @@ type TemplateOutCommonType = {
  * totalCount {number} 总数
  * records {ConditionTemplateOutCommonType[]} 记录
 */
- type GetConfTemResType = {
+export type GetConfTemResType = {
       totalCount: number;
       records: ConditionTemplateOutCommonType[];
 }
@@ -765,7 +765,7 @@ type TemplateOutCommonType = {
  * @params conditions {ConditionCommonType[]} 筛选条件 
  * @params templateIds {any[]} 模板id（逗号分割的多个ID） 
 */
- type AddConfTemReqType = {
+export type AddConfTemReqType = {
       name?: string;
       scene?: string;
       conditions?: ConditionCommonType[];
@@ -781,7 +781,7 @@ type TemplateOutCommonType = {
  * conditions {ConditionCommonType[]} 筛选条件
  * templateIds {any[]} 模板id（逗号分割的多个ID）
 */
- type AddConfTemResType = {
+export type AddConfTemResType = {
       id: string;
       name: string;
       scene: string;
@@ -794,7 +794,7 @@ type TemplateOutCommonType = {
  * 获取i18n——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetI18NConfByIdReqType = {
+export type GetI18NConfByIdReqType = {
       id: string;
 }
 
@@ -806,7 +806,7 @@ type TemplateOutCommonType = {
  * languageType {LanguageTypeCommonType} 语言类型
  * value {any} 值对象
 */
- type GetI18NConfByIdResType = {
+export type GetI18NConfByIdResType = {
       id: string;
       key: string;
       languageType: LanguageTypeCommonType;
@@ -821,7 +821,7 @@ type TemplateOutCommonType = {
  * @params languageType {LanguageTypeCommonType} 语言类型 
  * @params value {any} 值对象 
 */
- type UpdateI18NConfByIdReqType = {
+export type UpdateI18NConfByIdReqType = {
       id: string;
       key?: string;
       languageType?: LanguageTypeCommonType;
@@ -833,7 +833,7 @@ type TemplateOutCommonType = {
  * 删除i18n——请求参数类型定义
  * @params id {string} id （必填）
 */
- type DeleteI18NConfByIdReqType = {
+export type DeleteI18NConfByIdReqType = {
       id: string;
 }
 
@@ -844,7 +844,7 @@ type TemplateOutCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetI18NConfReqType = {
+export type GetI18NConfReqType = {
       keyword?: string;
       page?: number;
       per_page?: number;
@@ -856,7 +856,7 @@ type TemplateOutCommonType = {
  * totalCount {number} 总数
  * records {I18NConfigOutCommonType[]} 记录
 */
- type GetI18NConfResType = {
+export type GetI18NConfResType = {
       totalCount: number;
       records: I18NConfigOutCommonType[];
 }
@@ -868,7 +868,7 @@ type TemplateOutCommonType = {
  * @params languageType {LanguageTypeCommonType} 语言类型 
  * @params value {any} 值对象 
 */
- type AddI18NConfReqType = {
+export type AddI18NConfReqType = {
       key?: string;
       languageType?: LanguageTypeCommonType;
       value?: any;
@@ -882,7 +882,7 @@ type TemplateOutCommonType = {
  * languageType {LanguageTypeCommonType} 语言类型
  * value {any} 值对象
 */
- type AddI18NConfResType = {
+export type AddI18NConfResType = {
       id: string;
       key: string;
       languageType: LanguageTypeCommonType;
@@ -894,7 +894,7 @@ type TemplateOutCommonType = {
  * 获取通知配置——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetNotifyConfByIdReqType = {
+export type GetNotifyConfByIdReqType = {
       id: string;
 }
 
@@ -913,7 +913,7 @@ type TemplateOutCommonType = {
  * templates {TemplateContentOutCommonType[]} 模版
  * recipients {RecipientCommonType[]} 模板默认接收人
 */
- type GetNotifyConfByIdResType = {
+export type GetNotifyConfByIdResType = {
       id: string;
       name: string;
       scene: string;
@@ -939,7 +939,7 @@ type TemplateOutCommonType = {
  * @params templates {TemplateContentInCommonType[]} 模版 
  * @params recipients {RecipientCommonType[]} 模板默认接收人 
 */
- type UpdateNotifyConfByIdReqType = {
+export type UpdateNotifyConfByIdReqType = {
       id: string;
       name?: string;
       scene?: string;
@@ -955,7 +955,7 @@ type TemplateOutCommonType = {
  * 删除通知配置——请求参数类型定义
  * @params id {string} id （必填）
 */
- type DeleteNotifyConfByIdReqType = {
+export type DeleteNotifyConfByIdReqType = {
       id: string;
 }
 
@@ -967,7 +967,7 @@ type TemplateOutCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetNotifyConfReqType = {
+export type GetNotifyConfReqType = {
       keyword?: string;
       scene?: string;
       page?: number;
@@ -980,7 +980,7 @@ type TemplateOutCommonType = {
  * totalCount {number} 总数
  * records {NotifyConfigOutCommonType[]} 记录
 */
- type GetNotifyConfResType = {
+export type GetNotifyConfResType = {
       totalCount: number;
       records: NotifyConfigOutCommonType[];
 }
@@ -996,7 +996,7 @@ type TemplateOutCommonType = {
  * @params templates {TemplateContentInCommonType[]} 模版 
  * @params recipients {RecipientCommonType[]} 模板默认接收人 
 */
- type AddNotifyConfReqType = {
+export type AddNotifyConfReqType = {
       name?: string;
       scene?: string;
       type?: NotifyTypesCommonType;
@@ -1021,7 +1021,7 @@ type TemplateOutCommonType = {
  * templates {TemplateContentOutCommonType[]} 模版
  * recipients {RecipientCommonType[]} 模板默认接收人
 */
- type AddNotifyConfResType = {
+export type AddNotifyConfResType = {
       id: string;
       name: string;
       scene: string;
@@ -1041,7 +1041,7 @@ type TemplateOutCommonType = {
  * totalCount {number} 总数
  * records {NotifyTypeInfoCommonType[]} 记录
 */
- type GetNotifyConfTypesResType = {
+export type GetNotifyConfTypesResType = {
       totalCount: number;
       records: NotifyTypeInfoCommonType[];
 }
@@ -1052,7 +1052,7 @@ type TemplateOutCommonType = {
  * @params id {string} id （必填）
  * @params isEnable {boolean} 是否启用 
 */
- type EnableNotifyConfByIdReqType = {
+export type EnableNotifyConfByIdReqType = {
       id: string;
       isEnable?: boolean;
 }
@@ -1062,7 +1062,7 @@ type TemplateOutCommonType = {
  * 获取通知记录——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetNotifyRecordByIdReqType = {
+export type GetNotifyRecordByIdReqType = {
       id: string;
 }
 
@@ -1083,7 +1083,7 @@ type TemplateOutCommonType = {
  * arrivalTime {string} 送达时间
  * createTime {string} 创建时间
 */
- type GetNotifyRecordByIdResType = {
+export type GetNotifyRecordByIdResType = {
       id: string;
       content: string;
       type: NotifyTypesCommonType;
@@ -1106,7 +1106,7 @@ type TemplateOutCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetNotifyRecordReqType = {
+export type GetNotifyRecordReqType = {
       keyword?: string;
       page?: number;
       per_page?: number;
@@ -1118,7 +1118,7 @@ type TemplateOutCommonType = {
  * totalCount {number} 总数
  * records {NotifyRecordOutCommonType[]} 记录
 */
- type GetNotifyRecordResType = {
+export type GetNotifyRecordResType = {
       totalCount: number;
       records: NotifyRecordOutCommonType[];
 }
@@ -1128,7 +1128,7 @@ type TemplateOutCommonType = {
  * 获取占位符——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetPlaceholderByIdReqType = {
+export type GetPlaceholderByIdReqType = {
       id: string;
 }
 
@@ -1143,7 +1143,7 @@ type TemplateOutCommonType = {
  * isEnableExpression {boolean} 是否启用表达式替换
  * replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式
 */
- type GetPlaceholderByIdResType = {
+export type GetPlaceholderByIdResType = {
       id: string;
       name: string;
       type: PlaceHolderTypeCommonType;
@@ -1164,7 +1164,7 @@ type TemplateOutCommonType = {
  * @params isEnableExpression {boolean} 是否启用表达式替换 
  * @params replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式 
 */
- type UpdatePlaceholderByIdReqType = {
+export type UpdatePlaceholderByIdReqType = {
       id: string;
       name: string;
       type?: PlaceHolderTypeCommonType;
@@ -1179,7 +1179,7 @@ type TemplateOutCommonType = {
  * 删除占位符——请求参数类型定义
  * @params id {string} id （必填）
 */
- type DeletePlaceholderByIdReqType = {
+export type DeletePlaceholderByIdReqType = {
       id: string;
 }
 
@@ -1190,7 +1190,7 @@ type TemplateOutCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetPlaceholdersReqType = {
+export type GetPlaceholdersReqType = {
       keyword?: string;
       page?: number;
       per_page?: number;
@@ -1202,7 +1202,7 @@ type TemplateOutCommonType = {
  * totalCount {number} 总数
  * records {PlaceholderOutCommonType[]} 记录
 */
- type GetPlaceholdersResType = {
+export type GetPlaceholdersResType = {
       totalCount: number;
       records: PlaceholderOutCommonType[];
 }
@@ -1217,7 +1217,7 @@ type TemplateOutCommonType = {
  * @params isEnableExpression {boolean} 是否启用表达式替换 
  * @params replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式 
 */
- type AddPlaceholdersReqType = {
+export type AddPlaceholdersReqType = {
       name: string;
       type?: PlaceHolderTypeCommonType;
       key?: string;
@@ -1237,7 +1237,7 @@ type TemplateOutCommonType = {
  * isEnableExpression {boolean} 是否启用表达式替换
  * replaceExpressions {ReplaceExpressionCommonType[]} 替换表达式
 */
- type AddPlaceholdersResType = {
+export type AddPlaceholdersResType = {
       id: string;
       name: string;
       type: PlaceHolderTypeCommonType;
@@ -1252,7 +1252,7 @@ type TemplateOutCommonType = {
  * 获取Scene——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetSceneByIdReqType = {
+export type GetSceneByIdReqType = {
       id: string;
 }
 
@@ -1265,7 +1265,7 @@ type TemplateOutCommonType = {
  * recipientTips {string} 接收对象提示：设备联系人
  * notifyExample {string} 通知样例
 */
- type GetSceneByIdResType = {
+export type GetSceneByIdResType = {
       id: string;
       name: string;
       tips: string;
@@ -1279,7 +1279,7 @@ type TemplateOutCommonType = {
  * totalCount {number} 总数
  * records {SceneOutCommonType[]} 记录
 */
- type GetScenesResType = {
+export type GetScenesResType = {
       totalCount: number;
       records: SceneOutCommonType[];
 }
@@ -1293,7 +1293,7 @@ type TemplateOutCommonType = {
  * @params recipientTips {string} 接收对象提示：设备联系人 
  * @params notifyExample {string} 通知样例 
 */
- type AddScenesReqType = {
+export type AddScenesReqType = {
       id?: string;
       name?: string;
       tips?: string;
@@ -1310,7 +1310,7 @@ type TemplateOutCommonType = {
  * recipientTips {string} 接收对象提示：设备联系人
  * notifyExample {string} 通知样例
 */
- type AddScenesResType = {
+export type AddScenesResType = {
       id: string;
       name: string;
       tips: string;
@@ -1323,7 +1323,7 @@ type TemplateOutCommonType = {
  * 获取scheme——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetSchemeByIdReqType = {
+export type GetSchemeByIdReqType = {
       id: string;
 }
 
@@ -1342,7 +1342,7 @@ type TemplateOutCommonType = {
  * rangeValues {RangeValueCommonType[]} 静态值范围-动态从对应接口获取
  * description {string} 描述
 */
- type GetSchemeByIdResType = {
+export type GetSchemeByIdResType = {
       id: string;
       scene: string;
       key: string;
@@ -1370,7 +1370,7 @@ type TemplateOutCommonType = {
  * @params isDynamicRangeValue {boolean} 是否动态的值范围 
  * @params rangeValue {undefined} 静态值范围-动态从对应接口获取 
 */
- type UpdateSchemeByIdReqType = {
+export type UpdateSchemeByIdReqType = {
       id: string;
       scene?: string;
       key?: string;
@@ -1388,7 +1388,7 @@ type TemplateOutCommonType = {
  * 删除scheme——请求参数类型定义
  * @params id {string} id （必填）
 */
- type DeleteSchemeByIdReqType = {
+export type DeleteSchemeByIdReqType = {
       id: string;
 }
 
@@ -1399,7 +1399,7 @@ type TemplateOutCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetSchemesReqType = {
+export type GetSchemesReqType = {
       scene?: string;
       page?: number;
       per_page?: number;
@@ -1411,7 +1411,7 @@ type TemplateOutCommonType = {
  * totalCount {number} 总数
  * records {SchemeOutCommonType[]} 记录
 */
- type GetSchemesResType = {
+export type GetSchemesResType = {
       totalCount: number;
       records: SchemeOutCommonType[];
 }
@@ -1429,7 +1429,7 @@ type TemplateOutCommonType = {
  * @params isDynamicRangeValue {boolean} 是否动态的值范围 
  * @params rangeValue {undefined} 静态值范围-动态从对应接口获取 
 */
- type AddSchemesReqType = {
+export type AddSchemesReqType = {
       scene?: string;
       key?: string;
       type?: FieldTypeCommonType;
@@ -1456,7 +1456,7 @@ type TemplateOutCommonType = {
  * rangeValues {RangeValueCommonType[]} 静态值范围-动态从对应接口获取
  * description {string} 描述
 */
- type AddSchemesResType = {
+export type AddSchemesResType = {
       id: string;
       scene: string;
       key: string;
@@ -1475,7 +1475,7 @@ type TemplateOutCommonType = {
  * 获取模板——请求参数类型定义
  * @params id {string} id （必填）
 */
- type GetTemplateByIdReqType = {
+export type GetTemplateByIdReqType = {
       id: string;
 }
 
@@ -1496,7 +1496,7 @@ type TemplateOutCommonType = {
  * recipients {RecipientCommonType[]} 模板默认接收人
  * priorityPhoneType {string} 优先电话类型
 */
- type GetTemplateByIdResType = {
+export type GetTemplateByIdResType = {
       id: string;
       scene: string;
       notifyType: NotifyTypesCommonType;
@@ -1529,7 +1529,7 @@ type TemplateOutCommonType = {
  * @params recipients {RecipientCommonType[]} 模板默认接收人 
  * @params priorityPhoneType {string} 优先电话类型 
 */
- type UpdateTemplateByIdReqType = {
+export type UpdateTemplateByIdReqType = {
       id: string;
       scene: string;
       notifyType?: NotifyTypesCommonType;
@@ -1550,7 +1550,7 @@ type TemplateOutCommonType = {
  * 删除模板——请求参数类型定义
  * @params id {string} id （必填）
 */
- type DeleteTemplateByIdReqType = {
+export type DeleteTemplateByIdReqType = {
       id: string;
 }
 
@@ -1561,7 +1561,7 @@ type TemplateOutCommonType = {
  * @params page {number} 页码, 从1开始 默认：1 
  * @params per_page {number} 页容量, [1, 128] 默认：100 
 */
- type GetTemplatesReqType = {
+export type GetTemplatesReqType = {
       keyword?: string;
       page?: number;
       per_page?: number;
@@ -1573,7 +1573,7 @@ type TemplateOutCommonType = {
  * totalCount {number} 总数
  * records {TemplateOutCommonType[]} 记录
 */
- type GetTemplatesResType = {
+export type GetTemplatesResType = {
       totalCount: number;
       records: TemplateOutCommonType[];
 }
@@ -1594,7 +1594,7 @@ type TemplateOutCommonType = {
  * @params recipients {RecipientCommonType[]} 模板默认接收人 
  * @params priorityPhoneType {string} 优先电话类型 
 */
- type AddTemplatesReqType = {
+export type AddTemplatesReqType = {
       scene: string;
       notifyType?: NotifyTypesCommonType;
       content: string;
@@ -1626,7 +1626,7 @@ type TemplateOutCommonType = {
  * recipients {RecipientCommonType[]} 模板默认接收人
  * priorityPhoneType {string} 优先电话类型
 */
- type AddTemplatesResType = {
+export type AddTemplatesResType = {
       id: string;
       scene: string;
       notifyType: NotifyTypesCommonType;
@@ -1655,7 +1655,7 @@ type TemplateOutCommonType = {
  * @params id {string} 标识ID 
  * @params source {string} 业务来源 
 */
- type WebHooksReqType = {
+export type WebHooksReqType = {
       scene?: string;
       notifyType?: NotifyTypesCommonType;
       notifyContent?: any;
@@ -1674,7 +1674,7 @@ type TemplateOutCommonType = {
  * message {string} Message
  * success {boolean} 是否成功
 */
- type WebHooksResType = {
+export type WebHooksResType = {
       taskId: string;
       message: string;
       success: boolean;
