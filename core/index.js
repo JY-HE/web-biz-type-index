@@ -1,4 +1,4 @@
-const { createMarkdown } = require('./jsonToMd');
+const createMarkdown = require('./jsonToMd');
 const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
@@ -110,7 +110,7 @@ class Initializer {
             console.log('json转化成功，开始生成markdown文件');
             // markdown模板生成;
             for (const key in this.requestConfig) {
-                await createMarkdown(key, this.requestConfig[key]);
+                await createMarkdown.startup(key, this.requestConfig[key]);
             }
         }
     }

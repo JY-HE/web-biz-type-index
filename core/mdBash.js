@@ -1,18 +1,15 @@
 const path = require('path');
 const fs = require('fs');
-const { createMarkdown } = require('./jsonToMd');
+const createMarkdown = require('./jsonToMd');
 const requestConfig = require('./dist/biz.json');
 
 const newMethods = {};
-
 let changeLogTemplate = '';
-
-let warehouseMethodsTemPlate = ``;
 
 (async () => {
     // 处理warehouseMethods内容生成
     for (const key in requestConfig) {
-        await createMarkdown(key, requestConfig[key]);
+        await createMarkdown.startup(key, requestConfig[key]);
         changeLogTemplate += `\n### ${key}\n\n|requestTypeName|responsesTypeName|url|methodType|describe|version|\n| --------- | --------- | --------- | --------- | --------- | --------- |\n`;
         newMethods[key] = requestConfig[key].reduce((obj, item) => {
             if (item.requestTypeName || item.responsesTypeName) {
