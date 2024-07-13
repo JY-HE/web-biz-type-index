@@ -4,83 +4,175 @@ const path = require('path');
 const fs = require('fs');
 const { readJson } = require('fs-extra');
 const { argv } = require('process');
-const { swaggerJSON } = require('./config');
+const swaggerJSON = require('./swaggerMap');
 
-// biz请求配置
-let requestConfig = {};
-let schemaData = {};
-const descReg = /\r|\n|;\"|(<.+\/?>)/g;
+class Initializer {
+    /**
+     * swagger转json并生成markdown
+     * @param {number} buildType {0:打印全部，1：打印没有入库的方法，2：打印入库了的方法}
+     */
+    constructor(buildType = 0) {
+        this.buildType = buildType;
+        // biz请求配置
+        this.requestConfig = {};
+        // 模型数据，用于写入json文件
+        this.schemaDataJson = {};
+        // swagger文档地址列表
+        this.swaggerList = {};
+        // 正则表达式，用于处理接口描述
+        this.descReg = /\r|\n|;\"|(<.+\/?>)/g;
+        // 已有的类型定义数据
+        this.warehouseTypes = {};
+        // 过滤忽略的接口
+        this.ignorePaths = {};
+        this.getJsonFileData();
+        this.init();
+    }
 
-/**
- * swagger转json并生成markdown
- * @param {Number} buildType {0:打印全部，1：打印没有入库的方法，2：打印入库了的方法}
- */
-async function init(buildType = 0) {
-    // swagger文档地址列表
-    let swaggerList = {};
-    const bizNameList = [];
-    const warehouseTypes = await readJson(path.join(__dirname, './warehouseTypes.json'));
-    Object.entries(swaggerJSON).forEach(([bizName, swaggerDataConfig]) => {
-        bizNameList.push(bizName);
-        const { primaryName, address, port, url } = swaggerDataConfig;
-        // 走54429
-        const headers = primaryName ? { 'X-Service-Address': address, 'X-Service-Port': port } : {};
-        if (typeof url === 'string') {
-            swaggerList[bizName] = { url, headers, params: { ip: address, port } };
-        } else {
-            Object.keys(url).forEach((version) => {
-                swaggerList[`${bizName}-${version}`] = { url: url[version], headers, params: { ip: address, port } };
-            });
+    /**
+     * 获取相关json文件数据
+     */
+    async getJsonFileData() {
+        this.warehouseTypes = await readJson(path.join(__dirname, './warehouseTypes.json'));
+        this.ignorePaths = await readJson(path.join(__dirname, './ignoreTypes.json'));
+    }
+
+    async init() {
+        await this.getSwaggerList();
+        const swaggerData = await this.getSwaggerData();
+        // 解析 swagger 文档接口数据
+        swaggerData.map(async (bizRes, index) => {
+            try {
+                const {
+                    paths,
+                    components: { schemas },
+                } = bizRes.data;
+                // 当前处理的 biz 名称
+                let bizName = Object.keys(this.swaggerList)[index];
+                console.log('开始处理' + bizName);
+                // 当前处理的 biz 版本
+                let version = 'v1';
+                if (bizName.includes('-v')) {
+                    const [n, v] = bizName.split('-');
+                    bizName = n;
+                    version = v;
+                }
+                // 解析 schema 模型
+                const schemaData = this.schemaDataHandler(schemas);
+                this.schemaDataJson = { ...this.schemaDataJson, [bizName]: schemaData };
+                // 处理 paths 路径数据
+                const ignorePathList = [...this.ignorePaths.common, ...(this.ignorePaths[bizName] || [])];
+                Object.keys(paths)
+                    .filter((url) => !ignorePathList.includes(url))
+                    .forEach((url) => {
+                        Object.entries(paths[url]).forEach(([methodType, value]) => {
+                            const { operationId, tags, summary, parameters, requestBody, responses } = value;
+                            // 分类
+                            const tag = tags?.at(0) || '';
+                            // 过滤回调型接口
+                            if (tag === 'Callbacks') return;
+                            const transformParams = this.apiParamsHandler(parameters, schemaData);
+                            const transformRequestBody = this.apiRequestBodyHandler(requestBody, schemaData);
+                            const transformResponses = this.apiResponsesHandler(responses, schemaData);
+                            /**
+                             * 处理 requestConfig 请求配置
+                             */
+                            const warehouseTypesDataInfo = this.warehouseTypes[bizName]?.[`${methodType}&${url}${version != 'v1' ? '&' + version : ''}`];
+                            // 已有的接口不再入库
+                            const canSave = this.buildType == 0 || (this.buildType == 1 && !warehouseTypesDataInfo) || (this.buildType == 2 && !!warehouseTypesDataInfo);
+                            canSave &&
+                                this.requestConfig[bizName].push({
+                                    url,
+                                    tag,
+                                    method: methodType,
+                                    summary,
+                                    version,
+                                    requestTypeName: warehouseTypesDataInfo?.requestTypeName || '',
+                                    responsesTypeName: warehouseTypesDataInfo?.responsesTypeName || '',
+                                    operationId,
+                                    parameters: transformParams,
+                                    responses: transformResponses,
+                                    requestBody: transformRequestBody,
+                                });
+                        });
+                    });
+            } catch (error) {
+                throw error;
+            }
+        });
+
+        // 将 schemaData 写入json文件
+        await fs.writeFileSync(path.join(__dirname, `/dist/schema.json`), JSON.stringify(this.schemaDataJson, null, '\t'), 'utf8');
+
+        this.writeBizJson();
+
+        if (this.buildType == 2) {
+            console.log('json转化成功，开始生成markdown文件');
+            // markdown模板生成;
+            for (const key in this.requestConfig) {
+                await createMarkdown(key, this.requestConfig[key]);
+            }
         }
-        requestConfig[bizName] = [];
-    });
+    }
+
     /**
-     * 请求swagger文档接口数据
+     * 获取 swagger 文档地址列表
      */
-    console.log('请求拼装成功，开始请求swagger文档接口数据');
-    const res = await Promise.all(
-        Object.values(swaggerList).map((item) => {
-            let requestUrl = item.url;
-            if (item.params.ip && item.params.port) {
-                requestUrl = `${requestUrl}?ip=${item.params.ip}&port=${item.params.port}`;
+    getSwaggerList() {
+        return new Promise((resolve, reject) => {
+            try {
+                Object.entries(swaggerJSON).forEach(([bizName, swaggerDataConfig]) => {
+                    const { primaryName, address, port, url } = swaggerDataConfig;
+                    const headers = primaryName ? { 'X-Service-Address': address, 'X-Service-Port': port } : {};
+                    if (typeof url === 'string') {
+                        this.swaggerList[bizName] = { url, headers, params: { ip: address, port } };
+                    } else {
+                        Object.keys(url).forEach((version) => {
+                            this.swaggerList[`${bizName}-${version}`] = { url: url[version], headers, params: { ip: address, port } };
+                        });
+                    }
+                    this.requestConfig[bizName] = [];
+                });
+                resolve();
+            } catch (error) {
+                reject(error);
             }
-            return axios.get(requestUrl, { headers: item.headers });
-        })
-    ).catch((error) => {
-        const errorMsg = `请求错误,错误码:${error.code}，请求url:${error.config.url}`;
-        throw new Error(errorMsg);
-    });
-    res.forEach((item) => console.log(item.config.url, item.status === 200 ? `success` : 'fail'));
-    // 过滤忽略的接口
-    const ignorePaths = await readJson(path.join(__dirname, './ignoreTypes.json'));
-    let newSchemaDataJson = {};
+        });
+    }
+
     /**
-     * 解析swagger文档接口数据
+     * 获取 swagger 文档数据
+     * @returns {array} 获取到的所有文档数据
      */
-    res.map(async (bizRes, index) => {
+    async getSwaggerData() {
+        console.log('请求拼装成功，开始请求swagger文档接口数据');
+        const swaggerData = await Promise.all(
+            Object.values(this.swaggerList).map((item) => {
+                let requestUrl = item.url;
+                if (item.params.ip && item.params.port) {
+                    requestUrl = `${requestUrl}?ip=${item.params.ip}&port=${item.params.port}`;
+                }
+                return axios.get(requestUrl, { headers: item.headers });
+            })
+        ).catch((error) => {
+            const errorMsg = `请求错误,错误码:${error.code}，请求url:${error.config.url}`;
+            throw new Error(errorMsg);
+        });
+        swaggerData.forEach((item) => console.log(item.config.url, item.status === 200 ? `success` : 'fail'));
+
+        return swaggerData;
+    }
+
+    /**
+     * schema 模型处理
+     * @param {object} schemas 原始模型数据
+     * @returns {object} 处理后的模型数据
+     */
+    schemaDataHandler(schemas) {
         try {
-            const {
-                paths,
-                components: { schemas },
-            } = bizRes.data;
-            // 当前处理的 biz 名称
-            let bizName = Object.keys(swaggerList)[index];
-            console.log('开始处理' + bizName);
-            // 当前处理的 biz 版本
-            let version = 'v1';
-            if (bizName.includes('-v')) {
-                const [n, v] = bizName.split('-');
-                bizName = n;
-                version = v;
-            }
-            // 当前处理 biz 的类型定义数据
-            const warehouseTypesData = warehouseTypes[bizName] || {};
-            /**
-             * schema 模型处理
-             */
-            schemaData = Object.entries(schemas).reduce((pre, [schemaName, schemaData]) => {
-                if (schemaData.type === 'object') {
-                    const { type, properties = {}, description = '', required = [] } = schemaData;
+            return Object.entries(schemas).reduce((pre, [curSchemaName, curSchemaData]) => {
+                if (curSchemaData.type === 'object') {
+                    const { type, properties = {}, description = '', required = [] } = curSchemaData;
                     // 解析接口响应参数
                     const params = Object.entries(properties).map(([key, value]) => {
                         if (value.$ref || value.allOf || value.items?.$ref) {
@@ -100,7 +192,7 @@ async function init(buildType = 0) {
                             return {
                                 key,
                                 type: value.type || refObj.type,
-                                description: value.description ? value.description.replace(descReg, '') : refObj.description ? refObj.description.replace(descReg, '') : '',
+                                description: value.description ? value.description.replace(this.descReg, '') : refObj.description ? refObj.description.replace(this.descReg, '') : '',
                                 required: required.includes(key),
                                 // details: details,
                                 // 映射的公共type名称
@@ -110,131 +202,120 @@ async function init(buildType = 0) {
                             return {
                                 key,
                                 type: value.type,
-                                description: value.description ? value.description.replace(descReg, '') : '',
+                                description: value.description ? value.description.replace(this.descReg, '') : '',
                                 required: required.includes(key),
                             };
                         }
                     });
-                    return { ...pre, [schemaName]: { type, description: description.replace(descReg, ''), properties: params, commonTypeName: `${schemaName.split('.')?.at(-1)}CommonType` } };
+                    return { ...pre, [curSchemaName]: { type, description: description.replace(this.descReg, ''), properties: params, commonTypeName: `${curSchemaName.split('.')?.at(-1)}CommonType` } };
                 } else {
-                    return { ...pre, [schemaName]: { ...schemaData, commonTypeName: `${schemaName.split('.')?.at(-1)}CommonType` } };
+                    return { ...pre, [curSchemaName]: { ...curSchemaData, commonTypeName: `${curSchemaName.split('.')?.at(-1)}CommonType` } };
                 }
             }, {});
-            newSchemaDataJson = { ...newSchemaDataJson, [bizName]: schemaData };
-
-            /**
-             * 处理 path 请求
-             */
-            const ignorePathList = [...ignorePaths.common, ...(ignorePaths[bizName] || [])];
-            Object.keys(paths)
-                .filter((url) => !ignorePathList.includes(url))
-                .forEach((url) => {
-                    Object.entries(paths[url]).forEach(([method, value]) => {
-                        const { operationId, tags, summary, parameters, requestBody, responses } = value;
-                        // 分类
-                        const tag = tags.length ? tags[0] : '';
-                        // 过滤回调型接口
-                        if (tag === 'Callbacks') return;
-                        /**
-                         * 处理 params 参数
-                         */
-                        const transformParams = !Array.isArray(parameters)
-                            ? null
-                            : parameters.map((item) => {
-                                  // 基本参数
-                                  let paramInfo = {
-                                      key: item.name,
-                                      type: item.schema?.type,
-                                      description: item.description ? item.description.replace(descReg, '') : /id$/i.test(item.name) ? item.name : '',
-                                      required: item.required,
-                                      default: item.schema?.default || null,
-                                      in: item.in,
-                                  };
-                                  // 走 schema 模型的参数
-                                  if (!item.type && (item.schema?.$ref || item.schema?.allOf)) {
-                                      const refName = item.schema.$ref ? item.schema.$ref.split('/')?.at(-1) : item.schema?.allOf?.at(0)?.$ref.split('/')?.at(-1);
-                                      const refData = schemaData?.[refName] || {};
-                                      paramInfo.type = refData?.type;
-                                  }
-                                  // 请求头参数
-                                  if (item.in === 'header') {
-                                      paramInfo.in = 'header';
-                                      paramInfo.type = item?.schema?.type ?? 'string';
-                                  }
-                                  return paramInfo;
-                              });
-                        /**
-                         * 处理 requestBody 请求体
-                         */
-                        let transformRequestBody = null;
-                        if (requestBody) {
-                            const schemaWrap = requestBody.content['application/json']?.schema ?? {};
-                            const schemaRef = schemaWrap?.$ref || schemaWrap?.allOf?.at(0)?.$ref || '';
-                            const schemaName = schemaRef.split('/').at(-1);
-                            const schema = schemaData[schemaName] || {};
-                            transformRequestBody = schema.properties?.map((i) => ({ ...i, in: 'requestBody' })) || [];
-                        }
-                        /**
-                         * 处理 responses 响应
-                         */
-                        let transformResponses = null;
-                        const responsesData = responses['200'] || responses['201'] || responses['204'] || {};
-                        if (responsesData.content) {
-                            const schemaObj = responsesData.content['application/json'].schema;
-                            let responseSchemaRef = schemaObj.$ref || schemaObj?.items?.$ref || '';
-                            const responseSchemaName = responseSchemaRef.split('/').at(-1) || '';
-                            const transformSchema = schemaData[responseSchemaName] || {};
-                            transformResponses = transformSchema.properties || null;
-                        }
-                        /**
-                         * 处理 requestConfig 请求配置
-                         */
-                        const warehouseTypesDataInfo = warehouseTypesData[`${method}&${url}${version != 'v1' ? '&' + version : ''}`];
-                        // 已有的接口不再入库
-                        const canSave = buildType == 0 || (buildType == 1 && !warehouseTypesDataInfo) || (buildType == 2 && !!warehouseTypesDataInfo);
-                        canSave &&
-                            requestConfig[bizName].push({
-                                url,
-                                tag,
-                                method,
-                                summary,
-                                version,
-                                requestTypeName: warehouseTypesDataInfo?.requestTypeName || '',
-                                responsesTypeName: warehouseTypesDataInfo?.responsesTypeName || '',
-                                operationId,
-                                parameters: transformParams,
-                                responses: transformResponses,
-                                requestBody: transformRequestBody,
-                            });
-                    });
-                });
         } catch (error) {
-            console.log('🚀 ~ index.js:112 ~ error:', error);
+            throw error;
         }
-    });
+    }
 
-    // 将 schemaData 写入json文件
-    await fs.writeFileSync(path.join(__dirname, `/dist/schema.json`), JSON.stringify(newSchemaDataJson, null, '\t'), 'utf8');
-
-    // 对空的biz模块进行移除
-    Reflect.ownKeys(requestConfig).forEach((key) => {
-        if (requestConfig[key].length === 0 || key === 'facilityBiz') {
-            Reflect.deleteProperty(requestConfig, key);
-        } else {
-            buildType == 1 && key !== 'facilityBiz' && console.log(`${key} 新增接口${requestConfig[key].length}个`);
+    /**
+     * 处理接口 params 参数
+     * @param {array} parameters 接口对象的 parameters 数组
+     * @param {object} schemaData 模型数据
+     * @returns {array} 处理后的 params 参数数组
+     */
+    apiParamsHandler(parameters, schemaData) {
+        try {
+            return !Array.isArray(parameters)
+                ? null
+                : parameters.map((item) => {
+                      // 基本参数
+                      let paramInfo = {
+                          key: item.name,
+                          type: item.schema?.type,
+                          description: item.description ? item.description.replace(this.descReg, '') : /id$/i.test(item.name) ? item.name : '',
+                          required: item.required,
+                          default: item.schema?.default || null,
+                          in: item.in,
+                      };
+                      // 走 schema 模型的参数
+                      if (!item.type && (item.schema?.$ref || item.schema?.allOf)) {
+                          const refName = item.schema.$ref ? item.schema.$ref.split('/')?.at(-1) : item.schema?.allOf?.at(0)?.$ref.split('/')?.at(-1);
+                          const refData = schemaData?.[refName] || {};
+                          paramInfo.type = refData?.type;
+                      }
+                      // 请求头参数
+                      if (item.in === 'header') {
+                          paramInfo.in = 'header';
+                          paramInfo.type = item?.schema?.type ?? 'string';
+                      }
+                      return paramInfo;
+                  });
+        } catch (error) {
+            throw error;
         }
-    });
+    }
 
-    // 将 requestConfig 写入json文件
-    await fs.writeFileSync(path.join(__dirname, `/dist/biz.json`), JSON.stringify(requestConfig, null, '\t'), 'utf8');
+    /**
+     * 处理接口 requestBody 参数
+     * @param {object} requestBody 接口对象的 requestBody 对象
+     * @param {object} schemaData 模型数据
+     * @returns {array} 处理后的 requestBody 参数数组
+     */
+    apiRequestBodyHandler(requestBody, schemaData) {
+        try {
+            if (requestBody) {
+                const schemaWrap = requestBody.content['application/json']?.schema ?? {};
+                const schemaRef = schemaWrap?.$ref || schemaWrap?.allOf?.at(0)?.$ref || '';
+                const schemaName = schemaRef.split('/').at(-1);
+                const schema = schemaData[schemaName] || {};
+                return schema.properties?.map((i) => ({ ...i, in: 'requestBody' })) || [];
+            }
+            return null;
+        } catch (error) {
+            throw error;
+        }
+    }
 
-    if (buildType == 2) {
-        console.log('json转化成功，开始生成markdown文件');
-        // markdown模板生成;
-        for (const key in requestConfig) {
-            await createMarkdown(key, requestConfig[key]);
+    /**
+     * 处理接口 responses 参数
+     * @param {object} responses 接口对象的 responses 对象
+     * @param {object} schemaData 模型数据
+     * @returns {array} 处理后的 responses 参数数组
+     */
+    apiResponsesHandler(responses, schemaData) {
+        try {
+            const responsesData = responses['200'] || responses['201'] || responses['204'] || {};
+            if (responsesData?.content) {
+                const schemaObj = responsesData.content['application/json']?.schema || {};
+                const responseSchemaRef = schemaObj?.$ref || schemaObj?.items?.$ref || '';
+                const responseSchemaName = responseSchemaRef.split('/').at(-1) || '';
+                const transformSchema = schemaData[responseSchemaName] || {};
+                return transformSchema.properties || null;
+            }
+            return null;
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    /**
+     * 将 requestConfig 写入biz.json文件
+     */
+    writeBizJson() {
+        try {
+            // 对空的biz模块进行移除
+            Reflect.ownKeys(this.requestConfig).forEach((key) => {
+                if (this.requestConfig[key].length === 0 || key === 'facilityBiz') {
+                    Reflect.deleteProperty(this.requestConfig, key);
+                } else {
+                    this.buildType == 1 && key !== 'facilityBiz' && console.log(`${key} 新增接口${this.requestConfig[key].length}个`);
+                }
+            });
+            fs.writeFileSync(path.join(__dirname, `/dist/biz.json`), JSON.stringify(this.requestConfig, null, '\t'), 'utf8');
+        } catch (error) {
+            throw error;
         }
     }
 }
 
-init(argv[2]);
+new Initializer(argv[2]);
