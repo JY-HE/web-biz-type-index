@@ -13,12 +13,10 @@ let warehouseMethodsTemPlate = ``;
     // 处理warehouseMethods内容生成
     for (const key in requestConfig) {
         await createMarkdown(key, requestConfig[key]);
-        // warehouseMethodsTemPlate += `\n### ${key}\n`;
         changeLogTemplate += `\n### ${key}\n\n|requestTypeName|responsesTypeName|url|methodType|describe|version|\n| --------- | --------- | --------- | --------- | --------- | --------- |\n`;
         newMethods[key] = requestConfig[key].reduce((obj, item) => {
             if (item.requestTypeName || item.responsesTypeName) {
                 changeLogTemplate += '|`' + item.requestTypeName + '`|`' + item.responsesTypeName + '`|`' + item.url + '`|' + item.method + '|' + item.summary + '|' + item.version + '|\n';
-                // warehouseMethodsTemPlate += `'${item.methods}&${item.url}${item.version != 'v1' ? '&' + item.version : ''}':'${item.methodName}',\n`;
             }
             return {
                 ...obj,

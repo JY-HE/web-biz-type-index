@@ -212,7 +212,7 @@
                             }
                             str += `${data.responsesTypeName}`;
                         }
-                        return str ? `import { ${str} } from '@rdapp/web-biz-type/${data.bizName}'` : '';
+                        return str ? `import { ${str} } from '@rdapp/web-biz-type/${data.bizName}Types'` : '';
                     },
                     // 跳转文档地址
                     skipSwagger(data) {

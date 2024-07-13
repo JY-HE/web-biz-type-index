@@ -2,31 +2,43 @@ const path = require('path');
 const fs = require('fs');
 const { readJson } = require('fs-extra');
 
-function getType(item) {
-    let type = '';
-    if (item.typeNameMap) {
-        type = item.type === 'array' ? `${item.typeNameMap}[]` : item.typeNameMap;
-    } else {
-        type = item.type === 'array' ? 'any[]' : item.type === 'object' ? 'any' : item.type;
+const SCHEMA_PATH = path.join(__dirname, './dist/schema.json');
+
+/**
+ * 根据给定的类型对象和类型名称映射获取类型字符串
+ * @param {object} options 包含类型和类型名称映射的对象
+ * @param {string} options.type 字符串类型，表示基础数据类型，如 'array', 'object', 'integer' 等
+ * @param {string} options.typeNameMap 字符串类型，表示自定义类型名称映射
+ * @returns {string} 返回字符串类型的类型名称，若存在自定义类型名称映射，则返回映射后的名称；否则返回基础数据类型的名称
+ */
+function getType({ type, typeNameMap }) {
+    if (typeNameMap) {
+        return type === 'array' ? `${typeNameMap}[]` : typeNameMap;
     }
-    return type === 'integer' ? 'number' : type;
+    const baseType = type === 'array' ? 'any[]' : type === 'object' ? 'any' : type;
+    return baseType === 'integer' ? 'number' : baseType;
 }
 
-async function createMarkdown(bizName, data) {
-    const schemaData = await readJson(path.join(__dirname, '/dist/schema.json'));
-    /**
-     * 处理公共的type类型定义
-     */
+/**
+ * 根据给定的bizName来获取schema.json中的数据，处理该业务数据下的所有的公共类型定义
+ * @param {string} bizName 业务名称
+ * @returns {string} 处理好的公共类型定义字符串
+ */
+async function getCommonType(bizName) {
+    const schemaData = await readJson(SCHEMA_PATH);
     const bizNameSchemaData = schemaData[bizName];
-    const commonTypeMdTemplate = Object.entries(bizNameSchemaData).reduce((pre, [name, data]) => {
+    if (!bizNameSchemaData) {
+        return '';
+    }
+    const commonTypeStr = Object.entries(bizNameSchemaData).reduce((pre, [name, data]) => {
         let formatParamsStr = '';
         let formatTypesStr = '';
         if (data.type === 'object') {
-            formatParamsStr = data.properties.reduce((str, i) => {
-                return `${str} * @params ${i.key} {${getType(i)}} ${i.description}\n`;
+            formatParamsStr = data.properties.reduce((str, property) => {
+                return `${str} * @params ${property.key} {${getType(property)}} ${property.description}\n`;
             }, '');
-            formatTypesStr = data.properties.reduce((str, i) => {
-                return `${str}      ${i.key}${!i.required ? '?:' : ':'} ${getType(i)};\n`;
+            formatTypesStr = data.properties.reduce((str, property) => {
+                return `${str}      ${property.key}${!property.required ? '?:' : ':'} ${getType(property)};\n`;
             }, '');
             formatTypesStr = `type ${data.commonTypeName} = {\n${formatTypesStr}}`;
         } else {
@@ -41,14 +53,17 @@ async function createMarkdown(bizName, data) {
         }
         return pre + '\n/**\n * ' + data.description + '\n' + formatParamsStr + '*/\n' + formatTypesStr + '\n\n';
     }, '');
+    return commonTypeStr;
+}
 
-    /**
-     * 处理api接口的类型定义
-     */
-    const typeMdTemplate = data.reduce((pre, item) => {
-        /**
-         * 处理请求参数类型定义
-         */
+/**
+ * 获取API类型定义
+ * @param {array} bizData 业务数据
+ * @returns {string} 返回API类型定义字符串
+ */
+function getApiType(bizData) {
+    const ApiTypeStr = bizData.reduce((pre, item) => {
+        // 处理请求参数类型定义
         let formatParamsData = item.methods === 'get' ? item.parameters || [] : [].concat(item.parameters || [], item.requestBody || []) || [];
         const formatRequestParamsStr = formatParamsData.reduce((str, i) => {
             return `${str} * @${i?.in === 'header' ? 'headers' : 'params'} ${i.key} {${getType(i)}} ${i.description}${i.default ? ' 默认：' + i.default : ''} ${i.required ? '（必填）' : ''}\n`;
@@ -57,9 +72,7 @@ async function createMarkdown(bizName, data) {
             return `${str}      ${i.key}${!i.required ? '?:' : ':'} ${getType(i)};\n`;
         }, '');
 
-        /**
-         * 处理响应参数类型定义
-         */
+        // 处理响应参数类型定义
         const formatResponsesData = item.responses || [];
         const formatResponsesParamsStr = formatResponsesData.reduce((str, i) => {
             return `${str} * @params ${i.key} {${getType(i)}} ${i.description}\n`;
@@ -74,8 +87,13 @@ async function createMarkdown(bizName, data) {
             `${item.responses ? `\n/**\n * ${item.summary}——响应参数类型定义\n${formatResponsesParamsStr}*/\nexport type ${item.responsesTypeName} = {\n${formatResponsesTypeStr}}\n\n` : ''}`
         );
     }, '');
+    return ApiTypeStr;
+}
 
-    const templateFormat = commonTypeMdTemplate + '\n----\n' + typeMdTemplate;
+async function createMarkdown(bizName, data) {
+    const commonTypeMdTemplate = await getCommonType(bizName);
+    const apiTypeMdTemplate = getApiType(data);
+    const templateFormat = commonTypeMdTemplate + '\n----\n' + apiTypeMdTemplate;
 
     await fs.writeFileSync(path.join(__dirname, `/dist/${bizName}.md`), templateFormat, 'utf8');
 }
