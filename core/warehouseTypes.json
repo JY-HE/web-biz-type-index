@@ -1,5 +1,42 @@
 {
-  "gcsBiz": {},
+  "gcsBiz": {
+    "put&/api/active_gps/{device}": {
+      "requestTypeName": "UpdateDeviceReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/active_gps": {
+      "requestTypeName": "GetActiveGpsReqType",
+      "responsesTypeName": "GetActiveGpsResType"
+    },
+    "get&/api/active_gps/{device}/latest": {
+      "requestTypeName": "GetActiveGpsByDeviceReqType",
+      "responsesTypeName": "GetActiveGpsByDeviceResType"
+    },
+    "get&/api/active_gps/devices/latest": {
+      "requestTypeName": "GetActiveGpsDevicesLatestReqType",
+      "responsesTypeName": "GetActiveGpsDevicesLatestResType"
+    },
+    "get&/api/history_gps/{device}/latest": {
+      "requestTypeName": "GetHistoryGpsDeviceLatestReqType",
+      "responsesTypeName": "GetHistoryGpsDeviceLatestResType"
+    },
+    "get&/api/history_gps/{device}": {
+      "requestTypeName": "GetHistoryGpsByDeviceReqType",
+      "responsesTypeName": "GetHistoryGpsByDeviceResType"
+    },
+    "get&/api/history_gps": {
+      "requestTypeName": "GetHistoryGpsReqType",
+      "responsesTypeName": "GetHistoryGpsResType"
+    },
+    "put&/api/history_gps": {
+      "requestTypeName": "UpdateHistoryGpsReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/history_gps/devices": {
+      "requestTypeName": "GetDevicesHistoryReqType",
+      "responsesTypeName": "GetDevicesHistoryResType"
+    }
+  },
   "cgsBiz": {},
   "mmtBiz": {},
   "aggsBiz": {},

@@ -2,13 +2,13 @@
  * @Description: 各个服务接口数据源
  */
 module.exports = {
-    // gcsBiz: {
-    //     label: 'GPS点位服务',
-    //     url: 'http://newdev.rdapp.com:53839/docs/v1/gcs-api.json',
-    //     primaryName: 'GCSServer',
-    //     address: '10.8.109.235',
-    //     port: '7319',
-    // },
+    gcsBiz: {
+        label: 'GPS点位服务',
+        url: 'http://newdev.rdapp.com:53839/docs/v1/gcs-api.json',
+        primaryName: 'GCSServer',
+        address: '10.8.109.235',
+        port: '7319',
+    },
     // cgsBiz: {
     //     label: '认知服务(文字转语音)',
     //     url: 'http://newdev.rdapp.com:53839/docs/v1/CognitiveService-API.json',

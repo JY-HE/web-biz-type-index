@@ -1,4 +1,625 @@
 {
+	"gcsBiz": [
+		{
+			"url": "/api/active_gps/{device}",
+			"tag": "ActiveGps",
+			"method": "put",
+			"summary": "上报GPS点位",
+			"version": "v1",
+			"requestTypeName": "UpdateDeviceReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "device",
+					"type": "string",
+					"description": "",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "coordinate",
+					"type": "object",
+					"description": "坐标",
+					"required": true,
+					"typeNameMap": "CoordinateCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "metersPerSecond",
+					"type": "number",
+					"description": "速度(米/秒)",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "direction",
+					"type": "number",
+					"description": "方向(取值0-360, 以正北为参考基准)",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "altitude",
+					"type": "number",
+					"description": "海拔高度",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "地址",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "reportTime",
+					"type": "string",
+					"description": "上报时间(UTC)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "sourceCoordinateType",
+					"type": "integer",
+					"description": "上报点位坐标系类型1-WGS84LL3-GCJ02LL5-BD09LL",
+					"required": false,
+					"typeNameMap": "CoordinateTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "uploadSourceType",
+					"type": "integer",
+					"description": "上报源类型（0:人员上报类型(默认值)；1:终端资产类型）",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/active_gps",
+			"tag": "ActiveGps",
+			"method": "get",
+			"summary": "查询可视区域内的设备活跃点",
+			"version": "v1",
+			"requestTypeName": "GetActiveGpsReqType",
+			"responsesTypeName": "GetActiveGpsResType",
+			"parameters": [
+				{
+					"key": "up_left.longitude",
+					"type": "number",
+					"description": "经度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "up_left.latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "bottom_right.longitude",
+					"type": "number",
+					"description": "经度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "bottom_right.latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, 从1开始",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "符合条件的结果总量",
+					"required": true
+				},
+				{
+					"key": "items",
+					"type": "array",
+					"description": "结果集",
+					"required": true,
+					"typeNameMap": "ActiveItemCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/active_gps/{device}/latest",
+			"tag": "ActiveGps",
+			"method": "get",
+			"summary": "查询指定设备的最新活跃点位",
+			"version": "v1",
+			"requestTypeName": "GetActiveGpsByDeviceReqType",
+			"responsesTypeName": "GetActiveGpsByDeviceResType",
+			"parameters": [
+				{
+					"key": "device",
+					"type": "string",
+					"description": "",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "upload_source_type",
+					"type": "integer",
+					"description": "上报源类型（0:人员上报（默认值），1:终端上报类型）",
+					"default": null,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "deviceId",
+					"type": "string",
+					"description": "设备Id",
+					"required": true
+				},
+				{
+					"key": "gps",
+					"type": "object",
+					"description": "设备位置",
+					"required": true,
+					"typeNameMap": "GpsDataCommonType"
+				},
+				{
+					"key": "reportTime",
+					"type": "string",
+					"description": "上报时间",
+					"required": true
+				},
+				{
+					"key": "uploadSourceType",
+					"type": "integer",
+					"description": "上报源类型",
+					"required": true
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/active_gps/devices/latest",
+			"tag": "ActiveGps",
+			"method": "get",
+			"summary": "查询多个指定设备的最新活跃点位",
+			"version": "v1",
+			"requestTypeName": "GetActiveGpsDevicesLatestReqType",
+			"responsesTypeName": "GetActiveGpsDevicesLatestResType",
+			"parameters": [
+				{
+					"key": "Devices",
+					"type": "string",
+					"description": "设备Id:上报源类型，用 \",\" 分开多个",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, 从1开始",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "符合条件的结果总量",
+					"required": true
+				},
+				{
+					"key": "items",
+					"type": "array",
+					"description": "结果集",
+					"required": true,
+					"typeNameMap": "ActiveItemCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/history_gps/{device}/latest",
+			"tag": "HistoryGps",
+			"method": "get",
+			"summary": "获取设备最后的Gps点位",
+			"version": "v1",
+			"requestTypeName": "GetHistoryGpsDeviceLatestReqType",
+			"responsesTypeName": "GetHistoryGpsDeviceLatestResType",
+			"parameters": [
+				{
+					"key": "device",
+					"type": "string",
+					"description": "设备Id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "day_intervals",
+					"type": "integer",
+					"description": "最近多少天内",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "upload_source_type",
+					"type": "integer",
+					"description": "上报源类型",
+					"default": null,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "deviceId",
+					"type": "string",
+					"description": "设备Id",
+					"required": true
+				},
+				{
+					"key": "gps",
+					"type": "object",
+					"description": "设备位置",
+					"required": true,
+					"typeNameMap": "HistoryGpsDataCommonType"
+				},
+				{
+					"key": "reportTime",
+					"type": "string",
+					"description": "上报时间",
+					"required": true
+				},
+				{
+					"key": "uploadSourceType",
+					"type": "integer",
+					"description": "上报源类型",
+					"required": true
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/history_gps/{device}",
+			"tag": "HistoryGps",
+			"method": "get",
+			"summary": "查询设备GPS历史轨迹",
+			"version": "v1",
+			"requestTypeName": "GetHistoryGpsByDeviceReqType",
+			"responsesTypeName": "GetHistoryGpsByDeviceResType",
+			"parameters": [
+				{
+					"key": "device",
+					"type": "string",
+					"description": "设备ID",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "start_time",
+					"type": "string",
+					"description": "起始时间",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "end_time",
+					"type": "string",
+					"description": "结束时间",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "upload_source_type",
+					"type": "integer",
+					"description": "上报源类型（0:人员上报类型(默认值)；1:终端资产类型）",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "dilution_factor",
+					"type": "integer",
+					"description": "抽稀因子，默认结果点位在1000个以上就默认10个点抽1个点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, 从1开始",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "符合条件的结果总量",
+					"required": true
+				},
+				{
+					"key": "items",
+					"type": "array",
+					"description": "结果集",
+					"required": true,
+					"typeNameMap": "HistoryItemCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/history_gps",
+			"tag": "HistoryGps",
+			"method": "get",
+			"summary": "查询某区域在某个时段内的所有途经设备",
+			"version": "v1",
+			"requestTypeName": "GetHistoryGpsReqType",
+			"responsesTypeName": "GetHistoryGpsResType",
+			"parameters": [
+				{
+					"key": "up_left.Longitude",
+					"type": "number",
+					"description": "经度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "up_left.Latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "bottom_right.Longitude",
+					"type": "number",
+					"description": "经度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "bottom_right.Latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "start_time",
+					"type": "string",
+					"description": "起始时间",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "minute_intervals",
+					"type": "integer",
+					"description": "区间",
+					"default": 10,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, 从1开始",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "符合条件的结果总量",
+					"required": true
+				},
+				{
+					"key": "items",
+					"type": "array",
+					"description": "结果集",
+					"required": true
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/history_gps",
+			"tag": "HistoryGps",
+			"method": "put",
+			"summary": "历史点补全",
+			"version": "v1",
+			"requestTypeName": "UpdateHistoryGpsReqType",
+			"responsesTypeName": "",
+			"parameters": null,
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "deviceId",
+					"type": "string",
+					"description": "设备ID",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "gps",
+					"type": "object",
+					"description": "GPS数据",
+					"required": true,
+					"typeNameMap": "GpsDataCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "historyTime",
+					"type": "string",
+					"description": "该点应该上报的历史时间",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "currentTime",
+					"type": "string",
+					"description": "客户端当前时间",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "uploadSourceType",
+					"type": "integer",
+					"description": "上报源类型0：人员上报类型（默认值），1：资产终端类型",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/history_gps/devices",
+			"tag": "HistoryGps",
+			"method": "get",
+			"summary": "查询某区域在某个时段内的所有途经设备（返回设备Id带类型）",
+			"version": "v1",
+			"requestTypeName": "GetDevicesHistoryReqType",
+			"responsesTypeName": "GetDevicesHistoryResType",
+			"parameters": [
+				{
+					"key": "up_left.Longitude",
+					"type": "number",
+					"description": "经度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "up_left.Latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "bottom_right.Longitude",
+					"type": "number",
+					"description": "经度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "bottom_right.Latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "start_time",
+					"type": "string",
+					"description": "起始时间",
+					"required": true,
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "minute_intervals",
+					"type": "integer",
+					"description": "区间",
+					"default": 10,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, 从1开始",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "符合条件的结果总量",
+					"required": true
+				},
+				{
+					"key": "items",
+					"type": "array",
+					"description": "结果集",
+					"required": true,
+					"typeNameMap": "DeviceItemCommonType"
+				}
+			],
+			"requestBody": null
+		}
+	],
 	"quartzBiz": [
 		{
 			"url": "/api/Jobs",

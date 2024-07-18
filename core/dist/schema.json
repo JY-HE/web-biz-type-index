@@ -1,4 +1,418 @@
 {
+	"gcsBiz": {
+		"LocatingSystem.Controllers.Gps.Coordinate": {
+			"type": "object",
+			"description": "坐标",
+			"properties": [
+				{
+					"key": "longitude",
+					"type": "number",
+					"description": "经度",
+					"required": true
+				},
+				{
+					"key": "latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": true
+				}
+			],
+			"commonTypeName": "CoordinateCommonType"
+		},
+		"LocatingSystem.Controllers.Gps.CoordinateType": {
+			"enum": [
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			],
+			"type": "integer",
+			"description": "坐标系类型\r\n1-WGS84LL\r\n3-GCJ02LL\r\n5-BD09LL",
+			"format": "int32",
+			"commonTypeName": "CoordinateTypeCommonType"
+		},
+		"LocatingSystem.Controllers.Gps.ReportGpsData": {
+			"type": "object",
+			"description": "上报GPS数据",
+			"properties": [
+				{
+					"key": "coordinate",
+					"type": "object",
+					"description": "坐标",
+					"required": true,
+					"typeNameMap": "CoordinateCommonType"
+				},
+				{
+					"key": "metersPerSecond",
+					"type": "number",
+					"description": "速度(米/秒)",
+					"required": true
+				},
+				{
+					"key": "direction",
+					"type": "number",
+					"description": "方向(取值0-360, 以正北为参考基准)",
+					"required": true
+				},
+				{
+					"key": "altitude",
+					"type": "number",
+					"description": "海拔高度",
+					"required": true
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "地址",
+					"required": false
+				},
+				{
+					"key": "reportTime",
+					"type": "string",
+					"description": "上报时间(UTC)",
+					"required": false
+				},
+				{
+					"key": "sourceCoordinateType",
+					"type": "integer",
+					"description": "上报点位坐标系类型1-WGS84LL3-GCJ02LL5-BD09LL",
+					"required": false,
+					"typeNameMap": "CoordinateTypeCommonType"
+				},
+				{
+					"key": "uploadSourceType",
+					"type": "integer",
+					"description": "上报源类型（0:人员上报类型(默认值)；1:终端资产类型）",
+					"required": false
+				}
+			],
+			"commonTypeName": "ReportGpsDataCommonType"
+		},
+		"LocatingSystem.Models.ExceptionRecord": {
+			"type": "object",
+			"description": "异常记录消息结构",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "异常记录ID",
+					"required": true
+				},
+				{
+					"key": "text",
+					"type": "string",
+					"description": "异常描述文本",
+					"required": true
+				},
+				{
+					"key": "happenTime",
+					"type": "string",
+					"description": "调用时间",
+					"required": true
+				}
+			],
+			"commonTypeName": "ExceptionRecordCommonType"
+		},
+		"LocatingSystem.Controllers.Gps.GpsData": {
+			"type": "object",
+			"description": "GPS数据",
+			"properties": [
+				{
+					"key": "coordinate",
+					"type": "object",
+					"description": "坐标",
+					"required": true,
+					"typeNameMap": "CoordinateCommonType"
+				},
+				{
+					"key": "metersPerSecond",
+					"type": "number",
+					"description": "速度(米/秒)",
+					"required": true
+				},
+				{
+					"key": "direction",
+					"type": "number",
+					"description": "方向(取值0-360, 以正北为参考基准)",
+					"required": true
+				},
+				{
+					"key": "altitude",
+					"type": "number",
+					"description": "海拔高度",
+					"required": true
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "地址",
+					"required": false
+				}
+			],
+			"commonTypeName": "GpsDataCommonType"
+		},
+		"LocatingSystem.Controllers.Gps.ActiveItem": {
+			"type": "object",
+			"description": "活跃点",
+			"properties": [
+				{
+					"key": "deviceId",
+					"type": "string",
+					"description": "设备Id",
+					"required": true
+				},
+				{
+					"key": "gps",
+					"type": "object",
+					"description": "设备位置",
+					"required": true,
+					"typeNameMap": "GpsDataCommonType"
+				},
+				{
+					"key": "reportTime",
+					"type": "string",
+					"description": "上报时间",
+					"required": true
+				},
+				{
+					"key": "uploadSourceType",
+					"type": "integer",
+					"description": "上报源类型",
+					"required": true
+				}
+			],
+			"commonTypeName": "ActiveItemCommonType"
+		},
+		"LocatingSystem.Models.PagedQueryResponse`1[LocatingSystem.Controllers.Gps.ActiveItem]": {
+			"type": "object",
+			"description": "分页查询响应",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "符合条件的结果总量",
+					"required": true
+				},
+				{
+					"key": "items",
+					"type": "array",
+					"description": "结果集",
+					"required": true,
+					"typeNameMap": "ActiveItemCommonType"
+				}
+			],
+			"commonTypeName": "ActiveItem]CommonType"
+		},
+		"LocatingSystem.Controllers.History.HistoryCoordinate": {
+			"type": "object",
+			"description": "",
+			"properties": [
+				{
+					"key": "longitude",
+					"type": "number",
+					"description": "经度",
+					"required": true
+				},
+				{
+					"key": "latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": true
+				}
+			],
+			"commonTypeName": "HistoryCoordinateCommonType"
+		},
+		"LocatingSystem.Controllers.History.HistoryGpsData": {
+			"type": "object",
+			"description": "",
+			"properties": [
+				{
+					"key": "coordinate",
+					"type": "object",
+					"description": "坐标",
+					"required": true,
+					"typeNameMap": "HistoryCoordinateCommonType"
+				},
+				{
+					"key": "metersPerSecond",
+					"type": "number",
+					"description": "速度(米/秒)",
+					"required": true
+				},
+				{
+					"key": "direction",
+					"type": "number",
+					"description": "方向(取值0-360, 以正北为参考基准)",
+					"required": true
+				},
+				{
+					"key": "altitude",
+					"type": "number",
+					"description": "海拔高度",
+					"required": true
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "地址",
+					"required": false
+				}
+			],
+			"commonTypeName": "HistoryGpsDataCommonType"
+		},
+		"LocatingSystem.Controllers.History.HistoryItem": {
+			"type": "object",
+			"description": "历史点",
+			"properties": [
+				{
+					"key": "deviceId",
+					"type": "string",
+					"description": "设备Id",
+					"required": true
+				},
+				{
+					"key": "gps",
+					"type": "object",
+					"description": "设备位置",
+					"required": true,
+					"typeNameMap": "HistoryGpsDataCommonType"
+				},
+				{
+					"key": "reportTime",
+					"type": "string",
+					"description": "上报时间",
+					"required": true
+				},
+				{
+					"key": "uploadSourceType",
+					"type": "integer",
+					"description": "上报源类型",
+					"required": true
+				}
+			],
+			"commonTypeName": "HistoryItemCommonType"
+		},
+		"LocatingSystem.Models.PagedQueryResponse`1[LocatingSystem.Controllers.History.HistoryItem]": {
+			"type": "object",
+			"description": "分页查询响应",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "符合条件的结果总量",
+					"required": true
+				},
+				{
+					"key": "items",
+					"type": "array",
+					"description": "结果集",
+					"required": true,
+					"typeNameMap": "HistoryItemCommonType"
+				}
+			],
+			"commonTypeName": "HistoryItem]CommonType"
+		},
+		"LocatingSystem.Models.PagedQueryResponse`1[System.String]": {
+			"type": "object",
+			"description": "分页查询响应",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "符合条件的结果总量",
+					"required": true
+				},
+				{
+					"key": "items",
+					"type": "array",
+					"description": "结果集",
+					"required": true
+				}
+			],
+			"commonTypeName": "String]CommonType"
+		},
+		"LocatingSystem.Controllers.History.HistoryGpsUpdateRequest": {
+			"type": "object",
+			"description": "GPS历史轨迹补全请求",
+			"properties": [
+				{
+					"key": "deviceId",
+					"type": "string",
+					"description": "设备ID",
+					"required": true
+				},
+				{
+					"key": "gps",
+					"type": "object",
+					"description": "GPS数据",
+					"required": true,
+					"typeNameMap": "GpsDataCommonType"
+				},
+				{
+					"key": "historyTime",
+					"type": "string",
+					"description": "该点应该上报的历史时间",
+					"required": true
+				},
+				{
+					"key": "currentTime",
+					"type": "string",
+					"description": "客户端当前时间",
+					"required": true
+				},
+				{
+					"key": "uploadSourceType",
+					"type": "integer",
+					"description": "上报源类型0：人员上报类型（默认值），1：资产终端类型",
+					"required": false
+				}
+			],
+			"commonTypeName": "HistoryGpsUpdateRequestCommonType"
+		},
+		"LocatingSystem.Controllers.History.DeviceItem": {
+			"type": "object",
+			"description": "设备项",
+			"properties": [
+				{
+					"key": "deviceId",
+					"type": "string",
+					"description": "设备Id",
+					"required": false
+				},
+				{
+					"key": "uploadSourceType",
+					"type": "integer",
+					"description": "设备源类型 （0:人员上报源；1:资产终端上报源）0：",
+					"required": false
+				}
+			],
+			"commonTypeName": "DeviceItemCommonType"
+		},
+		"LocatingSystem.Models.PagedQueryResponse`1[LocatingSystem.Controllers.History.DeviceItem]": {
+			"type": "object",
+			"description": "分页查询响应",
+			"properties": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "符合条件的结果总量",
+					"required": true
+				},
+				{
+					"key": "items",
+					"type": "array",
+					"description": "结果集",
+					"required": true,
+					"typeNameMap": "DeviceItemCommonType"
+				}
+			],
+			"commonTypeName": "DeviceItem]CommonType"
+		}
+	},
 	"quartzBiz": {
 		"QuartzService.Models.Common.JobMode": {
 			"enum": [
