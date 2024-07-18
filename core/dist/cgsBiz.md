@@ -138,7 +138,7 @@ export type TextToSpeechResType = {
  * @params waitNeural {boolean} 是否等待神经网络声音生成再返回如果不等待，将临时返回低质量语音文件，高质量语音将在后台转换后，提供缓存缓存的key为NeuralVoiceName+VoiceName，使用SHA-256哈希算法生成唯一文件名 
  * @params neuralVoiceName {string} voice name 如果传入不支持的语音名字，将自动采用默认 
 */
-export type TextTtoRecordNotifyReqType = {
+export type TextToRecordNotifyReqType = {
       text: string;
       volume?: number;
       speed?: number;
@@ -158,7 +158,7 @@ export type TextTtoRecordNotifyReqType = {
  * @params filePath {string} 转换后的语音文件相对路径
  * @params text {string} 转语音的文字
 */
-export type TextTtoRecordNotifyResType = {
+export type TextToRecordNotifyResType = {
       id: string;
       filePath: string;
       text: string;

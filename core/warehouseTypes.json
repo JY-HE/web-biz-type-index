@@ -2,7 +2,7 @@
   "gcsBiz": {
     "put&/api/active_gps/{device}": {
       "requestTypeName": "UpdateDeviceReqType",
-      "responsesTypeName": ""
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/active_gps": {
       "requestTypeName": "GetActiveGpsReqType",
@@ -30,7 +30,7 @@
     },
     "put&/api/history_gps": {
       "requestTypeName": "UpdateHistoryGpsReqType",
-      "responsesTypeName": ""
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/history_gps/devices": {
       "requestTypeName": "GetDevicesHistoryReqType",
@@ -43,18 +43,18 @@
       "responsesTypeName": "TextToSpeechResType"
     },
     "post&/api/UniformSpeech/RecordNotify": {
-      "requestTypeName": "TextTtoRecordNotifyReqType",
-      "responsesTypeName": "TextTtoRecordNotifyResType"
+      "requestTypeName": "TextToRecordNotifyReqType",
+      "responsesTypeName": "TextToRecordNotifyResType"
     },
     "get&/api/UniformSpeech/voiceinfos": {
-      "requestTypeName": "",
+      "requestTypeName": "CommonReqType",
       "responsesTypeName": "GetVoiceInfosResType"
     }
   },
   "mmtBiz": {
     "post&/api/GradingDispatch": {
       "requestTypeName": "GradingDispatchReqType",
-      "responsesTypeName": ""
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/MultimediaTransfers": {
       "requestTypeName": "GetMultimediaTransfersReqType",
@@ -74,19 +74,19 @@
     },
     "delete&/api/MultimediaTransfers/{id}": {
       "requestTypeName": "DeleteMultimediaTransfersReqType",
-      "responsesTypeName": ""
+      "responsesTypeName": "CommonResType"
     },
     "post&/api/MultimediaTransfers/data_completion": {
       "requestTypeName": "CompleteMultimediaTransfersReqType",
-      "responsesTypeName": ""
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/Templates": {
       "requestTypeName": "GetMultimediaTemplatesReqType",
       "responsesTypeName": "GetMultimediaTemplatesResType"
     },
     "post&/api/Templates": {
-      "requestTypeName": "AddMultimediaTemplatesReqType",
-      "responsesTypeName": "AddMultimediaTemplatesResType"
+      "requestTypeName": "AddTemplatesReqType",
+      "responsesTypeName": "AddTemplatesResType"
     },
     "get&/api/Templates/{id}": {
       "requestTypeName": "GetTemplatesByIdReqType",
@@ -94,11 +94,11 @@
     },
     "put&/api/Templates/{id}": {
       "requestTypeName": "EditTemplatesReqType",
-      "responsesTypeName": ""
+      "responsesTypeName": "CommonResType"
     },
     "delete&/api/Templates/{id}": {
       "requestTypeName": "DeleteTemplatesReqType",
-      "responsesTypeName": ""
+      "responsesTypeName": "CommonResType"
     }
   },
   "aggsBiz": {},
@@ -201,44 +201,44 @@
       "responsesTypeName": "AddMainResourcesResType"
     },
     "get&/api/MainResources/{id}": {
-      "requestTypeName": "GetMainResByIdReqType",
-      "responsesTypeName": "GetMainResByIdResType"
+      "requestTypeName": "GetMainResourcesByIdReqType",
+      "responsesTypeName": "GetMainResourcesByIdResType"
     },
     "put&/api/MainResources/{id}": {
-      "requestTypeName": "UpdateMainResByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "UpdateMainResourcesReqType",
+      "responsesTypeName": "CommonResType"
     },
     "delete&/api/MainResources/{id}": {
-      "requestTypeName": "DeleteMainResByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "DeleteMainResourcesReqType",
+      "responsesTypeName": "CommonResType"
     },
     "post&/api/ResourceRelationships/resource": {
-      "requestTypeName": "SearchAllResourceReqType",
-      "responsesTypeName": "SearchAllResourceResType"
+      "requestTypeName": "GetAllResourceReqType",
+      "responsesTypeName": "GetAllResourceResType"
     },
     "put&/api/ResourceRelationships/resource": {
-      "requestTypeName": "UpdateAllResourceReqType",
-      "responsesTypeName": "UpdateAllResourceResType"
+      "requestTypeName": "UpdateMainLinkResourceReqType",
+      "responsesTypeName": "UpdateMainLinkResourceResType"
     },
     "post&/api/ResourceRelationships/resource/single": {
-      "requestTypeName": "SearchSingleResourceReqType",
-      "responsesTypeName": "SearchSingleResourceResType"
+      "requestTypeName": "GetResourceReqType",
+      "responsesTypeName": "GetResourceResType"
     },
     "post&/api/ResourceRelationships/resource/details": {
       "requestTypeName": "GetResourceDetailsReqType",
       "responsesTypeName": "GetResourceDetailsResType"
     },
     "post&/api/ResourceRelationships/main/details": {
-      "requestTypeName": "BatchMainDetailsReqType",
-      "responsesTypeName": "BatchMainDetailsResType"
+      "requestTypeName": "BatchGetMainDetailsReqType",
+      "responsesTypeName": "BatchGetMainDetailsResType"
     },
     "put&/api/ResourceRelationships": {
-      "requestTypeName": "BatchResRelationshipsReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "EditResourceRelationshipsReqType",
+      "responsesTypeName": "CommonResType"
     },
     "post&/api/ResourceRelationships": {
-      "requestTypeName": "UntieResRelationshipsReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "DeleteResourceRelationshipsReqType",
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/Resources": {
       "requestTypeName": "GetResourcesReqType",
@@ -253,24 +253,24 @@
       "responsesTypeName": "GetResourcesByIdResType"
     },
     "put&/api/Resources/{id}": {
-      "requestTypeName": "UpdateResourcesByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "EditResourcesReqType",
+      "responsesTypeName": "CommonResType"
     },
     "delete&/api/Resources/{id}": {
-      "requestTypeName": "DeleteResourcesByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "DeleteResourcesReqType",
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/ResourceTypes": {
       "requestTypeName": "GetResourceTypesReqType",
       "responsesTypeName": "GetResourceTypesResType"
     },
     "post&/api/ResourceTypes": {
-      "requestTypeName": "AddResourceTypesReqType",
-      "responsesTypeName": "AddResourceTypesResType"
+      "requestTypeName": "AddResourceTypeReqType",
+      "responsesTypeName": "AddResourceTypeResType"
     },
     "get&/api/ResourceTypes/{id}": {
-      "requestTypeName": "GetResourceTypesByIdReqType",
-      "responsesTypeName": "GetResourceTypesByIdResType"
+      "requestTypeName": "GetResourceTypeByIdReqType",
+      "responsesTypeName": "GetResourceTypeByIdResType"
     }
   },
   "dcsBiz": {
@@ -697,156 +697,156 @@
   },
   "ntsBiz": {
     "get&/api/ConditionTemplates/{id}": {
-      "requestTypeName": "GetConTemByIdReqType",
-      "responsesTypeName": "GetConTemByIdResType"
+      "requestTypeName": "GetConditionTemplateByIdReqType",
+      "responsesTypeName": "GetConditionTemplateByIdResType"
     },
     "put&/api/ConditionTemplates/{id}": {
-      "requestTypeName": "UpdateConfTemByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "EditConditionTemplateReqType",
+      "responsesTypeName": "CommonResType"
     },
     "delete&/api/ConditionTemplates/{id}": {
-      "requestTypeName": "DeleteConfTemByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "DeleteConditionTemplateReqType",
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/ConditionTemplates": {
-      "requestTypeName": "GetConfTemReqType",
-      "responsesTypeName": "GetConfTemResType"
+      "requestTypeName": "GetConditionTemplatesReqType",
+      "responsesTypeName": "GetConditionTemplatesResType"
     },
     "post&/api/ConditionTemplates": {
-      "requestTypeName": "AddConfTemReqType",
-      "responsesTypeName": "AddConfTemResType"
+      "requestTypeName": "AddConditionTemplateReqType",
+      "responsesTypeName": "AddConditionTemplateResType"
     },
     "get&/api/I18NConfigs/{id}": {
-      "requestTypeName": "GetI18NConfByIdReqType",
-      "responsesTypeName": "GetI18NConfByIdResType"
+      "requestTypeName": "GetI18NConfigByIdReqType",
+      "responsesTypeName": "GetI18NConfigByIdResType"
     },
     "put&/api/I18NConfigs/{id}": {
-      "requestTypeName": "UpdateI18NConfByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "EditI18NConfigReqType",
+      "responsesTypeName": "CommonResType"
     },
     "delete&/api/I18NConfigs/{id}": {
-      "requestTypeName": "DeleteI18NConfByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "DeleteI18NConfigReqType",
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/I18NConfigs": {
-      "requestTypeName": "GetI18NConfReqType",
-      "responsesTypeName": "GetI18NConfResType"
+      "requestTypeName": "GetI18NConfigsReqType",
+      "responsesTypeName": "GetI18NConfigsResType"
     },
     "post&/api/I18NConfigs": {
-      "requestTypeName": "AddI18NConfReqType",
-      "responsesTypeName": "AddI18NConfResType"
+      "requestTypeName": "AddI18NConfigReqType",
+      "responsesTypeName": "AddI18NConfigResType"
     },
     "get&/api/NotifyConfigs/{id}": {
-      "requestTypeName": "GetNotifyConfByIdReqType",
-      "responsesTypeName": "GetNotifyConfByIdResType"
+      "requestTypeName": "GetNotifyConfigByIdReqType",
+      "responsesTypeName": "GetNotifyConfigByIdResType"
     },
     "put&/api/NotifyConfigs/{id}": {
-      "requestTypeName": "UpdateNotifyConfByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "EditNotifyConfigReqType",
+      "responsesTypeName": "CommonResType"
     },
     "delete&/api/NotifyConfigs/{id}": {
-      "requestTypeName": "DeleteNotifyConfByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "DeleteNotifyConfigReqType",
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/NotifyConfigs": {
-      "requestTypeName": "GetNotifyConfReqType",
-      "responsesTypeName": "GetNotifyConfResType"
+      "requestTypeName": "GetNotifyConfigsReqType",
+      "responsesTypeName": "GetNotifyConfigsResType"
     },
     "post&/api/NotifyConfigs": {
-      "requestTypeName": "AddNotifyConfReqType",
-      "responsesTypeName": "AddNotifyConfResType"
+      "requestTypeName": "AddNotifyConfigReqType",
+      "responsesTypeName": "AddNotifyConfigResType"
     },
     "get&/api/NotifyConfigs/types": {
-      "requestTypeName": "",
-      "responsesTypeName": "GetNotifyConfTypesResType"
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetNotifyConfigTypesResType"
     },
     "put&/api/NotifyConfigs/{id}/enable": {
-      "requestTypeName": "EnableNotifyConfByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "OpenNotifyConfigReqType",
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/NotifyRecords/{id}": {
       "requestTypeName": "GetNotifyRecordByIdReqType",
       "responsesTypeName": "GetNotifyRecordByIdResType"
     },
     "get&/api/NotifyRecords": {
-      "requestTypeName": "GetNotifyRecordReqType",
-      "responsesTypeName": "GetNotifyRecordResType"
+      "requestTypeName": "GetNotifyRecordsReqType",
+      "responsesTypeName": "GetNotifyRecordsResType"
     },
     "get&/api/Placeholders/{id}": {
       "requestTypeName": "GetPlaceholderByIdReqType",
       "responsesTypeName": "GetPlaceholderByIdResType"
     },
     "put&/api/Placeholders/{id}": {
-      "requestTypeName": "UpdatePlaceholderByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "EditPlaceholderReqType",
+      "responsesTypeName": "CommonResType"
     },
     "delete&/api/Placeholders/{id}": {
-      "requestTypeName": "DeletePlaceholderByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "DeletePlaceholderReqType",
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/Placeholders": {
       "requestTypeName": "GetPlaceholdersReqType",
       "responsesTypeName": "GetPlaceholdersResType"
     },
     "post&/api/Placeholders": {
-      "requestTypeName": "AddPlaceholdersReqType",
-      "responsesTypeName": "AddPlaceholdersResType"
+      "requestTypeName": "AddPlaceholderReqType",
+      "responsesTypeName": "AddPlaceholderResType"
     },
     "get&/api/Scenes/{id}": {
       "requestTypeName": "GetSceneByIdReqType",
       "responsesTypeName": "GetSceneByIdResType"
     },
     "get&/api/Scenes": {
-      "requestTypeName": "",
+      "requestTypeName": "CommonReqType",
       "responsesTypeName": "GetScenesResType"
     },
     "post&/api/Scenes": {
-      "requestTypeName": "AddScenesReqType",
-      "responsesTypeName": "AddScenesResType"
+      "requestTypeName": "AddSceneReqType",
+      "responsesTypeName": "AddSceneResType"
     },
     "get&/api/Schemes/{id}": {
-      "requestTypeName": "GetSchemeByIdReqType",
-      "responsesTypeName": "GetSchemeByIdResType"
+      "requestTypeName": "GetSchemeReqType",
+      "responsesTypeName": "GetSchemeResType"
     },
     "put&/api/Schemes/{id}": {
-      "requestTypeName": "UpdateSchemeByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "EditSchemeReqType",
+      "responsesTypeName": "CommonResType"
     },
     "delete&/api/Schemes/{id}": {
-      "requestTypeName": "DeleteSchemeByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "DeleteSchemeReqType",
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/Schemes": {
       "requestTypeName": "GetSchemesReqType",
       "responsesTypeName": "GetSchemesResType"
     },
     "post&/api/Schemes": {
-      "requestTypeName": "AddSchemesReqType",
-      "responsesTypeName": "AddSchemesResType"
+      "requestTypeName": "AddSchemeReqType",
+      "responsesTypeName": "AddSchemeResType"
     },
     "get&/api/Templates/{id}": {
       "requestTypeName": "GetTemplateByIdReqType",
       "responsesTypeName": "GetTemplateByIdResType"
     },
     "put&/api/Templates/{id}": {
-      "requestTypeName": "UpdateTemplateByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "EditTemplateReqType",
+      "responsesTypeName": "CommonResType"
     },
     "delete&/api/Templates/{id}": {
-      "requestTypeName": "DeleteTemplateByIdReqType",
-      "responsesTypeName": ""
+      "requestTypeName": "DeleteTemplateReqType",
+      "responsesTypeName": "CommonResType"
     },
     "get&/api/Templates": {
       "requestTypeName": "GetTemplatesReqType",
       "responsesTypeName": "GetTemplatesResType"
     },
     "post&/api/Templates": {
-      "requestTypeName": "AddTemplatesReqType",
-      "responsesTypeName": "AddTemplatesResType"
+      "requestTypeName": "AddTemplateReqType",
+      "responsesTypeName": "AddTemplateResType"
     },
     "post&/api/WebHooks": {
-      "requestTypeName": "WebHooksReqType",
-      "responsesTypeName": "WebHooksResType"
+      "requestTypeName": "PostNotificationReqType",
+      "responsesTypeName": "PostNotificationResType"
     }
   }
 }

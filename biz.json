@@ -722,8 +722,8 @@
 			"method": "post",
 			"summary": "文字转语音(语音通知专用)\r\n<remarks>该接口的Rate不支持设置，必须为8000</remarks>",
 			"version": "v1",
-			"requestTypeName": "TextTtoRecordNotifyReqType",
-			"responsesTypeName": "TextTtoRecordNotifyResType",
+			"requestTypeName": "TextToRecordNotifyReqType",
+			"responsesTypeName": "TextToRecordNotifyResType",
 			"parameters": null,
 			"responses": [
 				{
@@ -1673,8 +1673,8 @@
 			"method": "post",
 			"summary": "创建拍传模板",
 			"version": "v1",
-			"requestTypeName": "AddMultimediaTemplatesReqType",
-			"responsesTypeName": "AddMultimediaTemplatesResType",
+			"requestTypeName": "AddTemplatesReqType",
+			"responsesTypeName": "AddTemplatesResType",
 			"parameters": [
 				{
 					"key": "X-version",
@@ -3280,8 +3280,8 @@
 			"method": "get",
 			"summary": "通过主资源ID获取主资源",
 			"version": "v1",
-			"requestTypeName": "GetMainResByIdReqType",
-			"responsesTypeName": "GetMainResByIdResType",
+			"requestTypeName": "GetMainResourcesByIdReqType",
+			"responsesTypeName": "GetMainResourcesByIdResType",
 			"operationId": "GetMainResource",
 			"parameters": [
 				{
@@ -3321,7 +3321,7 @@
 			"method": "put",
 			"summary": "更新主资源",
 			"version": "v1",
-			"requestTypeName": "UpdateMainResByIdReqType",
+			"requestTypeName": "UpdateMainResourcesReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -3357,7 +3357,7 @@
 			"method": "delete",
 			"summary": "删除主资源",
 			"version": "v1",
-			"requestTypeName": "DeleteMainResByIdReqType",
+			"requestTypeName": "DeleteMainResourcesReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -3378,8 +3378,8 @@
 			"method": "post",
 			"summary": "获取主体下所有资源",
 			"version": "v1",
-			"requestTypeName": "SearchAllResourceReqType",
-			"responsesTypeName": "SearchAllResourceResType",
+			"requestTypeName": "GetAllResourceReqType",
+			"responsesTypeName": "GetAllResourceResType",
 			"operationId": "SearchAllResource",
 			"parameters": null,
 			"responses": [
@@ -3427,8 +3427,8 @@
 			"method": "put",
 			"summary": "更新主体下资源关系",
 			"version": "v1",
-			"requestTypeName": "UpdateAllResourceReqType",
-			"responsesTypeName": "UpdateAllResourceResType",
+			"requestTypeName": "UpdateMainLinkResourceReqType",
+			"responsesTypeName": "UpdateMainLinkResourceResType",
 			"operationId": "Update",
 			"parameters": null,
 			"responses": [
@@ -3471,8 +3471,8 @@
 			"method": "post",
 			"summary": "资源查询",
 			"version": "v1",
-			"requestTypeName": "SearchSingleResourceReqType",
-			"responsesTypeName": "SearchSingleResourceResType",
+			"requestTypeName": "GetResourceReqType",
+			"responsesTypeName": "GetResourceResType",
 			"operationId": "SearchSingleResource",
 			"parameters": null,
 			"responses": [
@@ -3579,8 +3579,8 @@
 			"method": "post",
 			"summary": "批量获取主体资源详情（带关联下资源）",
 			"version": "v1",
-			"requestTypeName": "BatchMainDetailsReqType",
-			"responsesTypeName": "BatchMainDetailsResType",
+			"requestTypeName": "BatchGetMainDetailsReqType",
+			"responsesTypeName": "BatchGetMainDetailsResType",
 			"operationId": "BatchGetMainDetails",
 			"parameters": null,
 			"responses": [
@@ -3622,7 +3622,7 @@
 			"method": "put",
 			"summary": "绑定资源关系",
 			"version": "v1",
-			"requestTypeName": "BatchResRelationshipsReqType",
+			"requestTypeName": "EditResourceRelationshipsReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": null,
 			"responses": null,
@@ -3651,7 +3651,7 @@
 			"method": "post",
 			"summary": "解绑资源关系",
 			"version": "v1",
-			"requestTypeName": "UntieResRelationshipsReqType",
+			"requestTypeName": "DeleteResourceRelationshipsReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": null,
 			"responses": null,
@@ -3815,7 +3815,7 @@
 			"method": "put",
 			"summary": "更新资源",
 			"version": "v1",
-			"requestTypeName": "UpdateResourcesByIdReqType",
+			"requestTypeName": "EditResourcesReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -3851,7 +3851,7 @@
 			"method": "delete",
 			"summary": "删除资源",
 			"version": "v1",
-			"requestTypeName": "DeleteResourcesByIdReqType",
+			"requestTypeName": "DeleteResourcesReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -3920,8 +3920,8 @@
 			"method": "post",
 			"summary": "创建资源类型",
 			"version": "v1",
-			"requestTypeName": "AddResourceTypesReqType",
-			"responsesTypeName": "AddResourceTypesResType",
+			"requestTypeName": "AddResourceTypeReqType",
+			"responsesTypeName": "AddResourceTypeResType",
 			"parameters": null,
 			"responses": [
 				{
@@ -3968,8 +3968,8 @@
 			"method": "get",
 			"summary": "通过资源类型ID获取资源类型",
 			"version": "v1",
-			"requestTypeName": "GetResourceTypesByIdReqType",
-			"responsesTypeName": "GetResourceTypesByIdResType",
+			"requestTypeName": "GetResourceTypeByIdReqType",
+			"responsesTypeName": "GetResourceTypeByIdResType",
 			"operationId": "GetResourceType",
 			"parameters": [
 				{
@@ -10713,8 +10713,8 @@
 			"method": "get",
 			"summary": "获取条件配置",
 			"version": "v1",
-			"requestTypeName": "GetConTemByIdReqType",
-			"responsesTypeName": "GetConTemByIdResType",
+			"requestTypeName": "GetConditionTemplateByIdReqType",
+			"responsesTypeName": "GetConditionTemplateByIdResType",
 			"operationId": "GetConditionTemplate",
 			"parameters": [
 				{
@@ -10767,7 +10767,7 @@
 			"method": "put",
 			"summary": "更新条件配置",
 			"version": "v1",
-			"requestTypeName": "UpdateConfTemByIdReqType",
+			"requestTypeName": "EditConditionTemplateReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -10818,7 +10818,7 @@
 			"method": "delete",
 			"summary": "删除条件配置",
 			"version": "v1",
-			"requestTypeName": "DeleteConfTemByIdReqType",
+			"requestTypeName": "DeleteConditionTemplateReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -10839,8 +10839,8 @@
 			"method": "get",
 			"summary": "搜索条件配置",
 			"version": "v1",
-			"requestTypeName": "GetConfTemReqType",
-			"responsesTypeName": "GetConfTemResType",
+			"requestTypeName": "GetConditionTemplatesReqType",
+			"responsesTypeName": "GetConditionTemplatesResType",
 			"operationId": "GetConditionTemplates",
 			"parameters": [
 				{
@@ -10888,8 +10888,8 @@
 			"method": "post",
 			"summary": "新增条件配置",
 			"version": "v1",
-			"requestTypeName": "AddConfTemReqType",
-			"responsesTypeName": "AddConfTemResType",
+			"requestTypeName": "AddConditionTemplateReqType",
+			"responsesTypeName": "AddConditionTemplateResType",
 			"parameters": null,
 			"responses": [
 				{
@@ -10962,8 +10962,8 @@
 			"method": "get",
 			"summary": "获取i18n",
 			"version": "v1",
-			"requestTypeName": "GetI18NConfByIdReqType",
-			"responsesTypeName": "GetI18NConfByIdResType",
+			"requestTypeName": "GetI18NConfigByIdReqType",
+			"responsesTypeName": "GetI18NConfigByIdResType",
 			"operationId": "GetI18NConfig",
 			"parameters": [
 				{
@@ -11010,7 +11010,7 @@
 			"method": "put",
 			"summary": "更新i18n",
 			"version": "v1",
-			"requestTypeName": "UpdateI18NConfByIdReqType",
+			"requestTypeName": "EditI18NConfigReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -11054,7 +11054,7 @@
 			"method": "delete",
 			"summary": "删除i18n",
 			"version": "v1",
-			"requestTypeName": "DeleteI18NConfByIdReqType",
+			"requestTypeName": "DeleteI18NConfigReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -11075,8 +11075,8 @@
 			"method": "get",
 			"summary": "搜索i18n",
 			"version": "v1",
-			"requestTypeName": "GetI18NConfReqType",
-			"responsesTypeName": "GetI18NConfResType",
+			"requestTypeName": "GetI18NConfigsReqType",
+			"responsesTypeName": "GetI18NConfigsResType",
 			"operationId": "GetI18NConfigs",
 			"parameters": [
 				{
@@ -11124,8 +11124,8 @@
 			"method": "post",
 			"summary": "新增i18n",
 			"version": "v1",
-			"requestTypeName": "AddI18NConfReqType",
-			"responsesTypeName": "AddI18NConfResType",
+			"requestTypeName": "AddI18NConfigReqType",
+			"responsesTypeName": "AddI18NConfigResType",
 			"parameters": null,
 			"responses": [
 				{
@@ -11185,8 +11185,8 @@
 			"method": "get",
 			"summary": "获取通知配置",
 			"version": "v1",
-			"requestTypeName": "GetNotifyConfByIdReqType",
-			"responsesTypeName": "GetNotifyConfByIdResType",
+			"requestTypeName": "GetNotifyConfigByIdReqType",
+			"responsesTypeName": "GetNotifyConfigByIdResType",
 			"operationId": "GetNotifyConfig",
 			"parameters": [
 				{
@@ -11279,7 +11279,7 @@
 			"method": "put",
 			"summary": "更新通知配置",
 			"version": "v1",
-			"requestTypeName": "UpdateNotifyConfByIdReqType",
+			"requestTypeName": "EditNotifyConfigReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -11354,7 +11354,7 @@
 			"method": "delete",
 			"summary": "删除通知配置",
 			"version": "v1",
-			"requestTypeName": "DeleteNotifyConfByIdReqType",
+			"requestTypeName": "DeleteNotifyConfigReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -11375,8 +11375,8 @@
 			"method": "get",
 			"summary": "搜索通知配置",
 			"version": "v1",
-			"requestTypeName": "GetNotifyConfReqType",
-			"responsesTypeName": "GetNotifyConfResType",
+			"requestTypeName": "GetNotifyConfigsReqType",
+			"responsesTypeName": "GetNotifyConfigsResType",
 			"operationId": "GetNotifyConfigs",
 			"parameters": [
 				{
@@ -11431,8 +11431,8 @@
 			"method": "post",
 			"summary": "新增通知配置",
 			"version": "v1",
-			"requestTypeName": "AddNotifyConfReqType",
-			"responsesTypeName": "AddNotifyConfResType",
+			"requestTypeName": "AddNotifyConfigReqType",
+			"responsesTypeName": "AddNotifyConfigResType",
 			"parameters": null,
 			"responses": [
 				{
@@ -11570,7 +11570,7 @@
 			"summary": "获取全部通知类型",
 			"version": "v1",
 			"requestTypeName": "CommonReqType",
-			"responsesTypeName": "GetNotifyConfTypesResType",
+			"responsesTypeName": "GetNotifyConfigTypesResType",
 			"parameters": null,
 			"responses": [
 				{
@@ -11595,7 +11595,7 @@
 			"method": "put",
 			"summary": "启用通知配置",
 			"version": "v1",
-			"requestTypeName": "EnableNotifyConfByIdReqType",
+			"requestTypeName": "OpenNotifyConfigReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -11727,8 +11727,8 @@
 			"method": "get",
 			"summary": "搜索通知记录",
 			"version": "v1",
-			"requestTypeName": "GetNotifyRecordReqType",
-			"responsesTypeName": "GetNotifyRecordResType",
+			"requestTypeName": "GetNotifyRecordsReqType",
+			"responsesTypeName": "GetNotifyRecordsResType",
 			"operationId": "GetNotifyRecords",
 			"parameters": [
 				{
@@ -11843,7 +11843,7 @@
 			"method": "put",
 			"summary": "更新占位符",
 			"version": "v1",
-			"requestTypeName": "UpdatePlaceholderByIdReqType",
+			"requestTypeName": "EditPlaceholderReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -11909,7 +11909,7 @@
 			"method": "delete",
 			"summary": "删除占位符",
 			"version": "v1",
-			"requestTypeName": "DeletePlaceholderByIdReqType",
+			"requestTypeName": "DeletePlaceholderReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -11979,8 +11979,8 @@
 			"method": "post",
 			"summary": "新增占位符",
 			"version": "v1",
-			"requestTypeName": "AddPlaceholdersReqType",
-			"responsesTypeName": "AddPlaceholdersResType",
+			"requestTypeName": "AddPlaceholderReqType",
+			"responsesTypeName": "AddPlaceholderResType",
 			"parameters": null,
 			"responses": [
 				{
@@ -12161,8 +12161,8 @@
 			"method": "post",
 			"summary": "新增场景",
 			"version": "v1",
-			"requestTypeName": "AddScenesReqType",
-			"responsesTypeName": "AddScenesResType",
+			"requestTypeName": "AddSceneReqType",
+			"responsesTypeName": "AddSceneResType",
 			"parameters": null,
 			"responses": [
 				{
@@ -12240,8 +12240,8 @@
 			"method": "get",
 			"summary": "获取scheme",
 			"version": "v1",
-			"requestTypeName": "GetSchemeByIdReqType",
-			"responsesTypeName": "GetSchemeByIdResType",
+			"requestTypeName": "GetSchemeReqType",
+			"responsesTypeName": "GetSchemeResType",
 			"operationId": "GetScheme",
 			"parameters": [
 				{
@@ -12333,7 +12333,7 @@
 			"method": "put",
 			"summary": "更新scheme",
 			"version": "v1",
-			"requestTypeName": "UpdateSchemeByIdReqType",
+			"requestTypeName": "EditSchemeReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -12419,7 +12419,7 @@
 			"method": "delete",
 			"summary": "删除scheme",
 			"version": "v1",
-			"requestTypeName": "DeleteSchemeByIdReqType",
+			"requestTypeName": "DeleteSchemeReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -12489,8 +12489,8 @@
 			"method": "post",
 			"summary": "新增scheme",
 			"version": "v1",
-			"requestTypeName": "AddSchemesReqType",
-			"responsesTypeName": "AddSchemesResType",
+			"requestTypeName": "AddSchemeReqType",
+			"responsesTypeName": "AddSchemeResType",
 			"parameters": null,
 			"responses": [
 				{
@@ -12740,7 +12740,7 @@
 			"method": "put",
 			"summary": "更新模板",
 			"version": "v1",
-			"requestTypeName": "UpdateTemplateByIdReqType",
+			"requestTypeName": "EditTemplateReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -12848,7 +12848,7 @@
 			"method": "delete",
 			"summary": "删除模板",
 			"version": "v1",
-			"requestTypeName": "DeleteTemplateByIdReqType",
+			"requestTypeName": "DeleteTemplateReqType",
 			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
@@ -12918,8 +12918,8 @@
 			"method": "post",
 			"summary": "新增模板",
 			"version": "v1",
-			"requestTypeName": "AddTemplatesReqType",
-			"responsesTypeName": "AddTemplatesResType",
+			"requestTypeName": "AddTemplateReqType",
+			"responsesTypeName": "AddTemplateResType",
 			"parameters": null,
 			"responses": [
 				{
@@ -13098,8 +13098,8 @@
 			"method": "post",
 			"summary": "通知",
 			"version": "v1",
-			"requestTypeName": "WebHooksReqType",
-			"responsesTypeName": "WebHooksResType",
+			"requestTypeName": "PostNotificationReqType",
+			"responsesTypeName": "PostNotificationResType",
 			"parameters": null,
 			"responses": [
 				{

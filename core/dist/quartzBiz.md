@@ -49,7 +49,7 @@ type JobEntityOutCommonType = {
  * @params totalCount {number} 总数
  * @params records {JobEntityOutCommonType[]} 记录
 */
-type JobEntityOutResultCommonType = {
+type JobEntityOutReqCommonType = {
       totalCount?: number;
       records?: JobEntityOutCommonType[];
 }
@@ -183,7 +183,7 @@ type JobsEntityOutCommonType = {
  * @params totalCount {number} 总数
  * @params records {JobsEntityOutCommonType[]} 记录
 */
-type JobsEntityOutResultCommonType = {
+type JobsEntityOutReqCommonType = {
       totalCount?: number;
       records?: JobsEntityOutCommonType[];
 }

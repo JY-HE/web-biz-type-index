@@ -400,7 +400,7 @@ type TemplateInCommonType = {
  * @params timeout {number} 请求超时设置(单位：秒) （必填）
 */
 export type GradingDispatchReqType = {
-      X-version?: string;
+      'X-version'?: string;
       version: string;
       id: string;
       bizName: string;
@@ -437,7 +437,7 @@ export type GetMultimediaTransfersReqType = {
       PlatformId?: string;
       page?: number;
       per_page?: number;
-      X-version?: string;
+      'X-version'?: string;
 }
 
 
@@ -467,7 +467,7 @@ export type GetMultimediaTransfersResType = {
  * @params companyAddress {string} 单位地址 
 */
 export type AddMultimediaTransfersReqType = {
-      X-version?: string;
+      'X-version'?: string;
       name: string;
       templateId?: string;
       longitude: number;
@@ -546,7 +546,7 @@ export type AddMultimediaTransfersResType = {
  * @params isMatchNullAreaCode {boolean} 是否匹配空行政区域 
 */
 export type SearchMultimediaTransfersReqType = {
-      X-version?: string;
+      'X-version'?: string;
       pageIndex?: number;
       pageSize?: number;
       beginTime?: string;
@@ -583,7 +583,7 @@ export type SearchMultimediaTransfersResType = {
 export type GetMultimediaTransfersByIdReqType = {
       id: string;
       platformId?: string;
-      X-version?: string;
+      'X-version'?: string;
 }
 
 
@@ -643,7 +643,7 @@ export type GetMultimediaTransfersByIdResType = {
 */
 export type DeleteMultimediaTransfersReqType = {
       id: string;
-      X-version?: string;
+      'X-version'?: string;
 }
 
 
@@ -654,7 +654,7 @@ export type DeleteMultimediaTransfersReqType = {
  * @params endTime {string} 结束时间 
 */
 export type CompleteMultimediaTransfersReqType = {
-      X-version?: string;
+      'X-version'?: string;
       beginTime?: string;
       endTime?: string;
 }
@@ -671,7 +671,7 @@ export type GetMultimediaTemplatesReqType = {
       keyword?: string;
       page?: number;
       per_page?: number;
-      X-version?: string;
+      'X-version'?: string;
 }
 
 
@@ -694,8 +694,8 @@ export type GetMultimediaTemplatesResType = {
  * @params title {string} 标题 （必填）
  * @params placeHolders {PlaceHolderCommonType[]} 模板占位符 
 */
-export type AddMultimediaTemplatesReqType = {
-      X-version?: string;
+export type AddTemplatesReqType = {
+      'X-version'?: string;
       name: string;
       description?: string;
       title: string;
@@ -713,7 +713,7 @@ export type AddMultimediaTemplatesReqType = {
  * @params resourceId {string} 资源ID
  * @params platformId {string} 平台Id
 */
-export type AddMultimediaTemplatesResType = {
+export type AddTemplatesResType = {
       id: string;
       name: string;
       description: string;
@@ -733,7 +733,7 @@ export type AddMultimediaTemplatesResType = {
 export type GetTemplatesByIdReqType = {
       id: string;
       platformId?: string;
-      X-version?: string;
+      'X-version'?: string;
 }
 
 
@@ -769,7 +769,7 @@ export type GetTemplatesByIdResType = {
 */
 export type EditTemplatesReqType = {
       id: string;
-      X-version?: string;
+      'X-version'?: string;
       name: string;
       description?: string;
       title: string;
@@ -784,6 +784,6 @@ export type EditTemplatesReqType = {
 */
 export type DeleteTemplatesReqType = {
       id: string;
-      X-version?: string;
+      'X-version'?: string;
 }
 
