@@ -3,7 +3,6 @@ const path = require('path');
 const { readFileSync, readJson, writeFileSync, ensureFile, copyFileSync } = require('fs-extra');
 const childProcess = require('child_process');
 const bodyParser = require('body-parser');
-const axios = require('axios');
 const url = require('./const');
 
 const app = express();
@@ -16,8 +15,9 @@ router.get('/admin', (req, res) => {
     res.sendFile(url.ADMIN_HTML_PATH);
 });
 app.use(router);
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// 增大请求体的限制
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(bodyParser.json({ limit: '50mb' }));
 
 /** 获取新接口 */
 app.get('/api/newApi', async (req, res) => {

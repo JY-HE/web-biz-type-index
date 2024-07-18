@@ -25,6 +25,8 @@ class Initializer {
         this.warehouseTypes = {};
         // 过滤忽略的接口
         this.ignorePaths = {};
+        // 已有方法集合
+        this.methods = {};
         this.getJsonFileData();
         this.init();
     }
@@ -35,6 +37,7 @@ class Initializer {
     async getJsonFileData() {
         this.warehouseTypes = await readJson(path.join(__dirname, './warehouseTypes.json'));
         this.ignorePaths = await readJson(path.join(__dirname, './ignoreTypes.json'));
+        this.methods = await readJson(path.join(__dirname, './methods.json'));
     }
 
     async init() {
@@ -78,6 +81,10 @@ class Initializer {
                              * 处理 requestConfig 请求配置
                              */
                             const warehouseTypesDataInfo = this.warehouseTypes[bizName]?.[`${methodType}&${url}${version != 'v1' ? '&' + version : ''}`];
+                            // 根据已有的biz库方法名创建requestTypeName和responsesTypeName
+                            const methodsName = this.methods[bizName]?.[`${methodType}&${url}${version != 'v1' ? '&' + version : ''}`];
+                            const requestTypeName = warehouseTypesDataInfo?.requestTypeName || this.getNameFromMethodsJson(1, parameters, requestBody, transformResponses, methodsName);
+                            const responsesTypeName = warehouseTypesDataInfo?.responsesTypeName || this.getNameFromMethodsJson(2, parameters, requestBody, transformResponses, methodsName);
                             // 已有的接口不再入库
                             const canSave = this.buildType == 0 || (this.buildType == 1 && !warehouseTypesDataInfo) || (this.buildType == 2 && !!warehouseTypesDataInfo);
                             canSave &&
@@ -87,8 +94,8 @@ class Initializer {
                                     method: methodType,
                                     summary,
                                     version,
-                                    requestTypeName: warehouseTypesDataInfo?.requestTypeName || '',
-                                    responsesTypeName: warehouseTypesDataInfo?.responsesTypeName || '',
+                                    requestTypeName,
+                                    responsesTypeName,
                                     operationId,
                                     parameters: transformParams,
                                     responses: transformResponses,
@@ -113,6 +120,40 @@ class Initializer {
                 await createMarkdown.startup(key, this.requestConfig[key]);
             }
         }
+    }
+
+    /**
+     * 根据已有的biz库方法名创建requestTypeName和responsesTypeName
+     * @param {number} type 1-requestTypeName 2-responsesTypeName
+     * @param {object} parameters api参数对象
+     * @param {object} requestBody api请求体对象
+     * @param {object} responses api响应对象
+     * @param {string} methodsName 已有的biz库方法名
+     * @returns {string} 创建好的requestTypeName或responsesTypeName
+     */
+    getNameFromMethodsJson(type, parameters, requestBody, responses, methodsName) {
+        if (type === 1) {
+            if (!parameters && !requestBody) {
+                return 'CommonReqType';
+            } else {
+                return methodsName ? `${this.capitalizeFirstLetter(methodsName)}ReqType` : '';
+            }
+        } else {
+            if (!responses) {
+                return 'CommonResType';
+            } else {
+                return methodsName ? `${this.capitalizeFirstLetter(methodsName)}ResType` : '';
+            }
+        }
+    }
+
+    /**
+     * 字符串首字母大写
+     * @param {string} str
+     * @returns {string} 转换后的字符串
+     */
+    capitalizeFirstLetter(str) {
+        return str ? str.replace(/^\w/, (c) => c.toUpperCase()) : '';
     }
 
     /**

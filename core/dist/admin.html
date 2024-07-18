@@ -266,9 +266,12 @@
                     // 检查是否有重名
                     checkName() {
                         return new Promise((resolved, rejected) => {
-                            const newApiNameArr = Object.entries(this.newApi).reduce((pre, [bizName, list]) => {
-                                return [...pre, ...list.map((i) => i.requestTypeName), ...list.map((i) => i.responsesTypeName)].filter(Boolean);
-                            }, []);
+                            const newApiNameArr = Object.entries(this.newApi)
+                                .reduce((pre, [bizName, list]) => {
+                                    return [...pre, ...list.map((i) => i.requestTypeName), ...list.map((i) => i.responsesTypeName)].filter(Boolean);
+                                }, [])
+                                .filter((item) => item !== 'CommonReqType' && item !== 'CommonResType');
+
                             // 判断newApiNameArr是否有重复项
                             const { duplicates } = newApiNameArr.reduce(
                                 (acc, item) => {
