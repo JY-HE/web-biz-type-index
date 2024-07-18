@@ -7,7 +7,7 @@
 			"summary": "上报GPS点位",
 			"version": "v1",
 			"requestTypeName": "UpdateDeviceReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "device",
@@ -489,7 +489,7 @@
 			"summary": "历史点补全",
 			"version": "v1",
 			"requestTypeName": "UpdateHistoryGpsReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": null,
 			"responses": null,
 			"requestBody": [
@@ -817,7 +817,7 @@
 			"method": "get",
 			"summary": "通过语音信息列表",
 			"version": "v1",
-			"requestTypeName": "",
+			"requestTypeName": "CommonReqType",
 			"responsesTypeName": "GetVoiceInfosResType",
 			"parameters": null,
 			"responses": [
@@ -871,7 +871,7 @@
 			"summary": "分级调度操作",
 			"version": "v1",
 			"requestTypeName": "GradingDispatchReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "X-version",
@@ -1555,7 +1555,7 @@
 			"summary": "删除拍传",
 			"version": "v1",
 			"requestTypeName": "DeleteMultimediaTransfersReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -1583,7 +1583,7 @@
 			"summary": "拍传数据补全",
 			"version": "v1",
 			"requestTypeName": "CompleteMultimediaTransfersReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"operationId": "CompleteData",
 			"parameters": [
 				{
@@ -1848,7 +1848,7 @@
 			"summary": "更新拍传模板",
 			"version": "v1",
 			"requestTypeName": "EditTemplatesReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -1906,7 +1906,7 @@
 			"summary": "删除拍传模板",
 			"version": "v1",
 			"requestTypeName": "DeleteTemplatesReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -2244,7 +2244,7 @@
 			"summary": "修改一个定时任务",
 			"version": "v1",
 			"requestTypeName": "UpdateJobsByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -2323,7 +2323,7 @@
 			"summary": "删除定时任务",
 			"version": "v1",
 			"requestTypeName": "DeleteJobsByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -2344,7 +2344,7 @@
 			"summary": "立刻执行任务一次",
 			"version": "v1",
 			"requestTypeName": "ExecuteJobsByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -2365,7 +2365,7 @@
 			"summary": "停止指定任务",
 			"version": "v1",
 			"requestTypeName": "PauseJobsByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -2386,7 +2386,7 @@
 			"summary": "恢复指定任务",
 			"version": "v1",
 			"requestTypeName": "ResumeJobsByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -2738,7 +2738,7 @@
 			"summary": "更新作业，包含子作业",
 			"version": "v1",
 			"requestTypeName": "UpdateMultipleByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -2825,7 +2825,7 @@
 			"summary": "删除作业，包含子作业",
 			"version": "v1",
 			"requestTypeName": "DeleteMultipleByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -3322,7 +3322,7 @@
 			"summary": "更新主资源",
 			"version": "v1",
 			"requestTypeName": "UpdateMainResByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -3358,7 +3358,7 @@
 			"summary": "删除主资源",
 			"version": "v1",
 			"requestTypeName": "DeleteMainResByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -3623,7 +3623,7 @@
 			"summary": "绑定资源关系",
 			"version": "v1",
 			"requestTypeName": "BatchResRelationshipsReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": null,
 			"responses": null,
 			"requestBody": [
@@ -3652,7 +3652,7 @@
 			"summary": "解绑资源关系",
 			"version": "v1",
 			"requestTypeName": "UntieResRelationshipsReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": null,
 			"responses": null,
 			"requestBody": [
@@ -3816,7 +3816,7 @@
 			"summary": "更新资源",
 			"version": "v1",
 			"requestTypeName": "UpdateResourcesByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -3852,7 +3852,7 @@
 			"summary": "删除资源",
 			"version": "v1",
 			"requestTypeName": "DeleteResourcesByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -4005,6 +4005,6707 @@
 			"requestBody": null
 		}
 	],
+	"dcsBiz": [
+		{
+			"url": "/api/Businesses",
+			"tag": "Businesses",
+			"method": "get",
+			"summary": "获取行业分类列表",
+			"version": "v1",
+			"requestTypeName": "CommonReqType",
+			"responsesTypeName": "GetBusinessesResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "BusinessOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckRule/Search",
+			"tag": "CheckRule",
+			"method": "get",
+			"summary": "查询质检规则",
+			"version": "v1",
+			"requestTypeName": "SearchCheckRuleReqType",
+			"responsesTypeName": "SearchCheckRuleResType",
+			"parameters": [
+				{
+					"key": "Name",
+					"type": "string",
+					"description": "名称",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "TypeId",
+					"type": "string",
+					"description": "类型Id",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "UpdateTimeBegin",
+					"type": "string",
+					"description": "更新时间左端点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "UpdateTimeEnd",
+					"type": "string",
+					"description": "更新时间右端点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "Updater",
+					"type": "string",
+					"description": "更新人",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "Sort",
+					"type": "integer",
+					"description": "排序,0创建时间升序，1创建时间降序，2更新时间升序，3更新时间降序",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "CheckRuleOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckRule/{resourceId}/CheckRuleRelationMetadata",
+			"tag": "CheckRule",
+			"method": "get",
+			"summary": "查询质检规则的关联元数据信息",
+			"version": "v1",
+			"requestTypeName": "GetCheckRuleRelatedMetadataReqType",
+			"responsesTypeName": "GetCheckRuleRelatedMetadataResType",
+			"parameters": [
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "resourceId",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "CheckRuleRelationMetadataOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckRule",
+			"tag": "CheckRule",
+			"method": "post",
+			"summary": "添加质检规则",
+			"version": "v1",
+			"requestTypeName": "AddCheckRuleReqType",
+			"responsesTypeName": "AddCheckRuleResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建时间",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "修改时间",
+					"required": false
+				},
+				{
+					"key": "creator",
+					"type": "string",
+					"description": "创建者",
+					"required": false
+				},
+				{
+					"key": "updater",
+					"type": "string",
+					"description": "更新者",
+					"required": false
+				},
+				{
+					"key": "note",
+					"type": "string",
+					"description": "规则备注",
+					"required": false
+				},
+				{
+					"key": "ruleConfig",
+					"type": "string",
+					"description": "规则配置",
+					"required": false
+				},
+				{
+					"key": "ruleTypeId",
+					"type": "string",
+					"description": "关联的规则Id",
+					"required": false
+				},
+				{
+					"key": "relationMetadataIds",
+					"type": "array",
+					"description": "关联的元数据列表",
+					"required": false
+				},
+				{
+					"key": "checkRuleRelationMetadatas",
+					"type": "array",
+					"description": "关联的字段信息",
+					"required": false,
+					"typeNameMap": "CheckRuleRelationMetadataCommonType"
+				},
+				{
+					"key": "checkRuleType",
+					"type": "object",
+					"description": "校验规则类型",
+					"required": false,
+					"typeNameMap": "CheckRuleTypeCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "creator",
+					"type": "string",
+					"description": "创建者",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "updater",
+					"type": "string",
+					"description": "更新者",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "note",
+					"type": "string",
+					"description": "规则备注",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "ruleConfig",
+					"type": "string",
+					"description": "规则配置",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "ruleTypeId",
+					"type": "string",
+					"description": "关联的规则Id",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "relationMetadataIds",
+					"type": "array",
+					"description": "关联的元数据列表",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/CheckRule/{resourceId}",
+			"tag": "CheckRule",
+			"method": "put",
+			"summary": "修改质检规则",
+			"version": "v1",
+			"requestTypeName": "EditCheckRuleReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "resourceId",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "Id",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建时间",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "修改时间",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "creator",
+					"type": "string",
+					"description": "创建者",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "updater",
+					"type": "string",
+					"description": "更新者",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "note",
+					"type": "string",
+					"description": "规则备注",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "ruleConfig",
+					"type": "string",
+					"description": "规则配置",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "ruleTypeId",
+					"type": "string",
+					"description": "关联的规则Id",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "relationMetadataIds",
+					"type": "array",
+					"description": "关联的元数据列表",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/CheckRule/{resourceId}",
+			"tag": "CheckRule",
+			"method": "delete",
+			"summary": "删除质检规则",
+			"version": "v1",
+			"requestTypeName": "DeleteCheckRuleReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "resourceId",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckRuleType",
+			"tag": "CheckRuleType",
+			"method": "get",
+			"summary": "获取质检规则",
+			"version": "v1",
+			"requestTypeName": "CommonReqType",
+			"responsesTypeName": "GetCheckRuleTypeResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建时间",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "修改时间",
+					"required": false
+				},
+				{
+					"key": "creator",
+					"type": "string",
+					"description": "创建者",
+					"required": false
+				},
+				{
+					"key": "updater",
+					"type": "string",
+					"description": "更新者",
+					"required": false
+				},
+				{
+					"key": "ruleType",
+					"type": "integer",
+					"description": "规则类型",
+					"required": false,
+					"typeNameMap": "RuleTypeCommonType"
+				},
+				{
+					"key": "configTemplate",
+					"type": "string",
+					"description": "配置模板",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckTaskInfo/Search",
+			"tag": "CheckTaskInfo",
+			"method": "get",
+			"summary": "按照条件查询质检任务列表",
+			"version": "v1",
+			"requestTypeName": "GetCheckTaskInfoReqType",
+			"responsesTypeName": "GetCheckTaskInfoResType",
+			"parameters": [
+				{
+					"key": "Name",
+					"type": "string",
+					"description": "名称",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "MetadataName",
+					"type": "string",
+					"description": "元数据名称",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "UpdateTimeBegin",
+					"type": "string",
+					"description": "更新时间起点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "UpdateTimeEnd",
+					"type": "string",
+					"description": "更新时间终点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "ExecuteStatus",
+					"type": "integer",
+					"description": "执行状态",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "CheckTaskInfoOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckTaskInfo/{id}/Detail",
+			"tag": "CheckTaskInfo",
+			"method": "get",
+			"summary": "按照Id查询质检任务详情信息",
+			"version": "v1",
+			"requestTypeName": "GetCheckTaskInfoByIdReqType",
+			"responsesTypeName": "GetCheckTaskInfoByIdResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源ID",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建时间",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "修改时间",
+					"required": false
+				},
+				{
+					"key": "creator",
+					"type": "string",
+					"description": "创建者",
+					"required": false
+				},
+				{
+					"key": "updater",
+					"type": "string",
+					"description": "更新者",
+					"required": false
+				},
+				{
+					"key": "checkMetadataId",
+					"type": "string",
+					"description": "质检元数据对象Id",
+					"required": false
+				},
+				{
+					"key": "checkMetadataName",
+					"type": "string",
+					"description": "检测对象名称",
+					"required": false
+				},
+				{
+					"key": "cronExpression",
+					"type": "string",
+					"description": "Cron表达式",
+					"required": false
+				},
+				{
+					"key": "note",
+					"type": "string",
+					"description": "备注",
+					"required": false
+				},
+				{
+					"key": "allCheckDataCount",
+					"type": "integer",
+					"description": "检测数据总量",
+					"required": false
+				},
+				{
+					"key": "allCheckErrorDataCount",
+					"type": "integer",
+					"description": "检测失败总量",
+					"required": false
+				},
+				{
+					"key": "allCheckCount",
+					"type": "integer",
+					"description": "检查数量",
+					"required": false
+				},
+				{
+					"key": "lastCheckDataCount",
+					"type": "integer",
+					"description": "上一次检查数量",
+					"required": false
+				},
+				{
+					"key": "checkAvgRating",
+					"type": "number",
+					"description": "检测平均评分",
+					"required": false
+				},
+				{
+					"key": "lastCheckTime",
+					"type": "string",
+					"description": "最近一次检测时间",
+					"required": false
+				},
+				{
+					"key": "timeConsuming",
+					"type": "number",
+					"description": "耗时",
+					"required": false
+				},
+				{
+					"key": "isErrors",
+					"type": "boolean",
+					"description": "是否出错",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckTaskInfo/SingleExecution",
+			"tag": "CheckTaskInfo",
+			"method": "put",
+			"summary": "立即执行作业",
+			"version": "v1",
+			"requestTypeName": "RunCheckTaskReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "query"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckTaskInfo/{id}/CheckTaskExecuteRecord/Search",
+			"tag": "CheckTaskInfo",
+			"method": "get",
+			"summary": "按照条件查询质检任务执行记录列表",
+			"version": "v1",
+			"requestTypeName": "SearchCheckTaskInfoReqType",
+			"responsesTypeName": "SearchCheckTaskInfoResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "MetadataId",
+					"type": "string",
+					"description": "元数据Id",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "StartTimeBegin",
+					"type": "string",
+					"description": "开始时间起点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "StartTimeEnd",
+					"type": "string",
+					"description": "开始时间终点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "CheckTaskExecuteRecordOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckTaskInfo/CheckTaskExecuteRecord/{id}",
+			"tag": "CheckTaskInfo",
+			"method": "get",
+			"summary": "查询质检任务执行记录单个信息",
+			"version": "v1",
+			"requestTypeName": "GetCheckTaskExecuteRecordByIdReqType",
+			"responsesTypeName": "GetCheckTaskExecuteRecordByIdResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "检查记录ID",
+					"required": false
+				},
+				{
+					"key": "checkTaskId",
+					"type": "string",
+					"description": "检查任务Id",
+					"required": false
+				},
+				{
+					"key": "checkRowCount",
+					"type": "integer",
+					"description": "检查行数",
+					"required": false
+				},
+				{
+					"key": "checkErrorCount",
+					"type": "integer",
+					"description": "检查错误数",
+					"required": false
+				},
+				{
+					"key": "checkRating",
+					"type": "number",
+					"description": "质检评分",
+					"required": false
+				},
+				{
+					"key": "startTime",
+					"type": "string",
+					"description": "开始时间",
+					"required": false
+				},
+				{
+					"key": "endTime",
+					"type": "string",
+					"description": "结束时间",
+					"required": false
+				},
+				{
+					"key": "timeConsumer",
+					"type": "integer",
+					"description": "耗时",
+					"required": false
+				},
+				{
+					"key": "checkMetadaName",
+					"type": "string",
+					"description": "检查的元数据名称",
+					"required": false
+				},
+				{
+					"key": "isErrors",
+					"type": "boolean",
+					"description": "是否执行错误",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckTaskInfo/CheckTaskExecuteRecord/Search",
+			"tag": "CheckTaskInfo",
+			"method": "get",
+			"summary": "查询质检任务搜索执行记录",
+			"version": "v1",
+			"requestTypeName": "GetCheckTaskExecuteRecordReqType",
+			"responsesTypeName": "GetCheckTaskExecuteRecordResType",
+			"parameters": [
+				{
+					"key": "MetadataId",
+					"type": "string",
+					"description": "元数据Id",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "StartTimeBegin",
+					"type": "string",
+					"description": "开始时间起点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "StartTimeEnd",
+					"type": "string",
+					"description": "开始时间终点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "检查记录ID",
+					"required": false
+				},
+				{
+					"key": "checkTaskId",
+					"type": "string",
+					"description": "检查任务Id",
+					"required": false
+				},
+				{
+					"key": "checkRowCount",
+					"type": "integer",
+					"description": "检查行数",
+					"required": false
+				},
+				{
+					"key": "checkErrorCount",
+					"type": "integer",
+					"description": "检查错误数",
+					"required": false
+				},
+				{
+					"key": "checkRating",
+					"type": "number",
+					"description": "质检评分",
+					"required": false
+				},
+				{
+					"key": "startTime",
+					"type": "string",
+					"description": "开始时间",
+					"required": false
+				},
+				{
+					"key": "endTime",
+					"type": "string",
+					"description": "结束时间",
+					"required": false
+				},
+				{
+					"key": "timeConsumer",
+					"type": "integer",
+					"description": "耗时",
+					"required": false
+				},
+				{
+					"key": "checkMetadaName",
+					"type": "string",
+					"description": "检查的元数据名称",
+					"required": false
+				},
+				{
+					"key": "isErrors",
+					"type": "boolean",
+					"description": "是否执行错误",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/CheckTaskInfo/CheckTaskExecuteRecord/{id}/Errors",
+			"tag": "CheckTaskInfo",
+			"method": "get",
+			"summary": "分页查询质检任务检测详情出错的数据列表",
+			"version": "v1",
+			"requestTypeName": "GetCheckTaskExecuteRecordErrorsReqType",
+			"responsesTypeName": "GetCheckTaskExecuteRecordErrorsResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "CheckTaskExecuteRecordDetailOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/DataSource",
+			"tag": "DataSource",
+			"method": "get",
+			"summary": "",
+			"version": "v1",
+			"requestTypeName": "GetDataSourceReqType",
+			"responsesTypeName": "GetDataSourceResType",
+			"parameters": [
+				{
+					"key": "DataSourceName",
+					"type": "string",
+					"description": "数据源名称",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "DatabaseName",
+					"type": "string",
+					"description": "数据库名称",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "Ip",
+					"type": "string",
+					"description": "数据库Ip",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "DataSourceOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/DataSource",
+			"tag": "DataSource",
+			"method": "post",
+			"summary": "添加数据源",
+			"version": "v1",
+			"requestTypeName": "AddDataSourceReqType",
+			"responsesTypeName": "AddDataSourceResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "host",
+					"type": "string",
+					"description": "域名",
+					"required": false
+				},
+				{
+					"key": "port",
+					"type": "integer",
+					"description": "端口",
+					"required": false
+				},
+				{
+					"key": "account",
+					"type": "string",
+					"description": "账号",
+					"required": false
+				},
+				{
+					"key": "password",
+					"type": "string",
+					"description": "密码",
+					"required": false
+				},
+				{
+					"key": "schema",
+					"type": "string",
+					"description": "模式名",
+					"required": false
+				},
+				{
+					"key": "dbType",
+					"type": "integer",
+					"description": "数据源类型",
+					"required": false,
+					"typeNameMap": "DatabaseTypeCommonType"
+				},
+				{
+					"key": "updateTIme",
+					"type": "string",
+					"description": "更新时间",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "数据源名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "host",
+					"type": "string",
+					"description": "域名",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "port",
+					"type": "integer",
+					"description": "端口",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "account",
+					"type": "string",
+					"description": "账号",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "password",
+					"type": "string",
+					"description": "密码",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "schema",
+					"type": "string",
+					"description": "模式名",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dbType",
+					"type": "integer",
+					"description": "数据源类型",
+					"required": false,
+					"typeNameMap": "DatabaseTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "数据源id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/DataSource/{resourceId}",
+			"tag": "DataSource",
+			"method": "put",
+			"summary": "修改数据源",
+			"version": "v1",
+			"requestTypeName": "EditDataSourceReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "resourceId",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "数据源名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "host",
+					"type": "string",
+					"description": "域名",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "port",
+					"type": "integer",
+					"description": "端口",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "account",
+					"type": "string",
+					"description": "账号",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "password",
+					"type": "string",
+					"description": "密码",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "schema",
+					"type": "string",
+					"description": "模式名",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dbType",
+					"type": "integer",
+					"description": "数据源类型",
+					"required": false,
+					"typeNameMap": "DatabaseTypeCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/DataSource/{resourceId}",
+			"tag": "DataSource",
+			"method": "delete",
+			"summary": "删除数据源",
+			"version": "v1",
+			"requestTypeName": "DeleteDataSourceReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "resourceId",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/DataSource/{resourceId}/DbInfos",
+			"tag": "DataSource",
+			"method": "get",
+			"summary": "提供数据库信息",
+			"version": "v1",
+			"requestTypeName": "GetDbInfosByResourceIdReqType",
+			"responsesTypeName": "GetDbInfosByResourceIdResType",
+			"parameters": [
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "resourceId",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "DbInfoOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/DataSource/{resourceId}/DbInfos",
+			"tag": "DataSource",
+			"method": "post",
+			"summary": "抓取数据源提供的元数据",
+			"version": "v1",
+			"requestTypeName": "SearchMetadataInfoByResourceIdReqType",
+			"responsesTypeName": "SearchMetadataInfoByResourceIdResType",
+			"parameters": [
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "resourceId",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "code",
+					"type": "string",
+					"description": "元数据信息资源编码",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "元数据描述(摘要)",
+					"required": false
+				},
+				{
+					"key": "keyWords",
+					"type": "string",
+					"description": "关键字",
+					"required": false
+				},
+				{
+					"key": "developmentMode",
+					"type": "integer",
+					"description": "开发方式",
+					"required": false,
+					"typeNameMap": "DevelopmentModeCommonType"
+				},
+				{
+					"key": "updateFrequency",
+					"type": "integer",
+					"description": "更新频率",
+					"required": false,
+					"typeNameMap": "UpdateFrequencyCommonType"
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建日期",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "更新日期",
+					"required": false
+				},
+				{
+					"key": "publishTime",
+					"type": "string",
+					"description": "发布日期",
+					"required": false
+				},
+				{
+					"key": "resourceType",
+					"type": "integer",
+					"description": "资源格式",
+					"required": false,
+					"typeNameMap": "ResourceTypeCommonType"
+				},
+				{
+					"key": "administrativeMatters",
+					"type": "string",
+					"description": "所属行政事项",
+					"required": false
+				},
+				{
+					"key": "resourceStatus",
+					"type": "integer",
+					"description": "资源状态",
+					"required": false,
+					"typeNameMap": "ResourceStatusCommonType"
+				},
+				{
+					"key": "language",
+					"type": "string",
+					"description": "语种",
+					"required": false
+				},
+				{
+					"key": "onlineResourceLink",
+					"type": "string",
+					"description": "在线资源链接",
+					"required": false
+				},
+				{
+					"key": "sourceSystem",
+					"type": "string",
+					"description": "来源系统",
+					"required": false
+				},
+				{
+					"key": "spaceScope",
+					"type": "string",
+					"description": "空间（地域）范围",
+					"required": false
+				},
+				{
+					"key": "timeScope",
+					"type": "string",
+					"description": "时间范围",
+					"required": false
+				},
+				{
+					"key": "openLevel",
+					"type": "integer",
+					"description": "开放级别",
+					"required": false,
+					"typeNameMap": "OpenLevelCommonType"
+				},
+				{
+					"key": "dataItemDescriptions",
+					"type": "array",
+					"description": "数据项",
+					"required": false,
+					"typeNameMap": "DataItemDescriptionCommonType"
+				},
+				{
+					"key": "displayDataItemDescriptions",
+					"type": "array",
+					"description": "可展示字段",
+					"required": false,
+					"typeNameMap": "DisplayDataItemDescriptionCommonType"
+				},
+				{
+					"key": "tagIds",
+					"type": "array",
+					"description": "标签ID列表",
+					"required": false
+				},
+				{
+					"key": "kettleJobIds",
+					"type": "array",
+					"description": "关联的作业",
+					"required": false
+				},
+				{
+					"key": "businessOut",
+					"type": "object",
+					"description": "行业分类",
+					"required": false,
+					"typeNameMap": "BusinessOutCommonType"
+				},
+				{
+					"key": "serviceOut",
+					"type": "object",
+					"description": "服务分类",
+					"required": false,
+					"typeNameMap": "ServiceOutCommonType"
+				},
+				{
+					"key": "domainOut",
+					"type": "object",
+					"description": "数据领域",
+					"required": false,
+					"typeNameMap": "DomainOutCommonType"
+				},
+				{
+					"key": "departmentOut",
+					"type": "object",
+					"description": "行政单位",
+					"required": false,
+					"typeNameMap": "DepartmentOutCommonType"
+				},
+				{
+					"key": "districtOut",
+					"type": "object",
+					"description": "行政区域",
+					"required": false,
+					"typeNameMap": "DistrictOutCommonType"
+				},
+				{
+					"key": "themeOut",
+					"type": "object",
+					"description": "主题分类",
+					"required": false,
+					"typeNameMap": "ThemeOutCommonType"
+				},
+				{
+					"key": "dockInfo",
+					"type": "object",
+					"description": "对接信息(对接状态|方式|说明)",
+					"required": false,
+					"typeNameMap": "DockInfoCommonType"
+				},
+				{
+					"key": "projectInfo",
+					"type": "object",
+					"description": "项目信息",
+					"required": false,
+					"typeNameMap": "ProjectInfoCommonType"
+				},
+				{
+					"key": "totalDownloads",
+					"type": "integer",
+					"description": "下载量",
+					"required": false
+				},
+				{
+					"key": "totalViews",
+					"type": "integer",
+					"description": "浏览量",
+					"required": false
+				},
+				{
+					"key": "totalDataItems",
+					"type": "integer",
+					"description": "记录条数",
+					"required": false
+				},
+				{
+					"key": "fileSize",
+					"type": "integer",
+					"description": "文件大小(bytes)",
+					"required": false
+				},
+				{
+					"key": "fileCount",
+					"type": "integer",
+					"description": "文件数量(份)",
+					"required": false
+				},
+				{
+					"key": "dataSize",
+					"type": "integer",
+					"description": "数据量(条)",
+					"required": false
+				},
+				{
+					"key": "checkErrorDataCount",
+					"type": "integer",
+					"description": "检查错误的数据数量",
+					"required": false
+				},
+				{
+					"key": "dataRating",
+					"type": "number",
+					"description": "数据评分",
+					"required": false
+				},
+				{
+					"key": "bindTable",
+					"type": "string",
+					"description": "绑定的库表",
+					"required": false
+				},
+				{
+					"key": "bindSchema",
+					"type": "string",
+					"description": "绑定的模式",
+					"required": false
+				},
+				{
+					"key": "dasJobName",
+					"type": "string",
+					"description": "das job name",
+					"required": false
+				},
+				{
+					"key": "dataSourceId",
+					"type": "string",
+					"description": "数据源DataSource的id",
+					"required": false
+				},
+				{
+					"key": "selectDataItems",
+					"type": "object",
+					"description": "外部数据筛选类型数据",
+					"required": false
+				}
+			],
+			"requestBody": []
+		},
+		{
+			"url": "/api/Departments",
+			"tag": "Departments",
+			"method": "get",
+			"summary": "分页获取行政部门列表",
+			"version": "v1",
+			"requestTypeName": "GetDepartmentsReqType",
+			"responsesTypeName": "GetDepartmentsResType",
+			"operationId": "GetDepartments",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "关键词",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "DepartmentOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Departments",
+			"tag": "Departments",
+			"method": "post",
+			"summary": "新增行政部门",
+			"version": "v1",
+			"requestTypeName": "AddDepartmentsReqType",
+			"responsesTypeName": "AddDepartmentsResType",
+			"operationId": "CreateDepartment",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "部门描述",
+					"required": false
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "部门地址",
+					"required": false
+				},
+				{
+					"key": "areaCode",
+					"type": "string",
+					"description": "行政区划",
+					"required": false
+				},
+				{
+					"key": "totalMetadataCount",
+					"type": "integer",
+					"description": "",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "部门父Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "地址",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "areaCode",
+					"type": "string",
+					"description": "行政区划",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Departments/{id}",
+			"tag": "Departments",
+			"method": "get",
+			"summary": "获取行政部门详情（支持资源Id）",
+			"version": "v1",
+			"requestTypeName": "GetDepartmentByIdReqType",
+			"responsesTypeName": "GetDepartmentByIdResType",
+			"operationId": "GetDepartmentById",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "部门描述",
+					"required": false
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "部门地址",
+					"required": false
+				},
+				{
+					"key": "areaCode",
+					"type": "string",
+					"description": "行政区划",
+					"required": false
+				},
+				{
+					"key": "totalMetadataCount",
+					"type": "integer",
+					"description": "",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Departments/{id}",
+			"tag": "Departments",
+			"method": "put",
+			"summary": "修改行政部门",
+			"version": "v1",
+			"requestTypeName": "EditDepartmentReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "UpdateDepartment",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "部门父Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "地址",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "areaCode",
+					"type": "string",
+					"description": "行政区划",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Departments/{id}",
+			"tag": "Departments",
+			"method": "delete",
+			"summary": "删除行政部门",
+			"version": "v1",
+			"requestTypeName": "DeleteDepartmentReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "DeleteDepartment",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/Departments/batch",
+			"tag": "Departments",
+			"method": "post",
+			"summary": "批量Ids/ResourceIDs获取部门集合",
+			"version": "v1",
+			"requestTypeName": "GetDepartmentsByIdsReqType",
+			"responsesTypeName": "GetDepartmentsByIdsResType",
+			"operationId": "GetDepartmentsByIds",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "DepartmentItemCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "pageIndex",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "pageSize",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "ids",
+					"type": "array",
+					"description": "Id集合",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Departments/import",
+			"tag": "Departments",
+			"method": "post",
+			"summary": "导入行政部门",
+			"version": "v1",
+			"requestTypeName": "ImportDepartmentsReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "ImportDepartments",
+			"parameters": null,
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "importDepartments",
+					"type": "array",
+					"description": "行政部门",
+					"required": true,
+					"typeNameMap": "DepartmentItemCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Districts",
+			"tag": "Districts",
+			"method": "get",
+			"summary": "获取行政区域列表",
+			"version": "v1",
+			"requestTypeName": "CommonReqType",
+			"responsesTypeName": "GetDistrictsResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "DistrictOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Domains",
+			"tag": "Domains",
+			"method": "get",
+			"summary": "分页获取领域列表",
+			"version": "v1",
+			"requestTypeName": "GetDomainsReqType",
+			"responsesTypeName": "GetDomainsResType",
+			"operationId": "GetDomains",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "关键词",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "DomainOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Domains",
+			"tag": "Domains",
+			"method": "post",
+			"summary": "新增领域",
+			"version": "v1",
+			"requestTypeName": "AddDomainReqType",
+			"responsesTypeName": "AddDomainResType",
+			"operationId": "CreateDomain",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父主题Id",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "领域描述",
+					"required": false
+				},
+				{
+					"key": "totalMetadataCount",
+					"type": "integer",
+					"description": "",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "领域名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Domains/{id}",
+			"tag": "Domains",
+			"method": "get",
+			"summary": "获取领域详情（支持资源Id）",
+			"version": "v1",
+			"requestTypeName": "GetDomainByIdReqType",
+			"responsesTypeName": "GetDomainByIdResType",
+			"operationId": "GetDomainById",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父主题Id",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "领域描述",
+					"required": false
+				},
+				{
+					"key": "totalMetadataCount",
+					"type": "integer",
+					"description": "",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Domains/{id}",
+			"tag": "Domains",
+			"method": "put",
+			"summary": "修改领域",
+			"version": "v1",
+			"requestTypeName": "EditDomainReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "UpdateDomain",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "领域名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Domains/{id}",
+			"tag": "Domains",
+			"method": "delete",
+			"summary": "删除领域",
+			"version": "v1",
+			"requestTypeName": "DeleteDomainReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "DeleteDomain",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/Domains/batch",
+			"tag": "Domains",
+			"method": "post",
+			"summary": "批量Ids/ResourceIDs获取领域集合",
+			"version": "v1",
+			"requestTypeName": "GetDomainsByIdsReqType",
+			"responsesTypeName": "GetDomainsByIdsResType",
+			"operationId": "GetDomainsByIds",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "DomainItemCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "pageIndex",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "pageSize",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "ids",
+					"type": "array",
+					"description": "Id集合",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Domains/import",
+			"tag": "Domains",
+			"method": "post",
+			"summary": "导入行政部门",
+			"version": "v1",
+			"requestTypeName": "ImportDomainsReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "ImportDomains",
+			"parameters": null,
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "importDomains",
+					"type": "array",
+					"description": "领域",
+					"required": true,
+					"typeNameMap": "DomainItemCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Export/ExportDataRequestCategory",
+			"tag": "Export",
+			"method": "get",
+			"summary": "导出数据需求目录",
+			"version": "v1",
+			"requestTypeName": "ExportDataRequestCategoryReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "projectTagId",
+					"type": "string",
+					"description": "projectTagId",
+					"required": true,
+					"default": null,
+					"in": "query"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs",
+			"tag": "KettleJobs",
+			"method": "get",
+			"summary": "获取ETLJob的实体列表",
+			"version": "v1",
+			"requestTypeName": "GetKettleJobsReqType",
+			"responsesTypeName": "GetKettleJobsResType",
+			"parameters": [
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "KettleJobOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs",
+			"tag": "KettleJobs",
+			"method": "post",
+			"summary": "添加EtlJob",
+			"version": "v1",
+			"requestTypeName": "AddKettleJobsReqType",
+			"responsesTypeName": "AddKettleJobsResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "source",
+					"type": "string",
+					"description": "源点",
+					"required": false
+				},
+				{
+					"key": "destination",
+					"type": "string",
+					"description": "终点",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "作业创建时间",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "作业修改时间",
+					"required": false
+				},
+				{
+					"key": "startTime",
+					"type": "string",
+					"description": "开始时间",
+					"required": false
+				},
+				{
+					"key": "lastSyncTime",
+					"type": "string",
+					"description": "上一次同步时间",
+					"required": false
+				},
+				{
+					"key": "syncMetadata",
+					"type": "string",
+					"description": "同步的元数据",
+					"required": false
+				},
+				{
+					"key": "syncMetadataId",
+					"type": "string",
+					"description": "同步的元数据ID",
+					"required": false
+				},
+				{
+					"key": "timeConsuming",
+					"type": "number",
+					"description": "耗时",
+					"required": false
+				},
+				{
+					"key": "errors",
+					"type": "integer",
+					"description": "错误行数",
+					"required": false
+				},
+				{
+					"key": "cronExpression",
+					"type": "string",
+					"description": "Cron表达式信息",
+					"required": false
+				},
+				{
+					"key": "syncDataCount",
+					"type": "integer",
+					"description": "同步数据量",
+					"required": false
+				},
+				{
+					"key": "isRun",
+					"type": "boolean",
+					"description": "是否运行",
+					"required": false
+				},
+				{
+					"key": "fileInfos",
+					"type": "array",
+					"description": "文件信息列表",
+					"required": false
+				},
+				{
+					"key": "tags",
+					"type": "array",
+					"description": "分类标签",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "作业名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "cron",
+					"type": "string",
+					"description": "执行Cron表达式",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "isRun",
+					"type": "boolean",
+					"description": "是否运行",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "tags",
+					"type": "array",
+					"description": "标签列表",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/KettleJobs/{resourceId}",
+			"tag": "KettleJobs",
+			"method": "put",
+			"summary": "更新EtlJob",
+			"version": "v1",
+			"requestTypeName": "EditKettleJobsReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "resourceId",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "作业名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "cron",
+					"type": "string",
+					"description": "执行Cron表达式",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "isRun",
+					"type": "boolean",
+					"description": "是否运行",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "tags",
+					"type": "array",
+					"description": "标签列表",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/KettleJobs/{resourceId}",
+			"tag": "KettleJobs",
+			"method": "delete",
+			"summary": "删除EtlJob",
+			"version": "v1",
+			"requestTypeName": "DeleteKettleJobsReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "resourceId",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs/Search",
+			"tag": "KettleJobs",
+			"method": "get",
+			"summary": "查询ETLJob的实体列表",
+			"version": "v1",
+			"requestTypeName": "SearchKettleJobsReqType",
+			"responsesTypeName": "SearchKettleJobsResType",
+			"parameters": [
+				{
+					"key": "KettleJobName",
+					"type": "string",
+					"description": "作业名称",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "Source",
+					"type": "string",
+					"description": "源端",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "Destination",
+					"type": "string",
+					"description": "对端",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "ExecuteStatus",
+					"type": "integer",
+					"description": "执行状态枚举 0=所有 1=返回执行成功的作业数 2=返回执行失败作业数",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "OrderRule",
+					"type": "integer",
+					"description": "排序规则,0-更新时间降序,1-更新时间升序,2-数据同步量降序,3-数据同步量升序,4-耗时降序,5-耗时升序",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "KettleJobOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs/{id}",
+			"tag": "KettleJobs",
+			"method": "get",
+			"summary": "Etl具体信息",
+			"version": "v1",
+			"requestTypeName": "GetKettleJobByIdReqType",
+			"responsesTypeName": "GetKettleJobByIdResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "source",
+					"type": "string",
+					"description": "源点",
+					"required": false
+				},
+				{
+					"key": "destination",
+					"type": "string",
+					"description": "终点",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "作业创建时间",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "作业修改时间",
+					"required": false
+				},
+				{
+					"key": "startTime",
+					"type": "string",
+					"description": "开始时间",
+					"required": false
+				},
+				{
+					"key": "lastSyncTime",
+					"type": "string",
+					"description": "上一次同步时间",
+					"required": false
+				},
+				{
+					"key": "syncMetadata",
+					"type": "string",
+					"description": "同步的元数据",
+					"required": false
+				},
+				{
+					"key": "syncMetadataId",
+					"type": "string",
+					"description": "同步的元数据ID",
+					"required": false
+				},
+				{
+					"key": "timeConsuming",
+					"type": "number",
+					"description": "耗时",
+					"required": false
+				},
+				{
+					"key": "errors",
+					"type": "integer",
+					"description": "错误行数",
+					"required": false
+				},
+				{
+					"key": "cronExpression",
+					"type": "string",
+					"description": "Cron表达式信息",
+					"required": false
+				},
+				{
+					"key": "syncDataCount",
+					"type": "integer",
+					"description": "同步数据量",
+					"required": false
+				},
+				{
+					"key": "isRun",
+					"type": "boolean",
+					"description": "是否运行",
+					"required": false
+				},
+				{
+					"key": "fileInfos",
+					"type": "array",
+					"description": "文件信息列表",
+					"required": false
+				},
+				{
+					"key": "tags",
+					"type": "array",
+					"description": "分类标签",
+					"required": false
+				},
+				{
+					"key": "executeCount",
+					"type": "integer",
+					"description": "执行数量",
+					"required": false
+				},
+				{
+					"key": "creator",
+					"type": "string",
+					"description": "创建者",
+					"required": false
+				},
+				{
+					"key": "updater",
+					"type": "string",
+					"description": "更新者",
+					"required": false
+				},
+				{
+					"key": "syncAllDataCount",
+					"type": "integer",
+					"description": "总数据量",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs/{id}/Records",
+			"tag": "KettleJobs",
+			"method": "get",
+			"summary": "返回执行记录列表",
+			"version": "v1",
+			"requestTypeName": "GetKettleJobRecordsReqType",
+			"responsesTypeName": "GetKettleJobRecordsResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "StartTimeBegin",
+					"type": "string",
+					"description": "开始时间起始点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "StartTimeEnd",
+					"type": "string",
+					"description": "开始时间终点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "ExecuteStatus",
+					"type": "integer",
+					"description": "执行状态枚举 0=所有 1=返回执行成功的作业数 2=返回执行失败作业数",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "EtlExecuteRecordOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs/Records/Search",
+			"tag": "KettleJobs",
+			"method": "get",
+			"summary": "根据元数据ID返回ETL执行记录",
+			"version": "v1",
+			"requestTypeName": "GetKettleJobRecordsByMetadataIdReqType",
+			"responsesTypeName": "GetKettleJobRecordsByMetadataIdResType",
+			"parameters": [
+				{
+					"key": "MetadataId",
+					"type": "string",
+					"description": "元数据id",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "EtlExecuteRecordOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs/Tags",
+			"tag": "KettleJobs",
+			"method": "get",
+			"summary": "获取ETL作业的标签",
+			"version": "v1",
+			"requestTypeName": "CommonReqType",
+			"responsesTypeName": "GetKettleJobsTagsResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "tags",
+					"type": "array",
+					"description": "标签列表",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs/Import",
+			"tag": "KettleJobs",
+			"method": "post",
+			"summary": "导入kettle",
+			"version": "v1",
+			"requestTypeName": "ImportKettleJobsReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": null,
+			"responses": null,
+			"requestBody": []
+		},
+		{
+			"url": "/api/KettleJobs/Export",
+			"tag": "KettleJobs",
+			"method": "post",
+			"summary": "导出所有资源库的json数据",
+			"version": "v1",
+			"requestTypeName": "ExportKettleJobsReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": null,
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "fileName",
+					"type": "string",
+					"description": "导出文件名",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "tags",
+					"type": "array",
+					"description": "导出标签",
+					"required": true,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/KettleJobs/{id}/Run",
+			"tag": "KettleJobs",
+			"method": "put",
+			"summary": "运行作业",
+			"version": "v1",
+			"requestTypeName": "RunJobsReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs/{id}/Stop",
+			"tag": "KettleJobs",
+			"method": "put",
+			"summary": "停止作业",
+			"version": "v1",
+			"requestTypeName": "StopJobsReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs/SingleExecution",
+			"tag": "KettleJobs",
+			"method": "put",
+			"summary": "立即执行作业",
+			"version": "v1",
+			"requestTypeName": "SingleExecJobsReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "query"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs/{id}/Records/Export",
+			"tag": "KettleJobs",
+			"method": "get",
+			"summary": "导出某个ETL作业的前10条执行日志记录",
+			"version": "v1",
+			"requestTypeName": "ExportTop10JobsReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/KettleJobs/Records/{id}/Export",
+			"tag": "KettleJobs",
+			"method": "get",
+			"summary": "导出ETL执行记录的日志记录",
+			"version": "v1",
+			"requestTypeName": "ExportETLJobRecordsReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/Metadata/{id}",
+			"tag": "Metadata",
+			"method": "get",
+			"summary": "获取元数据详情",
+			"version": "v1",
+			"requestTypeName": "GetMetadataByIdReqType",
+			"responsesTypeName": "GetMetadataByIdResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "code",
+					"type": "string",
+					"description": "元数据信息资源编码",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "元数据描述(摘要)",
+					"required": false
+				},
+				{
+					"key": "keyWords",
+					"type": "string",
+					"description": "关键字",
+					"required": false
+				},
+				{
+					"key": "developmentMode",
+					"type": "integer",
+					"description": "开发方式",
+					"required": false,
+					"typeNameMap": "DevelopmentModeCommonType"
+				},
+				{
+					"key": "updateFrequency",
+					"type": "integer",
+					"description": "更新频率",
+					"required": false,
+					"typeNameMap": "UpdateFrequencyCommonType"
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建日期",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "更新日期",
+					"required": false
+				},
+				{
+					"key": "publishTime",
+					"type": "string",
+					"description": "发布日期",
+					"required": false
+				},
+				{
+					"key": "resourceType",
+					"type": "integer",
+					"description": "资源格式",
+					"required": false,
+					"typeNameMap": "ResourceTypeCommonType"
+				},
+				{
+					"key": "administrativeMatters",
+					"type": "string",
+					"description": "所属行政事项",
+					"required": false
+				},
+				{
+					"key": "resourceStatus",
+					"type": "integer",
+					"description": "资源状态",
+					"required": false,
+					"typeNameMap": "ResourceStatusCommonType"
+				},
+				{
+					"key": "language",
+					"type": "string",
+					"description": "语种",
+					"required": false
+				},
+				{
+					"key": "onlineResourceLink",
+					"type": "string",
+					"description": "在线资源链接",
+					"required": false
+				},
+				{
+					"key": "sourceSystem",
+					"type": "string",
+					"description": "来源系统",
+					"required": false
+				},
+				{
+					"key": "spaceScope",
+					"type": "string",
+					"description": "空间（地域）范围",
+					"required": false
+				},
+				{
+					"key": "timeScope",
+					"type": "string",
+					"description": "时间范围",
+					"required": false
+				},
+				{
+					"key": "openLevel",
+					"type": "integer",
+					"description": "开放级别",
+					"required": false,
+					"typeNameMap": "OpenLevelCommonType"
+				},
+				{
+					"key": "dataItemDescriptions",
+					"type": "array",
+					"description": "数据项",
+					"required": false,
+					"typeNameMap": "DataItemDescriptionCommonType"
+				},
+				{
+					"key": "displayDataItemDescriptions",
+					"type": "array",
+					"description": "可展示字段",
+					"required": false,
+					"typeNameMap": "DisplayDataItemDescriptionCommonType"
+				},
+				{
+					"key": "tagIds",
+					"type": "array",
+					"description": "标签ID列表",
+					"required": false
+				},
+				{
+					"key": "kettleJobIds",
+					"type": "array",
+					"description": "关联的作业",
+					"required": false
+				},
+				{
+					"key": "businessOut",
+					"type": "object",
+					"description": "行业分类",
+					"required": false,
+					"typeNameMap": "BusinessOutCommonType"
+				},
+				{
+					"key": "serviceOut",
+					"type": "object",
+					"description": "服务分类",
+					"required": false,
+					"typeNameMap": "ServiceOutCommonType"
+				},
+				{
+					"key": "domainOut",
+					"type": "object",
+					"description": "数据领域",
+					"required": false,
+					"typeNameMap": "DomainOutCommonType"
+				},
+				{
+					"key": "departmentOut",
+					"type": "object",
+					"description": "行政单位",
+					"required": false,
+					"typeNameMap": "DepartmentOutCommonType"
+				},
+				{
+					"key": "districtOut",
+					"type": "object",
+					"description": "行政区域",
+					"required": false,
+					"typeNameMap": "DistrictOutCommonType"
+				},
+				{
+					"key": "themeOut",
+					"type": "object",
+					"description": "主题分类",
+					"required": false,
+					"typeNameMap": "ThemeOutCommonType"
+				},
+				{
+					"key": "dockInfo",
+					"type": "object",
+					"description": "对接信息(对接状态|方式|说明)",
+					"required": false,
+					"typeNameMap": "DockInfoCommonType"
+				},
+				{
+					"key": "projectInfo",
+					"type": "object",
+					"description": "项目信息",
+					"required": false,
+					"typeNameMap": "ProjectInfoCommonType"
+				},
+				{
+					"key": "totalDownloads",
+					"type": "integer",
+					"description": "下载量",
+					"required": false
+				},
+				{
+					"key": "totalViews",
+					"type": "integer",
+					"description": "浏览量",
+					"required": false
+				},
+				{
+					"key": "totalDataItems",
+					"type": "integer",
+					"description": "记录条数",
+					"required": false
+				},
+				{
+					"key": "fileSize",
+					"type": "integer",
+					"description": "文件大小(bytes)",
+					"required": false
+				},
+				{
+					"key": "fileCount",
+					"type": "integer",
+					"description": "文件数量(份)",
+					"required": false
+				},
+				{
+					"key": "dataSize",
+					"type": "integer",
+					"description": "数据量(条)",
+					"required": false
+				},
+				{
+					"key": "checkErrorDataCount",
+					"type": "integer",
+					"description": "检查错误的数据数量",
+					"required": false
+				},
+				{
+					"key": "dataRating",
+					"type": "number",
+					"description": "数据评分",
+					"required": false
+				},
+				{
+					"key": "bindTable",
+					"type": "string",
+					"description": "绑定的库表",
+					"required": false
+				},
+				{
+					"key": "bindSchema",
+					"type": "string",
+					"description": "绑定的模式",
+					"required": false
+				},
+				{
+					"key": "dasJobName",
+					"type": "string",
+					"description": "das job name",
+					"required": false
+				},
+				{
+					"key": "dataSourceId",
+					"type": "string",
+					"description": "数据源DataSource的id",
+					"required": false
+				},
+				{
+					"key": "selectDataItems",
+					"type": "object",
+					"description": "外部数据筛选类型数据",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Metadata/{id}",
+			"tag": "Metadata",
+			"method": "put",
+			"summary": "修改元数据",
+			"version": "v1",
+			"requestTypeName": "EditMetadataReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父元数据Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "code",
+					"type": "string",
+					"description": "元数据信息资源编码",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "元数据描述(摘要)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "keyWords",
+					"type": "string",
+					"description": "关键字",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "developmentMode",
+					"type": "integer",
+					"description": "开发方式",
+					"required": false,
+					"typeNameMap": "DevelopmentModeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "updateFrequency",
+					"type": "integer",
+					"description": "更新频率",
+					"required": false,
+					"typeNameMap": "UpdateFrequencyCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建日期",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "更新日期",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "publishTime",
+					"type": "string",
+					"description": "发布日期",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceType",
+					"type": "integer",
+					"description": "资源格式",
+					"required": false,
+					"typeNameMap": "ResourceTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "administrativeMatters",
+					"type": "string",
+					"description": "所属行政事项",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceStatus",
+					"type": "integer",
+					"description": "资源状态",
+					"required": false,
+					"typeNameMap": "ResourceStatusCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "language",
+					"type": "string",
+					"description": "语种",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "onlineResourceLink",
+					"type": "string",
+					"description": "在线资源链接",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "sourceSystem",
+					"type": "string",
+					"description": "来源系统",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "spaceScope",
+					"type": "string",
+					"description": "空间（地域）范围",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "timeScope",
+					"type": "string",
+					"description": "时间范围",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "openLevel",
+					"type": "integer",
+					"description": "开放级别",
+					"required": false,
+					"typeNameMap": "OpenLevelCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "dataItemDescriptions",
+					"type": "array",
+					"description": "数据项",
+					"required": false,
+					"typeNameMap": "DataItemDescriptionCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "displayDataItemDescriptions",
+					"type": "array",
+					"description": "可展示字段",
+					"required": false,
+					"typeNameMap": "DisplayDataItemDescriptionCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "tagIds",
+					"type": "array",
+					"description": "标签ID列表",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "kettleJobIds",
+					"type": "array",
+					"description": "关联的作业",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "businessResourceId",
+					"type": "string",
+					"description": "行业分类资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "serviceResourceId",
+					"type": "string",
+					"description": "服务分类资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "domainResourceId",
+					"type": "string",
+					"description": "数据领域资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "departmentResourceId",
+					"type": "string",
+					"description": "行政单位资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "districtResourceId",
+					"type": "string",
+					"description": "行政区域资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "themeResourceId",
+					"type": "string",
+					"description": "主题分类资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dockInfo",
+					"type": "object",
+					"description": "对接信息(对接状态|方式|说明)",
+					"required": false,
+					"typeNameMap": "DockInfoCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "projectInfo",
+					"type": "object",
+					"description": "项目信息",
+					"required": false,
+					"typeNameMap": "ProjectInfoCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "totalDownloads",
+					"type": "integer",
+					"description": "下载量",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "totalViews",
+					"type": "integer",
+					"description": "浏览量",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "totalDataItems",
+					"type": "integer",
+					"description": "记录条数",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "fileSize",
+					"type": "integer",
+					"description": "文件大小(bytes)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "fileCount",
+					"type": "integer",
+					"description": "文件数量(份)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dataSize",
+					"type": "integer",
+					"description": "数据量(条)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "checkErrorDataCount",
+					"type": "integer",
+					"description": "检查错误的数据数量",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dataRating",
+					"type": "number",
+					"description": "数据评分",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "bindTable",
+					"type": "string",
+					"description": "绑定的库表",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "bindSchema",
+					"type": "string",
+					"description": "绑定的模式",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dasJobName",
+					"type": "string",
+					"description": "das job name",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dataSourceId",
+					"type": "string",
+					"description": "数据源DataSource的id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Metadata/{id}",
+			"tag": "Metadata",
+			"method": "delete",
+			"summary": "删除元数据",
+			"version": "v1",
+			"requestTypeName": "DeleteMetadataReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/Metadata/dockInfo",
+			"tag": "Metadata",
+			"method": "get",
+			"summary": "元数据对接统计",
+			"version": "v1",
+			"requestTypeName": "CommonReqType",
+			"responsesTypeName": "GetMetadataDockInfoResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "dockInfoItems",
+					"type": "object",
+					"description": "统计项",
+					"required": false,
+					"typeNameMap": "DockInfoItemsCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Metadata",
+			"tag": "Metadata",
+			"method": "get",
+			"summary": "根据（领域、主题、行业、服务、部门、行政区域）查询元数据（分页）",
+			"version": "v1",
+			"requestTypeName": "GetMetadataReqType",
+			"responsesTypeName": "GetMetadataResType",
+			"parameters": [
+				{
+					"key": "TagIds",
+					"type": "array",
+					"description": "标签ID列表",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "KeyWord",
+					"type": "string",
+					"description": "关键字",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "DomainResourceId",
+					"type": "string",
+					"description": "领域",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "ThemeResourceId",
+					"type": "string",
+					"description": "主题分类",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "BusinessResourceId",
+					"type": "string",
+					"description": "行业分类",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "DepartmentResourceId",
+					"type": "string",
+					"description": "行政单位",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "DistrictResourceId",
+					"type": "string",
+					"description": "行政区域",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "ServiceResourceId",
+					"type": "string",
+					"description": "服务分类",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "UpdateTimeBegin",
+					"type": "string",
+					"description": "更新时间起始点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "UpdateTimeEnd",
+					"type": "string",
+					"description": "更新时间终点",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "MetadataOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Metadata",
+			"tag": "Metadata",
+			"method": "post",
+			"summary": "添加元数据",
+			"version": "v1",
+			"requestTypeName": "AddMetadataReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": null,
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父元数据Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "code",
+					"type": "string",
+					"description": "元数据信息资源编码",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "元数据描述(摘要)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "keyWords",
+					"type": "string",
+					"description": "关键字",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "developmentMode",
+					"type": "integer",
+					"description": "开发方式",
+					"required": false,
+					"typeNameMap": "DevelopmentModeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "updateFrequency",
+					"type": "integer",
+					"description": "更新频率",
+					"required": false,
+					"typeNameMap": "UpdateFrequencyCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建日期",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "更新日期",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "publishTime",
+					"type": "string",
+					"description": "发布日期",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceType",
+					"type": "integer",
+					"description": "资源格式",
+					"required": false,
+					"typeNameMap": "ResourceTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "administrativeMatters",
+					"type": "string",
+					"description": "所属行政事项",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceStatus",
+					"type": "integer",
+					"description": "资源状态",
+					"required": false,
+					"typeNameMap": "ResourceStatusCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "language",
+					"type": "string",
+					"description": "语种",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "onlineResourceLink",
+					"type": "string",
+					"description": "在线资源链接",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "sourceSystem",
+					"type": "string",
+					"description": "来源系统",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "spaceScope",
+					"type": "string",
+					"description": "空间（地域）范围",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "timeScope",
+					"type": "string",
+					"description": "时间范围",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "openLevel",
+					"type": "integer",
+					"description": "开放级别",
+					"required": false,
+					"typeNameMap": "OpenLevelCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "dataItemDescriptions",
+					"type": "array",
+					"description": "数据项",
+					"required": false,
+					"typeNameMap": "DataItemDescriptionCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "displayDataItemDescriptions",
+					"type": "array",
+					"description": "可展示字段",
+					"required": false,
+					"typeNameMap": "DisplayDataItemDescriptionCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "tagIds",
+					"type": "array",
+					"description": "标签ID列表",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "kettleJobIds",
+					"type": "array",
+					"description": "关联的作业",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "businessResourceId",
+					"type": "string",
+					"description": "行业分类资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "serviceResourceId",
+					"type": "string",
+					"description": "服务分类资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "domainResourceId",
+					"type": "string",
+					"description": "数据领域资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "departmentResourceId",
+					"type": "string",
+					"description": "行政单位资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "districtResourceId",
+					"type": "string",
+					"description": "行政区域资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "themeResourceId",
+					"type": "string",
+					"description": "主题分类资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dockInfo",
+					"type": "object",
+					"description": "对接信息(对接状态|方式|说明)",
+					"required": false,
+					"typeNameMap": "DockInfoCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "projectInfo",
+					"type": "object",
+					"description": "项目信息",
+					"required": false,
+					"typeNameMap": "ProjectInfoCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "totalDownloads",
+					"type": "integer",
+					"description": "下载量",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "totalViews",
+					"type": "integer",
+					"description": "浏览量",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "totalDataItems",
+					"type": "integer",
+					"description": "记录条数",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "fileSize",
+					"type": "integer",
+					"description": "文件大小(bytes)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "fileCount",
+					"type": "integer",
+					"description": "文件数量(份)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dataSize",
+					"type": "integer",
+					"description": "数据量(条)",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "checkErrorDataCount",
+					"type": "integer",
+					"description": "检查错误的数据数量",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dataRating",
+					"type": "number",
+					"description": "数据评分",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "bindTable",
+					"type": "string",
+					"description": "绑定的库表",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "bindSchema",
+					"type": "string",
+					"description": "绑定的模式",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dasJobName",
+					"type": "string",
+					"description": "das job name",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "dataSourceId",
+					"type": "string",
+					"description": "数据源DataSource的id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Metadata/FindPageBySearch",
+			"tag": "Metadata",
+			"method": "post",
+			"summary": "根据（领域、主题、行业、服务、部门、行政区域、标签）查询元数据",
+			"version": "v1",
+			"requestTypeName": "SearchMetadataReqType",
+			"responsesTypeName": "SearchMetadataResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "MetadataOutCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "pageIndex",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "pageSize",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "keyWord",
+					"type": "string",
+					"description": "关键字",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "domainResourceId",
+					"type": "string",
+					"description": "领域",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "themeResourceId",
+					"type": "string",
+					"description": "主题分类",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "businessResourceId",
+					"type": "string",
+					"description": "行业分类",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "departmentResourceId",
+					"type": "string",
+					"description": "行政单位",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "districtResourceId",
+					"type": "string",
+					"description": "行政区域",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "serviceResourceId",
+					"type": "string",
+					"description": "服务分类",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "updateTimeBegin",
+					"type": "string",
+					"description": "更新时间起始点",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "updateTimeEnd",
+					"type": "string",
+					"description": "更新时间终点",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "tagIds",
+					"type": "array",
+					"description": "标签ID列表",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Metadata/UpdateMetadataCountInfo",
+			"tag": "Metadata",
+			"method": "post",
+			"summary": "更新元数据的统计信息",
+			"version": "v1",
+			"requestTypeName": "UpdateMetadataCountInfoReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": null,
+			"responses": null,
+			"requestBody": []
+		},
+		{
+			"url": "/api/Projects",
+			"tag": "Projects",
+			"method": "get",
+			"summary": "分页获取项目列表",
+			"version": "v1",
+			"requestTypeName": "GetProjectsReqType",
+			"responsesTypeName": "GetProjectsResType",
+			"operationId": "GetProjects",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "关键词",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "ProjectOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Projects",
+			"tag": "Projects",
+			"method": "post",
+			"summary": "新增项目",
+			"version": "v1",
+			"requestTypeName": "AddProjectReqType",
+			"responsesTypeName": "AddProjectResType",
+			"operationId": "CreateProject",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false
+				},
+				{
+					"key": "totalMetadataCount",
+					"type": "integer",
+					"description": "元数据统计总数",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "项目描述",
+					"required": false
+				},
+				{
+					"key": "themes",
+					"type": "array",
+					"description": "项目专题列表",
+					"required": false,
+					"typeNameMap": "ProjectThemeDetailCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "项目名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Projects/{id}",
+			"tag": "Projects",
+			"method": "get",
+			"summary": "获取项目（支持资源Id）",
+			"version": "v1",
+			"requestTypeName": "GetProjectByIdReqType",
+			"responsesTypeName": "GetProjectByIdResType",
+			"operationId": "GetProjectById",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false
+				},
+				{
+					"key": "totalMetadataCount",
+					"type": "integer",
+					"description": "元数据统计总数",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "项目描述",
+					"required": false
+				},
+				{
+					"key": "themes",
+					"type": "array",
+					"description": "项目专题列表",
+					"required": false,
+					"typeNameMap": "ProjectThemeDetailCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Projects/{id}",
+			"tag": "Projects",
+			"method": "put",
+			"summary": "修改项目",
+			"version": "v1",
+			"requestTypeName": "EditProjectReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "UpdateProject",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "项目名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Projects/{id}",
+			"tag": "Projects",
+			"method": "delete",
+			"summary": "删除项目",
+			"version": "v1",
+			"requestTypeName": "DeleteProjectReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "DeleteProject",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/Projects/{id}/detail",
+			"tag": "Projects",
+			"method": "get",
+			"summary": "获取项目详情（支持资源Id）",
+			"version": "v1",
+			"requestTypeName": "GetProjectDetailByIdReqType",
+			"responsesTypeName": "GetProjectDetailByIdResType",
+			"operationId": "GetProjectDetailById",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "themes",
+					"type": "array",
+					"description": "项目专题列表",
+					"required": false,
+					"typeNameMap": "ThemeDetailItemCommonType"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "项目描述",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Projects/import",
+			"tag": "Projects",
+			"method": "post",
+			"summary": "导入项目专题",
+			"version": "v1",
+			"requestTypeName": "ImportProjectsReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "ImportProjects",
+			"parameters": null,
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "importProjects",
+					"type": "array",
+					"description": "项目",
+					"required": true,
+					"typeNameMap": "ProjectDetailItemCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Projects/{id}/defaultResourceDbs",
+			"tag": "Projects",
+			"method": "post",
+			"summary": "根据项目Id创建模板资源库",
+			"version": "v1",
+			"requestTypeName": "AddResourceDbsByProjectIdReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "InitializeDefaultResourceDbByProjectId",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/ResourceDb/tree",
+			"tag": "ResourceDb",
+			"method": "get",
+			"summary": "查询资源库树",
+			"version": "v1",
+			"requestTypeName": "GetResourceDbTreeReqType",
+			"responsesTypeName": "GetResourceDbTreeResType",
+			"parameters": [
+				{
+					"key": "ProductId",
+					"type": "string",
+					"description": "ProductId",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "NodeTreeOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/ResourceDb",
+			"tag": "ResourceDb",
+			"method": "get",
+			"summary": "查询符合条件的资源库",
+			"version": "v1",
+			"requestTypeName": "GetResourceDbReqType",
+			"responsesTypeName": "GetResourceDbResType",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "模糊匹配关键字",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "SelectDataItems",
+					"type": "object",
+					"description": "查询条件",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "ResourceDbOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/ResourceDb",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "添加资源库",
+			"version": "v1",
+			"requestTypeName": "AddResourceDbReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": null,
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceDbType",
+					"type": "integer",
+					"description": "资源类型",
+					"required": false,
+					"typeNameMap": "ResourceDbTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "relationship",
+					"type": "object",
+					"description": "关联的信息",
+					"required": false,
+					"typeNameMap": "RelationshipCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "extension",
+					"type": "string",
+					"description": "拓展信息",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "productId",
+					"type": "string",
+					"description": "ProductId",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/{id}",
+			"tag": "ResourceDb",
+			"method": "get",
+			"summary": "查询资源库详情",
+			"version": "v1",
+			"requestTypeName": "GetResourceDbByIdReqType",
+			"responsesTypeName": "GetResourceDbByIdResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源id（数据同步使用）",
+					"required": false
+				},
+				{
+					"key": "parentName",
+					"type": "string",
+					"description": "父名称",
+					"required": false
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false
+				},
+				{
+					"key": "resourceDbType",
+					"type": "integer",
+					"description": "资源类型",
+					"required": false,
+					"typeNameMap": "ResourceDbTypeCommonType"
+				},
+				{
+					"key": "relationship",
+					"type": "object",
+					"description": "元数据信息",
+					"required": false,
+					"typeNameMap": "RelationshipCommonType"
+				},
+				{
+					"key": "extension",
+					"type": "string",
+					"description": "拓展信息(资源库的筛选拓展信息)",
+					"required": false
+				},
+				{
+					"key": "productId",
+					"type": "string",
+					"description": "ProductId",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/ResourceDb/{id}",
+			"tag": "ResourceDb",
+			"method": "put",
+			"summary": "修改资源库",
+			"version": "v1",
+			"requestTypeName": "EditResourceDbReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceDbType",
+					"type": "integer",
+					"description": "资源类型",
+					"required": false,
+					"typeNameMap": "ResourceDbTypeCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "relationship",
+					"type": "object",
+					"description": "关联的信息",
+					"required": false,
+					"typeNameMap": "RelationshipCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "extension",
+					"type": "string",
+					"description": "拓展信息",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "productId",
+					"type": "string",
+					"description": "ProductId",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/{id}",
+			"tag": "ResourceDb",
+			"method": "delete",
+			"summary": "删除资源库",
+			"version": "v1",
+			"requestTypeName": "DeleteResourceDbReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/ResourceDb/search/batch",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "批量Ids/ResourceIDs/Numbers获取资源库集合（带元数据和数据源,ps:Number为图层LayerId）",
+			"version": "v1",
+			"requestTypeName": "GetResourceDbsByIdsReqType",
+			"responsesTypeName": "GetResourceDbsByIdsResType",
+			"operationId": "GetResourceDbsByIds",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "ResourceDbItemCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "pageIndex",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "pageSize",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "ids",
+					"type": "array",
+					"description": "Id集合",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "productId",
+					"type": "string",
+					"description": "项目Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/search",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "通过productId获取资源库集合（带元数据和数据源）",
+			"version": "v1",
+			"requestTypeName": "GetResourceDbsByIdReqType",
+			"responsesTypeName": "GetResourceDbsByIdResType",
+			"operationId": "GetResourceDbsByProductId",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "ResourceDbItemCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "pageIndex",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "pageSize",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "productId",
+					"type": "string",
+					"description": "产品Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/export",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "导出资源库",
+			"version": "v1",
+			"requestTypeName": "ExportResourceDbsReqType",
+			"responsesTypeName": "ExportResourceDbsResType",
+			"operationId": "ExportResourceDbs",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "ResourceDbItemCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "productId",
+					"type": "string",
+					"description": "产品Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/import",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "导入资源库（带元数据和数据源）",
+			"version": "v1",
+			"requestTypeName": "ImportResourceDbsReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "ImportResourceDbs",
+			"parameters": null,
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "importResourceDbs",
+					"type": "array",
+					"description": "导入资源库列表",
+					"required": false,
+					"typeNameMap": "ResourceDbItemCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/Batch",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "批量添加资源库",
+			"version": "v1",
+			"requestTypeName": "BatchAddResourceDbReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": null,
+			"responses": null,
+			"requestBody": []
+		},
+		{
+			"url": "/api/ResourceDb/children/mergence",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "聚合资源库为父级",
+			"version": "v1",
+			"requestTypeName": "MergeResourceDbReqType",
+			"responsesTypeName": "MergeResourceDbResType",
+			"operationId": "MergeResourceDb",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "ResourceDbTreeNodeOutCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "pageIndex",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "pageSize",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "ids",
+					"type": "array",
+					"description": "Id集合",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "productId",
+					"type": "string",
+					"description": "项目Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/{id}/Metadata",
+			"tag": "ResourceDb",
+			"method": "get",
+			"summary": "查询资源库关联的元数据",
+			"version": "v1",
+			"requestTypeName": "GetMetadataByResourceDbReqType",
+			"responsesTypeName": "GetMetadataByResourceDbResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "code",
+					"type": "string",
+					"description": "元数据信息资源编码",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "元数据描述(摘要)",
+					"required": false
+				},
+				{
+					"key": "keyWords",
+					"type": "string",
+					"description": "关键字",
+					"required": false
+				},
+				{
+					"key": "developmentMode",
+					"type": "integer",
+					"description": "开发方式",
+					"required": false,
+					"typeNameMap": "DevelopmentModeCommonType"
+				},
+				{
+					"key": "updateFrequency",
+					"type": "integer",
+					"description": "更新频率",
+					"required": false,
+					"typeNameMap": "UpdateFrequencyCommonType"
+				},
+				{
+					"key": "createTime",
+					"type": "string",
+					"description": "创建日期",
+					"required": false
+				},
+				{
+					"key": "updateTime",
+					"type": "string",
+					"description": "更新日期",
+					"required": false
+				},
+				{
+					"key": "publishTime",
+					"type": "string",
+					"description": "发布日期",
+					"required": false
+				},
+				{
+					"key": "resourceType",
+					"type": "integer",
+					"description": "资源格式",
+					"required": false,
+					"typeNameMap": "ResourceTypeCommonType"
+				},
+				{
+					"key": "administrativeMatters",
+					"type": "string",
+					"description": "所属行政事项",
+					"required": false
+				},
+				{
+					"key": "resourceStatus",
+					"type": "integer",
+					"description": "资源状态",
+					"required": false,
+					"typeNameMap": "ResourceStatusCommonType"
+				},
+				{
+					"key": "language",
+					"type": "string",
+					"description": "语种",
+					"required": false
+				},
+				{
+					"key": "onlineResourceLink",
+					"type": "string",
+					"description": "在线资源链接",
+					"required": false
+				},
+				{
+					"key": "sourceSystem",
+					"type": "string",
+					"description": "来源系统",
+					"required": false
+				},
+				{
+					"key": "spaceScope",
+					"type": "string",
+					"description": "空间（地域）范围",
+					"required": false
+				},
+				{
+					"key": "timeScope",
+					"type": "string",
+					"description": "时间范围",
+					"required": false
+				},
+				{
+					"key": "openLevel",
+					"type": "integer",
+					"description": "开放级别",
+					"required": false,
+					"typeNameMap": "OpenLevelCommonType"
+				},
+				{
+					"key": "dataItemDescriptions",
+					"type": "array",
+					"description": "数据项",
+					"required": false,
+					"typeNameMap": "DataItemDescriptionCommonType"
+				},
+				{
+					"key": "displayDataItemDescriptions",
+					"type": "array",
+					"description": "可展示字段",
+					"required": false,
+					"typeNameMap": "DisplayDataItemDescriptionCommonType"
+				},
+				{
+					"key": "tagIds",
+					"type": "array",
+					"description": "标签ID列表",
+					"required": false
+				},
+				{
+					"key": "kettleJobIds",
+					"type": "array",
+					"description": "关联的作业",
+					"required": false
+				},
+				{
+					"key": "businessOut",
+					"type": "object",
+					"description": "行业分类",
+					"required": false,
+					"typeNameMap": "BusinessOutCommonType"
+				},
+				{
+					"key": "serviceOut",
+					"type": "object",
+					"description": "服务分类",
+					"required": false,
+					"typeNameMap": "ServiceOutCommonType"
+				},
+				{
+					"key": "domainOut",
+					"type": "object",
+					"description": "数据领域",
+					"required": false,
+					"typeNameMap": "DomainOutCommonType"
+				},
+				{
+					"key": "departmentOut",
+					"type": "object",
+					"description": "行政单位",
+					"required": false,
+					"typeNameMap": "DepartmentOutCommonType"
+				},
+				{
+					"key": "districtOut",
+					"type": "object",
+					"description": "行政区域",
+					"required": false,
+					"typeNameMap": "DistrictOutCommonType"
+				},
+				{
+					"key": "themeOut",
+					"type": "object",
+					"description": "主题分类",
+					"required": false,
+					"typeNameMap": "ThemeOutCommonType"
+				},
+				{
+					"key": "dockInfo",
+					"type": "object",
+					"description": "对接信息(对接状态|方式|说明)",
+					"required": false,
+					"typeNameMap": "DockInfoCommonType"
+				},
+				{
+					"key": "projectInfo",
+					"type": "object",
+					"description": "项目信息",
+					"required": false,
+					"typeNameMap": "ProjectInfoCommonType"
+				},
+				{
+					"key": "totalDownloads",
+					"type": "integer",
+					"description": "下载量",
+					"required": false
+				},
+				{
+					"key": "totalViews",
+					"type": "integer",
+					"description": "浏览量",
+					"required": false
+				},
+				{
+					"key": "totalDataItems",
+					"type": "integer",
+					"description": "记录条数",
+					"required": false
+				},
+				{
+					"key": "fileSize",
+					"type": "integer",
+					"description": "文件大小(bytes)",
+					"required": false
+				},
+				{
+					"key": "fileCount",
+					"type": "integer",
+					"description": "文件数量(份)",
+					"required": false
+				},
+				{
+					"key": "dataSize",
+					"type": "integer",
+					"description": "数据量(条)",
+					"required": false
+				},
+				{
+					"key": "checkErrorDataCount",
+					"type": "integer",
+					"description": "检查错误的数据数量",
+					"required": false
+				},
+				{
+					"key": "dataRating",
+					"type": "number",
+					"description": "数据评分",
+					"required": false
+				},
+				{
+					"key": "bindTable",
+					"type": "string",
+					"description": "绑定的库表",
+					"required": false
+				},
+				{
+					"key": "bindSchema",
+					"type": "string",
+					"description": "绑定的模式",
+					"required": false
+				},
+				{
+					"key": "dasJobName",
+					"type": "string",
+					"description": "das job name",
+					"required": false
+				},
+				{
+					"key": "dataSourceId",
+					"type": "string",
+					"description": "数据源DataSource的id",
+					"required": false
+				},
+				{
+					"key": "selectDataItems",
+					"type": "object",
+					"description": "外部数据筛选类型数据",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/ResourceDb/reload",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "重新加载资源库树缓存",
+			"version": "v1",
+			"requestTypeName": "CommonReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "ReloadResourceDb",
+			"parameters": null,
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/ResourceDb/{id}/ExternalResource/Search",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "查询外部数据",
+			"version": "v1",
+			"requestTypeName": "SearchExternalResourceReqType",
+			"responsesTypeName": "SearchExternalResourceResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "pageIndex",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "pageSize",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "模糊匹配关键字",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "selectDataItems",
+					"type": "object",
+					"description": "查询条件",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/{id}/ExternalResource/Statistic",
+			"tag": "ResourceDb",
+			"method": "get",
+			"summary": "统计资源库子项对应的外部数据总量",
+			"version": "v1",
+			"requestTypeName": "GetExternalResourceAmountReqType",
+			"responsesTypeName": "GetExternalResourceAmountResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "areaCode",
+					"type": "string",
+					"description": "行政区域码",
+					"default": null,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "资源库id",
+					"required": false
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父id",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "资源名称",
+					"required": false
+				},
+				{
+					"key": "amount",
+					"type": "integer",
+					"description": "统计数量",
+					"required": false
+				},
+				{
+					"key": "isLeaf",
+					"type": "boolean",
+					"description": "是否为叶子节点",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/ResourceDb/{id}/ExternalResource",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "新增外部数据",
+			"version": "v1",
+			"requestTypeName": "AddExternalResourceReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "externalResourceObject",
+					"type": "object",
+					"description": "外部资源数据项(key，value)集合(修改时需带主键信息)",
+					"required": true,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/{id}/ExternalResource",
+			"tag": "ResourceDb",
+			"method": "put",
+			"summary": "修改外部数据",
+			"version": "v1",
+			"requestTypeName": "EditExternalResourceReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "externalResourceObject",
+					"type": "object",
+					"description": "外部资源数据项(key，value)集合(修改时需带主键信息)",
+					"required": true,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/{id}/ExternalResource",
+			"tag": "ResourceDb",
+			"method": "delete",
+			"summary": "删除外部数据",
+			"version": "v1",
+			"requestTypeName": "DeleteExternalResourceReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "primaryKey",
+					"type": "string",
+					"description": "主键key",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "primaryValue",
+					"type": "string",
+					"description": "主键value",
+					"required": true,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/export/ExternalData",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "导出资源库条目",
+			"version": "v1",
+			"requestTypeName": "ExportExternalDataEntryReqType",
+			"responsesTypeName": "ExportExternalDataEntryResType",
+			"operationId": "ExportExternalDataEntry",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "externalDataEntries",
+					"type": "array",
+					"description": "资源库条目导出实体集合",
+					"required": false,
+					"typeNameMap": "ExportExternalDataEntryOutCommonType"
+				},
+				{
+					"key": "resourceDbs",
+					"type": "array",
+					"description": "资源库导出实体集合",
+					"required": false,
+					"typeNameMap": "ExportResourceDbOutCommonType"
+				},
+				{
+					"key": "metadatas",
+					"type": "array",
+					"description": "元数据导出实体集合",
+					"required": false,
+					"typeNameMap": "ExportMetadataOutCommonType"
+				},
+				{
+					"key": "dataSources",
+					"type": "array",
+					"description": "数据源导出实体集合",
+					"required": false,
+					"typeNameMap": "ExportDataSourceOutCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "productId",
+					"type": "string",
+					"description": "产品Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceDbId",
+					"type": "string",
+					"description": "资源库Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/import/ExternalData",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "导入资源库条目",
+			"version": "v1",
+			"requestTypeName": "ImportExternalDataEntryReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "ImportExternalDataEntry",
+			"parameters": null,
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "externalDataEntries",
+					"type": "array",
+					"description": "资源库条目导入实体集合",
+					"required": false,
+					"typeNameMap": "ImportExternalDataEntryInCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceDbs",
+					"type": "array",
+					"description": "资源库导入实体集合",
+					"required": false,
+					"typeNameMap": "ImportResourceDbInCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "metadatas",
+					"type": "array",
+					"description": "元数据导入实体集合",
+					"required": false,
+					"typeNameMap": "ImportMetadataInCommonType",
+					"in": "requestBody"
+				},
+				{
+					"key": "dataSources",
+					"type": "array",
+					"description": "数据源导入实体集合",
+					"required": false,
+					"typeNameMap": "ImportDataSourceInCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/ResourceDb/{id}/export/ExternalData/excel/template",
+			"tag": "ResourceDb",
+			"method": "get",
+			"summary": "导出资源库条目Excel模版",
+			"version": "v1",
+			"requestTypeName": "ExportExternalDataEntryExcelTemplateReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "ExportExternalDataEntryExcelTemplate",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/ResourceDb/{id}/import/ExternalData/excel",
+			"tag": "ResourceDb",
+			"method": "post",
+			"summary": "Excel导入资源库条目",
+			"version": "v1",
+			"requestTypeName": "ImportExcelExternalDataEntryReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "ImportExcelExternalDataEntry",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": []
+		},
+		{
+			"url": "/api/ResourceDb/{id}/ExternalResource/Batch",
+			"tag": "ResourceDb",
+			"method": "delete",
+			"summary": "批量删除外部数据",
+			"version": "v1",
+			"requestTypeName": "BatchDeleteExternalResourceReqType",
+			"responsesTypeName": "CommonResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "primaryKey",
+					"type": "string",
+					"description": "主键key",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "primaryValues",
+					"type": "array",
+					"description": "主键值集合",
+					"required": true,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Services",
+			"tag": "Services",
+			"method": "get",
+			"summary": "获取服务分类列表",
+			"version": "v1",
+			"requestTypeName": "CommonReqType",
+			"responsesTypeName": "GetServicesResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "ServiceOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Statistics/Metadata/ThirtyEtlJobWriteCount",
+			"tag": "Statistics",
+			"method": "get",
+			"summary": "返回近30天的同步记录信息",
+			"version": "v1",
+			"requestTypeName": "GetThirtyEtlJobWriteCountReqType",
+			"responsesTypeName": "GetThirtyEtlJobWriteCountResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "TimeValueCalculateOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Statistics/CheckTaskExecuteRecord/LastThirtyTimesRecord",
+			"tag": "Statistics",
+			"method": "get",
+			"summary": "返回近30天的执行记录信息",
+			"version": "v1",
+			"requestTypeName": "GetLastThirtyTimesRecordReqType",
+			"responsesTypeName": "GetLastThirtyTimesRecordResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"default": null,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "source",
+					"type": "array",
+					"description": "字段信息",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Statistics/CheckTaskExecuteRecord/LastThirtyTimesRaise",
+			"tag": "Statistics",
+			"method": "get",
+			"summary": "返回近30天的执行评分信息",
+			"version": "v1",
+			"requestTypeName": "GetLastThirtyTimesRaiseReqType",
+			"responsesTypeName": "GetLastThirtyTimesRaiseResType",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"default": null,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "source",
+					"type": "array",
+					"description": "字段信息",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Statistics/Metadata/Count",
+			"tag": "Statistics",
+			"method": "get",
+			"summary": "统计元数据数量",
+			"version": "v1",
+			"requestTypeName": "CommonReqType",
+			"responsesTypeName": "GetMetadataCountResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "categories",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "yesterday",
+					"type": "integer",
+					"description": "昨天的总数",
+					"required": false
+				},
+				{
+					"key": "today",
+					"type": "integer",
+					"description": "今天的总数",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Statistics/CheckRule/Count",
+			"tag": "Statistics",
+			"method": "get",
+			"summary": "统计规则数量",
+			"version": "v1",
+			"requestTypeName": "CommonReqType",
+			"responsesTypeName": "GetCheckRuleCountResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "categories",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "yesterday",
+					"type": "integer",
+					"description": "昨天的总数",
+					"required": false
+				},
+				{
+					"key": "today",
+					"type": "integer",
+					"description": "今天的总数",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Statistics/Metadata/Activity",
+			"tag": "Statistics",
+			"method": "get",
+			"summary": "统计元数据的活跃度",
+			"version": "v1",
+			"requestTypeName": "GetMetadataActivityReqType",
+			"responsesTypeName": "GetMetadataActivityResType",
+			"parameters": [
+				{
+					"key": "timeType",
+					"type": "integer",
+					"description": "",
+					"required": true,
+					"default": null,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "category",
+					"type": "string",
+					"description": "元数据名称",
+					"required": false
+				},
+				{
+					"key": "value",
+					"description": "",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Tags",
+			"tag": "Tags",
+			"method": "get",
+			"summary": "获取标签列表",
+			"version": "v1",
+			"requestTypeName": "CommonReqType",
+			"responsesTypeName": "GetTagsResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "TagsOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Themes",
+			"tag": "Themes",
+			"method": "get",
+			"summary": "分页获取专题列表",
+			"version": "v1",
+			"requestTypeName": "GetThemesReqType",
+			"responsesTypeName": "GetThemesResType",
+			"operationId": "GetThemes",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "关键词",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量, [1, 128]",
+					"default": 100,
+					"in": "query"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "ThemeOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Themes",
+			"tag": "Themes",
+			"method": "post",
+			"summary": "新增专题",
+			"version": "v1",
+			"requestTypeName": "AddThemeReqType",
+			"responsesTypeName": "AddThemeResType",
+			"operationId": "CreateTheme",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父主题Id",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "主题描述",
+					"required": false
+				},
+				{
+					"key": "code",
+					"type": "string",
+					"description": "主题编码",
+					"required": false
+				},
+				{
+					"key": "totalMetadataCount",
+					"type": "integer",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "projectId",
+					"type": "string",
+					"description": "所属项目Id",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "专题名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "code",
+					"type": "string",
+					"description": "主题编码",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "projectId",
+					"type": "string",
+					"description": "所属项目Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Themes/{id}",
+			"tag": "Themes",
+			"method": "get",
+			"summary": "获取专题（支持资源Id）",
+			"version": "v1",
+			"requestTypeName": "GetThemeByIdReqType",
+			"responsesTypeName": "GetThemeByIdResType",
+			"operationId": "GetThemeById",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父主题Id",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "主题描述",
+					"required": false
+				},
+				{
+					"key": "code",
+					"type": "string",
+					"description": "主题编码",
+					"required": false
+				},
+				{
+					"key": "totalMetadataCount",
+					"type": "integer",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "projectId",
+					"type": "string",
+					"description": "所属项目Id",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Themes/{id}",
+			"tag": "Themes",
+			"method": "put",
+			"summary": "修改专题",
+			"version": "v1",
+			"requestTypeName": "EditThemeReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "UpdateTheme",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "专题名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "parentId",
+					"type": "string",
+					"description": "父Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "code",
+					"type": "string",
+					"description": "主题编码",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "projectId",
+					"type": "string",
+					"description": "所属项目Id",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Themes/{id}",
+			"tag": "Themes",
+			"method": "delete",
+			"summary": "删除专题",
+			"version": "v1",
+			"requestTypeName": "DeleteThemeReqType",
+			"responsesTypeName": "CommonResType",
+			"operationId": "DeleteTheme",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		}
+	],
 	"ntsBiz": [
 		{
 			"url": "/api/ConditionTemplates/{id}",
@@ -4067,7 +10768,7 @@
 			"summary": "更新条件配置",
 			"version": "v1",
 			"requestTypeName": "UpdateConfTemByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -4118,7 +10819,7 @@
 			"summary": "删除条件配置",
 			"version": "v1",
 			"requestTypeName": "DeleteConfTemByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -4310,7 +11011,7 @@
 			"summary": "更新i18n",
 			"version": "v1",
 			"requestTypeName": "UpdateI18NConfByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -4354,7 +11055,7 @@
 			"summary": "删除i18n",
 			"version": "v1",
 			"requestTypeName": "DeleteI18NConfByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -4579,7 +11280,7 @@
 			"summary": "更新通知配置",
 			"version": "v1",
 			"requestTypeName": "UpdateNotifyConfByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -4654,7 +11355,7 @@
 			"summary": "删除通知配置",
 			"version": "v1",
 			"requestTypeName": "DeleteNotifyConfByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -4868,7 +11569,7 @@
 			"method": "get",
 			"summary": "获取全部通知类型",
 			"version": "v1",
-			"requestTypeName": "",
+			"requestTypeName": "CommonReqType",
 			"responsesTypeName": "GetNotifyConfTypesResType",
 			"parameters": null,
 			"responses": [
@@ -4895,7 +11596,7 @@
 			"summary": "启用通知配置",
 			"version": "v1",
 			"requestTypeName": "EnableNotifyConfByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -5143,7 +11844,7 @@
 			"summary": "更新占位符",
 			"version": "v1",
 			"requestTypeName": "UpdatePlaceholderByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -5209,7 +11910,7 @@
 			"summary": "删除占位符",
 			"version": "v1",
 			"requestTypeName": "DeletePlaceholderByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -5433,7 +12134,7 @@
 			"method": "get",
 			"summary": "获取场景",
 			"version": "v1",
-			"requestTypeName": "",
+			"requestTypeName": "CommonReqType",
 			"responsesTypeName": "GetScenesResType",
 			"operationId": "GetScenes",
 			"parameters": null,
@@ -5633,7 +12334,7 @@
 			"summary": "更新scheme",
 			"version": "v1",
 			"requestTypeName": "UpdateSchemeByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -5719,7 +12420,7 @@
 			"summary": "删除scheme",
 			"version": "v1",
 			"requestTypeName": "DeleteSchemeByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -6040,7 +12741,7 @@
 			"summary": "更新模板",
 			"version": "v1",
 			"requestTypeName": "UpdateTemplateByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",
@@ -6148,7 +12849,7 @@
 			"summary": "删除模板",
 			"version": "v1",
 			"requestTypeName": "DeleteTemplateByIdReqType",
-			"responsesTypeName": "",
+			"responsesTypeName": "CommonResType",
 			"parameters": [
 				{
 					"key": "id",

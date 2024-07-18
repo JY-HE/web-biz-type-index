@@ -273,7 +273,428 @@
       "responsesTypeName": "GetResourceTypesByIdResType"
     }
   },
-  "dcsBiz": {},
+  "dcsBiz": {
+    "get&/api/Businesses": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetBusinessesResType"
+    },
+    "get&/api/CheckRule/Search": {
+      "requestTypeName": "SearchCheckRuleReqType",
+      "responsesTypeName": "SearchCheckRuleResType"
+    },
+    "get&/api/CheckRule/{resourceId}/CheckRuleRelationMetadata": {
+      "requestTypeName": "GetCheckRuleRelatedMetadataReqType",
+      "responsesTypeName": "GetCheckRuleRelatedMetadataResType"
+    },
+    "post&/api/CheckRule": {
+      "requestTypeName": "AddCheckRuleReqType",
+      "responsesTypeName": "AddCheckRuleResType"
+    },
+    "put&/api/CheckRule/{resourceId}": {
+      "requestTypeName": "EditCheckRuleReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/CheckRule/{resourceId}": {
+      "requestTypeName": "DeleteCheckRuleReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/CheckRuleType": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetCheckRuleTypeResType"
+    },
+    "get&/api/CheckTaskInfo/Search": {
+      "requestTypeName": "GetCheckTaskInfoReqType",
+      "responsesTypeName": "GetCheckTaskInfoResType"
+    },
+    "get&/api/CheckTaskInfo/{id}/Detail": {
+      "requestTypeName": "GetCheckTaskInfoByIdReqType",
+      "responsesTypeName": "GetCheckTaskInfoByIdResType"
+    },
+    "put&/api/CheckTaskInfo/SingleExecution": {
+      "requestTypeName": "RunCheckTaskReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/CheckTaskInfo/{id}/CheckTaskExecuteRecord/Search": {
+      "requestTypeName": "SearchCheckTaskInfoReqType",
+      "responsesTypeName": "SearchCheckTaskInfoResType"
+    },
+    "get&/api/CheckTaskInfo/CheckTaskExecuteRecord/{id}": {
+      "requestTypeName": "GetCheckTaskExecuteRecordByIdReqType",
+      "responsesTypeName": "GetCheckTaskExecuteRecordByIdResType"
+    },
+    "get&/api/CheckTaskInfo/CheckTaskExecuteRecord/Search": {
+      "requestTypeName": "GetCheckTaskExecuteRecordReqType",
+      "responsesTypeName": "GetCheckTaskExecuteRecordResType"
+    },
+    "get&/api/CheckTaskInfo/CheckTaskExecuteRecord/{id}/Errors": {
+      "requestTypeName": "GetCheckTaskExecuteRecordErrorsReqType",
+      "responsesTypeName": "GetCheckTaskExecuteRecordErrorsResType"
+    },
+    "get&/api/DataSource": {
+      "requestTypeName": "GetDataSourceReqType",
+      "responsesTypeName": "GetDataSourceResType"
+    },
+    "post&/api/DataSource": {
+      "requestTypeName": "AddDataSourceReqType",
+      "responsesTypeName": "AddDataSourceResType"
+    },
+    "put&/api/DataSource/{resourceId}": {
+      "requestTypeName": "EditDataSourceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/DataSource/{resourceId}": {
+      "requestTypeName": "DeleteDataSourceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/DataSource/{resourceId}/DbInfos": {
+      "requestTypeName": "GetDbInfosByResourceIdReqType",
+      "responsesTypeName": "GetDbInfosByResourceIdResType"
+    },
+    "post&/api/DataSource/{resourceId}/DbInfos": {
+      "requestTypeName": "SearchMetadataInfoByResourceIdReqType",
+      "responsesTypeName": "SearchMetadataInfoByResourceIdResType"
+    },
+    "get&/api/Departments": {
+      "requestTypeName": "GetDepartmentsReqType",
+      "responsesTypeName": "GetDepartmentsResType"
+    },
+    "post&/api/Departments": {
+      "requestTypeName": "AddDepartmentsReqType",
+      "responsesTypeName": "AddDepartmentsResType"
+    },
+    "get&/api/Departments/{id}": {
+      "requestTypeName": "GetDepartmentByIdReqType",
+      "responsesTypeName": "GetDepartmentByIdResType"
+    },
+    "put&/api/Departments/{id}": {
+      "requestTypeName": "EditDepartmentReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Departments/{id}": {
+      "requestTypeName": "DeleteDepartmentReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Departments/batch": {
+      "requestTypeName": "GetDepartmentsByIdsReqType",
+      "responsesTypeName": "GetDepartmentsByIdsResType"
+    },
+    "post&/api/Departments/import": {
+      "requestTypeName": "ImportDepartmentsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Districts": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetDistrictsResType"
+    },
+    "get&/api/Domains": {
+      "requestTypeName": "GetDomainsReqType",
+      "responsesTypeName": "GetDomainsResType"
+    },
+    "post&/api/Domains": {
+      "requestTypeName": "AddDomainReqType",
+      "responsesTypeName": "AddDomainResType"
+    },
+    "get&/api/Domains/{id}": {
+      "requestTypeName": "GetDomainByIdReqType",
+      "responsesTypeName": "GetDomainByIdResType"
+    },
+    "put&/api/Domains/{id}": {
+      "requestTypeName": "EditDomainReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Domains/{id}": {
+      "requestTypeName": "DeleteDomainReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Domains/batch": {
+      "requestTypeName": "GetDomainsByIdsReqType",
+      "responsesTypeName": "GetDomainsByIdsResType"
+    },
+    "post&/api/Domains/import": {
+      "requestTypeName": "ImportDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Export/ExportDataRequestCategory": {
+      "requestTypeName": "ExportDataRequestCategoryReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/KettleJobs": {
+      "requestTypeName": "GetKettleJobsReqType",
+      "responsesTypeName": "GetKettleJobsResType"
+    },
+    "post&/api/KettleJobs": {
+      "requestTypeName": "AddKettleJobsReqType",
+      "responsesTypeName": "AddKettleJobsResType"
+    },
+    "put&/api/KettleJobs/{resourceId}": {
+      "requestTypeName": "EditKettleJobsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/KettleJobs/{resourceId}": {
+      "requestTypeName": "DeleteKettleJobsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/KettleJobs/Search": {
+      "requestTypeName": "SearchKettleJobsReqType",
+      "responsesTypeName": "SearchKettleJobsResType"
+    },
+    "get&/api/KettleJobs/{id}": {
+      "requestTypeName": "GetKettleJobByIdReqType",
+      "responsesTypeName": "GetKettleJobByIdResType"
+    },
+    "get&/api/KettleJobs/{id}/Records": {
+      "requestTypeName": "GetKettleJobRecordsReqType",
+      "responsesTypeName": "GetKettleJobRecordsResType"
+    },
+    "get&/api/KettleJobs/Records/Search": {
+      "requestTypeName": "GetKettleJobRecordsByMetadataIdReqType",
+      "responsesTypeName": "GetKettleJobRecordsByMetadataIdResType"
+    },
+    "get&/api/KettleJobs/Tags": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetKettleJobsTagsResType"
+    },
+    "post&/api/KettleJobs/Import": {
+      "requestTypeName": "ImportKettleJobsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/KettleJobs/Export": {
+      "requestTypeName": "ExportKettleJobsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/KettleJobs/{id}/Run": {
+      "requestTypeName": "RunJobsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/KettleJobs/{id}/Stop": {
+      "requestTypeName": "StopJobsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/KettleJobs/SingleExecution": {
+      "requestTypeName": "SingleExecJobsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/KettleJobs/{id}/Records/Export": {
+      "requestTypeName": "ExportTop10JobsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/KettleJobs/Records/{id}/Export": {
+      "requestTypeName": "ExportETLJobRecordsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Metadata/{id}": {
+      "requestTypeName": "GetMetadataByIdReqType",
+      "responsesTypeName": "GetMetadataByIdResType"
+    },
+    "put&/api/Metadata/{id}": {
+      "requestTypeName": "EditMetadataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Metadata/{id}": {
+      "requestTypeName": "DeleteMetadataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Metadata/dockInfo": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetMetadataDockInfoResType"
+    },
+    "get&/api/Metadata": {
+      "requestTypeName": "GetMetadataReqType",
+      "responsesTypeName": "GetMetadataResType"
+    },
+    "post&/api/Metadata": {
+      "requestTypeName": "AddMetadataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Metadata/FindPageBySearch": {
+      "requestTypeName": "SearchMetadataReqType",
+      "responsesTypeName": "SearchMetadataResType"
+    },
+    "post&/api/Metadata/UpdateMetadataCountInfo": {
+      "requestTypeName": "UpdateMetadataCountInfoReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Projects": {
+      "requestTypeName": "GetProjectsReqType",
+      "responsesTypeName": "GetProjectsResType"
+    },
+    "post&/api/Projects": {
+      "requestTypeName": "AddProjectReqType",
+      "responsesTypeName": "AddProjectResType"
+    },
+    "get&/api/Projects/{id}": {
+      "requestTypeName": "GetProjectByIdReqType",
+      "responsesTypeName": "GetProjectByIdResType"
+    },
+    "put&/api/Projects/{id}": {
+      "requestTypeName": "EditProjectReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Projects/{id}": {
+      "requestTypeName": "DeleteProjectReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Projects/{id}/detail": {
+      "requestTypeName": "GetProjectDetailByIdReqType",
+      "responsesTypeName": "GetProjectDetailByIdResType"
+    },
+    "post&/api/Projects/import": {
+      "requestTypeName": "ImportProjectsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Projects/{id}/defaultResourceDbs": {
+      "requestTypeName": "AddResourceDbsByProjectIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/ResourceDb/tree": {
+      "requestTypeName": "GetResourceDbTreeReqType",
+      "responsesTypeName": "GetResourceDbTreeResType"
+    },
+    "get&/api/ResourceDb": {
+      "requestTypeName": "GetResourceDbReqType",
+      "responsesTypeName": "GetResourceDbResType"
+    },
+    "post&/api/ResourceDb": {
+      "requestTypeName": "AddResourceDbReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/ResourceDb/{id}": {
+      "requestTypeName": "GetResourceDbByIdReqType",
+      "responsesTypeName": "GetResourceDbByIdResType"
+    },
+    "put&/api/ResourceDb/{id}": {
+      "requestTypeName": "EditResourceDbReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/ResourceDb/{id}": {
+      "requestTypeName": "DeleteResourceDbReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ResourceDb/search/batch": {
+      "requestTypeName": "GetResourceDbsByIdsReqType",
+      "responsesTypeName": "GetResourceDbsByIdsResType"
+    },
+    "post&/api/ResourceDb/search": {
+      "requestTypeName": "GetResourceDbsByIdReqType",
+      "responsesTypeName": "GetResourceDbsByIdResType"
+    },
+    "post&/api/ResourceDb/export": {
+      "requestTypeName": "ExportResourceDbsReqType",
+      "responsesTypeName": "ExportResourceDbsResType"
+    },
+    "post&/api/ResourceDb/import": {
+      "requestTypeName": "ImportResourceDbsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ResourceDb/Batch": {
+      "requestTypeName": "BatchAddResourceDbReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ResourceDb/children/mergence": {
+      "requestTypeName": "MergeResourceDbReqType",
+      "responsesTypeName": "MergeResourceDbResType"
+    },
+    "get&/api/ResourceDb/{id}/Metadata": {
+      "requestTypeName": "GetMetadataByResourceDbReqType",
+      "responsesTypeName": "GetMetadataByResourceDbResType"
+    },
+    "post&/api/ResourceDb/reload": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ResourceDb/{id}/ExternalResource/Search": {
+      "requestTypeName": "SearchExternalResourceReqType",
+      "responsesTypeName": "SearchExternalResourceResType"
+    },
+    "get&/api/ResourceDb/{id}/ExternalResource/Statistic": {
+      "requestTypeName": "GetExternalResourceAmountReqType",
+      "responsesTypeName": "GetExternalResourceAmountResType"
+    },
+    "post&/api/ResourceDb/{id}/ExternalResource": {
+      "requestTypeName": "AddExternalResourceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/ResourceDb/{id}/ExternalResource": {
+      "requestTypeName": "EditExternalResourceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/ResourceDb/{id}/ExternalResource": {
+      "requestTypeName": "DeleteExternalResourceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ResourceDb/export/ExternalData": {
+      "requestTypeName": "ExportExternalDataEntryReqType",
+      "responsesTypeName": "ExportExternalDataEntryResType"
+    },
+    "post&/api/ResourceDb/import/ExternalData": {
+      "requestTypeName": "ImportExternalDataEntryReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/ResourceDb/{id}/export/ExternalData/excel/template": {
+      "requestTypeName": "ExportExternalDataEntryExcelTemplateReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ResourceDb/{id}/import/ExternalData/excel": {
+      "requestTypeName": "ImportExcelExternalDataEntryReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/ResourceDb/{id}/ExternalResource/Batch": {
+      "requestTypeName": "BatchDeleteExternalResourceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Services": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetServicesResType"
+    },
+    "get&/api/Statistics/Metadata/ThirtyEtlJobWriteCount": {
+      "requestTypeName": "GetThirtyEtlJobWriteCountReqType",
+      "responsesTypeName": "GetThirtyEtlJobWriteCountResType"
+    },
+    "get&/api/Statistics/CheckTaskExecuteRecord/LastThirtyTimesRecord": {
+      "requestTypeName": "GetLastThirtyTimesRecordReqType",
+      "responsesTypeName": "GetLastThirtyTimesRecordResType"
+    },
+    "get&/api/Statistics/CheckTaskExecuteRecord/LastThirtyTimesRaise": {
+      "requestTypeName": "GetLastThirtyTimesRaiseReqType",
+      "responsesTypeName": "GetLastThirtyTimesRaiseResType"
+    },
+    "get&/api/Statistics/Metadata/Count": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetMetadataCountResType"
+    },
+    "get&/api/Statistics/CheckRule/Count": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetCheckRuleCountResType"
+    },
+    "get&/api/Statistics/Metadata/Activity": {
+      "requestTypeName": "GetMetadataActivityReqType",
+      "responsesTypeName": "GetMetadataActivityResType"
+    },
+    "get&/api/Tags": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetTagsResType"
+    },
+    "get&/api/Themes": {
+      "requestTypeName": "GetThemesReqType",
+      "responsesTypeName": "GetThemesResType"
+    },
+    "post&/api/Themes": {
+      "requestTypeName": "AddThemeReqType",
+      "responsesTypeName": "AddThemeResType"
+    },
+    "get&/api/Themes/{id}": {
+      "requestTypeName": "GetThemeByIdReqType",
+      "responsesTypeName": "GetThemeByIdResType"
+    },
+    "put&/api/Themes/{id}": {
+      "requestTypeName": "EditThemeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Themes/{id}": {
+      "requestTypeName": "DeleteThemeReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
   "ntsBiz": {
     "get&/api/ConditionTemplates/{id}": {
       "requestTypeName": "GetConTemByIdReqType",

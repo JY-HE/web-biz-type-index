@@ -175,13 +175,13 @@ module.exports = {
         address: '10.8.109.235',
         port: '54229',
     },
-    // dcsBiz: {
-    //     label: '数据中台服务',
-    //     url: 'http://newdev.rdapp.com:53839/docs/v1/DataCenterService-API.json',
-    //     primaryName: 'DataCenterServer',
-    //     address: '10.8.109.235',
-    //     port: '3079',
-    // },
+    dcsBiz: {
+        label: '数据中台服务',
+        url: 'http://newdev.rdapp.com:53839/docs/v1/DataCenterService-API.json',
+        primaryName: 'DataCenterServer',
+        address: '10.8.109.235',
+        port: '3079',
+    },
     ntsBiz: {
         label: '通知服务',
         url: 'http://newdev.rdapp.com:53839/docs/v1/NotificationService-API.json',
