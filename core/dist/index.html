@@ -64,13 +64,17 @@
                             <el-table-column label="请求URL" prop="url"> </el-table-column>
                             <el-table-column label="请求类型名称" prop="requestTypeName">
                                 <template #default="scope">
-                                    <el-button title="点击复制" type="primary" size="small" v-if="scope.row.requestTypeName" @click.stop="copyName(scope.row.requestTypeName)">{{scope.row.requestTypeName}}</el-button>
+                                    <el-button title="点击复制" :type="scope.row.requestTypeName === 'CommonReqType' ? 'warning':'primary'" size="small" v-if="scope.row.requestTypeName" @click.stop="copyName(scope.row.requestTypeName)"
+                                        >{{scope.row.requestTypeName}}</el-button
+                                    >
                                     <el-tag v-else type="danger" effect="dark">无</el-tag>
                                 </template>
                             </el-table-column>
                             <el-table-column label="响应类型名称" prop="responsesTypeName">
                                 <template #default="scope">
-                                    <el-button title="点击复制" type="primary" size="small" v-if="scope.row.responsesTypeName" @click.stop="copyName(scope.row.responsesTypeName)">{{scope.row.responsesTypeName}}</el-button>
+                                    <el-button title="点击复制" :type="scope.row.responsesTypeName === 'CommonResType' ? 'warning':'primary'" size="small" v-if="scope.row.responsesTypeName" @click.stop="copyName(scope.row.responsesTypeName)"
+                                        >{{scope.row.responsesTypeName}}</el-button
+                                    >
                                     <el-tag v-else type="danger" effect="dark">无</el-tag>
                                 </template>
                             </el-table-column>
@@ -212,7 +216,7 @@
                             }
                             str += `${data.responsesTypeName}`;
                         }
-                        return str ? `import { ${str} } from '@rdapp/web-biz-type/${data.bizName}Types'` : '';
+                        return str ? `import { ${str} } from '@rdapp/web-biz-type'` : '';
                     },
                     // 跳转文档地址
                     skipSwagger(data) {
