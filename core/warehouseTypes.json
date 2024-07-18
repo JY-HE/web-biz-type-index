@@ -51,7 +51,56 @@
       "responsesTypeName": "GetVoiceInfosResType"
     }
   },
-  "mmtBiz": {},
+  "mmtBiz": {
+    "post&/api/GradingDispatch": {
+      "requestTypeName": "GradingDispatchReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/MultimediaTransfers": {
+      "requestTypeName": "GetMultimediaTransfersReqType",
+      "responsesTypeName": "GetMultimediaTransfersResType"
+    },
+    "post&/api/MultimediaTransfers": {
+      "requestTypeName": "AddMultimediaTransfersReqType",
+      "responsesTypeName": "AddMultimediaTransfersResType"
+    },
+    "post&/api/MultimediaTransfers/search": {
+      "requestTypeName": "SearchMultimediaTransfersReqType",
+      "responsesTypeName": "SearchMultimediaTransfersResType"
+    },
+    "get&/api/MultimediaTransfers/{id}": {
+      "requestTypeName": "GetMultimediaTransfersByIdReqType",
+      "responsesTypeName": "GetMultimediaTransfersByIdResType"
+    },
+    "delete&/api/MultimediaTransfers/{id}": {
+      "requestTypeName": "DeleteMultimediaTransfersReqType",
+      "responsesTypeName": ""
+    },
+    "post&/api/MultimediaTransfers/data_completion": {
+      "requestTypeName": "CompleteMultimediaTransfersReqType",
+      "responsesTypeName": ""
+    },
+    "get&/api/Templates": {
+      "requestTypeName": "GetMultimediaTemplatesReqType",
+      "responsesTypeName": "GetMultimediaTemplatesResType"
+    },
+    "post&/api/Templates": {
+      "requestTypeName": "AddMultimediaTemplatesReqType",
+      "responsesTypeName": "AddMultimediaTemplatesResType"
+    },
+    "get&/api/Templates/{id}": {
+      "requestTypeName": "GetTemplatesByIdReqType",
+      "responsesTypeName": "GetTemplatesByIdResType"
+    },
+    "put&/api/Templates/{id}": {
+      "requestTypeName": "EditTemplatesReqType",
+      "responsesTypeName": ""
+    },
+    "delete&/api/Templates/{id}": {
+      "requestTypeName": "DeleteTemplatesReqType",
+      "responsesTypeName": ""
+    }
+  },
   "aggsBiz": {},
   "authBiz": {},
   "edmsBiz": {},

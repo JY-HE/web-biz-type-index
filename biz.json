@@ -863,6 +863,1071 @@
 			"requestBody": null
 		}
 	],
+	"mmtBiz": [
+		{
+			"url": "/api/GradingDispatch",
+			"tag": "GradingDispatch",
+			"method": "post",
+			"summary": "分级调度操作",
+			"version": "v1",
+			"requestTypeName": "GradingDispatchReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "version",
+					"type": "string",
+					"description": "请求版本",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "id",
+					"type": "string",
+					"description": "Id",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "bizName",
+					"type": "string",
+					"description": "业务名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "bizData",
+					"description": "业务数据",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "sourceId",
+					"type": "string",
+					"description": "源平台 Id",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "destinationId",
+					"type": "string",
+					"description": "目标平台 Id",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "type",
+					"type": "integer",
+					"description": "业务类型：1-Erds|2-Vfs|3-Rms",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "timeout",
+					"type": "integer",
+					"description": "请求超时设置(单位：秒)",
+					"required": true,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/MultimediaTransfers",
+			"tag": "MultimediaTransfers",
+			"method": "get",
+			"summary": "查询拍传",
+			"version": "v1",
+			"requestTypeName": "GetMultimediaTransfersReqType",
+			"responsesTypeName": "GetMultimediaTransfersResType",
+			"operationId": "GetMultimediaTransfers",
+			"parameters": [
+				{
+					"key": "BeginTime",
+					"type": "string",
+					"description": "开始时间",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "EndTime",
+					"type": "string",
+					"description": "结束时间",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "TemplateId",
+					"type": "string",
+					"description": "模板Id",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "KeyWord",
+					"type": "string",
+					"description": "关键字模糊查询",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "OrganizationId",
+					"type": "string",
+					"description": "组织机构Id",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "UserId",
+					"type": "string",
+					"description": "用户Id",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "ResourceId",
+					"type": "string",
+					"description": "资源ID",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "PlatformId",
+					"type": "string",
+					"description": "平台 ID",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量，最小为1",
+					"default": 100,
+					"in": "query"
+				},
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "MultimediaTransferOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/MultimediaTransfers",
+			"tag": "MultimediaTransfers",
+			"method": "post",
+			"summary": "创建拍传",
+			"version": "v1",
+			"requestTypeName": "AddMultimediaTransfersReqType",
+			"responsesTypeName": "AddMultimediaTransfersResType",
+			"parameters": [
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "拍传ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "拍传名称",
+					"required": false
+				},
+				{
+					"key": "templateId",
+					"type": "string",
+					"description": "拍传模板Id",
+					"required": false
+				},
+				{
+					"key": "templateName",
+					"type": "string",
+					"description": "拍传模板名称",
+					"required": false
+				},
+				{
+					"key": "longitude",
+					"type": "number",
+					"description": "经度",
+					"required": false
+				},
+				{
+					"key": "latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": false
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "地址",
+					"required": false
+				},
+				{
+					"key": "fileGroupId",
+					"type": "string",
+					"description": "文件组Id",
+					"required": false
+				},
+				{
+					"key": "fileCount",
+					"type": "integer",
+					"description": "文件数量",
+					"required": false
+				},
+				{
+					"key": "userId",
+					"type": "string",
+					"description": "拍传用户id",
+					"required": false
+				},
+				{
+					"key": "userName",
+					"type": "string",
+					"description": "用户名称",
+					"required": false
+				},
+				{
+					"key": "organizationId",
+					"type": "string",
+					"description": "组织机构Id",
+					"required": false
+				},
+				{
+					"key": "organizationName",
+					"type": "string",
+					"description": "组织机构名称",
+					"required": false
+				},
+				{
+					"key": "uploadTime",
+					"type": "string",
+					"description": "上传时间",
+					"required": false
+				},
+				{
+					"key": "company",
+					"type": "string",
+					"description": "单位名称",
+					"required": false
+				},
+				{
+					"key": "companyAddress",
+					"type": "string",
+					"description": "单位地址",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源ID",
+					"required": false
+				},
+				{
+					"key": "platformId",
+					"type": "string",
+					"description": "平台Id",
+					"required": false
+				},
+				{
+					"key": "areaCode",
+					"type": "string",
+					"description": "行政区域码",
+					"required": false
+				},
+				{
+					"key": "districtName",
+					"type": "string",
+					"description": "行政区域名",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "拍传名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "templateId",
+					"type": "string",
+					"description": "拍传模板Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "longitude",
+					"type": "number",
+					"description": "经度",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "地址",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "fileGroupId",
+					"type": "string",
+					"description": "文件组Id",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "uploadTime",
+					"type": "string",
+					"description": "文件上传时间",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "fileCount",
+					"type": "integer",
+					"description": "文件数量",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "company",
+					"type": "string",
+					"description": "单位名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "companyAddress",
+					"type": "string",
+					"description": "单位地址",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/MultimediaTransfers/search",
+			"tag": "MultimediaTransfers",
+			"method": "post",
+			"summary": "查询拍传",
+			"version": "v1",
+			"requestTypeName": "SearchMultimediaTransfersReqType",
+			"responsesTypeName": "SearchMultimediaTransfersResType",
+			"operationId": "GetMultimediaTransfersByArea",
+			"parameters": [
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "MultimediaTransferOutCommonType"
+				}
+			],
+			"requestBody": [
+				{
+					"key": "pageIndex",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "pageSize",
+					"type": "integer",
+					"description": "页容量，最小为1",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "beginTime",
+					"type": "string",
+					"description": "开始时间",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "endTime",
+					"type": "string",
+					"description": "结束时间",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "templateId",
+					"type": "string",
+					"description": "模板Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "keyWord",
+					"type": "string",
+					"description": "关键字模糊查询",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "organizationId",
+					"type": "string",
+					"description": "组织机构Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "userId",
+					"type": "string",
+					"description": "用户Id",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源ID",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "platformId",
+					"type": "string",
+					"description": "平台 ID",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "organizationIds",
+					"type": "array",
+					"description": "组织机构Id集合",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "prefixAreaCodes",
+					"type": "array",
+					"description": "行政区域码前缀",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "isMatchNullAreaCode",
+					"type": "boolean",
+					"description": "是否匹配空行政区域",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/MultimediaTransfers/{id}",
+			"tag": "MultimediaTransfers",
+			"method": "get",
+			"summary": "通过拍传ID获取拍传",
+			"version": "v1",
+			"requestTypeName": "GetMultimediaTransfersByIdReqType",
+			"responsesTypeName": "GetMultimediaTransfersByIdResType",
+			"operationId": "GetMultimediaTransfer",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "platformId",
+					"type": "string",
+					"description": "platformId",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "拍传ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "拍传名称",
+					"required": false
+				},
+				{
+					"key": "templateId",
+					"type": "string",
+					"description": "拍传模板Id",
+					"required": false
+				},
+				{
+					"key": "templateName",
+					"type": "string",
+					"description": "拍传模板名称",
+					"required": false
+				},
+				{
+					"key": "longitude",
+					"type": "number",
+					"description": "经度",
+					"required": false
+				},
+				{
+					"key": "latitude",
+					"type": "number",
+					"description": "纬度",
+					"required": false
+				},
+				{
+					"key": "address",
+					"type": "string",
+					"description": "地址",
+					"required": false
+				},
+				{
+					"key": "fileGroupId",
+					"type": "string",
+					"description": "文件组Id",
+					"required": false
+				},
+				{
+					"key": "fileCount",
+					"type": "integer",
+					"description": "文件数量",
+					"required": false
+				},
+				{
+					"key": "userId",
+					"type": "string",
+					"description": "拍传用户id",
+					"required": false
+				},
+				{
+					"key": "userName",
+					"type": "string",
+					"description": "用户名称",
+					"required": false
+				},
+				{
+					"key": "organizationId",
+					"type": "string",
+					"description": "组织机构Id",
+					"required": false
+				},
+				{
+					"key": "organizationName",
+					"type": "string",
+					"description": "组织机构名称",
+					"required": false
+				},
+				{
+					"key": "uploadTime",
+					"type": "string",
+					"description": "上传时间",
+					"required": false
+				},
+				{
+					"key": "company",
+					"type": "string",
+					"description": "单位名称",
+					"required": false
+				},
+				{
+					"key": "companyAddress",
+					"type": "string",
+					"description": "单位地址",
+					"required": false
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源ID",
+					"required": false
+				},
+				{
+					"key": "platformId",
+					"type": "string",
+					"description": "平台Id",
+					"required": false
+				},
+				{
+					"key": "areaCode",
+					"type": "string",
+					"description": "行政区域码",
+					"required": false
+				},
+				{
+					"key": "districtName",
+					"type": "string",
+					"description": "行政区域名",
+					"required": false
+				},
+				{
+					"key": "fileRecords",
+					"type": "array",
+					"description": "文件记录",
+					"required": false,
+					"typeNameMap": "FileEntityOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/MultimediaTransfers/{id}",
+			"tag": "MultimediaTransfers",
+			"method": "delete",
+			"summary": "删除拍传",
+			"version": "v1",
+			"requestTypeName": "DeleteMultimediaTransfersReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		},
+		{
+			"url": "/api/MultimediaTransfers/data_completion",
+			"tag": "MultimediaTransfers",
+			"method": "post",
+			"summary": "拍传数据补全",
+			"version": "v1",
+			"requestTypeName": "CompleteMultimediaTransfersReqType",
+			"responsesTypeName": "",
+			"operationId": "CompleteData",
+			"parameters": [
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "beginTime",
+					"type": "string",
+					"description": "开始时间",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "endTime",
+					"type": "string",
+					"description": "结束时间",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Templates",
+			"tag": "Templates",
+			"method": "get",
+			"summary": "按条件查询拍传模板",
+			"version": "v1",
+			"requestTypeName": "GetMultimediaTemplatesReqType",
+			"responsesTypeName": "GetMultimediaTemplatesResType",
+			"parameters": [
+				{
+					"key": "keyword",
+					"type": "string",
+					"description": "模糊匹配关键字",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "page",
+					"type": "integer",
+					"description": "页码, 从1开始",
+					"default": 1,
+					"in": "query"
+				},
+				{
+					"key": "per_page",
+					"type": "integer",
+					"description": "页容量，最小为1",
+					"default": 100,
+					"in": "query"
+				},
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": [
+				{
+					"key": "totalCount",
+					"type": "integer",
+					"description": "总数",
+					"required": false
+				},
+				{
+					"key": "records",
+					"type": "array",
+					"description": "记录",
+					"required": false,
+					"typeNameMap": "TemplateOutCommonType"
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Templates",
+			"tag": "Templates",
+			"method": "post",
+			"summary": "创建拍传模板",
+			"version": "v1",
+			"requestTypeName": "AddMultimediaTemplatesReqType",
+			"responsesTypeName": "AddMultimediaTemplatesResType",
+			"parameters": [
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "拍传模板ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "拍传模板名称",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题",
+					"required": false
+				},
+				{
+					"key": "placeHolders",
+					"type": "array",
+					"description": "模板占位符",
+					"required": false,
+					"typeNameMap": "PlaceHolderCommonType"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源ID",
+					"required": false
+				},
+				{
+					"key": "platformId",
+					"type": "string",
+					"description": "平台Id",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "拍传模板名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "placeHolders",
+					"type": "array",
+					"description": "模板占位符",
+					"required": false,
+					"typeNameMap": "PlaceHolderCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Templates/{id}",
+			"tag": "Templates",
+			"method": "get",
+			"summary": "通过拍传模板ID获取拍传模板",
+			"version": "v1",
+			"requestTypeName": "GetTemplatesByIdReqType",
+			"responsesTypeName": "GetTemplatesByIdResType",
+			"operationId": "GetTemplate",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "platformId",
+					"type": "string",
+					"description": "platformId",
+					"default": null,
+					"in": "query"
+				},
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "拍传模板ID",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "拍传模板名称",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题",
+					"required": false
+				},
+				{
+					"key": "placeHolders",
+					"type": "array",
+					"description": "模板占位符",
+					"required": false,
+					"typeNameMap": "PlaceHolderCommonType"
+				},
+				{
+					"key": "resourceId",
+					"type": "string",
+					"description": "资源ID",
+					"required": false
+				},
+				{
+					"key": "platformId",
+					"type": "string",
+					"description": "平台Id",
+					"required": false
+				}
+			],
+			"requestBody": null
+		},
+		{
+			"url": "/api/Templates/{id}",
+			"tag": "Templates",
+			"method": "put",
+			"summary": "更新拍传模板",
+			"version": "v1",
+			"requestTypeName": "EditTemplatesReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": null,
+			"requestBody": [
+				{
+					"key": "name",
+					"type": "string",
+					"description": "拍传模板名称",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "描述",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "标题",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "placeHolders",
+					"type": "array",
+					"description": "模板占位符",
+					"required": false,
+					"typeNameMap": "PlaceHolderCommonType",
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/Templates/{id}",
+			"tag": "Templates",
+			"method": "delete",
+			"summary": "删除拍传模板",
+			"version": "v1",
+			"requestTypeName": "DeleteTemplatesReqType",
+			"responsesTypeName": "",
+			"parameters": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "id",
+					"required": true,
+					"default": null,
+					"in": "path"
+				},
+				{
+					"key": "X-version",
+					"type": "string",
+					"description": "",
+					"default": null,
+					"in": "header"
+				}
+			],
+			"responses": null,
+			"requestBody": null
+		}
+	],
 	"quartzBiz": [
 		{
 			"url": "/api/Jobs",

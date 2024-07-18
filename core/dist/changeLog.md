@@ -1,9 +1,17 @@
 
-### cgsBiz
+### mmtBiz
 
 |requestTypeName|responsesTypeName|url|methodType|describe|version|
 | --------- | --------- | --------- | --------- | --------- | --------- |
-|`TextToSpeechReqType`|`TextToSpeechResType`|`/api/UniformSpeech`|post|文字转语音|v1|
-|`TextTtoRecordNotifyReqType`|`TextTtoRecordNotifyResType`|`/api/UniformSpeech/RecordNotify`|post|文字转语音(语音通知专用)
-<remarks>该接口的Rate不支持设置，必须为8000</remarks>|v1|
-|``|`GetVoiceInfosResType`|`/api/UniformSpeech/voiceinfos`|get|通过语音信息列表|v1|
+|`GradingDispatchReqType`|``|`/api/GradingDispatch`|post|分级调度操作|v1|
+|`GetMultimediaTransfersReqType`|`GetMultimediaTransfersResType`|`/api/MultimediaTransfers`|get|查询拍传|v1|
+|`AddMultimediaTransfersReqType`|`AddMultimediaTransfersResType`|`/api/MultimediaTransfers`|post|创建拍传|v1|
+|`SearchMultimediaTransfersReqType`|`SearchMultimediaTransfersResType`|`/api/MultimediaTransfers/search`|post|查询拍传|v1|
+|`GetMultimediaTransfersByIdReqType`|`GetMultimediaTransfersByIdResType`|`/api/MultimediaTransfers/{id}`|get|通过拍传ID获取拍传|v1|
+|`DeleteMultimediaTransfersReqType`|``|`/api/MultimediaTransfers/{id}`|delete|删除拍传|v1|
+|`CompleteMultimediaTransfersReqType`|``|`/api/MultimediaTransfers/data_completion`|post|拍传数据补全|v1|
+|`GetMultimediaTemplatesReqType`|`GetMultimediaTemplatesResType`|`/api/Templates`|get|按条件查询拍传模板|v1|
+|`AddMultimediaTemplatesReqType`|`AddMultimediaTemplatesResType`|`/api/Templates`|post|创建拍传模板|v1|
+|`GetTemplatesByIdReqType`|`GetTemplatesByIdResType`|`/api/Templates/{id}`|get|通过拍传模板ID获取拍传模板|v1|
+|`EditTemplatesReqType`|``|`/api/Templates/{id}`|put|更新拍传模板|v1|
+|`DeleteTemplatesReqType`|``|`/api/Templates/{id}`|delete|删除拍传模板|v1|

@@ -16,13 +16,13 @@ module.exports = {
         address: '10.8.109.235',
         port: '3378',
     },
-    // mmtBiz: {
-    //     label: '拍传服务',
-    //     url: 'http://newdev.rdapp.com:53839/docs/v1/MultimediaTransferService-API.json',
-    //     primaryName: 'MultimediaTransferService',
-    //     address: '10.8.109.235',
-    //     port: '17599',
-    // },
+    mmtBiz: {
+        label: '拍传服务',
+        url: 'http://newdev.rdapp.com:53839/docs/v1/MultimediaTransferService-API.json',
+        primaryName: 'MultimediaTransferService',
+        address: '10.8.109.235',
+        port: '17599',
+    },
     // aggsBiz: {
     //     label: '聚合查询服务',
     //     url: 'http://newdev.rdapp.com:53839/docs/v1/AggregationService-API.json',
