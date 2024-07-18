@@ -620,6 +620,249 @@
 			"requestBody": null
 		}
 	],
+	"cgsBiz": [
+		{
+			"url": "/api/UniformSpeech",
+			"tag": "UniformSpeech",
+			"method": "post",
+			"summary": "文字转语音",
+			"version": "v1",
+			"requestTypeName": "TextToSpeechReqType",
+			"responsesTypeName": "TextToSpeechResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "转换Id",
+					"required": false
+				},
+				{
+					"key": "filePath",
+					"type": "string",
+					"description": "转换后的语音文件相对路径",
+					"required": false
+				},
+				{
+					"key": "text",
+					"type": "string",
+					"description": "转语音的文字",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "text",
+					"type": "string",
+					"description": "需要转换的文字",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "volume",
+					"type": "integer",
+					"description": "音量",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "speed",
+					"type": "integer",
+					"description": "速度",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "voiceName",
+					"type": "string",
+					"description": "语音名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "rate",
+					"type": "integer",
+					"description": "采样率",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "lang",
+					"type": "string",
+					"description": "语言",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "usingNeural",
+					"type": "boolean",
+					"description": "使用使用神经网络声音（高质量语音）",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "waitNeural",
+					"type": "boolean",
+					"description": "是否等待神经网络声音生成再返回如果不等待，将临时返回低质量语音文件，高质量语音将在后台转换后，提供缓存缓存的key为NeuralVoiceName+VoiceName，使用SHA-256哈希算法生成唯一文件名",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "neuralVoiceName",
+					"type": "string",
+					"description": "voice name 如果传入不支持的语音名字，将自动采用默认",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/UniformSpeech/RecordNotify",
+			"tag": "UniformSpeech",
+			"method": "post",
+			"summary": "文字转语音(语音通知专用)\r\n<remarks>该接口的Rate不支持设置，必须为8000</remarks>",
+			"version": "v1",
+			"requestTypeName": "TextTtoRecordNotifyReqType",
+			"responsesTypeName": "TextTtoRecordNotifyResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "转换Id",
+					"required": false
+				},
+				{
+					"key": "filePath",
+					"type": "string",
+					"description": "转换后的语音文件相对路径",
+					"required": false
+				},
+				{
+					"key": "text",
+					"type": "string",
+					"description": "转语音的文字",
+					"required": false
+				}
+			],
+			"requestBody": [
+				{
+					"key": "text",
+					"type": "string",
+					"description": "需要转换的文字",
+					"required": true,
+					"in": "requestBody"
+				},
+				{
+					"key": "volume",
+					"type": "integer",
+					"description": "音量",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "speed",
+					"type": "integer",
+					"description": "速度",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "voiceName",
+					"type": "string",
+					"description": "语音名称",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "rate",
+					"type": "integer",
+					"description": "采样率",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "lang",
+					"type": "string",
+					"description": "语言",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "usingNeural",
+					"type": "boolean",
+					"description": "使用使用神经网络声音（高质量语音）",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "waitNeural",
+					"type": "boolean",
+					"description": "是否等待神经网络声音生成再返回如果不等待，将临时返回低质量语音文件，高质量语音将在后台转换后，提供缓存缓存的key为NeuralVoiceName+VoiceName，使用SHA-256哈希算法生成唯一文件名",
+					"required": false,
+					"in": "requestBody"
+				},
+				{
+					"key": "neuralVoiceName",
+					"type": "string",
+					"description": "voice name 如果传入不支持的语音名字，将自动采用默认",
+					"required": false,
+					"in": "requestBody"
+				}
+			]
+		},
+		{
+			"url": "/api/UniformSpeech/voiceinfos",
+			"tag": "UniformSpeech",
+			"method": "get",
+			"summary": "通过语音信息列表",
+			"version": "v1",
+			"requestTypeName": "",
+			"responsesTypeName": "GetVoiceInfosResType",
+			"parameters": null,
+			"responses": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "voiceAge",
+					"type": "integer",
+					"description": "",
+					"required": false,
+					"typeNameMap": "VoiceAgeCommonType"
+				},
+				{
+					"key": "voiceGender",
+					"type": "integer",
+					"description": "",
+					"required": false,
+					"typeNameMap": "VoiceGenderCommonType"
+				},
+				{
+					"key": "culture",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "",
+					"required": false
+				}
+			],
+			"requestBody": null
+		}
+	],
 	"quartzBiz": [
 		{
 			"url": "/api/Jobs",

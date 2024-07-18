@@ -9,13 +9,13 @@ module.exports = {
         address: '10.8.109.235',
         port: '7319',
     },
-    // cgsBiz: {
-    //     label: '认知服务(文字转语音)',
-    //     url: 'http://newdev.rdapp.com:53839/docs/v1/CognitiveService-API.json',
-    //     primaryName: 'CognitiveServer',
-    //     address: '10.8.109.235',
-    //     port: '3378',
-    // },
+    cgsBiz: {
+        label: '认知服务(文字转语音)',
+        url: 'http://newdev.rdapp.com:53839/docs/v1/CognitiveService-API.json',
+        primaryName: 'CognitiveServer',
+        address: '10.8.109.235',
+        port: '3378',
+    },
     // mmtBiz: {
     //     label: '拍传服务',
     //     url: 'http://newdev.rdapp.com:53839/docs/v1/MultimediaTransferService-API.json',

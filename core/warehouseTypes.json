@@ -37,7 +37,20 @@
       "responsesTypeName": "GetDevicesHistoryResType"
     }
   },
-  "cgsBiz": {},
+  "cgsBiz": {
+    "post&/api/UniformSpeech": {
+      "requestTypeName": "TextToSpeechReqType",
+      "responsesTypeName": "TextToSpeechResType"
+    },
+    "post&/api/UniformSpeech/RecordNotify": {
+      "requestTypeName": "TextTtoRecordNotifyReqType",
+      "responsesTypeName": "TextTtoRecordNotifyResType"
+    },
+    "get&/api/UniformSpeech/voiceinfos": {
+      "requestTypeName": "",
+      "responsesTypeName": "GetVoiceInfosResType"
+    }
+  },
   "mmtBiz": {},
   "aggsBiz": {},
   "authBiz": {},

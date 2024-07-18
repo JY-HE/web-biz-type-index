@@ -413,6 +413,199 @@
 			"commonTypeName": "DeviceItem]CommonType"
 		}
 	},
+	"cgsBiz": {
+		"CognitiveService.Models.Request.UniformSpeechIn": {
+			"type": "object",
+			"description": "文字转语音",
+			"properties": [
+				{
+					"key": "text",
+					"type": "string",
+					"description": "需要转换的文字",
+					"required": true
+				},
+				{
+					"key": "volume",
+					"type": "integer",
+					"description": "音量",
+					"required": false
+				},
+				{
+					"key": "speed",
+					"type": "integer",
+					"description": "速度",
+					"required": false
+				},
+				{
+					"key": "voiceName",
+					"type": "string",
+					"description": "语音名称",
+					"required": false
+				},
+				{
+					"key": "rate",
+					"type": "integer",
+					"description": "采样率",
+					"required": false
+				},
+				{
+					"key": "lang",
+					"type": "string",
+					"description": "语言",
+					"required": false
+				},
+				{
+					"key": "usingNeural",
+					"type": "boolean",
+					"description": "使用使用神经网络声音（高质量语音）",
+					"required": false
+				},
+				{
+					"key": "waitNeural",
+					"type": "boolean",
+					"description": "是否等待神经网络声音生成再返回如果不等待，将临时返回低质量语音文件，高质量语音将在后台转换后，提供缓存缓存的key为NeuralVoiceName+VoiceName，使用SHA-256哈希算法生成唯一文件名",
+					"required": false
+				},
+				{
+					"key": "neuralVoiceName",
+					"type": "string",
+					"description": "voice name 如果传入不支持的语音名字，将自动采用默认",
+					"required": false
+				}
+			],
+			"commonTypeName": "UniformSpeechInCommonType"
+		},
+		"Microsoft.AspNetCore.Mvc.ProblemDetails": {
+			"type": "object",
+			"description": "",
+			"properties": [
+				{
+					"key": "type",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "title",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "status",
+					"type": "integer",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "detail",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "instance",
+					"type": "string",
+					"description": "",
+					"required": false
+				}
+			],
+			"commonTypeName": "ProblemDetailsCommonType"
+		},
+		"CognitiveService.Models.Response.TextToSpeechOutEx": {
+			"type": "object",
+			"description": "文字转语音结果",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "转换Id",
+					"required": false
+				},
+				{
+					"key": "filePath",
+					"type": "string",
+					"description": "转换后的语音文件相对路径",
+					"required": false
+				},
+				{
+					"key": "text",
+					"type": "string",
+					"description": "转语音的文字",
+					"required": false
+				}
+			],
+			"commonTypeName": "TextToSpeechOutExCommonType"
+		},
+		"SpeechCommon.VoiceAge": {
+			"enum": [
+				0,
+				10,
+				15,
+				30,
+				65
+			],
+			"type": "integer",
+			"format": "int32",
+			"commonTypeName": "VoiceAgeCommonType"
+		},
+		"SpeechCommon.VoiceGender": {
+			"enum": [
+				0,
+				1,
+				2,
+				3
+			],
+			"type": "integer",
+			"format": "int32",
+			"commonTypeName": "VoiceGenderCommonType"
+		},
+		"SpeechCommon.VoiceInfo": {
+			"type": "object",
+			"description": "",
+			"properties": [
+				{
+					"key": "id",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "name",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "voiceAge",
+					"type": "integer",
+					"description": "",
+					"required": false,
+					"typeNameMap": "VoiceAgeCommonType"
+				},
+				{
+					"key": "voiceGender",
+					"type": "integer",
+					"description": "",
+					"required": false,
+					"typeNameMap": "VoiceGenderCommonType"
+				},
+				{
+					"key": "culture",
+					"type": "string",
+					"description": "",
+					"required": false
+				},
+				{
+					"key": "description",
+					"type": "string",
+					"description": "",
+					"required": false
+				}
+			],
+			"commonTypeName": "VoiceInfoCommonType"
+		}
+	},
 	"quartzBiz": {
 		"QuartzService.Models.Common.JobMode": {
 			"enum": [
