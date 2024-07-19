@@ -101,13 +101,2252 @@
       "responsesTypeName": "CommonResType"
     }
   },
-  "aggsBiz": {},
-  "authBiz": {},
-  "edmsBiz": {},
-  "orgsBiz": {},
-  "eventBiz": {},
-  "viscsBiz": {},
-  "alarmBiz": {},
+  "aggsBiz": {
+    "post&/api/Alarms/GetAlarmInfo": {
+      "requestTypeName": "AggsGetAlarmInfoReqType",
+      "responsesTypeName": "AggsGetAlarmInfoResType"
+    },
+    "get&/api/Alarms/GetAlarmsByDistrictIds": {
+      "requestTypeName": "AggsGetAlarmsByDistrictIdsReqType",
+      "responsesTypeName": "AggsGetAlarmsByDistrictIdsResType"
+    },
+    "post&/api/AlertRecords/search": {
+      "requestTypeName": "SearchAlertRecordReqType",
+      "responsesTypeName": "SearchAlertRecordResType"
+    },
+    "get&/api/AlertRecords/{id}": {
+      "requestTypeName": "AggsGetAlertRecordByIdReqType",
+      "responsesTypeName": "AggsGetAlertRecordByIdResType"
+    },
+    "post&/api/AlertRecords/converter/event": {
+      "requestTypeName": "AlarmToEventReqType",
+      "responsesTypeName": "AlarmToEventResType"
+    },
+    "get&/api/Assets/{id}": {
+      "requestTypeName": "GetAssetsByIdReqType",
+      "responsesTypeName": "GetAssetsByIdResType"
+    },
+    "post&/api/Assets": {
+      "requestTypeName": "AggsSearchAssetsReqType",
+      "responsesTypeName": "AggsSearchAssetsResType"
+    },
+    "post&/api/Assets/circle_area": {
+      "requestTypeName": "GetNearAssetsReqType",
+      "responsesTypeName": "GetNearAssetsResType"
+    },
+    "post&/api/Assets/circle_area/Alert": {
+      "requestTypeName": "GetNearAlertsReqType",
+      "responsesTypeName": "GetNearAlertsResType"
+    },
+    "post&/api/Assets/search": {
+      "requestTypeName": "AggsCommonAssetSearchReqType",
+      "responsesTypeName": "AggsCommonAssetSearchResType"
+    },
+    "get&/api/events/{eventId}/communications": {
+      "requestTypeName": "GetCommunicationByEventIdReqType",
+      "responsesTypeName": "GetCommunicationByEventIdResType"
+    },
+    "get&/api/events/{eventId}/communications/{id}": {
+      "requestTypeName": "GetCommunicationByIdReqType",
+      "responsesTypeName": "GetCommunicationByIdResType"
+    },
+    "get&/api/events/{eventId}/files": {
+      "requestTypeName": "GetAggsFilesByEventIdReqType",
+      "responsesTypeName": "GetAggsFilesByEventIdResType"
+    },
+    "get&/api/events/{eventId}/files/{id}": {
+      "requestTypeName": "GetAggsFilesByIdReqType",
+      "responsesTypeName": "GetAggsFilesByIdResType"
+    },
+    "get&/api/events/{eventId}/multimediatransfers": {
+      "requestTypeName": "GetMultimediaTransfersByEventIdReqType",
+      "responsesTypeName": "GetMultimediaTransfersByEventIdResType"
+    },
+    "get&/api/events/{eventId}/multimediatransfers/{id}": {
+      "requestTypeName": "GetAggsMultimediaTransfersByIdReqType",
+      "responsesTypeName": "GetAggsMultimediaTransfersByIdResType"
+    },
+    "get&/api/events/{eventId}/pictures": {
+      "requestTypeName": "GetEventPicturesReqType",
+      "responsesTypeName": "GetEventPicturesResType"
+    },
+    "get&/api/events/{eventId}/pictures/{id}": {
+      "requestTypeName": "GetEventPictureByIdReqType",
+      "responsesTypeName": "GetEventPictureByIdResType"
+    },
+    "get&/api/events/{eventId}/videos": {
+      "requestTypeName": "GetEventVideosReqType",
+      "responsesTypeName": "GetEventVideosResType"
+    },
+    "get&/api/events/{eventId}/videos/{id}": {
+      "requestTypeName": "GetEventVideoByIdReqType",
+      "responsesTypeName": "GetEventVideoByIdResType"
+    },
+    "get&/api/Camera/groups": {
+      "requestTypeName": "GetAllCameraGroupsReqType",
+      "responsesTypeName": "GetAllCameraGroupsResType"
+    },
+    "post&/api/Camera": {
+      "requestTypeName": "AggsSearchCamerasReqType",
+      "responsesTypeName": "AggsSearchCamerasResType"
+    },
+    "post&/api/Camera/circle_area": {
+      "requestTypeName": "GetNearCamerasReqType",
+      "responsesTypeName": "GetNearCamerasResType"
+    },
+    "post&/api/Camera/custom": {
+      "requestTypeName": "AddCameraTerminalReqType",
+      "responsesTypeName": "AddCameraTerminalResType"
+    },
+    "put&/api/Camera/custom/{id}": {
+      "requestTypeName": "EditCameraTerminalReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/DetectionTasks": {
+      "requestTypeName": "AggsGetDetectionTasksReqType",
+      "responsesTypeName": "AggsGetDetectionTasksResType"
+    },
+    "get&/api/DetectionTasks/{id}": {
+      "requestTypeName": "GetDetectionTaskByIdReqType",
+      "responsesTypeName": "GetDetectionTaskByIdResType"
+    },
+    "post&/api/Districts/{userId}": {
+      "requestTypeName": "JudgeAreaCodePermissionReqType",
+      "responsesTypeName": "JudgeAreaCodePermissionResType"
+    },
+    "get&/api/Districts/Coordinate": {
+      "requestTypeName": "GetDistrictByCoordinateReqType",
+      "responsesTypeName": "GetDistrictByCoordinateResType"
+    },
+    "get&/api/Events": {
+      "requestTypeName": "GetAggsEventsReqType",
+      "responsesTypeName": "GetAggsEventsResType"
+    },
+    "post&/api/Events": {
+      "requestTypeName": "SearchEventsReqType",
+      "responsesTypeName": "SearchEventsResType"
+    },
+    "get&/api/Events/base": {
+      "requestTypeName": "GetBaseEventsReqType",
+      "responsesTypeName": "GetBaseEventsResType"
+    },
+    "get&/api/Events/{id}": {
+      "requestTypeName": "GetEventInfoReqType",
+      "responsesTypeName": "GetEventInfoResType"
+    },
+    "get&/api/Events/running": {
+      "requestTypeName": "GetAggsRunningEventsReqType",
+      "responsesTypeName": "GetAggsRunningEventsResType"
+    },
+    "get&/api/Events/history": {
+      "requestTypeName": "GetAggsEventsHistoryReqType",
+      "responsesTypeName": "GetAggsEventsHistoryResType"
+    },
+    "get&/api/Events/AssociateData": {
+      "requestTypeName": "GetEventsAssociateDataReqType",
+      "responsesTypeName": "GetEventsAssociateDataResType"
+    },
+    "get&/api/Events/{id}/Members": {
+      "requestTypeName": "GetEventsMembersReqType",
+      "responsesTypeName": "GetEventsMembersResType"
+    },
+    "post&/api/Facilities/condition_query": {
+      "requestTypeName": "AggsQueryFacilitiesReqType",
+      "responsesTypeName": "AggsQueryFacilitiesResType"
+    },
+    "post&/api/Facilities/event/{eventId}": {
+      "requestTypeName": "SearchFacilitiesByEventIdReqType",
+      "responsesTypeName": "SearchFacilitiesByEventIdResType"
+    },
+    "post&/api/Facilities/event/{eventId}/statistics": {
+      "requestTypeName": "SearchFacilityTotalByEventIdReqType",
+      "responsesTypeName": "SearchFacilityTotalByEventIdResType"
+    },
+    "post&/api/Facilities/circle_area": {
+      "requestTypeName": "GetNearFacilitiesReqType",
+      "responsesTypeName": "GetNearFacilitiesResType"
+    },
+    "get&/api/Facilities/{alertId}/Match": {
+      "requestTypeName": "GetFacilitiesByAlertIdReqType",
+      "responsesTypeName": "GetFacilitiesByAlertIdResType"
+    },
+    "post&/api/Facilities/metrics": {
+      "requestTypeName": "GetFacilityMetricsReqType",
+      "responsesTypeName": "GetFacilityMetricsResType"
+    },
+    "get&/api/Files": {
+      "requestTypeName": "GetAggsFilesReqType",
+      "responsesTypeName": "GetAggsFilesResType"
+    },
+    "get&/api/GbLowerDomains": {
+      "requestTypeName": "GetGbLowerDomainsReqType",
+      "responsesTypeName": "GetGbLowerDomainsResType"
+    },
+    "post&/api/GbLowerDomains": {
+      "requestTypeName": "AddGbLowerDomainsReqType",
+      "responsesTypeName": "AddGbLowerDomainsResType"
+    },
+    "get&/api/GbLowerDomains/{id}": {
+      "requestTypeName": "GetGbLowerDomainsByIdReqType",
+      "responsesTypeName": "GetGbLowerDomainsByIdResType"
+    },
+    "delete&/api/GbLowerDomains/{id}": {
+      "requestTypeName": "DeleteGbLowerDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/GbLowerDomains/{id}": {
+      "requestTypeName": "EditGbLowerDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Goods/search": {
+      "requestTypeName": "AggsSearchGoodsReqType",
+      "responsesTypeName": "AggsSearchGoodsResType"
+    },
+    "get&/api/GpsSearch": {
+      "requestTypeName": "GetGpsReqType",
+      "responsesTypeName": "GetGpsResType"
+    },
+    "get&/api/GpsSearch/active/{device}/latest": {
+      "requestTypeName": "GetDeviceGpsReqType",
+      "responsesTypeName": "GetDeviceGpsResType"
+    },
+    "post&/api/GpsSearch/active/devices/latest": {
+      "requestTypeName": "SearchDevicesGpsReqType",
+      "responsesTypeName": "SearchDevicesGpsResType"
+    },
+    "get&/api/GpsSearch/history/{device}": {
+      "requestTypeName": "GetDeviceGpsHistoryReqType",
+      "responsesTypeName": "GetDeviceGpsHistoryResType"
+    },
+    "get&/api/GpsSearch/history/{device}/latest": {
+      "requestTypeName": "GetDeviceLatestGpsReqType",
+      "responsesTypeName": "GetDeviceLatestGpsResType"
+    },
+    "get&/api/GpsSearch/{deviceId}/camera": {
+      "requestTypeName": "GetRelateCamerasReqType",
+      "responsesTypeName": "GetRelateCamerasResType"
+    },
+    "get&/api/Groups/{id}/members": {
+      "requestTypeName": "GetGroupMemberReqType",
+      "responsesTypeName": "GetGroupMemberResType"
+    },
+    "post&/api/Groups": {
+      "requestTypeName": "GetGroupsReqType",
+      "responsesTypeName": "GetGroupsResType"
+    },
+    "post&/api/Groups/search": {
+      "requestTypeName": "SearchGroupsReqType",
+      "responsesTypeName": "SearchGroupsResType"
+    },
+    "get&/api/Layers/statistics/root_layers": {
+      "requestTypeName": "GetLayerStatisticsTotalReqType",
+      "responsesTypeName": "GetLayerStatisticsTotalResType"
+    },
+    "get&/api/Layers/statistics/batch_layers": {
+      "requestTypeName": "GetRootLayerStatisticsTotalReqType",
+      "responsesTypeName": "GetRootLayerStatisticsTotalResType"
+    },
+    "get&/api/MultimediaTransfers/{id}": {
+      "requestTypeName": "GetMultimediaTransferDetailsReqType",
+      "responsesTypeName": "GetMultimediaTransferDetailsResType"
+    },
+    "post&/api/MultimediaTransfers": {
+      "requestTypeName": "SearchAggsMultimediaTransfersReqType",
+      "responsesTypeName": "SearchAggsMultimediaTransfersResType"
+    },
+    "post&/api/Platforms": {
+      "requestTypeName": "AggsGetPlatformsReqType",
+      "responsesTypeName": "AggsGetPlatformsResType"
+    },
+    "get&/api/Preplans/{id}/group": {
+      "requestTypeName": "SearchPreplanGroupsReqType",
+      "responsesTypeName": "SearchPreplanGroupsResType"
+    },
+    "post&/api/Preplans": {
+      "requestTypeName": "AggsSearchPreplansReqType",
+      "responsesTypeName": "AggsSearchPreplansResType"
+    },
+    "get&/api/Preplans/{eventId}/match": {
+      "requestTypeName": "GetPreplansByEventIdReqType",
+      "responsesTypeName": "GetPreplansByEventIdResType"
+    },
+    "post&/api/Preplans/grouping": {
+      "requestTypeName": "AggsSearchPreplanGroupReqType",
+      "responsesTypeName": "AggsSearchPreplanGroupResType"
+    },
+    "post&/api/Projects": {
+      "requestTypeName": "AddAggsProjectReqType",
+      "responsesTypeName": "AddAggsProjectResType"
+    },
+    "get&/api/Projects/{id}": {
+      "requestTypeName": "GetAggsProjectByIdReqType",
+      "responsesTypeName": "GetAggsProjectByIdResType"
+    },
+    "delete&/api/Projects/{id}": {
+      "requestTypeName": "DeleteAggsProjectReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Projects/{id}/export": {
+      "requestTypeName": "AggsExportProjectReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Projects/import": {
+      "requestTypeName": "AggsImportProjectReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Projects/{id}/export/LayerConfig": {
+      "requestTypeName": "ExportMapConfigReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Projects/import/LayerConfig": {
+      "requestTypeName": "ImportMapConfigReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Projects/{id}/export/ResourceDbs": {
+      "requestTypeName": "ExportResourceDbsByIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Projects/import/ResourceDbs": {
+      "requestTypeName": "AggsImportResourceDbsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ResourceRelationships/resource": {
+      "requestTypeName": "GetMainResourceReqType",
+      "responsesTypeName": "GetMainResourceResType"
+    },
+    "post&/api/ResourceRelationships/resource/single": {
+      "requestTypeName": "GetSingleResourceReqType",
+      "responsesTypeName": "GetSingleResourceResType"
+    },
+    "post&/api/ResourceRelationships/resource/search": {
+      "requestTypeName": "SearchResourceReqType",
+      "responsesTypeName": "SearchResourceResType"
+    },
+    "post&/api/ResourceRelationships/eventTypeGroup": {
+      "requestTypeName": "BindEventTypeGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ResourceRelationships/alarmType": {
+      "requestTypeName": "BindAlarmTypeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/ResourceRelationships/fix": {
+      "requestTypeName": "FixRelationshipDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Roles/{role}/members": {
+      "requestTypeName": "GetMembersByRoleReqType",
+      "responsesTypeName": "GetMembersByRoleResType"
+    },
+    "get&/api/Roles/{role}/organizations": {
+      "requestTypeName": "GetOrganizationsByRoleReqType",
+      "responsesTypeName": "GetOrganizationsByRoleResType"
+    },
+    "get&/api/Roles/{role}/districts": {
+      "requestTypeName": "GetDistrictsByRoleReqType",
+      "responsesTypeName": "GetDistrictsByRoleResType"
+    },
+    "get&/api/Roles/{role}/camera/groups": {
+      "requestTypeName": "GetCameraGroupsByRoleReqType",
+      "responsesTypeName": "GetCameraGroupsByRoleResType"
+    },
+    "put&/api/Roles/{role}/participators/batch": {
+      "requestTypeName": "BatchAddRoleReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Schemes": {
+      "requestTypeName": "GetAggsSchemesReqType",
+      "responsesTypeName": "GetAggsSchemesResType"
+    },
+    "get&/api/Schemes/range_value": {
+      "requestTypeName": "GetRangeValuesReqType",
+      "responsesTypeName": "GetRangeValuesResType"
+    },
+    "get&/api/search/resource": {
+      "requestTypeName": "QueryResourceReqType",
+      "responsesTypeName": "QueryResourceResType"
+    },
+    "get&/api/Statistical/events": {
+      "requestTypeName": "GetEventCountReqType",
+      "responsesTypeName": "GetEventCountResType"
+    },
+    "get&/api/Statistical/resources": {
+      "requestTypeName": "GetResourceCountReqType",
+      "responsesTypeName": "GetResourceCountResType"
+    },
+    "post&/api/Statistical/Area/Terminal": {
+      "requestTypeName": "AggsGetTerminalByAreaReqType",
+      "responsesTypeName": "AggsGetTerminalByAreaResType"
+    },
+    "post&/api/Statistical/Area/Platform": {
+      "requestTypeName": "AggsGetPlatformByAreaReqType",
+      "responsesTypeName": "AggsGetPlatformByAreaResType"
+    },
+    "post&/api/Statistical/overview/asset": {
+      "requestTypeName": "GetAssetOverviewReqType",
+      "responsesTypeName": "GetAssetOverviewResType"
+    },
+    "post&/api/Statistical/overview/client": {
+      "requestTypeName": "AggsGetClientOverviewReqType",
+      "responsesTypeName": "AggsGetClientOverviewResType"
+    },
+    "post&/api/Statistical/overview/terminal": {
+      "requestTypeName": "GetTerminalOverviewReqType",
+      "responsesTypeName": "GetTerminalOverviewResType"
+    },
+    "post&/api/Statistical/facilities/circle_area/mergence": {
+      "requestTypeName": "GetSurroundFacilitiesTotalReqType",
+      "responsesTypeName": "GetSurroundFacilitiesTotalResType"
+    },
+    "post&/api/Statistical/Layers/resource": {
+      "requestTypeName": "GetLayerResourceTotalReqType",
+      "responsesTypeName": "GetLayerResourceTotalResType"
+    },
+    "post&/api/Statistical/Layers/resource/batch": {
+      "requestTypeName": "BatchGetResourceStatisticalReqType",
+      "responsesTypeName": "BatchGetResourceStatisticalResType"
+    },
+    "post&/api/Statistical/Layers/circle_area": {
+      "requestTypeName": "GetAreaLayersTotalReqType",
+      "responsesTypeName": "GetAreaLayersTotalResType"
+    },
+    "post&/api/Statistical/Area/camera": {
+      "requestTypeName": "AggsGetCameraStatisticsByAreaReqType",
+      "responsesTypeName": "AggsGetCameraStatisticsByAreaResType"
+    },
+    "post&/api/Statistical/AssetType": {
+      "requestTypeName": "AggsGetAssetTypeStatisticsReqType",
+      "responsesTypeName": "AggsGetAssetTypeStatisticsResType"
+    },
+    "post&/api/StreamKeepAliveJobs": {
+      "requestTypeName": "AddStreamKeepAliveJobsReqType",
+      "responsesTypeName": "AddStreamKeepAliveJobsResType"
+    },
+    "get&/api/StreamKeepAliveJobs": {
+      "requestTypeName": "AggsGetStreamKeepAliveJobsReqType",
+      "responsesTypeName": "AggsGetStreamKeepAliveJobsResType"
+    },
+    "get&/api/StreamKeepAliveJobs/{id}": {
+      "requestTypeName": "AggsGetStreamKeepAliveJobByIdReqType",
+      "responsesTypeName": "AggsGetStreamKeepAliveJobByIdResType"
+    },
+    "put&/api/StreamKeepAliveJobs/{id}": {
+      "requestTypeName": "AggsEditStreamKeepAliveJobReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/StreamKeepAliveJobs/{id}": {
+      "requestTypeName": "AggsDeleteStreamKeepAliveJobReqType",
+      "responsesTypeName": "AggsDeleteStreamKeepAliveJobResType"
+    },
+    "get&/api/Tasks/{id}": {
+      "requestTypeName": "AggsGetTasksByIdReqType",
+      "responsesTypeName": "AggsGetTasksByIdResType"
+    },
+    "get&/api/event/{eventId}/Tasks": {
+      "requestTypeName": "AggsGetTasksByEventIdReqType",
+      "responsesTypeName": "AggsGetTasksByEventIdResType"
+    },
+    "get&/api/Tasks": {
+      "requestTypeName": "QueryTasksReqType",
+      "responsesTypeName": "QueryTasksResType"
+    },
+    "get&/api/Tasks/{id}/children": {
+      "requestTypeName": "GetChildrenTasksByIdReqType",
+      "responsesTypeName": "GetChildrenTasksByIdResType"
+    },
+    "get&/api/Tasks/AssociateData": {
+      "requestTypeName": "GetTaskAssociateDataReqType",
+      "responsesTypeName": "GetTaskAssociateDataResType"
+    },
+    "post&/api/Terminals": {
+      "requestTypeName": "AggsSearchTerminalsReqType",
+      "responsesTypeName": "AggsSearchTerminalsResType"
+    },
+    "post&/api/Terminals/Camera": {
+      "requestTypeName": "SearchCameraTerminalsReqType",
+      "responsesTypeName": "SearchCameraTerminalsResType"
+    },
+    "get&/api/Topologys": {
+      "requestTypeName": "AggsGetTopologyReqType",
+      "responsesTypeName": "AggsGetTopologyResType"
+    }
+  },
+  "authBiz": {
+    "post&/api/authentications/exchangetoken": {
+      "requestTypeName": "AuthenticationsReqType",
+      "responsesTypeName": "AuthenticationsResType"
+    },
+    "get&/api/clients": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "IdsGetClientsResType"
+    },
+    "get&/api/clients/{client}": {
+      "requestTypeName": "GetClientInfoReqType",
+      "responsesTypeName": "GetClientInfoResType"
+    },
+    "post&/api/clients/config": {
+      "requestTypeName": "IdsAddClientReqType",
+      "responsesTypeName": "IdsAddClientResType"
+    },
+    "get&/api/clients/config": {
+      "requestTypeName": "GetClientConfigReqType",
+      "responsesTypeName": "GetClientConfigResType"
+    },
+    "put&/api/clients/config/{clientId}": {
+      "requestTypeName": "EditClientConfigReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/clients/config/{clientId}": {
+      "requestTypeName": "DeleteClientConfigReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/clients/config/{clientId}": {
+      "requestTypeName": "GetClientConfigByIdReqType",
+      "responsesTypeName": "GetClientConfigByIdResType"
+    },
+    "post&/api/clients/data/sync": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/clients/data/sync/{sessionId}/progress": {
+      "requestTypeName": "IdsGetProgressBySessionIdReqType",
+      "responsesTypeName": "IdsGetProgressBySessionIdResType"
+    },
+    "get&/api/permissionDatas/{data}/roles": {
+      "requestTypeName": "GetRolesByPermissionReqType",
+      "responsesTypeName": "GetRolesByPermissionResType"
+    },
+    "get&/api/permissionDatas": {
+      "requestTypeName": "GetPermissionDataByPathReqType",
+      "responsesTypeName": "GetPermissionDataByPathResType"
+    },
+    "get&/api/roles/permissionDatas": {
+      "requestTypeName": "GetPermissionDataReqType",
+      "responsesTypeName": "GetPermissionDataResType"
+    },
+    "get&/api/roles/{role}/permissionDatas": {
+      "requestTypeName": "GetPermissionDataByRoleReqType",
+      "responsesTypeName": "GetPermissionDataByRoleResType"
+    },
+    "post&/api/roles/{role}/permissionDatas": {
+      "requestTypeName": "AddPermissionDataToRoleReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/roles/{role}/permissionDatas": {
+      "requestTypeName": "DeletePermissionDataRoleReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/roles/{role}/allPermissionDatas": {
+      "requestTypeName": "DeleteAllPermissionDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/roles/{role}/batchPermissionDatas": {
+      "requestTypeName": "BatchAddPermissionDataToRoleReqType",
+      "responsesTypeName": "BatchAddPermissionDataToRoleResType"
+    },
+    "put&/api/roles/{role}/batchPermissionDatas": {
+      "requestTypeName": "BatchUpdatePermissionDataToRoleReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/roles/{role}/batchPermissionDatas": {
+      "requestTypeName": "DeletePermissionDatasReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/users/{user}/permissionDatas": {
+      "requestTypeName": "GetPermissionDataByUserReqType",
+      "responsesTypeName": "GetPermissionDataByUserResType"
+    },
+    "delete&/api/roles/{role}/permissionDatas/functionModule": {
+      "requestTypeName": "UnbindPermissionDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/roles/{role}/permissionDatas/functionModule": {
+      "requestTypeName": "BindPermissionDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/roles/{role}/permissionDatas/functionModule/all": {
+      "requestTypeName": "UnbindAllPermissionDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/functions/root": {
+      "requestTypeName": "GetRootFunctionsReqType",
+      "responsesTypeName": "GetRootFunctionsResType"
+    },
+    "get&/api/functions": {
+      "requestTypeName": "GetFunctionsReqType",
+      "responsesTypeName": "GetFunctionsResType"
+    },
+    "post&/api/functions": {
+      "requestTypeName": "AddFunctionsReqType",
+      "responsesTypeName": "AddFunctionsResType"
+    },
+    "get&/api/functions/{pid}/paging": {
+      "requestTypeName": "GetFunctionsByPidReqType",
+      "responsesTypeName": "GetFunctionsByPidResType"
+    },
+    "get&/api/functions/{id}": {
+      "requestTypeName": "GetFunctionsByIdReqType",
+      "responsesTypeName": "GetFunctionsByIdResType"
+    },
+    "put&/api/functions/{id}": {
+      "requestTypeName": "UpdateFunctionsReqType",
+      "responsesTypeName": "UpdateFunctionsResType"
+    },
+    "delete&/api/functions/{id}": {
+      "requestTypeName": "DeleteFunctionsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/licenses/{bizControlKey}/string": {
+      "requestTypeName": "GetStringLicenseReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/licenses/{bizControlKey}/bool": {
+      "requestTypeName": "GetBoolLicenseReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/licenses/{bizControlKey}/int": {
+      "requestTypeName": "GetIntLicenseReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/licenses/bizControlInfo/all": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/licenses/authorization/functions": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetFunctionsLicenseResType"
+    },
+    "post&/api/roles/{role}/participators": {
+      "requestTypeName": "AddUserToRoleReqType",
+      "responsesTypeName": "AddUserToRoleResType"
+    },
+    "get&/api/roles/{role}/participators": {
+      "requestTypeName": "GetRoleUsersReqType",
+      "responsesTypeName": "GetRoleUsersResType"
+    },
+    "post&/api/roles/{role}/batchParticipators": {
+      "requestTypeName": "AddUsersToRoleReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/roles/{role}/batchParticipators": {
+      "requestTypeName": "ChangeRoleUsersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/roles/{role}/batchParticipators": {
+      "requestTypeName": "DeleteRoleUsersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/roles/{role}/participators/{user}": {
+      "requestTypeName": "DeleteRoleUserReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/users/{user}/participating": {
+      "requestTypeName": "GetRolesByUserReqType",
+      "responsesTypeName": "GetRolesByUserResType"
+    },
+    "get&/api/user/participating": {
+      "requestTypeName": "GetUserRolesReqType",
+      "responsesTypeName": "GetUserRolesResType"
+    },
+    "put&/api/users/{user}/batchParticipators": {
+      "requestTypeName": "BatchChangeRoleUsersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/roles/{role}/visiting": {
+      "requestTypeName": "GetPermissionByRoleReqType",
+      "responsesTypeName": "GetPermissionByRoleResType"
+    },
+    "post&/api/roles/{role}/visiting": {
+      "requestTypeName": "AddPermissionToRoleReqType",
+      "responsesTypeName": "AddPermissionToRoleResType"
+    },
+    "post&/api/roles/{role}/BatchVisiting": {
+      "requestTypeName": "AddPermissionToRolesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/roles/{role}/BatchVisiting": {
+      "requestTypeName": "UpdateRolePermissionsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/roles/{role}/visiting/{client}": {
+      "requestTypeName": "DeleteRolePermissionReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/users/{user}/visiting": {
+      "requestTypeName": "GetUserPermissionsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/user/visiting": {
+      "requestTypeName": "GetPermissionsReqType",
+      "responsesTypeName": "GetPermissionsResType"
+    },
+    "get&/api/roles": {
+      "requestTypeName": "GetRolesReqType",
+      "responsesTypeName": "GetRolesResType"
+    },
+    "post&/api/roles": {
+      "requestTypeName": "AddRolesReqType",
+      "responsesTypeName": "AddRolesResType"
+    },
+    "get&/api/roles/{id}": {
+      "requestTypeName": "AddRolesByIdReqType",
+      "responsesTypeName": "AddRolesByIdResType"
+    },
+    "put&/api/roles/{id}": {
+      "requestTypeName": "UpdateRolesReqType",
+      "responsesTypeName": "UpdateRolesResType"
+    },
+    "delete&/api/roles/{id}": {
+      "requestTypeName": "DeleteRolesReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
+  "edmsBiz": {
+    "post&/api/Appointments/conference": {
+      "requestTypeName": "AddAppointmentsConferenceReqType",
+      "responsesTypeName": "AddAppointmentsConferenceResType"
+    },
+    "get&/api/Appointments/conference": {
+      "requestTypeName": "GetAppointmentsConferenceReqType",
+      "responsesTypeName": "GetAppointmentsConferenceResType"
+    },
+    "get&/api/Appointments/conference/{id}": {
+      "requestTypeName": "GetAppointmentsConferenceByIdReqType",
+      "responsesTypeName": "GetAppointmentsConferenceByIdResType"
+    },
+    "put&/api/Appointments/conference/{id}": {
+      "requestTypeName": "EditAppointmentsConferenceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Appointments/conference/{id}": {
+      "requestTypeName": "DeleteAppointmentsConferenceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Appointments/voice_notify": {
+      "requestTypeName": "AddAppointmentsVoiceNotifyReqType",
+      "responsesTypeName": "AddAppointmentsVoiceNotifyResType"
+    },
+    "get&/api/Appointments/voice_notify": {
+      "requestTypeName": "GetAppointmentsVoiceNotifyReqType",
+      "responsesTypeName": "GetAppointmentsVoiceNotifyResType"
+    },
+    "get&/api/Appointments/voice_notify/{id}": {
+      "requestTypeName": "GetAppointmentsVoiceNotifyByIdReqType",
+      "responsesTypeName": "GetAppointmentsVoiceNotifyByIdResType"
+    },
+    "put&/api/Appointments/voice_notify/{id}": {
+      "requestTypeName": "EditSingleAppointmentsVoiceNotifyReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Appointments/voice_notify/{id}": {
+      "requestTypeName": "DeleteAppointmentsVoiceNotifyReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Appointments/voice_notify/{id}/single": {
+      "requestTypeName": "EditAppointmentsVoiceNotifySingleReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Broadcasts/{id}": {
+      "requestTypeName": "GetBroadcastByIdReqType",
+      "responsesTypeName": "GetBroadcastByIdResType"
+    },
+    "delete&/api/Broadcasts/{id}": {
+      "requestTypeName": "CloseBroadcastGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Broadcasts": {
+      "requestTypeName": "AddBroadcastReqType",
+      "responsesTypeName": "AddBroadcastResType"
+    },
+    "get&/api/Broadcasts": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetBroadcastGroupResType"
+    },
+    "get&/api/Broadcasts/{id}/members": {
+      "requestTypeName": "GetBroadcastGroupMembersReqType",
+      "responsesTypeName": "GetBroadcastGroupMembersResType"
+    },
+    "put&/api/CallBiz/call_out": {
+      "requestTypeName": "CallBizReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CallBiz/nuChat/call_out": {
+      "requestTypeName": "NuChatCallOutReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CallBiz/forced_hook": {
+      "requestTypeName": "ForcedNumberReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CallBiz/answer": {
+      "requestTypeName": "AnswerQueueCallReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CallBiz/forced_insert": {
+      "requestTypeName": "ForcedInsertReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CallBiz/forced_release": {
+      "requestTypeName": "ForcedReleaseReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CallBiz/monitor": {
+      "requestTypeName": "MonitorCallReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/CallBiz/NumberConfig": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "NumberConfigResType"
+    },
+    "get&/api/CallBiz/NumberTransform": {
+      "requestTypeName": "NumberTransformReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/ClientContext": {
+      "requestTypeName": "GetClientContextReqType",
+      "responsesTypeName": "GetClientContextResType"
+    },
+    "put&/api/ClientContext/kick_out/{type}": {
+      "requestTypeName": "KickOutUserReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/Commands": {
+      "requestTypeName": "GetCommandsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Conferences/{id}": {
+      "requestTypeName": "GetConferenceByIdReqType",
+      "responsesTypeName": "GetConferenceByIdResType"
+    },
+    "delete&/api/Conferences/{id}": {
+      "requestTypeName": "CloseConferenceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Conferences": {
+      "requestTypeName": "AddConferenceReqType",
+      "responsesTypeName": "AddConferenceResType"
+    },
+    "get&/api/Conferences": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetConferenceResType"
+    },
+    "put&/api/Conferences/{id}/mode": {
+      "requestTypeName": "ChangeConferenceModeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Conferences/{id}/members": {
+      "requestTypeName": "GetConferenceMemberReqType",
+      "responsesTypeName": "GetConferenceMemberResType"
+    },
+    "get&/api/DataRequestBiz/phonelines": {
+      "requestTypeName": "GetPhoneLinesReqType",
+      "responsesTypeName": "GetPhoneLinesResType"
+    },
+    "get&/api/DataRequestBiz/conference_record": {
+      "requestTypeName": "GetConferenceRecordReqType",
+      "responsesTypeName": "GetConferenceRecordResType"
+    },
+    "get&/api/DataRequestBiz/conference_record/{id}": {
+      "requestTypeName": "GetConferenceRecordByIdReqType",
+      "responsesTypeName": "GetConferenceRecordByIdResType"
+    },
+    "get&/api/DataRequestBiz/call_record": {
+      "requestTypeName": "GetCallRecordReqType",
+      "responsesTypeName": "GetCallRecordResType"
+    },
+    "put&/api/DataRequestBiz/call_record/call_video_id": {
+      "requestTypeName": "AddVideoIdForCallRecordReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/DataRequestBiz/call_record/operation/areacode": {
+      "requestTypeName": "OperationCallRecordAreacodeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/DataRequestBiz/call_record/conference": {
+      "requestTypeName": "GetCallRecordByConferenceIdReqType",
+      "responsesTypeName": "GetCallRecordByConferenceIdResType"
+    },
+    "get&/api/DataRequestBiz/calling": {
+      "requestTypeName": "GetCallingReqType",
+      "responsesTypeName": "GetCallingResType"
+    },
+    "get&/api/DataRequestBiz/queue": {
+      "requestTypeName": "GetQueueReqType",
+      "responsesTypeName": "GetQueueResType"
+    },
+    "get&/api/DataRequestBiz/phones": {
+      "requestTypeName": "GetPhonesReqType",
+      "responsesTypeName": "GetPhonesResType"
+    },
+    "get&/api/DataRequestBiz/thunk_phones": {
+      "requestTypeName": "GetThunkPhonesReqType",
+      "responsesTypeName": "GetThunkPhonesResType"
+    },
+    "put&/api/DataRequestBiz/phones/{phoneNumber}/location": {
+      "requestTypeName": "UpdatePhoneLocationReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/DataRequestBiz/operation_log": {
+      "requestTypeName": "GetOperationLogReqType",
+      "responsesTypeName": "GetOperationLogResType"
+    },
+    "get&/api/ExceptionDemo/{resourceId}": {
+      "requestTypeName": "GetExceptionDemoReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/ExceptionDemo/{resourceId}": {
+      "requestTypeName": "DeleteExceptionDemoReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ExceptionDemo": {
+      "requestTypeName": "AddExceptionDemoReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Faxes": {
+      "requestTypeName": "GetFaxListReqType",
+      "responsesTypeName": "GetFaxListResType"
+    },
+    "post&/api/Faxes": {
+      "requestTypeName": "SendFaxReqType",
+      "responsesTypeName": "SendFaxResType"
+    },
+    "get&/api/Faxes/{id}": {
+      "requestTypeName": "GetFaxInfoByIdReqType",
+      "responsesTypeName": "GetFaxInfoByIdResType"
+    },
+    "put&/api/Faxes/{id}/resend": {
+      "requestTypeName": "ResendFaxReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Faxes/draft": {
+      "requestTypeName": "GetDraftFaxListReqType",
+      "responsesTypeName": "GetDraftFaxListResType"
+    },
+    "post&/api/Faxes/draft": {
+      "requestTypeName": "SaveFaxToDraftReqType",
+      "responsesTypeName": "SaveFaxToDraftResType"
+    },
+    "get&/api/Faxes/draft/{id}": {
+      "requestTypeName": "GetDraftFaxInfoByIdReqType",
+      "responsesTypeName": "GetDraftFaxInfoByIdResType"
+    },
+    "put&/api/Faxes/draft/{id}": {
+      "requestTypeName": "UpdateDraftFaxReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Faxes/draft/{id}": {
+      "requestTypeName": "DeleteDraftFaxReqType",
+      "responsesTypeName": "DeleteDraftFaxResType"
+    },
+    "put&/api/Faxes/draft/{id}/send": {
+      "requestTypeName": "SendDraftFaxReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Faxes/{id}/abandon": {
+      "requestTypeName": "MoveFaxToRecycleBinReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Faxes/{id}/forever": {
+      "requestTypeName": "DeleteRecycleBinFaxReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Faxes/{id}/recover": {
+      "requestTypeName": "RecoverRecycleBinFaxReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Faxes/{id}/read": {
+      "requestTypeName": "ReadFaxReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Faxes/blacklist": {
+      "requestTypeName": "UpdateBlackListReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Faxes/blacklist": {
+      "requestTypeName": "GetBlackListReqType",
+      "responsesTypeName": "GetBlackListResType"
+    },
+    "put&/api/Faxes/whitelist": {
+      "requestTypeName": "UpdateWhitelistReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Faxes/whitelist": {
+      "requestTypeName": "GetWhitelistReqType",
+      "responsesTypeName": "GetWhitelistResType"
+    },
+    "post&/api/GradingDispatch": {
+      "requestTypeName": "EdmsGradingDispatchReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Messages": {
+      "requestTypeName": "GetMessagesReqType",
+      "responsesTypeName": "GetMessagesResType"
+    },
+    "post&/api/Messages": {
+      "requestTypeName": "PostMessagesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Messages/records": {
+      "requestTypeName": "GetMessageRecordsReqType",
+      "responsesTypeName": "GetMessageRecordsResType"
+    },
+    "get&/api/Messages/{id}": {
+      "requestTypeName": "GetMessagesByIdReqType",
+      "responsesTypeName": "GetMessagesByIdResType"
+    },
+    "post&/api/Messages/group": {
+      "requestTypeName": "PostMessageGroupReqType",
+      "responsesTypeName": "PostMessageGroupResType"
+    },
+    "get&/api/Messages/templates": {
+      "requestTypeName": "GetMessageTemplatesReqType",
+      "responsesTypeName": "GetMessageTemplatesResType"
+    },
+    "post&/api/Messages/templates": {
+      "requestTypeName": "AddMessageTemplateReqType",
+      "responsesTypeName": "AddMessageTemplateResType"
+    },
+    "get&/api/Messages/templates/{id}": {
+      "requestTypeName": "GetMessageTemplateByIdReqType",
+      "responsesTypeName": "GetMessageTemplateByIdResType"
+    },
+    "put&/api/Messages/templates/{id}": {
+      "requestTypeName": "EditMessageTemplateReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Messages/templates/{id}": {
+      "requestTypeName": "DeleteMessageTemplateReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Messages/conversations/{id}": {
+      "requestTypeName": "EditMessageSessionNameReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Messages/districts": {
+      "requestTypeName": "EditMessageDistrictReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/NightServices/duty": {
+      "requestTypeName": "PhoneDutyReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/NightServices/auto": {
+      "requestTypeName": "AutoVoiceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/NightServices/close": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/NightServices/user": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetUserNightServicesStateResType"
+    },
+    "get&/api/NightServices": {
+      "requestTypeName": "GetNightServicesStatusReqType",
+      "responsesTypeName": "GetNightServicesStatusResType"
+    },
+    "get&/api/Petstore/{id}": {
+      "requestTypeName": "GetPetByIdReqType",
+      "responsesTypeName": "GetPetByIdResType"
+    },
+    "get&/api/RecordNotifies/{id}": {
+      "requestTypeName": "GetRecordNotifiesByIdReqType",
+      "responsesTypeName": "GetRecordNotifiesByIdResType"
+    },
+    "delete&/api/RecordNotifies/{id}": {
+      "requestTypeName": "CloseRecordNotifiesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/RecordNotifies": {
+      "requestTypeName": "AddRecordNotifiesReqType",
+      "responsesTypeName": "AddRecordNotifiesResType"
+    },
+    "get&/api/RecordNotifies": {
+      "requestTypeName": "GetRecordNotifiesReqType",
+      "responsesTypeName": "GetRecordNotifiesResType"
+    },
+    "put&/api/RecordNotifies/{id}/invite": {
+      "requestTypeName": "InviteRecordNotifiesUserReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/RecordNotifies/{id}/remove": {
+      "requestTypeName": "RemoveRecordNotifiesUserReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/RecordNotifies/{id}/statistic": {
+      "requestTypeName": "GetRecordNotifiesTotalReqType",
+      "responsesTypeName": "GetRecordNotifiesTotalResType"
+    },
+    "get&/api/RecordNotifies/{id}/members": {
+      "requestTypeName": "GetRecordNotifiesMembersReqType",
+      "responsesTypeName": "GetRecordNotifiesMembersResType"
+    },
+    "get&/api/Servers/conference": {
+      "requestTypeName": "GetConferenceServersReqType",
+      "responsesTypeName": "GetConferenceServersResType"
+    },
+    "post&/api/Servers/conference": {
+      "requestTypeName": "AddConferenceServersReqType",
+      "responsesTypeName": "AddConferenceServersResType"
+    },
+    "get&/api/Servers/conference/{id}": {
+      "requestTypeName": "GetConferenceServersByIdReqType",
+      "responsesTypeName": "GetConferenceServersByIdResType"
+    },
+    "put&/api/Servers/conference/{id}": {
+      "requestTypeName": "EditConferenceServersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Servers/conference/{id}": {
+      "requestTypeName": "DeleteConferenceServersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Subscriptions/phone_state": {
+      "requestTypeName": "SubscribePhoneStateReqType",
+      "responsesTypeName": "SubscribePhoneStateResType"
+    },
+    "post&/api/Subscriptions/{id}/phone_state": {
+      "requestTypeName": "UnsubscribePhoneStateReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/TextTemplates": {
+      "requestTypeName": "GetTextTemplatesReqType",
+      "responsesTypeName": "GetTextTemplatesResType"
+    },
+    "post&/api/TextTemplates": {
+      "requestTypeName": "AddTextTemplatesReqType",
+      "responsesTypeName": "AddTextTemplatesResType"
+    },
+    "get&/api/TextTemplates/{id}": {
+      "requestTypeName": "GetTextTemplateByIdReqType",
+      "responsesTypeName": "GetTextTemplateByIdResType"
+    },
+    "put&/api/TextTemplates/{id}": {
+      "requestTypeName": "EditTextTemplatesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/TextTemplates/{id}": {
+      "requestTypeName": "DeleteTextTemplatesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/VirtualNCDevices": {
+      "requestTypeName": "GetVirtualNCDevicesReqType",
+      "responsesTypeName": "GetVirtualNCDevicesResType"
+    },
+    "post&/api/VirtualNCDevices": {
+      "requestTypeName": "AddVirtualNCDevicesReqType",
+      "responsesTypeName": "AddVirtualNCDevicesResType"
+    },
+    "get&/api/VirtualNCDevices/{id}": {
+      "requestTypeName": "GetVirtualNCDevicesByIdReqType",
+      "responsesTypeName": "GetVirtualNCDevicesByIdResType"
+    },
+    "put&/api/VirtualNCDevices/{id}": {
+      "requestTypeName": "EditVirtualNCDevicesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/VirtualNCDevices/{id}": {
+      "requestTypeName": "DeleteVirtualNCDevicesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/VirtualNCDevices/{id}/trunk_group_configs": {
+      "requestTypeName": "GetVncTrunkGroupConfigsReqType",
+      "responsesTypeName": "GetVncTrunkGroupConfigsResType"
+    },
+    "put&/api/VirtualNCDevices/{id}/trunk_group_configs": {
+      "requestTypeName": "EditVncTrunkGroupConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/VirtualNCDevices/{id}/trunk_group_configs/batch": {
+      "requestTypeName": "BatchEditNcTrunkGroupConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/VirtualNCDevices/{id}/trunk_group_configs/refresh": {
+      "requestTypeName": "RefreshVncTrunkGroupConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/VirtualNCDevices/{id}/phones/refresh": {
+      "requestTypeName": "RefreshVncPhonesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/VirtualNCDevices/{id}/phones": {
+      "requestTypeName": "GetVncPhonesReqType",
+      "responsesTypeName": "GetVncPhonesResType"
+    }
+  },
+  "orgsBiz": {
+    "post&/api/contacts/{pid}": {
+      "requestTypeName": "AddContactUserReqType",
+      "responsesTypeName": "AddContactUserResType"
+    },
+    "get&/api/contacts/{id}": {
+      "requestTypeName": "GetUserInfoReqType",
+      "responsesTypeName": "GetUserInfoResType"
+    },
+    "put&/api/contacts/{id}": {
+      "requestTypeName": "UpdateContactUserReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/contacts/{id}": {
+      "requestTypeName": "DeleteContactUserReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/contacts/{id}/password": {
+      "requestTypeName": "UpdateContactUserPasswordReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/contacts/{id}/password/reset": {
+      "requestTypeName": "ResetPasswordReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/contacts/detail": {
+      "requestTypeName": "GetContractDetailsReqType",
+      "responsesTypeName": "GetContractDetailsResType"
+    },
+    "post&/api/Import/ImportXlsOrganization": {
+      "requestTypeName": "ImportOrganizationXlsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Export/Organization/{pid}": {
+      "requestTypeName": "ExportOrganizationReqType",
+      "responsesTypeName": "ExportOrganizationResType"
+    },
+    "post&/api/Export/PlanGroup": {
+      "requestTypeName": "ExportPlanGroupReqType",
+      "responsesTypeName": "ExportPlanGroupResType"
+    },
+    "get&/api/Export/Task/{taskId}": {
+      "requestTypeName": "GetExportTaskReqType",
+      "responsesTypeName": "GetExportTaskResType"
+    },
+    "get&/api/Export/Download/{taskId}": {
+      "requestTypeName": "GetExportFileInfoReqType",
+      "responsesTypeName": "GetExportFileInfoResType"
+    },
+    "post&/api/Import/ImportPlanGroup/{pid}": {
+      "requestTypeName": "ImportPlanGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/favorites": {
+      "requestTypeName": "AddUserFavoritesReqType",
+      "responsesTypeName": "AddUserFavoritesResType"
+    },
+    "get&/api/favorites": {
+      "requestTypeName": "GetCurrentUserFavoritesReqType",
+      "responsesTypeName": "GetCurrentUserFavoritesResType"
+    },
+    "delete&/api/favorites/{favoriteId}": {
+      "requestTypeName": "DeleteUserFavoritesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/favorites/{favoriteId}": {
+      "requestTypeName": "UpdateUserFavoritesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/favorites/{favoriteId}": {
+      "requestTypeName": "GetCurrentUserFavoritesInfoReqType",
+      "responsesTypeName": "GetCurrentUserFavoritesInfoResType"
+    },
+    "post&/api/favorites/{favoriteId}/contacts": {
+      "requestTypeName": "AddUserFavoritesContactReqType",
+      "responsesTypeName": "AddUserFavoritesContactResType"
+    },
+    "put&/api/favorites/{favoriteId}/contacts": {
+      "requestTypeName": "UpdateUserFavoritesContactReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/favorites/{favoriteId}/contacts": {
+      "requestTypeName": "GetUserFavoritesContactReqType",
+      "responsesTypeName": "GetUserFavoritesContactResType"
+    },
+    "post&/api/groups/{pid}": {
+      "requestTypeName": "CreateGroupV2ReqType",
+      "responsesTypeName": "CreateGroupV2ResType"
+    },
+    "delete&/api/groups/{id}": {
+      "requestTypeName": "DeleteGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/groups/{id}": {
+      "requestTypeName": "UpdateGroupV2ReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/groups/{id}": {
+      "requestTypeName": "GetGroupInfoReqType",
+      "responsesTypeName": "GetGroupInfoResType"
+    },
+    "get&/api/groups": {
+      "requestTypeName": "GetAllGroupsV2ReqType",
+      "responsesTypeName": "GetAllGroupsV2ResType"
+    },
+    "get&/api/groups/NoContactDetail/{id}": {
+      "requestTypeName": "GetGroupDetailsReqType",
+      "responsesTypeName": "GetGroupDetailsResType"
+    },
+    "post&/api/groups/{groupId}/members": {
+      "requestTypeName": "AddGroupMembersReqType",
+      "responsesTypeName": "AddGroupMembersResType"
+    },
+    "put&/api/groups/{groupId}/members": {
+      "requestTypeName": "UpdateGroupMembersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/groups/{groupId}/members": {
+      "requestTypeName": "GetGroupMembersReqType",
+      "responsesTypeName": "GetGroupMembersResType"
+    },
+    "post&/api/organizations/{pid}": {
+      "requestTypeName": "AddOrganizationsReqType",
+      "responsesTypeName": "AddOrganizationsResType"
+    },
+    "delete&/api/organizations/{id}": {
+      "requestTypeName": "DeleteOrganizationsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/organizations/{id}": {
+      "requestTypeName": "UpdateOrganizationsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/organizations/{id}": {
+      "requestTypeName": "GetOrganizationsByIdV2ReqType",
+      "responsesTypeName": "GetOrganizationsByIdV2ResType"
+    },
+    "delete&/api/organizations/{id}/All": {
+      "requestTypeName": "DeleteAllOrganizationsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/organizations": {
+      "requestTypeName": "OrgsGetRootOrganizationsReqType",
+      "responsesTypeName": "OrgsGetRootOrganizationsResType"
+    },
+    "get&/api/organizations/{pid}/members": {
+      "requestTypeName": "GetAllDepartmentsMembersV2ReqType",
+      "responsesTypeName": "GetAllDepartmentsMembersV2ResType"
+    },
+    "get&/api/organizations/departments": {
+      "requestTypeName": "GetOrganizationsDepartmentsReqType",
+      "responsesTypeName": "GetOrganizationsDepartmentsResType"
+    },
+    "get&/api/organizations/contacts": {
+      "requestTypeName": "GetFrequentContactsReqType",
+      "responsesTypeName": "GetFrequentContactsResType"
+    },
+    "post&/api/keys/generateKeyPair": {
+      "requestTypeName": "CreateGenerateKeyPairReqType",
+      "responsesTypeName": "CreateGenerateKeyPairResType"
+    },
+    "post&/api/keys/generateMainKey": {
+      "requestTypeName": "CreateGenerateMainKeyReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/keys/contactDataSwitch": {
+      "requestTypeName": "TransformContactDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/search": {
+      "requestTypeName": "SearchKeyWordOrPidV2ReqType",
+      "responsesTypeName": "SearchKeyWordOrPidV2ResType"
+    },
+    "put&/api/contacts/{id}/move": {
+      "requestTypeName": "MoveContactsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/contacts/{id}/top": {
+      "requestTypeName": "TopContactsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/contacts/{id}/departmentPaths": {
+      "requestTypeName": "GetContactDepartmentPathReqType",
+      "responsesTypeName": "GetContactDepartmentPathResType"
+    },
+    "get&/api/contacts/{id}/{callerUserId}/departmentPaths": {
+      "requestTypeName": "GetDepartmentPathsForSpecifyCallerReqType",
+      "responsesTypeName": "GetDepartmentPathsForSpecifyCallerResType"
+    },
+    "put&/api/contacts/{id}/department/change": {
+      "requestTypeName": "ChangeDepartmentReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/contacts/permission/departments": {
+      "requestTypeName": "GetUserDepartmentsReqType",
+      "responsesTypeName": "GetUserDepartmentsResType"
+    },
+    "put&/api/contacts/{id}/state": {
+      "requestTypeName": "ChangeContactStateReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/contacts/pinyinAndInitials": {
+      "requestTypeName": "UpdateContactsPinyinAndInitialsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/upload/photo": {
+      "requestTypeName": "UploadUserAvatarReqType",
+      "responsesTypeName": "UploadUserAvatarResType"
+    },
+    "put&/api/contacts/photos": {
+      "requestTypeName": "UpdateUserAvatarReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/contacts/districts": {
+      "requestTypeName": "EditContractDistrictsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/contactTypes": {
+      "requestTypeName": "AddContactTypeReqType",
+      "responsesTypeName": "AddContactTypeResType"
+    },
+    "get&/api/contactTypes": {
+      "requestTypeName": "GetContactTypesReqType",
+      "responsesTypeName": "GetContactTypesResType"
+    },
+    "put&/api/contactTypes/{id}": {
+      "requestTypeName": "EditContactTypeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/contactTypes/{id}": {
+      "requestTypeName": "DeleteContactTypeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/contactTypes/{id}": {
+      "requestTypeName": "GetContactTypeByIdReqType",
+      "responsesTypeName": "GetContactTypeByIdResType"
+    },
+    "post&/api/import/data/organization": {
+      "requestTypeName": "ImportOrganizationReqType",
+      "responsesTypeName": "ImportOrganizationResType"
+    },
+    "put&/api/import/data/validation": {
+      "requestTypeName": "CheckDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/import/data/validation": {
+      "requestTypeName": "CancelCheckDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/import/data": {
+      "requestTypeName": "ImportTaskReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/import/data": {
+      "requestTypeName": "CancelImportTaskReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/import/organization/validation": {
+      "requestTypeName": "GetCheckDataReqType",
+      "responsesTypeName": "GetCheckDataResType"
+    },
+    "get&/api/import/task/progress": {
+      "requestTypeName": "GetTaskProgressReqType",
+      "responsesTypeName": "GetTaskProgressResType"
+    },
+    "get&/api/templateFiles/organization": {
+      "requestTypeName": "DownloadFilesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/import/task/running": {
+      "requestTypeName": "ImportRunningTaskReqType",
+      "responsesTypeName": "ImportRunningTaskResType"
+    },
+    "post&/api/datasync": {
+      "requestTypeName": "DatasyncReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/progress": {
+      "requestTypeName": "GetProgressReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/progress/{sessionId}": {
+      "requestTypeName": "GetProgressBySessionIdReqType",
+      "responsesTypeName": "GetProgressBySessionIdResType"
+    },
+    "post&/report": {
+      "requestTypeName": "ReportReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/report/{rid}": {
+      "requestTypeName": "ReportByRidReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/favorites/{favoriteId}/members": {
+      "requestTypeName": "RemoveFavoriteMembersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/groups/{id}/members": {
+      "requestTypeName": "RemoveGroupMembersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/groups/{id}/members": {
+      "requestTypeName": "DeleteGroupMemberV2ReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/groups/{id}/members": {
+      "requestTypeName": "GetGroupMembersV2ReqType",
+      "responsesTypeName": "GetGroupMembersV2ResType"
+    },
+    "post&/api/groups/{id}/members": {
+      "requestTypeName": "AddGroupMembersV2ReqType",
+      "responsesTypeName": "AddGroupMembersV2ResType"
+    },
+    "get&/api/groups/self/groups": {
+      "requestTypeName": "GetSelfGroupsReqType",
+      "responsesTypeName": "GetSelfGroupsResType"
+    },
+    "put&/api/groups/{id}/move": {
+      "requestTypeName": "MoveGroupMemberReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/groups/{id}/top": {
+      "requestTypeName": "TopGroupMemberReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/groups/{id}/move/group": {
+      "requestTypeName": "MoveGroupsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/groups/{id}/contacts": {
+      "requestTypeName": "QuerySearchGroupContactsReqType",
+      "responsesTypeName": "QuerySearchGroupContactsResType"
+    },
+    "put&/api/organizations/{id}/move": {
+      "requestTypeName": "MoveNearDepartmentReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/organizations/{id}/departmentPaths": {
+      "requestTypeName": "GetDepartmentPathByIdReqType",
+      "responsesTypeName": "GetDepartmentPathByIdResType"
+    },
+    "get&/api/organizations/{pid}/descendant/members": {
+      "requestTypeName": "GetDescendantMembersReqType",
+      "responsesTypeName": "GetDescendantMembersResType"
+    },
+    "post&/api/search/ContactByPhones": {
+      "requestTypeName": "SearchContactByPhonesReqType",
+      "responsesTypeName": "SearchContactByPhonesResType"
+    },
+    "post&/api/search/departments/batch": {
+      "requestTypeName": "SearchDepartmentsReqType",
+      "responsesTypeName": "SearchDepartmentsResType"
+    },
+    "post&/api/search/contacts/batch": {
+      "requestTypeName": "OrgsSearchContactsReqType",
+      "responsesTypeName": "OrgsSearchContactsResType"
+    },
+    "post&/api/search/groups/batch": {
+      "requestTypeName": "OrgsSearchGroupsReqType",
+      "responsesTypeName": "OrgsSearchGroupsResType"
+    },
+    "get&/api/search/statistics": {
+      "requestTypeName": "SearchStatisticsReqType",
+      "responsesTypeName": "SearchStatisticsResType"
+    },
+    "put&/api/userconfigs/{userId}": {
+      "requestTypeName": "UpdateUserConfigsByIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/userconfigs": {
+      "requestTypeName": "UpdateUserConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/userconfigs": {
+      "requestTypeName": "GetUserConfigsReqType",
+      "responsesTypeName": "GetUserConfigsResType"
+    }
+  },
+  "eventBiz": {
+    "get&/api/events/{eventId}/communications": {
+      "requestTypeName": "GetCommunicationsReqType",
+      "responsesTypeName": "GetCommunicationsResType"
+    },
+    "post&/api/events/{eventId}/communications": {
+      "requestTypeName": "ConnectCommunicationsReqType",
+      "responsesTypeName": "ConnectCommunicationsResType"
+    },
+    "get&/api/events/{eventId}/communications/{id}": {
+      "requestTypeName": "GetCommunicationsByIdReqType",
+      "responsesTypeName": "GetCommunicationsByIdResType"
+    },
+    "delete&/api/events/{eventId}/communications/{id}": {
+      "requestTypeName": "CancelConnectCommunicationsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/events/{eventId}/draws": {
+      "requestTypeName": "GetDrawsReqType",
+      "responsesTypeName": "GetDrawsResType"
+    },
+    "post&/api/events/{eventId}/draws": {
+      "requestTypeName": "ConnectDrawsReqType",
+      "responsesTypeName": "ConnectDrawsResType"
+    },
+    "get&/api/events/{eventId}/draws/{id}": {
+      "requestTypeName": "GetDrawsByIdReqType",
+      "responsesTypeName": "GetDrawsByIdResType"
+    },
+    "delete&/api/events/{eventId}/draws/{id}": {
+      "requestTypeName": "CancelConnectDrawsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/events/{eventId}/logs": {
+      "requestTypeName": "GetEventLogsReqType",
+      "responsesTypeName": "GetEventLogsResType"
+    },
+    "get&/api/events/{eventId}/faxes": {
+      "requestTypeName": "GetFaxesReqType",
+      "responsesTypeName": "GetFaxesResType"
+    },
+    "post&/api/events/{eventId}/faxes": {
+      "requestTypeName": "ConnectFaxesReqType",
+      "responsesTypeName": "ConnectFaxesResType"
+    },
+    "get&/api/events/{eventId}/faxes/{id}": {
+      "requestTypeName": "GetFaxesByIdReqType",
+      "responsesTypeName": "GetFaxesByIdResType"
+    },
+    "delete&/api/events/{eventId}/faxes/{id}": {
+      "requestTypeName": "CancelConnectFaxesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/events/{eventId}/files": {
+      "requestTypeName": "GetEtsFilesByEventIdReqType",
+      "responsesTypeName": "GetEtsFilesByEventIdResType"
+    },
+    "post&/api/events/{eventId}/files": {
+      "requestTypeName": "ConnectFilesReqType",
+      "responsesTypeName": "ConnectFilesResType"
+    },
+    "get&/api/events/{eventId}/files/{id}": {
+      "requestTypeName": "GetEtsFilesByIdReqType",
+      "responsesTypeName": "GetEtsFilesByIdResType"
+    },
+    "delete&/api/events/{eventId}/files/{id}": {
+      "requestTypeName": "CancelConnectFilesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/events/{eventId}/multimediatransfers": {
+      "requestTypeName": "GetMultimediatransfersReqType",
+      "responsesTypeName": "GetMultimediatransfersResType"
+    },
+    "post&/api/events/{eventId}/multimediatransfers": {
+      "requestTypeName": "ConnectMultimediatransfersReqType",
+      "responsesTypeName": "ConnectMultimediatransfersResType"
+    },
+    "get&/api/events/{eventId}/multimediatransfers/{id}": {
+      "requestTypeName": "GetEtsMultimediatransfersByIdReqType",
+      "responsesTypeName": "GetEtsMultimediatransfersByIdResType"
+    },
+    "delete&/api/events/{eventId}/multimediatransfers/{id}": {
+      "requestTypeName": "CancelConnectMultimediatransfersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/events/{eventId}/pictures": {
+      "requestTypeName": "GetPicturesReqType",
+      "responsesTypeName": "GetPicturesResType"
+    },
+    "post&/api/events/{eventId}/pictures": {
+      "requestTypeName": "ConnectPicturesReqType",
+      "responsesTypeName": "ConnectPicturesResType"
+    },
+    "get&/api/events/{eventId}/pictures/{id}": {
+      "requestTypeName": "GetPicturesByIdReqType",
+      "responsesTypeName": "GetPicturesByIdResType"
+    },
+    "delete&/api/events/{eventId}/pictures/{id}": {
+      "requestTypeName": "CancelConnectPicturesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/events/{eventId}/textmessages": {
+      "requestTypeName": "GetTextmessagesReqType",
+      "responsesTypeName": "GetTextmessagesResType"
+    },
+    "post&/api/events/{eventId}/textmessages": {
+      "requestTypeName": "ConnectTextmessagesReqType",
+      "responsesTypeName": "ConnectTextmessagesResType"
+    },
+    "get&/api/events/{eventId}/textmessages/{id}": {
+      "requestTypeName": "GetTextmessagesByIdReqType",
+      "responsesTypeName": "GetTextmessagesByIdResType"
+    },
+    "delete&/api/events/{eventId}/textmessages/{id}": {
+      "requestTypeName": "CancelConnectTextmessagesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/events/{eventId}/videos": {
+      "requestTypeName": "GetVideosReqType",
+      "responsesTypeName": "GetVideosResType"
+    },
+    "post&/api/events/{eventId}/videos": {
+      "requestTypeName": "ConnectVideosReqType",
+      "responsesTypeName": "ConnectVideosResType"
+    },
+    "get&/api/events/{eventId}/videos/{id}": {
+      "requestTypeName": "EtsGetVideosByIdReqType",
+      "responsesTypeName": "EtsGetVideosByIdResType"
+    },
+    "delete&/api/events/{eventId}/videos/{id}": {
+      "requestTypeName": "CancelConnectVideosReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/EventFeedbacks": {
+      "requestTypeName": "AddEventFeedBacksReqType",
+      "responsesTypeName": "AddEventFeedBacksResType"
+    },
+    "get&/api/EventFeedbacks/{eventId}/feedback": {
+      "requestTypeName": "GetEventFeedBackByEventIdReqType",
+      "responsesTypeName": "GetEventFeedBackByEventIdResType"
+    },
+    "get&/api/EventFeedbacks/{id}": {
+      "requestTypeName": "GetEventFeedBackByIdReqType",
+      "responsesTypeName": "GetEventFeedBackByIdResType"
+    },
+    "get&/api/Events": {
+      "requestTypeName": "GetEtsEventsReqType",
+      "responsesTypeName": "GetEtsEventsResType"
+    },
+    "post&/api/Events": {
+      "requestTypeName": "AddEventsReqType",
+      "responsesTypeName": "AddEventsResType"
+    },
+    "get&/api/Events/{id}": {
+      "requestTypeName": "GetEventsByIdReqType",
+      "responsesTypeName": "GetEventsByIdResType"
+    },
+    "put&/api/Events/{id}": {
+      "requestTypeName": "UpdateEventsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Events/{id}": {
+      "requestTypeName": "DeleteEventsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Events/running": {
+      "requestTypeName": "GetEtsRunningEventsReqType",
+      "responsesTypeName": "GetEtsRunningEventsResType"
+    },
+    "get&/api/Events/history": {
+      "requestTypeName": "GetEtsEventsHistoryReqType",
+      "responsesTypeName": "GetEtsEventsHistoryResType"
+    },
+    "get&/api/Events/owner": {
+      "requestTypeName": "GetOwnerEventsReqType",
+      "responsesTypeName": "GetOwnerEventsResType"
+    },
+    "put&/api/Events/{id}/priority": {
+      "requestTypeName": "UpdateEventsPriorityReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Events/{id}/state": {
+      "requestTypeName": "UpdateEventsStateReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Events/{id}/preplan": {
+      "requestTypeName": "UpdateEventPreplanReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Events/import": {
+      "requestTypeName": "ImportEventsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Events/remove": {
+      "requestTypeName": "DeleteExceptionEventsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/EventTypeGroups/{id}": {
+      "requestTypeName": "GetEventTypeGroupsByIdReqType",
+      "responsesTypeName": "GetEventTypeGroupsByIdResType"
+    },
+    "put&/api/EventTypeGroups/{id}": {
+      "requestTypeName": "UpdateEventTypeGroupsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/EventTypeGroups/{id}": {
+      "requestTypeName": "DeleteEventTypeGroupsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/EventTypeGroups": {
+      "requestTypeName": "GetEventTypeGroupsReqType",
+      "responsesTypeName": "GetEventTypeGroupsResType"
+    },
+    "post&/api/EventTypeGroups": {
+      "requestTypeName": "AddEventTypeGroupsReqType",
+      "responsesTypeName": "AddEventTypeGroupsResType"
+    },
+    "get&/api/EventTypeGroups/{id}/children": {
+      "requestTypeName": "GetEventTypeGroupsChildrenReqType",
+      "responsesTypeName": "GetEventTypeGroupsChildrenResType"
+    },
+    "post&/api/EventTypeGroups/parent/{id}": {
+      "requestTypeName": "AddEventTypeGroupsChildrenReqType",
+      "responsesTypeName": "AddEventTypeGroupsChildrenResType"
+    },
+    "get&/api/EventTypeGroups/{id}/EventTypes": {
+      "requestTypeName": "GetEventTypesByGroupIdReqType",
+      "responsesTypeName": "GetEventTypesByGroupIdResType"
+    },
+    "get&/api/EventTypeGroups/search": {
+      "requestTypeName": "SearchEventTypeGroupsReqType",
+      "responsesTypeName": "SearchEventTypeGroupsResType"
+    },
+    "post&/api/EventTypeGroups/import": {
+      "requestTypeName": "ImportEventTypeGroupsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/EventTypeGroups/children": {
+      "requestTypeName": "GetChildEventTypeGroupsReqType",
+      "responsesTypeName": "GetChildEventTypeGroupsResType"
+    },
+    "post&/api/EventTypeGroups/children/mergence": {
+      "requestTypeName": "MergeEventTypeGroupReqType",
+      "responsesTypeName": "MergeEventTypeGroupResType"
+    },
+    "post&/api/EventTypeGroups/subordinates": {
+      "requestTypeName": "GetEventTypeGroupsByIdsReqType",
+      "responsesTypeName": "GetEventTypeGroupsByIdsResType"
+    },
+    "get&/api/EventTypes": {
+      "requestTypeName": "GetEventTypesReqType",
+      "responsesTypeName": "GetEventTypesResType"
+    },
+    "get&/api/EventTypes/{id}": {
+      "requestTypeName": "GetEventTypesByIdReqType",
+      "responsesTypeName": "GetEventTypesByIdResType"
+    },
+    "put&/api/EventTypes/{id}": {
+      "requestTypeName": "UpdateEventTypesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/EventTypes/{id}": {
+      "requestTypeName": "DeleteEventTypesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/EventTypes/{id}/path": {
+      "requestTypeName": "GetEventTypePathReqType",
+      "responsesTypeName": "GetEventTypePathResType"
+    },
+    "post&/api/EventTypes/batch": {
+      "requestTypeName": "SearchEventTypesReqType",
+      "responsesTypeName": "SearchEventTypesResType"
+    },
+    "post&/api/EventTypes/import": {
+      "requestTypeName": "ImportEventTypesReqType",
+      "responsesTypeName": "ImportEventTypesResType"
+    },
+    "post&/api/EventTypeGroups/{eventTypeGroupId}/EventTypes": {
+      "requestTypeName": "AddEventTypesReqType",
+      "responsesTypeName": "AddEventTypesResType"
+    },
+    "post&/api/EventTypes/export/relationship": {
+      "requestTypeName": "ExportEventTypeReqType",
+      "responsesTypeName": "ExportEventTypeResType"
+    },
+    "post&/api/EventTypes/import/relationship": {
+      "requestTypeName": "ImportEventTypeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Preplans": {
+      "requestTypeName": "GetEtsPreplansReqType",
+      "responsesTypeName": "GetEtsPreplansResType"
+    },
+    "get&/api/Preplans/{id}": {
+      "requestTypeName": "GetPreplansByIdReqType",
+      "responsesTypeName": "GetPreplansByIdResType"
+    },
+    "put&/api/Preplans/{id}": {
+      "requestTypeName": "UpdatePreplansReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Preplans/{id}": {
+      "requestTypeName": "DeletePreplansReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Preplans/batch": {
+      "requestTypeName": "EtsSearchPreplansReqType",
+      "responsesTypeName": "EtsSearchPreplansResType"
+    },
+    "post&/api/{eventTypeId}/Preplans": {
+      "requestTypeName": "AddEtsPreplansReqType",
+      "responsesTypeName": "AddEtsPreplansResType"
+    },
+    "post&/api/Preplans/import": {
+      "requestTypeName": "ImportPreplansReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Preplans/template": {
+      "requestTypeName": "GetPreplanTemplateReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Preplans/grouping": {
+      "requestTypeName": "EtsSearchPreplanGroupReqType",
+      "responsesTypeName": "EtsSearchPreplanGroupResType"
+    },
+    "get&/api/Preplans/Recommend": {
+      "requestTypeName": "GetRecommendPreplanReqType",
+      "responsesTypeName": "GetRecommendPreplanResType"
+    },
+    "get&/api/tasks/{taskId}/feedbacks/{id}": {
+      "requestTypeName": "GetFeedbacksByIdReqType",
+      "responsesTypeName": "GetFeedbacksByIdResType"
+    },
+    "get&/api/tasks/{taskId}/feedbacks": {
+      "requestTypeName": "GetFeedbacksReqType",
+      "responsesTypeName": "GetFeedbacksResType"
+    },
+    "post&/api/tasks/{taskId}/feedbacks": {
+      "requestTypeName": "AddFeedbacksReqType",
+      "responsesTypeName": "AddFeedbacksResType"
+    },
+    "post&/api/taskFeedback/import": {
+      "requestTypeName": "ImportTaskFeedbackReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Tasks/{id}": {
+      "requestTypeName": "EtsGetTasksByIdReqType",
+      "responsesTypeName": "EtsGetTasksByIdResType"
+    },
+    "put&/api/Tasks/{id}": {
+      "requestTypeName": "UpdateTasksReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Tasks/{id}": {
+      "requestTypeName": "DeleteTasksReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/event/{eventId}/Tasks": {
+      "requestTypeName": "EtsGetTasksByEventIdReqType",
+      "responsesTypeName": "EtsGetTasksByEventIdResType"
+    },
+    "post&/api/event/{eventId}/Tasks": {
+      "requestTypeName": "AddTasksReqType",
+      "responsesTypeName": "AddTasksResType"
+    },
+    "get&/api/Tasks": {
+      "requestTypeName": "GetTasksReqType",
+      "responsesTypeName": "GetTasksResType"
+    },
+    "get&/api/Tasks/{id}/children": {
+      "requestTypeName": "GetSubTasksReqType",
+      "responsesTypeName": "GetSubTasksResType"
+    },
+    "get&/api/Tasks/owner": {
+      "requestTypeName": "GetOwnerTasksReqType",
+      "responsesTypeName": "GetOwnerTasksResType"
+    },
+    "post&/api/Tasks/import": {
+      "requestTypeName": "ImportTasksReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Tasks/{parentId}/children": {
+      "requestTypeName": "AddSubTasksReqType",
+      "responsesTypeName": "AddSubTasksResType"
+    },
+    "put&/api/Tasks/{taskId}/state/{state}": {
+      "requestTypeName": "UpdateTasksStatusReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/events/{eventId}/Tasks/order": {
+      "requestTypeName": "UpdateTasksOrderReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/TaskTemplates/{id}": {
+      "requestTypeName": "GetTaskTemplatesByIdReqType",
+      "responsesTypeName": "GetTaskTemplatesByIdResType"
+    },
+    "put&/api/TaskTemplates/{id}": {
+      "requestTypeName": "UpdateTaskTemplatesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/TaskTemplates/{id}": {
+      "requestTypeName": "DeleteTaskTemplatesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/TaskTemplates": {
+      "requestTypeName": "GetTaskTemplatesReqType",
+      "responsesTypeName": "GetTaskTemplatesResType"
+    },
+    "post&/api/TaskTemplates": {
+      "requestTypeName": "AddTaskTemplatesReqType",
+      "responsesTypeName": "AddTaskTemplatesResType"
+    },
+    "post&/api/TaskTemplates/import": {
+      "requestTypeName": "ImportTaskTemplatesReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
+  "viscsBiz": {
+    "get&/api/Components/{name}": {
+      "requestTypeName": "GetComponentByNameReqType",
+      "responsesTypeName": "GetComponentByNameResType"
+    },
+    "put&/api/Components/{name}": {
+      "requestTypeName": "UpdateComponentReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Components/{name}": {
+      "requestTypeName": "DeleteComponentReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Components": {
+      "requestTypeName": "SearchComponentsReqType",
+      "responsesTypeName": "SearchComponentsResType"
+    },
+    "post&/api/Components": {
+      "requestTypeName": "CreateComponentReqType",
+      "responsesTypeName": "CreateComponentResType"
+    },
+    "post&/api/Components/search/thumbnail": {
+      "requestTypeName": "GetComponentsPosterReqType",
+      "responsesTypeName": "GetComponentsPosterResType"
+    },
+    "put&/api/Components/{name}/thumbnail": {
+      "requestTypeName": "UpdateComponentsPosterReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Components/{name}/label": {
+      "requestTypeName": "EditComponentLabelReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Components/export": {
+      "requestTypeName": "ExportComponentsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Components/import": {
+      "requestTypeName": "ImportComponentsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Labels/{id}": {
+      "requestTypeName": "GetLabelByIdReqType",
+      "responsesTypeName": "GetLabelByIdResType"
+    },
+    "put&/api/Labels/{id}": {
+      "requestTypeName": "EtsEditLabelReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Labels/{id}": {
+      "requestTypeName": "EtsDeleteLabelReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Labels": {
+      "requestTypeName": "GetLabelsReqType",
+      "responsesTypeName": "GetLabelsResType"
+    },
+    "post&/api/Labels": {
+      "requestTypeName": "ViscsAddLabelsReqType",
+      "responsesTypeName": "ViscsAddLabelsResType"
+    },
+    "get&/api/Labels/export": {
+      "requestTypeName": "ExportLabelsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Labels/import": {
+      "requestTypeName": "ViscsImportLabelsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Projects/{id}": {
+      "requestTypeName": "GetViscsProjectByIdReqType",
+      "responsesTypeName": "GetViscsProjectByIdResType"
+    },
+    "put&/api/Projects/{id}": {
+      "requestTypeName": "EditViscsProjectReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Projects/{id}": {
+      "requestTypeName": "DeleteViscsProjectReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Projects": {
+      "requestTypeName": "GetViscsProjectsReqType",
+      "responsesTypeName": "GetViscsProjectsResType"
+    },
+    "post&/api/Projects": {
+      "requestTypeName": "AddViscsProjectReqType",
+      "responsesTypeName": "AddViscsProjectResType"
+    },
+    "get&/api/Projects/{id}/export": {
+      "requestTypeName": "ViscsExportProjectReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Projects/import": {
+      "requestTypeName": "ViscsImportProjectReqType",
+      "responsesTypeName": "ViscsImportProjectResType"
+    },
+    "get&/api/Themes/{id}": {
+      "requestTypeName": "GetThemeReqType",
+      "responsesTypeName": "GetThemeResType"
+    },
+    "put&/api/Themes/{id}": {
+      "requestTypeName": "UpdateThemeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Themes/{id}": {
+      "requestTypeName": "DeleteViscsThemeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Themes": {
+      "requestTypeName": "SearchThemesReqType",
+      "responsesTypeName": "SearchThemesResType"
+    },
+    "post&/api/Themes": {
+      "requestTypeName": "CreateThemeReqType",
+      "responsesTypeName": "CreateThemeResType"
+    },
+    "put&/api/Themes/{id}/hide": {
+      "requestTypeName": "HiddenThemeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Themes/{id}/publish": {
+      "requestTypeName": "PublishThemesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Themes/{id}/config/{layoutType}": {
+      "requestTypeName": "SaveThemeLayoutConfigReqType",
+      "responsesTypeName": "SaveThemeLayoutConfigResType"
+    },
+    "delete&/api/Themes/{id}/config/{layoutType}": {
+      "requestTypeName": "DeleteThemeLayoutConfigReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Themes/{id}/config/{layoutType}": {
+      "requestTypeName": "GetThemeLayoutConfigReqType",
+      "responsesTypeName": "GetThemeLayoutConfigResType"
+    },
+    "get&/api/Themes/export": {
+      "requestTypeName": "ExportThemesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Themes/import": {
+      "requestTypeName": "ImportThemesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Themes/{id}/move": {
+      "requestTypeName": "MoveThemeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Themes/{id}/history/{layoutType}": {
+      "requestTypeName": "GetHistoryRecordsReqType",
+      "responsesTypeName": "GetHistoryRecordsResType"
+    },
+    "get&/api/Themes/history/{historyId}": {
+      "requestTypeName": "GetHistoryThemeReqType",
+      "responsesTypeName": "GetHistoryThemeResType"
+    },
+    "put&/api/Themes/history/{historyId}/resume": {
+      "requestTypeName": "ResumeHistoryThemeReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
+  "alarmBiz": {
+    "get&/api/alarms/{id}": {
+      "requestTypeName": "GetAlarmsByIDReqType",
+      "responsesTypeName": "GetAlarmsByIDResType"
+    },
+    "delete&/api/alarms/{id}": {
+      "requestTypeName": "ClearAlarmReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/alarms": {
+      "requestTypeName": "GetAlarmsByPageReqType",
+      "responsesTypeName": "GetAlarmsByPageResType"
+    },
+    "get&/api/alarms/GetAll": {
+      "requestTypeName": "GetAllAlarmsReqType",
+      "responsesTypeName": "GetAllAlarmsResType"
+    },
+    "post&/api/alarms/GetAlarmInfo": {
+      "requestTypeName": "GetAlarmInfoReqType",
+      "responsesTypeName": "GetAlarmInfoResType"
+    },
+    "get&/api/alarms/GetAlarmByTypeIds": {
+      "requestTypeName": "GetAlarmByTypeIdsReqType",
+      "responsesTypeName": "GetAlarmByTypeIdsResType"
+    },
+    "get&/api/alarms/GetAlarmsByDistrictIds": {
+      "requestTypeName": "GetAlarmsByDistrictIdsReqType",
+      "responsesTypeName": "GetAlarmsByDistrictIdsResType"
+    },
+    "get&/api/alarms/GetAlarmCounterByDistrictId": {
+      "requestTypeName": "GetAlarmCounterByDistrictIdReqType",
+      "responsesTypeName": "GetAlarmCounterByDistrictIdResType"
+    },
+    "get&/api/alarms/GetAlarmTypeCounterByTime": {
+      "requestTypeName": "GetAlarmTypeCounterByTimeReqType",
+      "responsesTypeName": "GetAlarmTypeCounterByTimeResType"
+    },
+    "get&/api/alarms/GetAlarmCounterByTime": {
+      "requestTypeName": "GetAlarmCounterByTimeReqType",
+      "responsesTypeName": "GetAlarmCounterByTimeResType"
+    },
+    "get&/api/alarms/GetAlarmDistrictCounterByTime": {
+      "requestTypeName": "GetAlarmDistrictCounterByTimeReqType",
+      "responsesTypeName": "GetAlarmDistrictCounterByTimeResType"
+    },
+    "post&/api/alarms/Add": {
+      "requestTypeName": "AddAlarmReqType",
+      "responsesTypeName": "AddAlarmResType"
+    },
+    "put&/api/alarms/Update": {
+      "requestTypeName": "EditAlarmsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/alarms/ConfirmAlarm": {
+      "requestTypeName": "ConfirmAlarmReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Preplans": {
+      "requestTypeName": "GetPreplansReqType",
+      "responsesTypeName": "GetPreplansResType"
+    },
+    "post&/api/Preplans": {
+      "requestTypeName": "AddPreplansReqType",
+      "responsesTypeName": "AddPreplansResType"
+    },
+    "get&/api/Preplans/{id}": {
+      "requestTypeName": "GetPreplanByIdReqType",
+      "responsesTypeName": "GetPreplanByIdResType"
+    },
+    "put&/api/Preplans/{id}": {
+      "requestTypeName": "UpdatePreplanReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Preplans/{id}": {
+      "requestTypeName": "DeletePreplanReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/statisticians/GetAlarmCounterByDistrictIds": {
+      "requestTypeName": "GetAlarmCounterByDistrictIdsReqType",
+      "responsesTypeName": "GetAlarmCounterByDistrictIdsResType"
+    },
+    "post&/api/statisticians/GetAlarmCounterByTypes": {
+      "requestTypeName": "GetAlarmCounterByTypesReqType",
+      "responsesTypeName": "GetAlarmCounterByTypesResType"
+    },
+    "post&/api/statisticians/GetAlarmCounterByAlarmSourceIds": {
+      "requestTypeName": "GetAlarmCounterByAlarmSourceIdsReqType",
+      "responsesTypeName": "GetAlarmCounterByAlarmSourceIdsResType"
+    },
+    "post&/api/statisticians/GetAlarmCounterByLevel": {
+      "requestTypeName": "GetAlarmCounterByLevelReqType",
+      "responsesTypeName": "GetAlarmCounterByLevelResType"
+    },
+    "post&/api/statisticians/GetAlarmCounterByOrganization": {
+      "requestTypeName": "GetAlarmCounterByOrganizationReqType",
+      "responsesTypeName": "GetAlarmCounterByOrganizationResType"
+    },
+    "post&/api/statisticians/AlarmCounter": {
+      "requestTypeName": "GetAlarmCounterReqType",
+      "responsesTypeName": "GetAlarmCounterResType"
+    },
+    "post&/api/statisticians/AlarmCounterByMinute": {
+      "requestTypeName": "GetAlarmCounterByMinuteReqType",
+      "responsesTypeName": "GetAlarmCounterByMinuteResType"
+    },
+    "post&/api/statisticians/AlarmCounterByTime": {
+      "requestTypeName": "QueryAlarmCounterByTimeReqType",
+      "responsesTypeName": "QueryAlarmCounterByTimeResType"
+    },
+    "post&/api/ThirdAlarms": {
+      "requestTypeName": "AddThirdAlarmsReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
   "quartzBiz": {
     "get&/api/Jobs": {
       "requestTypeName": "GetJobsReqType",
@@ -166,13 +2405,1952 @@
       "responsesTypeName": ""
     }
   },
-  "geoDataBiz": {},
-  "fileStorageBiz": {},
-  "geoAnalysisBiz": {},
-  "preplanAnalysisBiz": {},
-  "modelAnalysisBiz": {},
-  "videoFusionServiceBiz": {},
-  "vcsBiz": {},
+  "geoDataBiz": {
+    "post&/api/Boundaries": {
+      "requestTypeName": "AddBoundariesReqType",
+      "responsesTypeName": "AddBoundariesResType"
+    },
+    "put&/api/Boundaries/{id}": {
+      "requestTypeName": "UpdateBoundariesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Boundaries/{id}": {
+      "requestTypeName": "DeleteBoundariesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Boundaries/{id}": {
+      "requestTypeName": "GetBoundariesByIdReqType",
+      "responsesTypeName": "GetBoundariesByIdResType"
+    },
+    "post&/api/Boundaries/condition_query": {
+      "requestTypeName": "SearchBoundariesReqType",
+      "responsesTypeName": "SearchBoundariesResType"
+    },
+    "post&/api/Coordinates": {
+      "requestTypeName": "AddCoordinateReqType",
+      "responsesTypeName": "AddCoordinateResType"
+    },
+    "get&/api/Coordinates": {
+      "requestTypeName": "GetCoordinatesReqType",
+      "responsesTypeName": "GetCoordinatesResType"
+    },
+    "delete&/api/Coordinates/{id}": {
+      "requestTypeName": "DeleteCoordinateReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Districts": {
+      "requestTypeName": "GetGdsDistrictsReqType",
+      "responsesTypeName": "GetGdsDistrictsResType"
+    },
+    "post&/api/Districts": {
+      "requestTypeName": "AddDistrictsReqType",
+      "responsesTypeName": "AddDistrictsResType"
+    },
+    "get&/api/Districts/{id}": {
+      "requestTypeName": "GetDistrictsByIdReqType",
+      "responsesTypeName": "GetDistrictsByIdResType"
+    },
+    "put&/api/Districts/{id}": {
+      "requestTypeName": "UpdateDistrictsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Districts/{id}": {
+      "requestTypeName": "DeleteDistrictsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Districts/ids": {
+      "requestTypeName": "GetDistrictsByIdsReqType",
+      "responsesTypeName": "GetDistrictsByIdsResType"
+    },
+    "post&/api/Districts/import": {
+      "requestTypeName": "ImportDistrictsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Districts/{parentId}/children": {
+      "requestTypeName": "GetSubDistrictsReqType",
+      "responsesTypeName": "GetSubDistrictsResType"
+    },
+    "post&/api/Districts/{parentId}/children": {
+      "requestTypeName": "AddSubDistrictsReqType",
+      "responsesTypeName": "AddSubDistrictsResType"
+    },
+    "get&/api/Districts/{id}/parents": {
+      "requestTypeName": "GetParentDistrictsByIdReqType",
+      "responsesTypeName": "GetParentDistrictsByIdResType"
+    },
+    "get&/api/Districts/{id}/tree": {
+      "requestTypeName": "GetDistrictTreeByIdReqType",
+      "responsesTypeName": "GetDistrictTreeByIdResType"
+    },
+    "post&/api/Districts/names": {
+      "requestTypeName": "GetDistrictsByNamesReqType",
+      "responsesTypeName": "GetDistrictsByNamesResType"
+    },
+    "post&/api/Districts/children/mergence": {
+      "requestTypeName": "MergeDistrictsReqType",
+      "responsesTypeName": "MergeDistrictsResType"
+    },
+    "post&/api/Districts/children": {
+      "requestTypeName": "GetChildDistrictsReqType",
+      "responsesTypeName": "GetChildDistrictsResType"
+    },
+    "post&/api/Districts/subordinates": {
+      "requestTypeName": "SearchSubDistrictsReqType",
+      "responsesTypeName": "SearchSubDistrictsResType"
+    },
+    "post&/api/Districts/analysis": {
+      "requestTypeName": "GetDistrictsByAnalysisReqType",
+      "responsesTypeName": "GetDistrictsByAnalysisResType"
+    },
+    "get&/api/Districts/analysis/address": {
+      "requestTypeName": "AnalysisAddressReqType",
+      "responsesTypeName": "AnalysisAddressResType"
+    },
+    "post&/api/Districts/export": {
+      "requestTypeName": "ExportDistrictsReqType",
+      "responsesTypeName": "ExportDistrictsResType"
+    },
+    "get&/api/Facilities/layers": {
+      "requestTypeName": "GetFacilityLayersReqType",
+      "responsesTypeName": "GetFacilityLayersResType"
+    },
+    "post&/api/Facilities/layers/import": {
+      "requestTypeName": "ImportFacilityLayersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Facilities/import": {
+      "requestTypeName": "ImportFacilitiesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Facilities/goods/import": {
+      "requestTypeName": "ImportFacilityGoodsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Facilities/{id}": {
+      "requestTypeName": "GetFacilitiesByIdReqType",
+      "responsesTypeName": "GetFacilitiesByIdResType"
+    },
+    "get&/api/Facilities/{id}/goods": {
+      "requestTypeName": "GetFacilityGoodsReqType",
+      "responsesTypeName": "GetFacilityGoodsResType"
+    },
+    "post&/api/Facilities/area_query": {
+      "requestTypeName": "GetFacilityAreaQueryReqType",
+      "responsesTypeName": "GetFacilityAreaQueryResType"
+    },
+    "post&/api/Facilities/circle_area": {
+      "requestTypeName": "QueryFacilitiesByCircleAreaReqType",
+      "responsesTypeName": "QueryFacilitiesByCircleAreaResType"
+    },
+    "post&/api/Facilities/search": {
+      "requestTypeName": "SearchFacilitiesReqType",
+      "responsesTypeName": "SearchFacilitiesResType"
+    },
+    "post&/api/Facilities/statics/generate": {
+      "requestTypeName": "GenerateFacilitiesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Facilities/statics/files": {
+      "requestTypeName": "GetGenerateFilesNameReqType",
+      "responsesTypeName": "GetGenerateFilesNameResType"
+    },
+    "post&/api/Facilities/camera_groups/import": {
+      "requestTypeName": "ImportFacilityCameraGroupsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Facilities/{id}/camera_groups": {
+      "requestTypeName": "GetFacilityCameraGroupsReqType",
+      "responsesTypeName": "GetFacilityCameraGroupsResType"
+    },
+    "post&/api/Facilities/goods/search": {
+      "requestTypeName": "SearchFacilityGoodsReqType",
+      "responsesTypeName": "SearchFacilityGoodsResType"
+    },
+    "post&/api/Facilities/condition_query": {
+      "requestTypeName": "QueryFacilitiesReqType",
+      "responsesTypeName": "QueryFacilitiesResType"
+    },
+    "put&/api/Facilities/{id}/labels": {
+      "requestTypeName": "EditFacilityLabelsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Facilities/{id}/state": {
+      "requestTypeName": "UpdateFacilityStatusReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Facilities": {
+      "requestTypeName": "MultDeleteFacilitiesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Facilities/{id}/scenes": {
+      "requestTypeName": "GetGdsScenesReqType",
+      "responsesTypeName": "GetGdsScenesResType"
+    },
+    "post&/api/Facilities/batch": {
+      "requestTypeName": "GetFacilitiesByIdsReqType",
+      "responsesTypeName": "GetFacilitiesByIdsResType"
+    },
+    "get&/api/Facilities/{productId}/query": {
+      "requestTypeName": "GetFacilitiesByProductIdReqType",
+      "responsesTypeName": "GetFacilitiesByProductIdResType"
+    },
+    "get&/api/GeoConfigs/{id}": {
+      "requestTypeName": "GetGeoConfigByIdReqType",
+      "responsesTypeName": "GetGeoConfigByIdResType"
+    },
+    "put&/api/GeoConfigs/{id}": {
+      "requestTypeName": "UpdateGeoConfigByIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/GeoConfigs": {
+      "requestTypeName": "GetGeoConfigsReqType",
+      "responsesTypeName": "GetGeoConfigsResType"
+    },
+    "post&/api/GeoConfigs": {
+      "requestTypeName": "AddGeoConfigsReqType",
+      "responsesTypeName": "AddGeoConfigsResType"
+    },
+    "get&/api/GeoConfigs/{productId}/mapConfig": {
+      "requestTypeName": "GetMapConfigByProductIdReqType",
+      "responsesTypeName": "GetMapConfigByProductIdResType"
+    },
+    "get&/api/GeoConfigs/effect": {
+      "requestTypeName": "GetGeoEffectConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/GeoConfigs/effect": {
+      "requestTypeName": "AddGeoEffectConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/GeoConfigs/effect": {
+      "requestTypeName": "EditGeoEffectConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/GeoConfigs/layer": {
+      "requestTypeName": "AddGeoLayerConfigsReqType",
+      "responsesTypeName": "AddGeoLayerConfigsResType"
+    },
+    "get&/api/GeoConfigs/layer": {
+      "requestTypeName": "GetGeoLayerConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/GeoConfigs/layers/{id}": {
+      "requestTypeName": "UpdateGeoLayerConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/GeoConfigs/layers/{id}": {
+      "requestTypeName": "DeleteLayerConfigReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/GeoConfigs/layers/root": {
+      "requestTypeName": "GetRootLayerConfigReqType",
+      "responsesTypeName": "GetRootLayerConfigResType"
+    },
+    "get&/api/GeoConfigs/layers/children": {
+      "requestTypeName": "GetGeoLayerChildrenConfigsReqType",
+      "responsesTypeName": "GetGeoLayerChildrenConfigsResType"
+    },
+    "get&/api/GeoConfigs/layers/floors": {
+      "requestTypeName": "GetGeoLayerFloorsConfigsReqType",
+      "responsesTypeName": "GetGeoLayerFloorsConfigsResType"
+    },
+    "post&/api/GeoConfigs/layers/import": {
+      "requestTypeName": "ImportLayerConfigReqType",
+      "responsesTypeName": "ImportLayerConfigResType"
+    },
+    "put&/api/GeoConfigs/layers/coverage": {
+      "requestTypeName": "CoverChildrenLayerConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Goods/{id}": {
+      "requestTypeName": "GetGoodsByIdReqType",
+      "responsesTypeName": "GetGoodsByIdResType"
+    },
+    "get&/api/Goods/type": {
+      "requestTypeName": "GetGoodsTypeReqType",
+      "responsesTypeName": "GetGoodsTypeResType"
+    },
+    "get&/api/Goods/name": {
+      "requestTypeName": "GetNameByTypeReqType",
+      "responsesTypeName": "GetNameByTypeResType"
+    },
+    "post&/api/Goods/search": {
+      "requestTypeName": "SearchGoodsReqType",
+      "responsesTypeName": "SearchGoodsResType"
+    },
+    "post&/api/Goods/sync": {
+      "requestTypeName": "SyncGoodsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Goods": {
+      "requestTypeName": "MultDeleteGoodsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Labels/{id}": {
+      "requestTypeName": "GetLabelsByIdReqType",
+      "responsesTypeName": "GetLabelsByIdResType"
+    },
+    "delete&/api/Labels/{id}": {
+      "requestTypeName": "DeleteLabelsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Labels/{id}": {
+      "requestTypeName": "EditLabelsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Labels/search": {
+      "requestTypeName": "SearchLabelsReqType",
+      "responsesTypeName": "SearchLabelsResType"
+    },
+    "post&/api/Labels": {
+      "requestTypeName": "GdsAddLabelsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Labels/import": {
+      "requestTypeName": "GdsImportLabelsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/LayerEffectConfig/{id}": {
+      "requestTypeName": "GetLayerEffectConfigByIdReqType",
+      "responsesTypeName": "GetLayerEffectConfigByIdResType"
+    },
+    "put&/api/LayerEffectConfig/{id}": {
+      "requestTypeName": "EditLayerEffectConfigReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/LayerEffectConfig/{id}": {
+      "requestTypeName": "DeleteLayerEffectConfigReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/LayerEffectConfig": {
+      "requestTypeName": "AddLayerEffectConfigReqType",
+      "responsesTypeName": "AddLayerEffectConfigResType"
+    },
+    "get&/api/LayerEffectConfig": {
+      "requestTypeName": "GetLayerEffectConfigReqType",
+      "responsesTypeName": "GetLayerEffectConfigResType"
+    },
+    "post&/api/Layers/reload": {
+      "requestTypeName": "ReloadLayersReqType",
+      "responsesTypeName": "ReloadLayersResType"
+    },
+    "get&/api/Layers/root": {
+      "requestTypeName": "GetRootLayersReqType",
+      "responsesTypeName": "GetRootLayersResType"
+    },
+    "get&/api/Layers/children": {
+      "requestTypeName": "GetChildrenLayersReqType",
+      "responsesTypeName": "GetChildrenLayersResType"
+    },
+    "get&/api/Layers/layers": {
+      "requestTypeName": "GetLayersReqType",
+      "responsesTypeName": "GetLayersResType"
+    },
+    "get&/api/Layers/group_keys": {
+      "requestTypeName": "GetGroupKeysReqType",
+      "responsesTypeName": "GetGroupKeysResType"
+    },
+    "post&/api/Layers/batch": {
+      "requestTypeName": "GetLayerInfoByIdsReqType",
+      "responsesTypeName": "GetLayerInfoByIdsResType"
+    },
+    "delete&/api/Layers/batch": {
+      "requestTypeName": "DeleteLayersByIdsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Layers/node/batch": {
+      "requestTypeName": "BatchGetLayerNodesReqType",
+      "responsesTypeName": "BatchGetLayerNodesResType"
+    },
+    "get&/api/Layers/search": {
+      "requestTypeName": "GetBaseLayersReqType",
+      "responsesTypeName": "GetBaseLayersResType"
+    },
+    "post&/api/Layers/export": {
+      "requestTypeName": "ExportLayersReqType",
+      "responsesTypeName": "ExportLayersResType"
+    },
+    "post&/api/Layers/import": {
+      "requestTypeName": "ImportLayersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Layers/tree": {
+      "requestTypeName": "GetLayerTreesReqType",
+      "responsesTypeName": "GetLayerTreesResType"
+    },
+    "post&/api/Layers/tree/status": {
+      "requestTypeName": "GetLayerTreesWithStatusReqType",
+      "responsesTypeName": "GetLayerTreesWithStatusResType"
+    },
+    "get&/api/Layers": {
+      "requestTypeName": "GetFlatLayersReqType",
+      "responsesTypeName": "GetFlatLayersResType"
+    },
+    "get&/api/MapCenters/{id}": {
+      "requestTypeName": "GetMapCenterByIdReqType",
+      "responsesTypeName": "GetMapCenterByIdResType"
+    },
+    "put&/api/MapCenters/{id}": {
+      "requestTypeName": "EditMapCenterByIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/MapCenters/{id}": {
+      "requestTypeName": "DeleteMapCenterReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/MapCenters": {
+      "requestTypeName": "GetMapCentersByProductIdReqType",
+      "responsesTypeName": "GetMapCentersByProductIdResType"
+    },
+    "post&/api/MapCenters": {
+      "requestTypeName": "AddMapCenterReqType",
+      "responsesTypeName": "AddMapCenterResType"
+    },
+    "put&/api/MapCenters/switch": {
+      "requestTypeName": "SwitchCenterReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/MapServerTypes/{id}": {
+      "requestTypeName": "GetMapServerTypeReqType",
+      "responsesTypeName": "GetMapServerTypeResType"
+    },
+    "put&/api/MapServerTypes/{id}": {
+      "requestTypeName": "EditMapServerTypeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/MapServerTypes/{id}": {
+      "requestTypeName": "DeleteMapServerTypeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/MapServerTypes": {
+      "requestTypeName": "AddMapServerTypeReqType",
+      "responsesTypeName": "AddMapServerTypeResType"
+    },
+    "get&/api/MapServerTypes": {
+      "requestTypeName": "GetMapServerTypesReqType",
+      "responsesTypeName": "GetMapServerTypesResType"
+    },
+    "get&/api/MapServerTypes/{id}/overlays": {
+      "requestTypeName": "GetMapTypeOverlaysReqType",
+      "responsesTypeName": "GetMapTypeOverlaysResType"
+    },
+    "get&/api/MapTypeOverlays/{id}": {
+      "requestTypeName": "GetMapTypeOverlayByIdReqType",
+      "responsesTypeName": "GetMapTypeOverlayByIdResType"
+    },
+    "put&/api/MapTypeOverlays/{id}": {
+      "requestTypeName": "EditMapTypeOverlayReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/MapTypeOverlays": {
+      "requestTypeName": "AddMapTypeOverlayReqType",
+      "responsesTypeName": "AddMapTypeOverlayResType"
+    },
+    "delete&/api/MapTypeOverlays": {
+      "requestTypeName": "DeleteMapTypeOverlaysReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/MapTypeOverlays/format/url": {
+      "requestTypeName": "GetUrlFormatReqType",
+      "responsesTypeName": "GetUrlFormatResType"
+    },
+    "get&/api/Plots/{id}": {
+      "requestTypeName": "GetPlotsByIdReqType",
+      "responsesTypeName": "GetPlotsByIdResType"
+    },
+    "put&/api/Plots/{id}": {
+      "requestTypeName": "ModifyPlotsByIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Plots/{id}": {
+      "requestTypeName": "DeletePlotsByIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Plots/event": {
+      "requestTypeName": "GetEventPlotsReqType",
+      "responsesTypeName": "GetEventPlotsResType"
+    },
+    "post&/api/Plots/event": {
+      "requestTypeName": "AddEventPlotsReqType",
+      "responsesTypeName": "AddEventPlotsResType"
+    },
+    "get&/api/Plots/user": {
+      "requestTypeName": "GetUserPlotsReqType",
+      "responsesTypeName": "GetUserPlotsResType"
+    },
+    "post&/api/Plots/user": {
+      "requestTypeName": "AddUserPlotsReqType",
+      "responsesTypeName": "AddUserPlotsResType"
+    },
+    "get&/api/Plots": {
+      "requestTypeName": "GetPlotsReqType",
+      "responsesTypeName": "GetPlotsResType"
+    },
+    "post&/api/Plots": {
+      "requestTypeName": "AddPlotsReqType",
+      "responsesTypeName": "AddPlotsResType"
+    },
+    "get&/api/PlotTypes/{id}": {
+      "requestTypeName": "GetUserPlotTypesByIdReqType",
+      "responsesTypeName": "GetUserPlotTypesByIdResType"
+    },
+    "delete&/api/PlotTypes/{id}": {
+      "requestTypeName": "DeletePlotTypesByIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/PlotTypes/user": {
+      "requestTypeName": "GetUserPlotTypesReqType",
+      "responsesTypeName": "GetUserPlotTypesResType"
+    },
+    "post&/api/PlotTypes/user": {
+      "requestTypeName": "AddUserPlotTypesReqType",
+      "responsesTypeName": "AddUserPlotTypesResType"
+    },
+    "post&/api/Scenes": {
+      "requestTypeName": "AddScenesReqType",
+      "responsesTypeName": "AddScenesResType"
+    },
+    "put&/api/Scenes/{id}": {
+      "requestTypeName": "EditSceneReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Scenes/{id}": {
+      "requestTypeName": "DeleteSceneReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Scenes/{id}": {
+      "requestTypeName": "GetGdsSceneByIdReqType",
+      "responsesTypeName": "GetGdsSceneByIdResType"
+    },
+    "get&/api/Scenes/areaCode": {
+      "requestTypeName": "GetSceneByAreaCodeReqType",
+      "responsesTypeName": "GetSceneByAreaCodeResType"
+    },
+    "get&/api/Scenes/search": {
+      "requestTypeName": "SearchScenesReqType",
+      "responsesTypeName": "SearchScenesResType"
+    },
+    "get&/api/Statistical/layers": {
+      "requestTypeName": "GetLayersStatisticalReqType",
+      "responsesTypeName": "GetLayersStatisticalResType"
+    },
+    "post&/api/Statistical/layers/tree": {
+      "requestTypeName": "SearchLayersTreeReqType",
+      "responsesTypeName": "SearchLayersTreeResType"
+    },
+    "post&/api/Statistical/area_query": {
+      "requestTypeName": "QueryFacilityByAreaLayerReqType",
+      "responsesTypeName": "QueryFacilityByAreaLayerResType"
+    },
+    "post&/api/Statistical/circle_area": {
+      "requestTypeName": "GetFacilitiesCountByCircleAreaReqType",
+      "responsesTypeName": "GetFacilitiesCountByCircleAreaResType"
+    }
+  },
+  "fileStorageBiz": {
+    "get&/api/Directories": {
+      "requestTypeName": "GetDirectoriesReqType",
+      "responsesTypeName": "GetDirectoriesResType"
+    },
+    "post&/api/Directories": {
+      "requestTypeName": "AddDirectoriesReqType",
+      "responsesTypeName": "AddDirectoriesResType"
+    },
+    "get&/api/Directories/root": {
+      "requestTypeName": "GetDirectoriesRootReqType",
+      "responsesTypeName": "GetDirectoriesRootResType"
+    },
+    "get&/api/Directories/{parentId}/children": {
+      "requestTypeName": "GetDirectoriesChildrenReqType",
+      "responsesTypeName": "GetDirectoriesChildrenResType"
+    },
+    "get&/api/Directories/{id}": {
+      "requestTypeName": "GetDirectoriesByIdReqType",
+      "responsesTypeName": "GetDirectoriesByIdResType"
+    },
+    "put&/api/Directories/{id}": {
+      "requestTypeName": "UpdateDirectoriesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Directories/{id}": {
+      "requestTypeName": "DeleteDirectoriesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Files": {
+      "requestTypeName": "GetFilesReqType",
+      "responsesTypeName": "GetFilesResType"
+    },
+    "get&/api/Files/search": {
+      "requestTypeName": "SearchFilesReqType",
+      "responsesTypeName": "SearchFilesResType"
+    },
+    "get&/api/Files/{fileId}": {
+      "requestTypeName": "GetFssFilesByIdReqType",
+      "responsesTypeName": "GetFssFilesByIdResType"
+    },
+    "put&/api/Files/{fileId}": {
+      "requestTypeName": "UpdateFilesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Files/{fileId}": {
+      "requestTypeName": "DeleteFilesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Files/ss": {
+      "requestTypeName": "AddSSReqType",
+      "responsesTypeName": "AddSSResType"
+    },
+    "put&/api/Files/recordnotify/{fileId}": {
+      "requestTypeName": "UpdateRecordFilesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Files/wts": {
+      "requestTypeName": "AddWTSReqType",
+      "responsesTypeName": "AddWTSResType"
+    },
+    "post&/api/Files/export/icon": {
+      "requestTypeName": "ExportIconFilesReqType",
+      "responsesTypeName": "ExportIconFilesResType"
+    },
+    "post&/api/Files/import/icon": {
+      "requestTypeName": "ImportIconFilesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Files/duration": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/ZEnums/StorageKind": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
+  "geoAnalysisBiz": {
+    "get&/api/Buildings": {
+      "requestTypeName": "GetBuildingsReqType",
+      "responsesTypeName": "GetBuildingsResType"
+    },
+    "get&/api/Geocoder/geocoding": {
+      "requestTypeName": "GetGeocodingReqType",
+      "responsesTypeName": "GetGeocodingResType"
+    },
+    "get&/api/Geocoder/reverse_geocoding": {
+      "requestTypeName": "GetGeocodingReverseReqType",
+      "responsesTypeName": "GetGeocodingReverseResType"
+    },
+    "get&/api/Navigation/driving": {
+      "requestTypeName": "GetDrivingNavigationReqType",
+      "responsesTypeName": "GetDrivingNavigationResType"
+    },
+    "get&/api/Navigation/walking": {
+      "requestTypeName": "GetWalkingNavigationReqType",
+      "responsesTypeName": "GetWalkingNavigationResType"
+    },
+    "get&/api/Navigation/riding": {
+      "requestTypeName": "GetRidingNavigationReqType",
+      "responsesTypeName": "GetRidingNavigationResType"
+    },
+    "get&/api/Poi": {
+      "requestTypeName": "GetPoiReqType",
+      "responsesTypeName": "GetPoiResType"
+    },
+    "get&/api/Poi/place_suggestion": {
+      "requestTypeName": "GetPlaceSuggestionReqType",
+      "responsesTypeName": "GetPlaceSuggestionResType"
+    },
+    "get&/api/Traffic": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
+  "preplanAnalysisBiz": {
+    "get&/Alarm/DangerousSources": {
+      "requestTypeName": "GetDangerousSourcesByAlarmIdReqType",
+      "responsesTypeName": "GetDangerousSourcesByAlarmIdResType"
+    },
+    "get&/Alarm/KeyProtections": {
+      "requestTypeName": "GetKeyProtectionsByAlarmIdReqType",
+      "responsesTypeName": "GetKeyProtectionsByAlarmIdResType"
+    },
+    "get&/Alarm/Shelters": {
+      "requestTypeName": "GetSheltersByAlarmIdReqType",
+      "responsesTypeName": "GetSheltersByAlarmIdResType"
+    },
+    "get&/Alarm/Warehouses": {
+      "requestTypeName": "GetWarehousesByAlarmIdReqType",
+      "responsesTypeName": "GetWarehousesByAlarmIdResType"
+    },
+    "get&/Alarm/EmergencyFacilities": {
+      "requestTypeName": "GetEmergencyFacilitiesByAlarmIdReqType",
+      "responsesTypeName": "GetEmergencyFacilitiesByAlarmIdResType"
+    },
+    "get&/Alarm/ManpowerResources": {
+      "requestTypeName": "GetManpowerResourcesByAlarmIdReqType",
+      "responsesTypeName": "GetManpowerResourcesByAlarmIdResType"
+    },
+    "get&/Alarm/MedicalResources": {
+      "requestTypeName": "GetMedicalResourcesByAlarmIdReqType",
+      "responsesTypeName": "GetMedicalResourcesByAlarmIdResType"
+    },
+    "get&/Alarm/PollutionSources": {
+      "requestTypeName": "GetPollutionSourcesByAlarmIdReqType",
+      "responsesTypeName": "GetPollutionSourcesByAlarmIdResType"
+    },
+    "get&/api/AlarmFacilities": {
+      "requestTypeName": "GetAlarmFacilitiesByGroupKeyReqType",
+      "responsesTypeName": "GetAlarmFacilitiesByGroupKeyResType"
+    },
+    "get&/api/AlarmFacilitiesStatistics": {
+      "requestTypeName": "GetAlarmFacilitiesStatisticsReqType",
+      "responsesTypeName": "GetAlarmFacilitiesStatisticsResType"
+    },
+    "get&/api/EventFacilities": {
+      "requestTypeName": "GetEventFacilitiesByGroupKeyReqType",
+      "responsesTypeName": "GetEventFacilitiesByGroupKeyResType"
+    },
+    "get&/DangerousSources": {
+      "requestTypeName": "GetDangerousSourcesReqType",
+      "responsesTypeName": "GetDangerousSourcesResType"
+    },
+    "get&/KeyProtections": {
+      "requestTypeName": "GetKeyProtectionsReqType",
+      "responsesTypeName": "GetKeyProtectionsResType"
+    },
+    "get&/Shelters": {
+      "requestTypeName": "GetSheltersReqType",
+      "responsesTypeName": "GetSheltersResType"
+    },
+    "get&/Warehouses": {
+      "requestTypeName": "GetWarehousesReqType",
+      "responsesTypeName": "GetWarehousesResType"
+    },
+    "get&/EmergencyFacilities": {
+      "requestTypeName": "GetEmergencyFacilitiesReqType",
+      "responsesTypeName": "GetEmergencyFacilitiesResType"
+    },
+    "get&/ManpowerResources": {
+      "requestTypeName": "GetManpowerResourcesReqType",
+      "responsesTypeName": "GetManpowerResourcesResType"
+    },
+    "get&/MedicalResources": {
+      "requestTypeName": "GetMedicalResourcesReqType",
+      "responsesTypeName": "GetMedicalResourcesResType"
+    },
+    "get&/api/EventFacilitiesStatistics": {
+      "requestTypeName": "GetEventFacilitiesStatisticsReqType",
+      "responsesTypeName": "GetEventFacilitiesStatisticsResType"
+    },
+    "post&/api/EventFacilitiesStatistics": {
+      "requestTypeName": "QueryEventFacilitiesStatisticsReqType",
+      "responsesTypeName": "QueryEventFacilitiesStatisticsResType"
+    }
+  },
+  "modelAnalysisBiz": {
+    "post&/api/Analysis/GetAnalysisGaussianPlumeData": {
+      "requestTypeName": "GetAnalysisGaussianPlumeDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Analysis/GetAnalysisDiffusionArea": {
+      "requestTypeName": "GetAnalysisDiffusionAreaReqType",
+      "responsesTypeName": "GetAnalysisDiffusionAreaResType"
+    },
+    "post&/api/Analysis/GetAnalysisDiffusionTrend": {
+      "requestTypeName": "GetAnalysisDiffusionTrendReqType",
+      "responsesTypeName": "GetAnalysisDiffusionTrendResType"
+    },
+    "post&/api/Analysis/AnalysisVaporCloudExplosion": {
+      "requestTypeName": "GetAnalysisVaporCloudExplosionReqType",
+      "responsesTypeName": "GetAnalysisVaporCloudExplosionResType"
+    },
+    "get&/api/ExceptionDemo/{resourceId}": {
+      "requestTypeName": "ShowCustomValidationExceptionReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/ExceptionDemo/{resourceId}": {
+      "requestTypeName": "ShowUnHandleExceptionReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ExceptionDemo": {
+      "requestTypeName": "ShowForbiddenExceptionReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Gas": {
+      "requestTypeName": "GetGasV2ReqType",
+      "responsesTypeName": "GetGasV2ResType"
+    },
+    "get&/api/Gas/{id}": {
+      "requestTypeName": "GetGasByIdV2ReqType",
+      "responsesTypeName": "GetGasByIdV2ResType"
+    },
+    "get&/api/Gas/Name/{name}": {
+      "requestTypeName": "GetGasByNameReqType",
+      "responsesTypeName": "GetGasByNameResType"
+    },
+    "post&/api/Analysis/gaussian_plume": {
+      "requestTypeName": "GetAnalysisGaussianPlumeDataV2ReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Analysis/gaussian_plume/area": {
+      "requestTypeName": "GetAnalysisDiffusionAreaV2ReqType",
+      "responsesTypeName": "GetAnalysisDiffusionAreaV2ResType"
+    },
+    "post&/api/Analysis/gaussian_plume/trend": {
+      "requestTypeName": "GetAnalysisDiffusionTrendV2ReqType",
+      "responsesTypeName": "GetAnalysisDiffusionTrendV2ResType"
+    },
+    "post&/api/Analysis/vapor_cloud_explosion": {
+      "requestTypeName": "GetAnalysisVaporCloudExplosionV2ReqType",
+      "responsesTypeName": "GetAnalysisVaporCloudExplosionV2ResType"
+    },
+    "get&/api/Gas/name": {
+      "requestTypeName": "GetGasByNameV2ReqType",
+      "responsesTypeName": "GetGasByNameV2ResType"
+    }
+  },
+  "videoFusionServiceBiz": {
+    "get&/api/CameraGroups": {
+      "requestTypeName": "GetCameraGroupsReqType",
+      "responsesTypeName": "GetCameraGroupsResType"
+    },
+    "post&/api/CameraGroups": {
+      "requestTypeName": "AddCameraGroupsReqType",
+      "responsesTypeName": "AddCameraGroupsResType"
+    },
+    "get&/api/CameraGroups/children": {
+      "requestTypeName": "GetCameraGroupListReqType",
+      "responsesTypeName": "GetCameraGroupListResType"
+    },
+    "post&/api/CameraGroups/batch": {
+      "requestTypeName": "SearchCameraGroupsReqType",
+      "responsesTypeName": "SearchCameraGroupsResType"
+    },
+    "put&/api/CameraGroups/{id}/move": {
+      "requestTypeName": "MoveCameraGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/CameraGroups/{id}/children": {
+      "requestTypeName": "GetChildrenCameraGroupsByIdReqType",
+      "responsesTypeName": "GetChildrenCameraGroupsByIdResType"
+    },
+    "put&/api/CameraGroups/{id}/children": {
+      "requestTypeName": "BatchAddCameraGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CameraGroups/camera/batch": {
+      "requestTypeName": "BatchAddCameraToGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/CameraGroups/Search": {
+      "requestTypeName": "QueryCameraGroupsReqType",
+      "responsesTypeName": "QueryCameraGroupsResType"
+    },
+    "get&/api/CameraGroups/advance_search": {
+      "requestTypeName": "SearchGroupAndCameraReqType",
+      "responsesTypeName": "SearchGroupAndCameraResType"
+    },
+    "put&/api/CameraGroups/{id}/camera/move": {
+      "requestTypeName": "MoveCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CameraGroups/{id}/camera/top": {
+      "requestTypeName": "MoveCameraTopReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/CameraGroups/{id}/children/{subGroupId}": {
+      "requestTypeName": "DeleteSubGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/CameraGroups/group": {
+      "requestTypeName": "AddSubGroupReqType",
+      "responsesTypeName": "AddSubGroupResType"
+    },
+    "post&/api/CameraGroups/subordinates": {
+      "requestTypeName": "GetCameraGroupSubordinatesReqType",
+      "responsesTypeName": "GetCameraGroupSubordinatesResType"
+    },
+    "post&/api/CameraGroups/{id}/cameras/batch": {
+      "requestTypeName": "BatchAddCamerasToGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/CameraGroups/bath": {
+      "requestTypeName": "MultAddCameraGroupsReqType",
+      "responsesTypeName": "MultAddCameraGroupsResType"
+    },
+    "delete&/api/CameraGroups/{id}": {
+      "requestTypeName": "RemoveCameraGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CameraGroups/{id}": {
+      "requestTypeName": "EditCameraGroupsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CameraGroups/parent/{id}": {
+      "requestTypeName": "ChangeCameraGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/CameraGroups/parent/{id}": {
+      "requestTypeName": "LinkCameraGroupReqType",
+      "responsesTypeName": "LinkCameraGroupResType"
+    },
+    "post&/api/CameraGroups/camera/parent/{id}": {
+      "requestTypeName": "AddGroupCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/CameraGroups/camera/parent/{id}": {
+      "requestTypeName": "RemoveGroupCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/CameraGroups/{id}/camera": {
+      "requestTypeName": "DeleteGroupCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/CameraGroups/{id}/group_children": {
+      "requestTypeName": "GetCameraGroupsChildrenReqType",
+      "responsesTypeName": "GetCameraGroupsChildrenResType"
+    },
+    "get&/api/CameraGroups/{id}/camera_children": {
+      "requestTypeName": "GetCameraGroupsLeafReqType",
+      "responsesTypeName": "GetCameraGroupsLeafResType"
+    },
+    "get&/api/CameraOrGroupDeleteRecords": {
+      "requestTypeName": "GetCameraOrGroupDeleteRecordsReqType",
+      "responsesTypeName": "GetCameraOrGroupDeleteRecordsResType"
+    },
+    "get&/api/Cameras/groups": {
+      "requestTypeName": "GetCameraByGroupReqType",
+      "responsesTypeName": "GetCameraByGroupResType"
+    },
+    "post&/api/Cameras/groups": {
+      "requestTypeName": "CreateMonitoringPlanGroupReqType",
+      "responsesTypeName": "CreateMonitoringPlanGroupResType"
+    },
+    "get&/api/Cameras/groups/{groupId}": {
+      "requestTypeName": "GetCameraListByIdReqType",
+      "responsesTypeName": "GetCameraListByIdResType"
+    },
+    "get&/api/Cameras/{id}/playUrls": {
+      "requestTypeName": "GetCameraPlayUrlsByIdReqType",
+      "responsesTypeName": "GetCameraPlayUrlsByIdResType"
+    },
+    "post&/api/Cameras/circle_area": {
+      "requestTypeName": "SearchCircleAreaCameraReqType",
+      "responsesTypeName": "SearchCircleAreaCameraResType"
+    },
+    "get&/api/Cameras/{id}": {
+      "requestTypeName": "GetCameraByIdReqType",
+      "responsesTypeName": "GetCameraByIdResType"
+    },
+    "put&/api/Cameras/{id}": {
+      "requestTypeName": "UpdateGbCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Cameras/area_query": {
+      "requestTypeName": "GetCamerasByAreaReqType",
+      "responsesTypeName": "GetCamerasByAreaResType"
+    },
+    "get&/api/Cameras/search": {
+      "requestTypeName": "CameraSearchByKeyReqType",
+      "responsesTypeName": "CameraSearchByKeyResType"
+    },
+    "post&/api/Cameras/statics/genarate": {
+      "requestTypeName": "AddGenarateReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Cameras/statics/files": {
+      "requestTypeName": "GetStaticFilesReqType",
+      "responsesTypeName": "GetStaticFilesResType"
+    },
+    "get&/api/Cameras/detection/search": {
+      "requestTypeName": "SearchDetectionDataReqType",
+      "responsesTypeName": "SearchDetectionDataResType"
+    },
+    "get&/api/Cameras/detection/download": {
+      "requestTypeName": "DownloadDetectionDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Cameras/groups/{id}": {
+      "requestTypeName": "EditMonitoringPlanGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Cameras/groups/{id}": {
+      "requestTypeName": "DeleteCameraGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Cameras/groups/{id}/children": {
+      "requestTypeName": "RemoveCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Cameras/groups/{id}/order": {
+      "requestTypeName": "SortPlansGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Cameras/groups/children": {
+      "requestTypeName": "CollectionMonitoringToPlanGroupReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Cameras/groups/{groupId}/children/{cameraId}": {
+      "requestTypeName": "DeletePlanGroupMonitoringReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Cameras/groups/{id}/preplan_cameras": {
+      "requestTypeName": "GetPreplanCamerasReqType",
+      "responsesTypeName": "GetPreplanCamerasResType"
+    },
+    "get&/api/Cameras/{id}/preplan_groups": {
+      "requestTypeName": "GetPreplanGroupsByCameraIdReqType",
+      "responsesTypeName": "GetPreplanGroupsByCameraIdResType"
+    },
+    "get&/api/Cameras/{id}/detection_records": {
+      "requestTypeName": "GetCameraDetectionRecordsReqType",
+      "responsesTypeName": "GetCameraDetectionRecordsResType"
+    },
+    "get&/api/Cameras/advance_search": {
+      "requestTypeName": "VfsSearchCamerasReqType",
+      "responsesTypeName": "VfsSearchCamerasResType"
+    },
+    "put&/api/Cameras/{id}/control": {
+      "requestTypeName": "ControlCamerasReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Cameras/{id}/playback_control": {
+      "requestTypeName": "SetCameraPlaybackReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Cameras/{id}/videos/start": {
+      "requestTypeName": "StartVideoRecordingReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Cameras/{id}/videos/stop": {
+      "requestTypeName": "StopVideoRecordingReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Cameras/{id}/pictures": {
+      "requestTypeName": "CameraScreenshotReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Cameras/mediarecords": {
+      "requestTypeName": "GetMediaRecordsReqType",
+      "responsesTypeName": "GetMediaRecordsResType"
+    },
+    "get&/api/Cameras/{id}/isvideoing": {
+      "requestTypeName": "GetUserInVideoByIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Cameras/{id}/recordingInfo": {
+      "requestTypeName": "GetCameraRecordingInfoReqType",
+      "responsesTypeName": "GetCameraRecordingInfoResType"
+    },
+    "get&/api/Cameras/{id}/favorite_groups": {
+      "requestTypeName": "GetFavoriteGroupsByIdReqType",
+      "responsesTypeName": "GetFavoriteGroupsByIdResType"
+    },
+    "post&/api/Cameras": {
+      "requestTypeName": "AddGbCameraReqType",
+      "responsesTypeName": "AddGbCameraResType"
+    },
+    "put&/api/Cameras/{id}/location": {
+      "requestTypeName": "EditCameraLocationReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Cameras/search/label": {
+      "requestTypeName": "SearchCamerasByLabelReqType",
+      "responsesTypeName": "SearchCamerasByLabelResType"
+    },
+    "post&/api/Cameras/import": {
+      "requestTypeName": "ImportCamerasReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Cameras/batch": {
+      "requestTypeName": "GetCameraInfoByIdsReqType",
+      "responsesTypeName": "GetCameraInfoByIdsResType"
+    },
+    "post&/api/Cameras/images/batch": {
+      "requestTypeName": "QueryMonitorScreenshotReqType",
+      "responsesTypeName": "QueryMonitorScreenshotResType"
+    },
+    "put&/api/Cameras/areaCode/batch": {
+      "requestTypeName": "EditCamerasAreaCodeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Cameras/areaCode/{areaCode}": {
+      "requestTypeName": "GetCamerasByAreaCodeReqType",
+      "responsesTypeName": "GetCamerasByAreaCodeResType"
+    },
+    "post&/api/Cameras/areaCode/search": {
+      "requestTypeName": "SearchCamerasByAreaCodeReqType",
+      "responsesTypeName": "SearchCamerasByAreaCodeResType"
+    },
+    "get&/api/Cameras/{id}/videos": {
+      "requestTypeName": "VfsGetVideosByIdReqType",
+      "responsesTypeName": "VfsGetVideosByIdResType"
+    },
+    "get&/api/Cameras/state/records": {
+      "requestTypeName": "GetCameraStateReqType",
+      "responsesTypeName": "GetCameraStateResType"
+    },
+    "get&/api/Cameras/{id}/points": {
+      "requestTypeName": "GetCameraPointsReqType",
+      "responsesTypeName": "GetCameraPointsResType"
+    },
+    "post&/api/Cameras/points": {
+      "requestTypeName": "AddCameraPointsReqType",
+      "responsesTypeName": "AddCameraPointsResType"
+    },
+    "delete&/api/Cameras/{cameraId}/points/{id}": {
+      "requestTypeName": "DeleteCameraPointsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Cameras/{cameraId}/points/{id}": {
+      "requestTypeName": "SetCameraPointsReqType",
+      "responsesTypeName": "SetCameraPointsResType"
+    },
+    "post&/api/Cameras/operation/areacode": {
+      "requestTypeName": "CompleteCameraAreaCodeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/CameraVideos": {
+      "requestTypeName": "StartCameraVideoReqType",
+      "responsesTypeName": "StartCameraVideoResType"
+    },
+    "put&/api/CameraVideos/{id}/stop": {
+      "requestTypeName": "StopCameraVideoReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/CurrentDomains": {
+      "requestTypeName": "GetCurrentDomainsReqType",
+      "responsesTypeName": "GetCurrentDomainsResType"
+    },
+    "put&/api/DetectionTasks/{id}/pause": {
+      "requestTypeName": "PauseDetectionTasksReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/DetectionTasks/{id}/resume": {
+      "requestTypeName": "ResumeDetectionTasksReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/DetectionTasks/{id}/stop": {
+      "requestTypeName": "StopDetectionTasksReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/DetectionTasks/{id}/records": {
+      "requestTypeName": "GetDetectionTaskRecordsReqType",
+      "responsesTypeName": "GetDetectionTaskRecordsResType"
+    },
+    "get&/api/DetectionTasks/{id}": {
+      "requestTypeName": "GetDetectionDetailsReqType",
+      "responsesTypeName": "GetDetectionDetailsResType"
+    },
+    "get&/api/DetectionTasks": {
+      "requestTypeName": "VfsGetDetectionTasksReqType",
+      "responsesTypeName": "VfsGetDetectionTasksResType"
+    },
+    "get&/api/DetectionTasks/newest_effective": {
+      "requestTypeName": "GetLatestEffectiveReqType",
+      "responsesTypeName": "GetLatestEffectiveResType"
+    },
+    "post&/api/DetectionTasks/newest_effectives": {
+      "requestTypeName": "GetLatestDetectionTasksReqType",
+      "responsesTypeName": "GetLatestDetectionTasksResType"
+    },
+    "put&/api/DetectionTasks/records/{id}": {
+      "requestTypeName": "ReplyDetectionTaskReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/DetectionTasks/{id}/export": {
+      "requestTypeName": "ExportDetectionTasksReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/FavoriteCameraItems/import": {
+      "requestTypeName": "ImportFavoriteCameraItemsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/FavoriteCameraItems": {
+      "requestTypeName": "CreateFavoriteCameraItemReqType",
+      "responsesTypeName": "CreateFavoriteCameraItemResType"
+    },
+    "get&/api/FavoriteCameraItems": {
+      "requestTypeName": "GetFavoriteCameraItemsReqType",
+      "responsesTypeName": "GetFavoriteCameraItemsResType"
+    },
+    "post&/api/FavoriteCameraItems/sub": {
+      "requestTypeName": "SaveFavoriteCameraItemsReqType",
+      "responsesTypeName": "SaveFavoriteCameraItemsResType"
+    },
+    "get&/api/FavoriteCameraItems/root": {
+      "requestTypeName": "GetRootFavoriteCameraItemsReqType",
+      "responsesTypeName": "GetRootFavoriteCameraItemsResType"
+    },
+    "get&/api/FavoriteCameraItems/{parentId}/children": {
+      "requestTypeName": "GetChildrenFavoriteCameraItemsReqType",
+      "responsesTypeName": "GetChildrenFavoriteCameraItemsResType"
+    },
+    "put&/api/FavoriteCameraItems/{id}": {
+      "requestTypeName": "EditFavoriteCameraItemReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/FavoriteCameraItemTypes/{type}/FavoriteCameraItems/{id}": {
+      "requestTypeName": "DeleteFavoriteCameraItemReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/FavoriteCameraItems/{subType}/{subId}/batch": {
+      "requestTypeName": "BatchEditFavoriteCameraItemsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/GbConfigs/sync_domain": {
+      "requestTypeName": "SyncGbConfigDomainReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/GbConfigs/domains/{id}": {
+      "requestTypeName": "EditGbConfigDomainReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/GbConfigs/domains/{id}": {
+      "requestTypeName": "GetGbConfigDomainByIdReqType",
+      "responsesTypeName": "GetGbConfigDomainByIdResType"
+    },
+    "get&/api/GbConfigs/domains": {
+      "requestTypeName": "GetGbConfigDomainsReqType",
+      "responsesTypeName": "GetGbConfigDomainsResType"
+    },
+    "post&/api/GbConfigs/domains": {
+      "requestTypeName": "AddGbConfigDomainsReqType",
+      "responsesTypeName": "AddGbConfigDomainsResType"
+    },
+    "get&/api/GbConfigs/unused_domains": {
+      "requestTypeName": "GetUnusedDomainsReqType",
+      "responsesTypeName": "GetUnusedDomainsResType"
+    },
+    "post&/api/GbConfigs/domains/batch": {
+      "requestTypeName": "DeleteDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/GbConfigs/domains/{id}/data": {
+      "requestTypeName": "ClearDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/GbConfigs/domains/{id}/syncTaskHistories": {
+      "requestTypeName": "GetSyncTaskHistoriesReqType",
+      "responsesTypeName": "GetSyncTaskHistoriesResType"
+    },
+    "get&/api/GbConfigs/domains/syncTaskHistories/{id}/records": {
+      "requestTypeName": "GetSyncTaskHistoriesByIdReqType",
+      "responsesTypeName": "GetSyncTaskHistoriesByIdResType"
+    },
+    "get&/api/GbConfigs/domains/{id}/expired": {
+      "requestTypeName": "GetExpiredDomainsReqType",
+      "responsesTypeName": "GetExpiredDomainsResType"
+    },
+    "post&/api/GbConfigs/domains/{id}/expired/batch": {
+      "requestTypeName": "DeleteExpiredDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/GbConfigs/domains/{id}/ResolveConflict": {
+      "requestTypeName": "ResolveConflictReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/GradingDispatch": {
+      "requestTypeName": "VfsGradingDispatchReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/HistoryCameraPulls/search": {
+      "requestTypeName": "GetHistoryCameraPullsReqType",
+      "responsesTypeName": "GetHistoryCameraPullsResType"
+    },
+    "get&/api/HistoryCameraPulls/{id}": {
+      "requestTypeName": "GetHistoryCameraPullsByIdReqType",
+      "responsesTypeName": "GetHistoryCameraPullsByIdResType"
+    },
+    "get&/api/HistoryCameraPulls": {
+      "requestTypeName": "SearchHistoryCameraPullsReqType",
+      "responsesTypeName": "SearchHistoryCameraPullsResType"
+    },
+    "get&/api/Label": {
+      "requestTypeName": "GetAllLabelsV2ReqType",
+      "responsesTypeName": "GetAllLabelsV2ResType"
+    },
+    "post&/api/Label": {
+      "requestTypeName": "CreateLabelReqType",
+      "responsesTypeName": "CreateLabelResType"
+    },
+    "put&/api/Label/{id}": {
+      "requestTypeName": "VfsEditLabelReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Label/{id}": {
+      "requestTypeName": "VfsDeleteLabelReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Label/batch": {
+      "requestTypeName": "BatchDeleteLabelReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Label/camera/batch": {
+      "requestTypeName": "BatchEditCameraLabelReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Label/camera/batch": {
+      "requestTypeName": "BatchDeleteCameraLabelReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Label/export": {
+      "requestTypeName": "ExportLabelReqType",
+      "responsesTypeName": "ExportLabelResType"
+    },
+    "post&/api/Label/import": {
+      "requestTypeName": "ImportLabelReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Lives": {
+      "requestTypeName": "ObtainLiveReqType",
+      "responsesTypeName": "ObtainLiveResType"
+    },
+    "put&/api/Lives": {
+      "requestTypeName": "OpenLivesReqType",
+      "responsesTypeName": "OpenLivesResType"
+    },
+    "post&/api/Lives": {
+      "requestTypeName": "CreateLivesReqType",
+      "responsesTypeName": "CreateLivesResType"
+    },
+    "put&/api/Lives/open": {
+      "requestTypeName": "OpenLiveWithInfoReqType",
+      "responsesTypeName": "OpenLiveWithInfoResType"
+    },
+    "post&/api/Lives/{stream}": {
+      "requestTypeName": "SendAudioReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Lives/{stream}": {
+      "requestTypeName": "GetLiveInfoReqType",
+      "responsesTypeName": "GetLiveInfoResType"
+    },
+    "delete&/api/Lives/{stream}": {
+      "requestTypeName": "CloseLiveReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Lives/{stream}/video_records": {
+      "requestTypeName": "GetVideoRecordsReqType",
+      "responsesTypeName": "GetVideoRecordsResType"
+    },
+    "post&/api/LowerDomains/sync": {
+      "requestTypeName": "SyncLowerDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/LowerDomains/{id}": {
+      "requestTypeName": "EditLowerDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/LowerDomains/{id}": {
+      "requestTypeName": "GetLowerDomainByIdReqType",
+      "responsesTypeName": "GetLowerDomainByIdResType"
+    },
+    "get&/api/LowerDomains": {
+      "requestTypeName": "GetLowerDomainsReqType",
+      "responsesTypeName": "GetLowerDomainsResType"
+    },
+    "post&/api/LowerDomains": {
+      "requestTypeName": "AddLowerDomainReqType",
+      "responsesTypeName": "AddLowerDomainResType"
+    },
+    "get&/api/LowerDomains/unused_domains": {
+      "requestTypeName": "GetUnusedLowerDomainsReqType",
+      "responsesTypeName": "GetUnusedLowerDomainsResType"
+    },
+    "get&/api/LowerDomains/{id}/syncTaskHistories": {
+      "requestTypeName": "GetLowerDomainsSyncHistoriesReqType",
+      "responsesTypeName": "GetLowerDomainsSyncHistoriesResType"
+    },
+    "post&/api/LowerDomains/batch": {
+      "requestTypeName": "BatchDeleteLowerDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/LowerDomains/{id}/data": {
+      "requestTypeName": "ClearLowerDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/LowerDomains/syncTaskHistories/{id}": {
+      "requestTypeName": "GetSyncTaskHistoryByIdReqType",
+      "responsesTypeName": "GetSyncTaskHistoryByIdResType"
+    },
+    "get&/api/LowerDomains/syncTaskHistories/{id}/records": {
+      "requestTypeName": "SearchSyncTaskHistoryReqType",
+      "responsesTypeName": "SearchSyncTaskHistoryResType"
+    },
+    "get&/api/LowerDomains/{id}/expired": {
+      "requestTypeName": "GetExpiredLowerDomainsReqType",
+      "responsesTypeName": "GetExpiredLowerDomainsResType"
+    },
+    "put&/api/LowerDomains/{id}/expired": {
+      "requestTypeName": "UpdateExpiredLowerDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/LowerDomains/{id}/expired/batch": {
+      "requestTypeName": "BatchDeleteExpiredLowerDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/LowerDomains/{id}/Conflict": {
+      "requestTypeName": "ResolveLowerDomainsConflictReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/LowerDomains/{id}/state/records": {
+      "requestTypeName": "GetLowerDomainStateRecordsReqType",
+      "responsesTypeName": "GetLowerDomainStateRecordsResType"
+    },
+    "get&/api/MediaServers": {
+      "requestTypeName": "GetAllMediaServersReqType",
+      "responsesTypeName": "GetAllMediaServersResType"
+    },
+    "get&/api/MediaSessions": {
+      "requestTypeName": "GetMediaSessionsV2ReqType",
+      "responsesTypeName": "GetMediaSessionsV2ResType"
+    },
+    "delete&/api/MediaSessions": {
+      "requestTypeName": "StopMediaSessionsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/MediaSessions/{id}": {
+      "requestTypeName": "GetMediaSessionsByIdReqType",
+      "responsesTypeName": "GetMediaSessionsByIdResType"
+    },
+    "get&/api/MediaSessions/statistics": {
+      "requestTypeName": "GetMediaSessionStatisticsReqType",
+      "responsesTypeName": "GetMediaSessionStatisticsResType"
+    },
+    "post&/api/Recording": {
+      "requestTypeName": "StartSteamRecordingReqType",
+      "responsesTypeName": "StartSteamRecordingResType"
+    },
+    "get&/api/Recording": {
+      "requestTypeName": "GetSteamRecordingInfoReqType",
+      "responsesTypeName": "GetSteamRecordingInfoResType"
+    },
+    "put&/api/Recording/{streamId}/status": {
+      "requestTypeName": "EditSteamRecordingStatusReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Recording/{id}": {
+      "requestTypeName": "DeleteRecordingReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Recording/batch/delete": {
+      "requestTypeName": "BatchDeleteRecordingReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Recording/search": {
+      "requestTypeName": "SearchRecordingReqType",
+      "responsesTypeName": "SearchRecordingResType"
+    },
+    "get&/api/Signals": {
+      "requestTypeName": "GetSignalsReqType",
+      "responsesTypeName": "GetSignalsResType"
+    },
+    "put&/api/Signals": {
+      "requestTypeName": "EditSignalsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Statistics/cameras": {
+      "requestTypeName": "GetCamerasReqType",
+      "responsesTypeName": "GetCamerasResType"
+    },
+    "get&/api/Statistics/cameras/fault": {
+      "requestTypeName": "GetFaultCamerasReqType",
+      "responsesTypeName": "GetFaultCamerasResType"
+    },
+    "get&/api/Statistics/cameras/bad": {
+      "requestTypeName": "GetBadCamerasReqType",
+      "responsesTypeName": "GetBadCamerasResType"
+    },
+    "get&/api/Statistics/cameras/resolution": {
+      "requestTypeName": "GetCamerasResolutionReqType",
+      "responsesTypeName": "GetCamerasResolutionResType"
+    },
+    "get&/api/Statistics/detectionTasks/history": {
+      "requestTypeName": "GetDetectionTasksHistoryReqType",
+      "responsesTypeName": "GetDetectionTasksHistoryResType"
+    },
+    "get&/api/Statistics/detectionTasks/{jobId}/quality": {
+      "requestTypeName": "GetCamerasByJobIdReqType",
+      "responsesTypeName": "GetCamerasByJobIdResType"
+    },
+    "get&/api/Statistics/detectionTasks/{jobId}/bad": {
+      "requestTypeName": "GetBadCamerasByJobIdReqType",
+      "responsesTypeName": "GetBadCamerasByJobIdResType"
+    },
+    "get&/api/Statistics/detectionTasks/{jobId}/fault": {
+      "requestTypeName": "GetFaultCamerasByJobIdReqType",
+      "responsesTypeName": "GetFaultCamerasByJobIdResType"
+    },
+    "get&/api/Statistics/favoriteCameraGroup": {
+      "requestTypeName": "GetFavoriteCameraGroupTotalReqType",
+      "responsesTypeName": "GetFavoriteCameraGroupTotalResType"
+    },
+    "get&/api/Statistics/detectionTasks/{jobId}/history": {
+      "requestTypeName": "GetDetectionHistoryByJobIdReqType",
+      "responsesTypeName": "GetDetectionHistoryByJobIdResType"
+    },
+    "post&/api/Statistics/camera/prefixAreaCode": {
+      "requestTypeName": "VfsGetCameraStatisticsByAreaReqType",
+      "responsesTypeName": "VfsGetCameraStatisticsByAreaResType"
+    },
+    "post&/api/StreamKeepAliveJobs": {
+      "requestTypeName": "AddStreamKeepAliveJobReqType",
+      "responsesTypeName": "AddStreamKeepAliveJobResType"
+    },
+    "get&/api/StreamKeepAliveJobs": {
+      "requestTypeName": "VfsGetStreamKeepAliveJobsReqType",
+      "responsesTypeName": "VfsGetStreamKeepAliveJobsResType"
+    },
+    "get&/api/StreamKeepAliveJobs/{id}": {
+      "requestTypeName": "VfsGetStreamKeepAliveJobByIdReqType",
+      "responsesTypeName": "VfsGetStreamKeepAliveJobByIdResType"
+    },
+    "delete&/api/StreamKeepAliveJobs/{id}": {
+      "requestTypeName": "VfsDeleteStreamKeepAliveJobReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/StreamKeepAliveJobs/{id}": {
+      "requestTypeName": "VfsEditStreamKeepAliveJobReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/StreamKeepAliveJobs/{id}/status": {
+      "requestTypeName": "EditStreamKeepAliveJobStatusReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/StreamKeepAliveJobs/{id}/task": {
+      "requestTypeName": "GetStreamKeepAliveTasksReqType",
+      "responsesTypeName": "GetStreamKeepAliveTasksResType"
+    },
+    "get&/api/StreamKeepAliveJobs/{id}/record": {
+      "requestTypeName": "GetStreamKeepAliveRecordsReqType",
+      "responsesTypeName": "GetStreamKeepAliveRecordsResType"
+    },
+    "get&/api/Tests/camera/{id}": {
+      "requestTypeName": "StopCameraByIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Tests/StreamKeepAliveJobs/{jobId}": {
+      "requestTypeName": "StreamKeepAliveJobsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Tests/Sync": {
+      "requestTypeName": "SyncTestsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Tests/SyncCatalog": {
+      "requestTypeName": "SyncCatalogReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Tests/IncrementSyncCatalog": {
+      "requestTypeName": "IncrementSyncCatalogReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/UpperDomains": {
+      "requestTypeName": "AddUpperDomainReqType",
+      "responsesTypeName": "AddUpperDomainResType"
+    },
+    "get&/api/UpperDomains": {
+      "requestTypeName": "GetUpperDomainsReqType",
+      "responsesTypeName": "GetUpperDomainsResType"
+    },
+    "put&/api/UpperDomains/{id}": {
+      "requestTypeName": "EditUpperDomainReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/UpperDomains/{id}": {
+      "requestTypeName": "DeleteUpperDomainReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/UpperDomains/{id}": {
+      "requestTypeName": "GetUpperDomainByIdReqType",
+      "responsesTypeName": "GetUpperDomainByIdResType"
+    },
+    "get&/api/UpperDomains/syncTaskHistories/{id}": {
+      "requestTypeName": "GetUpperSyncTaskHistoryByIdReqType",
+      "responsesTypeName": "GetUpperSyncTaskHistoryByIdResType"
+    },
+    "get&/api/UpperDomains/{id}/syncTaskHistories": {
+      "requestTypeName": "GetUpperDomainSyncHistoryReqType",
+      "responsesTypeName": "GetUpperDomainSyncHistoryResType"
+    },
+    "get&/api/UpperDomains/syncTaskHistories/{id}/records": {
+      "requestTypeName": "GetUpperDomainSyncRecordsReqType",
+      "responsesTypeName": "GetUpperDomainSyncRecordsResType"
+    },
+    "get&/api/UpperDomains/{id}/state/records": {
+      "requestTypeName": "GetUpperDomainStateRecordsReqType",
+      "responsesTypeName": "GetUpperDomainStateRecordsResType"
+    },
+    "post&/api/UpperDomains/{id}/synchronization": {
+      "requestTypeName": "SynchronizationReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/UpperDomains/cameras/state/records": {
+      "requestTypeName": "GetCamerasStateHistoryReqType",
+      "responsesTypeName": "GetCamerasStateHistoryResType"
+    },
+    "post&/api/UpperDomains/cameras/state/report": {
+      "requestTypeName": "ReportCameraStateToUpperDomainsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/VideoConferences": {
+      "requestTypeName": "GetVideoConferencesReqType",
+      "responsesTypeName": "GetVideoConferencesResType"
+    },
+    "put&/api/VideoConferences/{conferenceNumber}/invite_camera": {
+      "requestTypeName": "EditInviteCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/VideoConferences/{conferenceNumber}/invite_live": {
+      "requestTypeName": "EditInviteLiveReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/VideoConferences/{conferenceNumber}/to_live": {
+      "requestTypeName": "VideoConferenceToLiveReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/VideoConferences/live/{conferenceNumber}": {
+      "requestTypeName": "ObtainConferenceLiveReqType",
+      "responsesTypeName": "ObtainConferenceLiveResType"
+    },
+    "put&/api/Videos/push": {
+      "requestTypeName": "PushVideosReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Cameras/Search": {
+      "requestTypeName": "SearchCamerasV2ReqType",
+      "responsesTypeName": "SearchCamerasV2ResType"
+    },
+    "post&/api/Cameras/advance_search": {
+      "requestTypeName": "AdvanceSearchCamerasReqType",
+      "responsesTypeName": "AdvanceSearchCamerasResType"
+    },
+    "post&/api/Cameras/nonstandard": {
+      "requestTypeName": "AddNonStandardCameraReqType",
+      "responsesTypeName": "AddNonStandardCameraResType"
+    },
+    "put&/api/Cameras/nonstandard/{id}": {
+      "requestTypeName": "UpdateNonStandardCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Cameras/virtual": {
+      "requestTypeName": "AddVirtualFileReqType",
+      "responsesTypeName": "AddVirtualFileResType"
+    },
+    "put&/api/Cameras/virtual/{id}": {
+      "requestTypeName": "UpdateVirtualFileCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Cameras/id": {
+      "requestTypeName": "GenerateGbIdReqType",
+      "responsesTypeName": "GenerateGbIdResType"
+    }
+  },
+  "vcsBiz": {
+    "get&/api/Accounts": {
+      "requestTypeName": "GetAccountsReqType",
+      "responsesTypeName": "GetAccountsResType"
+    },
+    "post&/api/Accounts": {
+      "requestTypeName": "AddAccountsReqType",
+      "responsesTypeName": "AddAccountsResType"
+    },
+    "get&/api/Accounts/{id}": {
+      "requestTypeName": "GetAccountsByIdReqType",
+      "responsesTypeName": "GetAccountsByIdResType"
+    },
+    "delete&/api/Accounts/{id}": {
+      "requestTypeName": "DeleteAccountsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Accounts/name/{name}": {
+      "requestTypeName": "GetAccountsByNameReqType",
+      "responsesTypeName": "GetAccountsByNameResType"
+    },
+    "get&/api/Conferences/{id}": {
+      "requestTypeName": "GetConferencesByIdReqType",
+      "responsesTypeName": "GetConferencesByIdResType"
+    },
+    "delete&/api/Conferences/{id}": {
+      "requestTypeName": "EndConferencesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Conferences/number/{number}": {
+      "requestTypeName": "GetConferencesLayoutByIdReqType",
+      "responsesTypeName": "GetConferencesLayoutByIdResType"
+    },
+    "delete&/api/Conferences/number/{number}": {
+      "requestTypeName": "EndConferencesByNumberReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Conferences/{id}/layout": {
+      "requestTypeName": "GetConferenceLayoutByIdReqType",
+      "responsesTypeName": "GetConferenceLayoutByIdResType"
+    },
+    "put&/api/Conferences/{id}/layout": {
+      "requestTypeName": "EditConferenceLayoutReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Conferences/{id}/layout/cascade": {
+      "requestTypeName": "GetCascadeConferencesLayoutByIdReqType",
+      "responsesTypeName": "GetCascadeConferencesLayoutByIdResType"
+    },
+    "put&/api/Conferences/{id}/layout/cascade": {
+      "requestTypeName": "EditCascadeConferencesLayoutReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Conferences/{id}/presenters": {
+      "requestTypeName": "GetConferencesPresentersReqType",
+      "responsesTypeName": "GetConferencesPresentersResType"
+    },
+    "get&/api/Conferences/{id}/conventioneers": {
+      "requestTypeName": "GetConferencesConventioneersReqType",
+      "responsesTypeName": "GetConferencesConventioneersResType"
+    },
+    "get&/api/Conferences/{id}/conventioneers/inviteRecords": {
+      "requestTypeName": "GetInviteRecordsReqType",
+      "responsesTypeName": "GetInviteRecordsResType"
+    },
+    "get&/api/Conferences/{id}/broadcaster": {
+      "requestTypeName": "GetConferencesBroadcasterReqType",
+      "responsesTypeName": "GetConferencesBroadcasterResType"
+    },
+    "get&/api/Conferences/{id}/hide_conventioneers": {
+      "requestTypeName": "GetHideConventioneersReqType",
+      "responsesTypeName": "GetHideConventioneersResType"
+    },
+    "get&/api/Conferences/{id}/record": {
+      "requestTypeName": "GetConferencesRecordReqType",
+      "responsesTypeName": "GetConferencesRecordResType"
+    },
+    "put&/api/Conferences/{id}/record": {
+      "requestTypeName": "RecordConferencesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Conferences/{id}/invitation": {
+      "requestTypeName": "GetConferencesInvitationReqType",
+      "responsesTypeName": "GetConferencesInvitationResType"
+    },
+    "put&/api/Conferences/{id}/phone": {
+      "requestTypeName": "InviteMeetingByPhoneReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/account": {
+      "requestTypeName": "InviteMeetingByAccountReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/terminal": {
+      "requestTypeName": "InviteMeetingByTerminalReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/rtsp": {
+      "requestTypeName": "InviteMeetingByRtspReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/other": {
+      "requestTypeName": "InviteMeetingByOtherReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Conferences": {
+      "requestTypeName": "AddConferencesReqType",
+      "responsesTypeName": "AddConferencesResType"
+    },
+    "put&/api/Conferences/{id}/kick": {
+      "requestTypeName": "KickConventioneersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/mute": {
+      "requestTypeName": "SetConventioneersMuteReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/silence": {
+      "requestTypeName": "SetConventioneersSilenceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/isolate": {
+      "requestTypeName": "SetConventioneersIsolateReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/broadcast": {
+      "requestTypeName": "SetConventioneersBroadcastReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/screen": {
+      "requestTypeName": "SetConventioneersScreenReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/isCascade": {
+      "requestTypeName": "EditConferenceCascadeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/layout/default": {
+      "requestTypeName": "SetConferencesDefaultLayoutReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/subtitle": {
+      "requestTypeName": "SetConferencesSubtitleReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/presenter": {
+      "requestTypeName": "OpenConferencesLiveReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/live": {
+      "requestTypeName": "OpenConferenceLiveReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/keepalive": {
+      "requestTypeName": "KeepaliveConferencesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/reName": {
+      "requestTypeName": "EditConferenceNameReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/openCamera": {
+      "requestTypeName": "OpenConferenceCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/closeCamera": {
+      "requestTypeName": "CloseConferenceCameraReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Conferences/{id}/focus": {
+      "requestTypeName": "SetConferenceFocusReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/MCUData/type": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetMcuTypeResType"
+    },
+    "get&/api/MCUData": {
+      "requestTypeName": "GetMcuDataReqType",
+      "responsesTypeName": "GetMcuDataResType"
+    },
+    "post&/api/MCUData": {
+      "requestTypeName": "AddMcuDataReqType",
+      "responsesTypeName": "AddMcuDataResType"
+    },
+    "get&/api/MCUData/{id}": {
+      "requestTypeName": "GetMcuDataByIdReqType",
+      "responsesTypeName": "GetMcuDataByIdResType"
+    },
+    "put&/api/MCUData/{id}": {
+      "requestTypeName": "EditMcuDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/MCUData/{id}": {
+      "requestTypeName": "DeleteMcuDataReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/PlatformData/default": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetDefaultPlatformDataResType"
+    },
+    "post&/api/PlatformData/default": {
+      "requestTypeName": "SwitchPlatformReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/PlatformData/default/joinedConfig": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/PlatformData/type/{type}/{id}": {
+      "requestTypeName": "GetPlatformDataByIdReqType",
+      "responsesTypeName": "GetPlatformDataByIdResType"
+    },
+    "get&/api/PlatformData/type/{type}/ip/{ip}": {
+      "requestTypeName": "GetPlatformDataByIpReqType",
+      "responsesTypeName": "GetPlatformDataByIpResType"
+    },
+    "get&/api/PlatformData": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetPlatformDataResType"
+    },
+    "get&/api/PlatformData/host": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetPlatformDataHostResType"
+    },
+    "get&/api/PlatformData/strategy": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetPlatformStrategyResType"
+    },
+    "get&/api/PlatformData/config": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetPlatformConfigResType"
+    },
+    "get&/api/Recordings": {
+      "requestTypeName": "GetRecordingsReqType",
+      "responsesTypeName": "GetRecordingsResType"
+    },
+    "get&/api/Search": {
+      "requestTypeName": "SearchTerminalAndGroupReqType",
+      "responsesTypeName": "SearchTerminalAndGroupResType"
+    },
+    "get&/api/TencentConference": {
+      "requestTypeName": "TencentConferenceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/TencentConference": {
+      "requestTypeName": "TencentConferenceCallBackReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/TerminalOrganizations/{id}/terminals": {
+      "requestTypeName": "GetOrganizationTerminalReqType",
+      "responsesTypeName": "GetOrganizationTerminalResType"
+    },
+    "post&/api/TerminalOrganizations/terminals/batch": {
+      "requestTypeName": "SearchTerminalOrganizationsReqType",
+      "responsesTypeName": "SearchTerminalOrganizationsResType"
+    },
+    "get&/api/TerminalOrganizations/{id}": {
+      "requestTypeName": "VcsGetOrganizationsByIdReqType",
+      "responsesTypeName": "VcsGetOrganizationsByIdResType"
+    },
+    "get&/api/TerminalOrganizations": {
+      "requestTypeName": "GetOrganizationsReqType",
+      "responsesTypeName": "GetOrganizationsResType"
+    },
+    "get&/api/TerminalOrganizations/root": {
+      "requestTypeName": "VcsGetRootOrganizationsReqType",
+      "responsesTypeName": "VcsGetRootOrganizationsResType"
+    },
+    "get&/api/TerminalOrganizations/{parentID}/children": {
+      "requestTypeName": "GetChildOrganizationsReqType",
+      "responsesTypeName": "GetChildOrganizationsResType"
+    },
+    "get&/api/Terminals": {
+      "requestTypeName": "VcsGetTerminalsReqType",
+      "responsesTypeName": "VcsGetTerminalsResType"
+    },
+    "post&/api/Terminals": {
+      "requestTypeName": "AddTerminalsReqType",
+      "responsesTypeName": "AddTerminalsResType"
+    },
+    "get&/api/Terminals/{id}": {
+      "requestTypeName": "GetTerminalsByIdReqType",
+      "responsesTypeName": "GetTerminalsByIdResType"
+    },
+    "put&/api/Terminals/{id}": {
+      "requestTypeName": "VcsEditTerminalReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Terminals/{id}": {
+      "requestTypeName": "VcsDeleteTerminalsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Terminals/number/{number}": {
+      "requestTypeName": "GetTerminalsByNumberReqType",
+      "responsesTypeName": "GetTerminalsByNumberResType"
+    },
+    "post&/api/YealinkConference/{domain}": {
+      "requestTypeName": "YealinkConference2xCallBackReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/YealinkConference": {
+      "requestTypeName": "YealinkConference4xCallBackReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
   "auditBiz": {
     "get&/api/Operation": {
       "requestTypeName": "GetOperationReqType",
@@ -187,10 +4365,557 @@
       "responsesTypeName": "GetRecordByIdResType"
     }
   },
-  "assetBiz": {},
-  "alertsPlatformBiz": {},
+  "assetBiz": {
+    "get&/api/Assets/{type}/ip/{ip}": {
+      "requestTypeName": "GetAssetsByIpReqType",
+      "responsesTypeName": "GetAssetsByIpResType"
+    },
+    "post&/api/Assets/{id}/status/report": {
+      "requestTypeName": "ReportAssetsStatusReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Assets/{id}": {
+      "requestTypeName": "GetAssetByIdReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Assets": {
+      "requestTypeName": "SearchAssetsReqType",
+      "responsesTypeName": "SearchAssetsResType"
+    },
+    "post&/api/Assets/circle_area": {
+      "requestTypeName": "SearchCircleAreaAssetReqType",
+      "responsesTypeName": "SearchCircleAreaAssetResType"
+    },
+    "post&/api/Assets/search": {
+      "requestTypeName": "CommonAssetSearchReqType",
+      "responsesTypeName": "CommonAssetSearchResType"
+    },
+    "post&/api/Assets/contacts": {
+      "requestTypeName": "AtsSearchContactsReqType",
+      "responsesTypeName": "AtsSearchContactsResType"
+    },
+    "put&/api/Assets/ReloadCache": {
+      "requestTypeName": "ReloadCacheReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/AssetTypes/{id}": {
+      "requestTypeName": "GetAssetTypeByIdReqType",
+      "responsesTypeName": "GetAssetTypeByIdResType"
+    },
+    "put&/api/AssetTypes/{id}": {
+      "requestTypeName": "EditAssetTypeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/AssetTypes/{id}": {
+      "requestTypeName": "DeleteAssetTypeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/AssetTypes/search": {
+      "requestTypeName": "AtsSearchAssetTypesReqType",
+      "responsesTypeName": "AtsSearchAssetTypesResType"
+    },
+    "post&/api/AssetTypes": {
+      "requestTypeName": "AddAssetTypeReqType",
+      "responsesTypeName": "AddAssetTypeResType"
+    },
+    "put&/api/Client": {
+      "requestTypeName": "GetClientOverviewReqType",
+      "responsesTypeName": "GetClientOverviewResType"
+    },
+    "get&/api/Client": {
+      "requestTypeName": "GetClientsReqType",
+      "responsesTypeName": "GetClientsResType"
+    },
+    "post&/api/Client": {
+      "requestTypeName": "AtsAddClientReqType",
+      "responsesTypeName": "AtsAddClientResType"
+    },
+    "get&/api/Client/{id}": {
+      "requestTypeName": "GetClientsByIdReqType",
+      "responsesTypeName": "GetClientsByIdResType"
+    },
+    "put&/api/Client/{id}": {
+      "requestTypeName": "EditClientReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Client/{id}": {
+      "requestTypeName": "DeleteClientReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Client/import": {
+      "requestTypeName": "ImportClientReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Device": {
+      "requestTypeName": "GetDeviceOverviewReqType",
+      "responsesTypeName": "GetDeviceOverviewResType"
+    },
+    "get&/api/Device": {
+      "requestTypeName": "GetDeviceReqType",
+      "responsesTypeName": "GetDeviceResType"
+    },
+    "post&/api/Device": {
+      "requestTypeName": "AddDeviceReqType",
+      "responsesTypeName": "AddDeviceResType"
+    },
+    "get&/api/Device/{id}": {
+      "requestTypeName": "GetDeviceByIdReqType",
+      "responsesTypeName": "GetDeviceByIdResType"
+    },
+    "put&/api/Device/{id}": {
+      "requestTypeName": "EditDeviceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Device/{id}": {
+      "requestTypeName": "DeleteDeviceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Device/import": {
+      "requestTypeName": "ImportDeviceReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Machines": {
+      "requestTypeName": "GetMachinesReqType",
+      "responsesTypeName": "GetMachinesResType"
+    },
+    "post&/api/Machines": {
+      "requestTypeName": "AddMachinesReqType",
+      "responsesTypeName": "AddMachinesResType"
+    },
+    "get&/api/Machines/{id}": {
+      "requestTypeName": "GetMachineByIdReqType",
+      "responsesTypeName": "GetMachineByIdResType"
+    },
+    "put&/api/Machines/{id}": {
+      "requestTypeName": "EditMachineReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Machines/{id}": {
+      "requestTypeName": "DeleteMachineReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/MCU": {
+      "requestTypeName": "GetMcuReqType",
+      "responsesTypeName": "GetMcuResType"
+    },
+    "get&/api/MCU/{id}": {
+      "requestTypeName": "GetMcuByIdReqType",
+      "responsesTypeName": "GetMcuByIdResType"
+    },
+    "get&/api/MCU/terminal": {
+      "requestTypeName": "GetMcuTerminalReqType",
+      "responsesTypeName": "GetMcuTerminalResType"
+    },
+    "get&/api/Metrics/{id}": {
+      "requestTypeName": "GetMetricsByIdReqType",
+      "responsesTypeName": "GetMetricsByIdResType"
+    },
+    "put&/api/Metrics/{id}": {
+      "requestTypeName": "EditMetricsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Metrics/{id}": {
+      "requestTypeName": "DeleteMetricsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Metrics": {
+      "requestTypeName": "GetMetricsReqType",
+      "responsesTypeName": "GetMetricsResType"
+    },
+    "post&/api/Metrics": {
+      "requestTypeName": "AddMetricsReqType",
+      "responsesTypeName": "AddMetricsResType"
+    },
+    "post&/api/Metrics/import": {
+      "requestTypeName": "ImportMetricsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Nc": {
+      "requestTypeName": "GetNcReqType",
+      "responsesTypeName": "GetNcResType"
+    },
+    "get&/api/Nc/{id}": {
+      "requestTypeName": "GetNcByIdReqType",
+      "responsesTypeName": "GetNcByIdResType"
+    },
+    "get&/api/Nc/{id}/phones": {
+      "requestTypeName": "GetNcPhonesReqType",
+      "responsesTypeName": "GetNcPhonesResType"
+    },
+    "get&/api/Nc/{id}/trunk_group_configs": {
+      "requestTypeName": "GetNcTrunkGroupConfigsReqType",
+      "responsesTypeName": "GetNcTrunkGroupConfigsResType"
+    },
+    "put&/api/Networks": {
+      "requestTypeName": "GetNetworksOverviewReqType",
+      "responsesTypeName": "GetNetworksOverviewResType"
+    },
+    "get&/api/Networks": {
+      "requestTypeName": "GetNetworksReqType",
+      "responsesTypeName": "GetNetworksResType"
+    },
+    "post&/api/Networks": {
+      "requestTypeName": "AddNetworksReqType",
+      "responsesTypeName": "AddNetworksResType"
+    },
+    "get&/api/Networks/{id}": {
+      "requestTypeName": "GetNetworkByIdReqType",
+      "responsesTypeName": "GetNetworkByIdResType"
+    },
+    "put&/api/Networks/{id}": {
+      "requestTypeName": "EditNetworkReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Networks/{id}": {
+      "requestTypeName": "DeleteNetworkReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Networks/import": {
+      "requestTypeName": "ImportNetworksReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Platforms": {
+      "requestTypeName": "GetPlatformsOverviewReqType",
+      "responsesTypeName": "GetPlatformsOverviewResType"
+    },
+    "get&/api/Platforms": {
+      "requestTypeName": "AtsGetPlatformsReqType",
+      "responsesTypeName": "AtsGetPlatformsResType"
+    },
+    "post&/api/Platforms": {
+      "requestTypeName": "AddPlatformReqType",
+      "responsesTypeName": "AddPlatformResType"
+    },
+    "post&/api/Platforms/search": {
+      "requestTypeName": "SearchPlatformsByIdReqType",
+      "responsesTypeName": "SearchPlatformsByIdResType"
+    },
+    "get&/api/Platforms/{id}": {
+      "requestTypeName": "GetPlatformByIdReqType",
+      "responsesTypeName": "GetPlatformByIdResType"
+    },
+    "put&/api/Platforms/{id}": {
+      "requestTypeName": "EditPlatformReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Platforms/{id}": {
+      "requestTypeName": "DeletePlatformReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Platforms/Batch": {
+      "requestTypeName": "DeletePlatformsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Platforms/import": {
+      "requestTypeName": "ImportPlatformsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/PositionEquipment": {
+      "requestTypeName": "GetPositionEquipmentReqType",
+      "responsesTypeName": "GetPositionEquipmentResType"
+    },
+    "post&/api/PositionEquipment": {
+      "requestTypeName": "AddPositionEquipmentReqType",
+      "responsesTypeName": "AddPositionEquipmentResType"
+    },
+    "get&/api/PositionEquipment/{id}": {
+      "requestTypeName": "GetPositionEquipmentByIdReqType",
+      "responsesTypeName": "GetPositionEquipmentByIdResType"
+    },
+    "put&/api/PositionEquipment/{id}": {
+      "requestTypeName": "EditPositionEquipmentReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/PositionEquipment/{id}": {
+      "requestTypeName": "DeletePositionEquipmentReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/PositionEquipment/import": {
+      "requestTypeName": "ImportPositionEquipmentReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Statistics/Overview": {
+      "requestTypeName": "GetStatisticsOverviewReqType",
+      "responsesTypeName": "GetStatisticsOverviewResType"
+    },
+    "post&/api/Statistics/Overview/Search": {
+      "requestTypeName": "OverviewByPrefixAreaCodesReqType",
+      "responsesTypeName": "OverviewByPrefixAreaCodesResType"
+    },
+    "get&/api/Statistics/Overview/Client": {
+      "requestTypeName": "GetStatisticsClientOverviewReqType",
+      "responsesTypeName": "GetStatisticsClientOverviewResType"
+    },
+    "post&/api/Statistics/Overview/Client/Search": {
+      "requestTypeName": "ClientOverviewByPrefixAreaCodesReqType",
+      "responsesTypeName": "ClientOverviewByPrefixAreaCodesResType"
+    },
+    "get&/api/Statistics/Overview/Terminal": {
+      "requestTypeName": "GetStatisticsTerminalOverviewReqType",
+      "responsesTypeName": "GetStatisticsTerminalOverviewResType"
+    },
+    "post&/api/Statistics/Overview/Terminal/Search": {
+      "requestTypeName": "TerminalOverviewByPrefixAreaCodesReqType",
+      "responsesTypeName": "TerminalOverviewByPrefixAreaCodesResType"
+    },
+    "post&/api/Statistics/Area/Terminal": {
+      "requestTypeName": "GetTerminalByAreaReqType",
+      "responsesTypeName": "GetTerminalByAreaResType"
+    },
+    "post&/api/Statistics/Area/Platform": {
+      "requestTypeName": "GetPlatformByAreaReqType",
+      "responsesTypeName": "GetPlatformByAreaResType"
+    },
+    "post&/api/Statistics/MonitorDevice": {
+      "requestTypeName": "GetMonitorDeviceStatisticsReqType",
+      "responsesTypeName": "GetMonitorDeviceStatisticsResType"
+    },
+    "post&/api/Statistics/AssetType": {
+      "requestTypeName": "GetAssetTypeStatisticsReqType",
+      "responsesTypeName": "GetAssetTypeStatisticsResType"
+    },
+    "put&/api/Terminals": {
+      "requestTypeName": "GetTerminalsReqType",
+      "responsesTypeName": "GetTerminalsResType"
+    },
+    "get&/api/Terminals": {
+      "requestTypeName": "SearchTerminalsReqType",
+      "responsesTypeName": "SearchTerminalsResType"
+    },
+    "post&/api/Terminals": {
+      "requestTypeName": "AtsAddTerminalsReqType",
+      "responsesTypeName": "AtsAddTerminalsResType"
+    },
+    "post&/api/Terminals/search": {
+      "requestTypeName": "SearchTerminalsByIdReqType",
+      "responsesTypeName": "SearchTerminalsByIdResType"
+    },
+    "get&/api/Terminals/{id}": {
+      "requestTypeName": "GetTerminalByIdReqType",
+      "responsesTypeName": "GetTerminalByIdResType"
+    },
+    "put&/api/Terminals/{id}": {
+      "requestTypeName": "EditTerminalReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Terminals/{id}": {
+      "requestTypeName": "DeleteTerminalReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/Terminals/Batch": {
+      "requestTypeName": "DeleteTerminalsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/Terminals/SyncVcsTerminal": {
+      "requestTypeName": "SyncVcsTerminalReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Terminals/import": {
+      "requestTypeName": "ImportTerminalsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Terminals/source": {
+      "requestTypeName": "GetTerminalSourceReqType",
+      "responsesTypeName": "GetTerminalSourceResType"
+    },
+    "get&/api/Terminals/source/number": {
+      "requestTypeName": "GetTerminalSourceByNumberReqType",
+      "responsesTypeName": "GetTerminalSourceByNumberResType"
+    },
+    "get&/api/Terminals/camera/upgrade": {
+      "requestTypeName": "UpgradeRelateCameraReqType",
+      "responsesTypeName": "UpgradeRelateCameraResType"
+    },
+    "put&/api/Topologys/{id}": {
+      "requestTypeName": "EditTopologyReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/Topologys": {
+      "requestTypeName": "GetTopologyReqType",
+      "responsesTypeName": "GetTopologyResType"
+    },
+    "get&/api/TypeConfigs/{id}": {
+      "requestTypeName": "GetTypeConfigReqType",
+      "responsesTypeName": "GetTypeConfigResType"
+    },
+    "put&/api/TypeConfigs/{id}": {
+      "requestTypeName": "EditTypeConfigReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/TypeConfigs/{id}": {
+      "requestTypeName": "DeleteTypeConfigReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/TypeConfigs": {
+      "requestTypeName": "GetTypeConfigsReqType",
+      "responsesTypeName": "GetTypeConfigsResType"
+    },
+    "post&/api/TypeConfigs": {
+      "requestTypeName": "AddTypeConfigReqType",
+      "responsesTypeName": "AddTypeConfigResType"
+    },
+    "post&/api/TypeConfigs/search": {
+      "requestTypeName": "SearchTypeConfigsReqType",
+      "responsesTypeName": "SearchTypeConfigsResType"
+    },
+    "post&/api/TypeConfigs/export": {
+      "requestTypeName": "ExportTypeConfigsReqType",
+      "responsesTypeName": "ExportTypeConfigsResType"
+    },
+    "post&/api/TypeConfigs/import": {
+      "requestTypeName": "ImportTypeConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
+  "alertsPlatformBiz": {
+    "get&/api/AlertRecords": {
+      "requestTypeName": "GetAlertRecordsReqType",
+      "responsesTypeName": "GetAlertRecordsResType"
+    },
+    "post&/api/AlertRecords": {
+      "requestTypeName": "AddAlertRecordReqType",
+      "responsesTypeName": "AddAlertRecordResType"
+    },
+    "post&/api/AlertRecords/search": {
+      "requestTypeName": "SearchAlertRecordsReqType",
+      "responsesTypeName": "SearchAlertRecordsResType"
+    },
+    "get&/api/AlertRecords/{id}": {
+      "requestTypeName": "GetAlertRecordByIdReqType",
+      "responsesTypeName": "GetAlertRecordByIdResType"
+    },
+    "put&/api/AlertRecords/{id}/resolve": {
+      "requestTypeName": "CancelAlertRecordReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "put&/api/AlertRecords/operation/areacode": {
+      "requestTypeName": "OperationAlertRecordsAreacodeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/AlertSourceTypes": {
+      "requestTypeName": "GetAlertSourceTypesReqType",
+      "responsesTypeName": "GetAlertSourceTypesResType"
+    },
+    "get&/api/AlertSourceTypes/{id}": {
+      "requestTypeName": "GetAlertSourceTypeByIdReqType",
+      "responsesTypeName": "GetAlertSourceTypeByIdResType"
+    },
+    "put&/api/AlertSourceTypes/{id}": {
+      "requestTypeName": "UpdateAlertSourceTypeReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/AlertTypes": {
+      "requestTypeName": "GetAlertTypesReqType",
+      "responsesTypeName": "GetAlertTypesResType"
+    },
+    "post&/api/AlertTypes": {
+      "requestTypeName": "AddAlertTypeReqType",
+      "responsesTypeName": "AddAlertTypeResType"
+    },
+    "get&/api/AlertTypes/root": {
+      "requestTypeName": "GetRootAlertTypesReqType",
+      "responsesTypeName": "GetRootAlertTypesResType"
+    },
+    "get&/api/AlertTypes/{id}/children": {
+      "requestTypeName": "GetChildAlertTypesReqType",
+      "responsesTypeName": "GetChildAlertTypesResType"
+    },
+    "post&/api/AlertTypes/batch": {
+      "requestTypeName": "GetAlertTypeInfoByIdsReqType",
+      "responsesTypeName": "GetAlertTypeInfoByIdsResType"
+    },
+    "get&/api/AlertTypes/{id}": {
+      "requestTypeName": "GetAlertTypeByIdReqType",
+      "responsesTypeName": "GetAlertTypeByIdResType"
+    },
+    "post&/api/AlertTypes/children/mergence": {
+      "requestTypeName": "MergeChildAlertTypeReqType",
+      "responsesTypeName": "MergeChildAlertTypeResType"
+    },
+    "post&/api/AlertTypes/subordinates": {
+      "requestTypeName": "GetSubordinateAlertTypesReqType",
+      "responsesTypeName": "GetSubordinateAlertTypesResType"
+    },
+    "post&/api/AlertTypes/children": {
+      "requestTypeName": "SearchSubAlertTypesReqType",
+      "responsesTypeName": "SearchSubAlertTypesResType"
+    },
+    "post&/api/AlertTypes/export": {
+      "requestTypeName": "ExportAlertTypesReqType",
+      "responsesTypeName": "ExportAlertTypesResType"
+    },
+    "post&/api/AlertTypes/import": {
+      "requestTypeName": "ImportAlertTypesReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/AlertTypes/reload": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/WebHooks/alertManage": {
+      "requestTypeName": "WebHooksAlertManageReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/WebHooks": {
+      "requestTypeName": "WebHooksReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
   "facilityBiz": {},
-  "scheduleBiz": {},
+  "scheduleBiz": {
+    "get&/api/MatterTimeConfigs": {
+      "requestTypeName": "GetMatterTimeConfigsReqType",
+      "responsesTypeName": "GetMatterTimeConfigsResType"
+    },
+    "post&/api/MatterTimeConfigs": {
+      "requestTypeName": "AddMatterTimeConfigsReqType",
+      "responsesTypeName": "AddMatterTimeConfigsResType"
+    },
+    "get&/api/MatterTimeConfigs/{id}": {
+      "requestTypeName": "GetMatterTimeConfigsByIdReqType",
+      "responsesTypeName": "GetMatterTimeConfigsByIdResType"
+    },
+    "put&/api/MatterTimeConfigs/{id}": {
+      "requestTypeName": "UpdateMatterTimeConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/MatterTimeConfigs/{id}": {
+      "requestTypeName": "DeleteMatterTimeConfigsReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/ScheduleMatters": {
+      "requestTypeName": "AddScheduleMattersReqType",
+      "responsesTypeName": "AddScheduleMattersResType"
+    },
+    "get&/api/ScheduleMatters": {
+      "requestTypeName": "GetScheduleMattersReqType",
+      "responsesTypeName": "GetScheduleMattersResType"
+    },
+    "get&/api/ScheduleMatters/{id}": {
+      "requestTypeName": "GetScheduleMattersByIdReqType",
+      "responsesTypeName": "GetScheduleMattersByIdResType"
+    },
+    "put&/api/ScheduleMatters/{id}": {
+      "requestTypeName": "UpdateScheduleMattersReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "delete&/api/ScheduleMatters/{id}": {
+      "requestTypeName": "DeleteScheduleMatterReqType",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/ScheduleMatters/member": {
+      "requestTypeName": "SearchScheduleMemberReqType",
+      "responsesTypeName": "SearchScheduleMemberResType"
+    },
+    "get&/api/ScheduleMatters/other": {
+      "requestTypeName": "GetQtsReqType",
+      "responsesTypeName": "GetQtsResType"
+    },
+    "put&/api/ScheduleMatters/{id}/single": {
+      "requestTypeName": "UpdateSingleScheduleMatterReqType",
+      "responsesTypeName": "CommonResType"
+    }
+  },
   "rrsBiz": {
     "get&/api/MainResources": {
       "requestTypeName": "GetMainResourcesReqType",

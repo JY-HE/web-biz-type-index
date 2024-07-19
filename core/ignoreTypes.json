@@ -16,5 +16,8 @@
   ],
   "cgsBiz": [
     "/api/UniformSpeech/voicenames"
+  ],
+  "authBiz": [
+    "/api/roles/{role}/permissionDatas/{data}"
   ]
 }

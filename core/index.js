@@ -136,13 +136,13 @@ class Initializer {
             if (!parameters && !requestBody) {
                 return 'CommonReqType';
             } else {
-                return methodsName ? `${this.capitalizeFirstLetter(methodsName)}ReqType` : '';
+                return methodsName ? `${this.capitalizeFirstLetter(methodsName.name ? methodsName.name : methodsName)}ReqType` : '';
             }
         } else {
             if (!responses) {
                 return 'CommonResType';
             } else {
-                return methodsName ? `${this.capitalizeFirstLetter(methodsName)}ResType` : '';
+                return methodsName ? `${this.capitalizeFirstLetter(methodsName.name ? methodsName.name : methodsName)}ResType` : '';
             }
         }
     }
