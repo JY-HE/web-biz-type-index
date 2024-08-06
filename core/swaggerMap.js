@@ -189,4 +189,11 @@ module.exports = {
         address: '10.8.109.235',
         port: '50078',
     },
+    wxBiz: {
+        label: '气象服务',
+        url: 'http://newdev.rdapp.com:53839/docs/v1/MeteorologicalService-API.json',
+        primaryName: 'MeteorologicalService',
+        address: '10.8.109.235',
+        port: '52551',
+    },
 };
