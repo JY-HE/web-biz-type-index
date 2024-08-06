@@ -134,12 +134,12 @@ class Initializer {
             if (!parameters && !requestBody) {
                 return 'CommonReqType';
             }
-            return `${urls.join('')}ReqTypeBy${this.capitalizeFirstLetter(methodType)}${version === 'v1' ? '' : `V${version}`}`;
+            return `${urls.join('')}ReqTypeBy${this.capitalizeFirstLetter(methodType)}${version === 'v1' ? '' : this.capitalizeFirstLetter(version)}`;
         } else {
             if (!responses) {
                 return 'CommonResType';
             }
-            return `${urls.join('')}ResTypeBy${this.capitalizeFirstLetter(methodType)}${version === 'v1' ? '' : `V${version}`}`;
+            return `${urls.join('')}ResTypeBy${this.capitalizeFirstLetter(methodType)}${version === 'v1' ? '' : this.capitalizeFirstLetter(version)}`;
         }
     }
 
@@ -149,7 +149,16 @@ class Initializer {
      * @returns {string} 转换后的字符串
      */
     capitalizeFirstLetter(str) {
-        return str ? str.replace(/^\w/, (c) => c.toUpperCase()) : '';
+        let res = str || '';
+        if (res.includes('{')) {
+            res = res.replace(/[{}]/g, '');
+        }
+        if (res.includes('_')) {
+            return res.replace(/(?:^|_)([a-z])/g, function (_, p1) {
+                return p1.toUpperCase();
+            });
+        }
+        return res ? res.replace(/^\w/, (c) => c.toUpperCase()) : '';
     }
 
     /**
