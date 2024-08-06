@@ -25,6 +25,36 @@ class Initializer {
         this.warehouseTypes = {};
         // 过滤忽略的接口
         this.ignorePaths = {};
+        // bizName 映射
+        this.bizNameAbbreviation = new Map([
+            ['gcsBiz', 'Gcs'],
+            ['cgsBiz', 'Cgs'],
+            ['mmtBiz', 'Mmts'],
+            ['aggsBiz', 'Aggs'],
+            ['authBiz', 'Aus'],
+            ['edmsBiz', 'Edms'],
+            ['orgsBiz', 'Orgs'],
+            ['eventBiz', 'Ets'],
+            ['viscsBiz', 'Vss'],
+            ['alarmBiz', 'Als'],
+            ['quartzBiz', 'Qts'],
+            ['geoDataBiz', 'Gds'],
+            ['fileStorageBiz', 'Fss'],
+            ['geoAnalysisBiz', 'Gas'],
+            ['preplanAnalysisBiz', 'Pas'],
+            ['modelAnalysisBiz', 'Mas'],
+            ['videoFusionServiceBiz', 'Vfs'],
+            ['vcsBiz', 'Vcs'],
+            ['auditBiz', 'Ads'],
+            ['assetBiz', 'Ats'],
+            ['alertsPlatformBiz', 'Aps'],
+            ['facilityBiz', 'Fas'],
+            ['scheduleBiz', 'Scs'],
+            ['rrsBiz', 'Rrs'],
+            ['dcsBiz', 'Dcs'],
+            ['ntsBiz', 'Nts'],
+            ['wxBiz', 'Wxs'],
+        ]);
         this.getJsonFileData();
         this.init();
     }
@@ -78,8 +108,8 @@ class Initializer {
                              * 处理 requestConfig 请求配置
                              */
                             const warehouseTypesDataInfo = this.warehouseTypes[bizName]?.[`${methodType}&${url}${version != 'v1' ? '&' + version : ''}`];
-                            const requestTypeName = warehouseTypesDataInfo?.requestTypeName || this.getNameFromUrl(1, parameters, requestBody, transformResponses, url, methodType, version);
-                            const responsesTypeName = warehouseTypesDataInfo?.responsesTypeName || this.getNameFromUrl(2, parameters, requestBody, transformResponses, url, methodType, version);
+                            const requestTypeName = warehouseTypesDataInfo?.requestTypeName || this.getNameFromUrl(1, parameters, requestBody, transformResponses, url, methodType, version, bizName);
+                            const responsesTypeName = warehouseTypesDataInfo?.responsesTypeName || this.getNameFromUrl(2, parameters, requestBody, transformResponses, url, methodType, version, bizName);
                             // 已有的接口不再入库
                             const canSave = this.buildType == 0 || (this.buildType == 1 && !warehouseTypesDataInfo) || (this.buildType == 2 && !!warehouseTypesDataInfo);
                             canSave &&
@@ -126,20 +156,24 @@ class Initializer {
      * @param {string} url Api Url
      * @param {string} methodType 请求方式
      * @param {string} version 版本
+     * @param {string} bizName 业务名称
      * @returns {string} 创建好的requestTypeName或responsesTypeName
      */
-    getNameFromUrl(type, parameters, requestBody, responses, url, methodType, version) {
-        const urls = url.split('/').map((item) => this.capitalizeFirstLetter(item));
+    getNameFromUrl(type, parameters, requestBody, responses, url, methodType, version, bizName) {
+        const urls = url
+            .split('/')
+            .filter((item) => item !== 'api')
+            .map((item) => this.capitalizeFirstLetter(item));
         if (type === 1) {
             if (!parameters && !requestBody) {
                 return 'CommonReqType';
             }
-            return `${urls.join('')}ReqTypeBy${this.capitalizeFirstLetter(methodType)}${version === 'v1' ? '' : this.capitalizeFirstLetter(version)}`;
+            return `${this.capitalizeFirstLetter(methodType)}${urls.join('')}ReqTypeBy${this.bizNameAbbreviation.get(bizName) || ''}${version === 'v1' ? '' : this.capitalizeFirstLetter(version)}`;
         } else {
             if (!responses) {
                 return 'CommonResType';
             }
-            return `${urls.join('')}ResTypeBy${this.capitalizeFirstLetter(methodType)}${version === 'v1' ? '' : this.capitalizeFirstLetter(version)}`;
+            return `${this.capitalizeFirstLetter(methodType)}${urls.join('')}ResTypeBy${this.bizNameAbbreviation.get(bizName) || ''}${version === 'v1' ? '' : this.capitalizeFirstLetter(version)}`;
         }
     }
 
