@@ -19,13 +19,13 @@ class CreateTsFile {
             const res = details.reduce((str, item) => {
                 return `${str}      ${item.key}: ${this.getType(item)};\n`;
             }, '');
-            return `Array<{\n${res}}>\n`;
+            return `Array<{\n${res}}>`;
         }
         if (type === 'object' && details) {
             const res = details.reduce((str, item) => {
                 return `${str}      ${item.key}: ${this.getType(item)};\n`;
             }, '');
-            return `{\n${res}}\n`;
+            return `{\n${res}}`;
         }
         if (type === 'number' && details) {
             let res = '';
@@ -52,7 +52,7 @@ class CreateTsFile {
                 const formatReqDescStr = `/**\n * @description ${item.summary} \n * @summary Request data types \n * @url [ ${item.method} ] ${item.url} \n * @bizName ${bizName} \n */`;
                 // 请求类型定义
                 const formatRequestTypeStr = formatParamsData.reduce((str, i) => {
-                    return `${str}      ${i.key === 'X-version' ? `'${i.key}'` : i.key}${!i.required ? '?:' : ':'} ${this.getType(i)};\n`;
+                    return `${str}      ${i.key.includes('-') || i.key.includes('_') || i.key.includes('.') ? `'${i.key}'` : i.key}${!i.required ? '?:' : ':'} ${this.getType(i)};\n`;
                 }, '');
 
                 // 处理响应参数类型定义

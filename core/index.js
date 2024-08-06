@@ -379,6 +379,13 @@ class Initializer {
      * @returns {array} 处理后的 params 参数数组
      */
     apiParamsHandler(parameters, schemaData) {
+        const getType = (schema) => {
+            const { type = '', items = {} } = schema || {};
+            if (type === 'array') {
+                return `Array<${items.type ? (items.type === 'integer' ? 'number' : items.type) : 'any'}>`;
+            }
+            return type === 'integer' ? 'number' : type;
+        };
         try {
             return !Array.isArray(parameters)
                 ? null
@@ -386,7 +393,7 @@ class Initializer {
                       // 基本参数
                       let paramInfo = {
                           key: item.name,
-                          type: item.schema?.type,
+                          type: getType(item.schema),
                           description: item.description ? item.description.replace(this.descReg, '') : /id$/i.test(item.name) ? item.name : '',
                           required: item.required,
                           default: item.schema?.default || null,
