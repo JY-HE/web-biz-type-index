@@ -1,4 +1,4 @@
-const createMarkdown = require('./jsonToMd');
+const createTsFile = require('./jsonToTsFile');
 const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
@@ -25,8 +25,6 @@ class Initializer {
         this.warehouseTypes = {};
         // 过滤忽略的接口
         this.ignorePaths = {};
-        // 已有方法集合
-        this.methods = {};
         this.getJsonFileData();
         this.init();
     }
@@ -37,7 +35,6 @@ class Initializer {
     async getJsonFileData() {
         this.warehouseTypes = await readJson(path.join(__dirname, './warehouseTypes.json'));
         this.ignorePaths = await readJson(path.join(__dirname, './ignoreTypes.json'));
-        this.methods = await readJson(path.join(__dirname, './methods.json'));
     }
 
     async init() {
@@ -81,10 +78,8 @@ class Initializer {
                              * 处理 requestConfig 请求配置
                              */
                             const warehouseTypesDataInfo = this.warehouseTypes[bizName]?.[`${methodType}&${url}${version != 'v1' ? '&' + version : ''}`];
-                            // 根据已有的biz库方法名创建requestTypeName和responsesTypeName
-                            const methodsName = this.methods[bizName]?.[`${methodType}&${url}${version != 'v1' ? '&' + version : ''}`];
-                            const requestTypeName = warehouseTypesDataInfo?.requestTypeName || this.getNameFromMethodsJson(1, parameters, requestBody, transformResponses, methodsName);
-                            const responsesTypeName = warehouseTypesDataInfo?.responsesTypeName || this.getNameFromMethodsJson(2, parameters, requestBody, transformResponses, methodsName);
+                            const requestTypeName = warehouseTypesDataInfo?.requestTypeName || this.getNameFromUrl(1, parameters, requestBody, transformResponses, url, methodType, version);
+                            const responsesTypeName = warehouseTypesDataInfo?.responsesTypeName || this.getNameFromUrl(2, parameters, requestBody, transformResponses, url, methodType, version);
                             // 已有的接口不再入库
                             const canSave = this.buildType == 0 || (this.buildType == 1 && !warehouseTypesDataInfo) || (this.buildType == 2 && !!warehouseTypesDataInfo);
                             canSave &&
@@ -117,33 +112,34 @@ class Initializer {
             console.log('json转化成功，开始生成markdown文件');
             // markdown模板生成;
             for (const key in this.requestConfig) {
-                await createMarkdown.startup(key, this.requestConfig[key]);
+                await createTsFile.startup(key, this.requestConfig[key]);
             }
         }
     }
 
     /**
-     * 根据已有的biz库方法名创建requestTypeName和responsesTypeName
+     * 解析 url 获取类型定义名称
      * @param {number} type 1-requestTypeName 2-responsesTypeName
      * @param {object} parameters api参数对象
      * @param {object} requestBody api请求体对象
      * @param {object} responses api响应对象
-     * @param {string} methodsName 已有的biz库方法名
+     * @param {string} url Api Url
+     * @param {string} methodType 请求方式
+     * @param {string} version 版本
      * @returns {string} 创建好的requestTypeName或responsesTypeName
      */
-    getNameFromMethodsJson(type, parameters, requestBody, responses, methodsName) {
+    getNameFromUrl(type, parameters, requestBody, responses, url, methodType, version) {
+        const urls = url.split('/').map((item) => this.capitalizeFirstLetter(item));
         if (type === 1) {
             if (!parameters && !requestBody) {
                 return 'CommonReqType';
-            } else {
-                return methodsName ? `${this.capitalizeFirstLetter(methodsName.name ? methodsName.name : methodsName)}ReqType` : '';
             }
+            return `${urls.join('')}ReqTypeBy${this.capitalizeFirstLetter(methodType)}${version === 'v1' ? '' : `V${version}`}`;
         } else {
             if (!responses) {
                 return 'CommonResType';
-            } else {
-                return methodsName ? `${this.capitalizeFirstLetter(methodsName.name ? methodsName.name : methodsName)}ResType` : '';
             }
+            return `${urls.join('')}ResTypeBy${this.capitalizeFirstLetter(methodType)}${version === 'v1' ? '' : `V${version}`}`;
         }
     }
 
@@ -214,48 +210,123 @@ class Initializer {
             return Object.entries(schemas).reduce((pre, [curSchemaName, curSchemaData]) => {
                 if (curSchemaData.type === 'object') {
                     const { type, properties = {}, description = '', required = [] } = curSchemaData;
-                    // 解析接口响应参数
                     const params = Object.entries(properties).map(([key, value]) => {
-                        if (value.$ref || value.allOf || value.items?.$ref) {
-                            // 存在 $ref 说明是引用了常量字段参数
-                            let refName = '';
-                            if (value.$ref) {
-                                refName = value.$ref.split('/')?.at(-1);
-                            } else if (value.allOf) {
-                                refName = value.allOf.at(0)?.$ref.split('/')?.at(-1);
-                            } else if (value.items?.$ref) {
-                                refName = value.items.$ref.split('/')?.at(-1);
-                            }
-                            // 在常量字段参数对象中查找
-                            const refObj = pre[refName] || {};
-                            // 如果常量字段是一个对象或者数组对象
-                            const details = refObj.properties ? [...refObj.properties] : null;
-                            return {
-                                key,
-                                type: value.type || refObj.type,
-                                description: value.description ? value.description.replace(this.descReg, '') : refObj.description ? refObj.description.replace(this.descReg, '') : '',
-                                required: required.includes(key),
-                                // details: details,
-                                // 映射的公共type名称
-                                typeNameMap: refObj.commonTypeName || refName ? `${refName.split('.')?.at(-1)}CommonType` : '',
-                            };
-                        } else {
-                            return {
-                                key,
-                                type: value.type,
-                                description: value.description ? value.description.replace(this.descReg, '') : '',
-                                required: required.includes(key),
-                            };
-                        }
+                        return this.schemaPropertiesHandler(pre, key, value, required);
                     });
-                    return { ...pre, [curSchemaName]: { type, description: description.replace(this.descReg, ''), properties: params, commonTypeName: `${curSchemaName.split('.')?.at(-1)}CommonType` } };
+                    return { ...pre, [curSchemaName]: { type, description: description.replace(this.descReg, ''), properties: params } };
                 } else {
-                    return { ...pre, [curSchemaName]: { ...curSchemaData, commonTypeName: `${curSchemaName.split('.')?.at(-1)}CommonType` } };
+                    return {
+                        ...pre,
+                        [curSchemaName]: {
+                            type: curSchemaData.type === 'integer' ? 'number' : curSchemaData.type,
+                            description: curSchemaData.description,
+                            details: curSchemaData.enum || null,
+                        },
+                    };
                 }
             }, {});
         } catch (error) {
             throw error;
         }
+    }
+
+    /**
+     * 处理 schema 模型中的 properties
+     * @param {object} processedSchemas 已处理好的数据
+     * @param {string} key 属性名
+     * @param {object} value 属性值
+     * @param {array} requiredList 必填属性集合
+     */
+    schemaPropertiesHandler(processedSchemas, key, value, requiredList) {
+        const { type = '', description = '', items = {} } = value || {};
+        // 简单类型
+        if (['number', 'integer', 'string', 'boolean'].includes(type)) {
+            return {
+                key,
+                type: type === 'integer' ? 'number' : type,
+                description: description ? description.replace(this.descReg, '') : '',
+                required: requiredList.includes(key),
+                details: value?.enum ? value.enum : null,
+            };
+        }
+        // 数组类型
+        if (type === 'array') {
+            // 简单类型
+            if (['number', 'integer', 'string', 'boolean'].includes(items?.type)) {
+                return {
+                    key,
+                    type: `Array<${items.type === 'integer' ? 'number' : items.type}>`,
+                    description: description ? description.replace(this.descReg, '') : '',
+                    required: requiredList.includes(key),
+                };
+            }
+            // 复杂类型
+            if (items?.$ref) {
+                const refName = items.$ref.split('/')?.at(-1);
+                const refObj = processedSchemas[refName] || {};
+                const details = (refObj?.properties ? [...refObj.properties] : []).map((item) => {
+                    if (item.allOf || item.items) {
+                        console.log('🚀 ~ index.js:269 ~ item:', item);
+                        return this.schemaPropertiesHandler(processedSchemas, item.key, item, requiredList);
+                    }
+                    return item;
+                });
+                return {
+                    key,
+                    type: 'Array<object>',
+                    description: description ? description.replace(this.descReg, '') : '',
+                    required: requiredList.includes(key),
+                    details: details.length > 0 ? details : null,
+                };
+            }
+            return {
+                key,
+                type: `Array<any>`,
+                description: description ? description.replace(this.descReg, '') : '',
+                required: requiredList.includes(key),
+            };
+        }
+        // 对象类型
+        if (type === 'object') {
+            const { properties = {}, allOf = [] } = value || {};
+            let details = [];
+            const result = {
+                key,
+                type: 'Record<string, any>',
+                description: description ? description.replace(this.descReg, '') : '',
+                required: requiredList.includes(key),
+            };
+            if (Object.keys(properties).length) {
+                details = Object.entries(properties).map(([proKey, proValue]) => {
+                    return this.schemaPropertiesHandler(processedSchemas, proKey, proValue, requiredList);
+                });
+                result.type = 'object';
+                result.details = details.length > 0 ? details : null;
+            } else if (allOf.length) {
+                const refName = value.allOf?.at(0)?.$ref.split('/')?.at(-1);
+                const refObj = processedSchemas[refName] || {};
+                details = (refObj?.properties ? [...refObj.properties] : []).map((item) => {
+                    if (item.allOf || item.items) {
+                        console.log('🚀 ~ index.js:310 ~ item:', item);
+                        return this.schemaPropertiesHandler(processedSchemas, item.key, item, requiredList);
+                    }
+                    return item;
+                });
+                result.type = 'object';
+                result.details = details.length > 0 ? details : null;
+            }
+            return result;
+        }
+        // 未知类型
+        const refName = value.allOf?.at(0)?.$ref.split('/')?.at(-1);
+        const refObj = processedSchemas[refName] || {};
+        return {
+            key,
+            type: refObj.type || 'any',
+            description: description ? description.replace(this.descReg, '') : '',
+            required: requiredList.includes(key),
+            details: refObj.details || refObj.properties || null,
+        };
     }
 
     /**
