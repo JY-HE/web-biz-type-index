@@ -1373,15 +1373,15 @@
       "responsesTypeName": "GetFavoritesFavoriteIdContactsResTypeByOrgs"
     },
     "post&/api/groups/{pid}": {
-      "requestTypeName": "PostGroupsPidReqTypeByOrgsV2",
-      "responsesTypeName": "PostGroupsPidResTypeByOrgsV2"
+      "requestTypeName": "PostGroupsPidReqTypeByOrgs",
+      "responsesTypeName": "PostGroupsPidResTypeByOrgs"
     },
     "delete&/api/groups/{id}": {
       "requestTypeName": "DeleteGroupsIdReqTypeByOrgs",
       "responsesTypeName": "CommonResType"
     },
     "put&/api/groups/{id}": {
-      "requestTypeName": "PutGroupsIdReqTypeByOrgsV2",
+      "requestTypeName": "PutGroupsIdReqTypeByOrgs",
       "responsesTypeName": "CommonResType"
     },
     "get&/api/groups/{id}": {
@@ -1389,8 +1389,8 @@
       "responsesTypeName": "GetGroupsIdResTypeByOrgs"
     },
     "get&/api/groups": {
-      "requestTypeName": "GetGroupsReqTypeByOrgsV2",
-      "responsesTypeName": "GetGroupsResTypeByOrgsV2"
+      "requestTypeName": "GetGroupsReqTypeByOrgs",
+      "responsesTypeName": "GetGroupsResTypeByOrgs"
     },
     "get&/api/groups/NoContactDetail/{id}": {
       "requestTypeName": "GetGroupsNoContactDetailIdReqTypeByOrgs",
@@ -1421,20 +1421,20 @@
       "responsesTypeName": "CommonResType"
     },
     "get&/api/organizations/{id}": {
-      "requestTypeName": "GetOrganizationsIdReqTypeByOrgsV2",
-      "responsesTypeName": "GetOrganizationsIdResTypeByOrgsV2"
+      "requestTypeName": "GetOrganizationsIdReqTypeByOrgs",
+      "responsesTypeName": "GetOrganizationsIdResTypeByOrgs"
     },
     "delete&/api/organizations/{id}/All": {
       "requestTypeName": "DeleteOrganizationsIdAllReqTypeByOrgs",
       "responsesTypeName": "CommonResType"
     },
     "get&/api/organizations": {
-      "requestTypeName": "GetOrganizationsReqTypeByOrgsV2",
-      "responsesTypeName": "GetOrganizationsResTypeByOrgsV2"
+      "requestTypeName": "GetOrganizationsReqTypeByOrgs",
+      "responsesTypeName": "GetOrganizationsResTypeByOrgs"
     },
     "get&/api/organizations/{pid}/members": {
-      "requestTypeName": "GetOrganizationsPidMembersReqTypeByOrgsV2",
-      "responsesTypeName": "GetOrganizationsPidMembersResTypeByOrgsV2"
+      "requestTypeName": "GetOrganizationsPidMembersReqTypeByOrgs",
+      "responsesTypeName": "GetOrganizationsPidMembersResTypeByOrgs"
     },
     "get&/api/organizations/departments": {
       "requestTypeName": "GetOrganizationsDepartmentsReqTypeByOrgs",
@@ -1457,210 +1457,238 @@
       "responsesTypeName": "CommonResType"
     },
     "get&/api/search": {
-      "requestTypeName": "GetSearchReqTypeByOrgsV2",
-      "responsesTypeName": "GetSearchResTypeByOrgsV2"
+      "requestTypeName": "GetSearchReqTypeByOrgs",
+      "responsesTypeName": "GetSearchResTypeByOrgs"
     },
-    "put&/api/contacts/{id}/move": {
+    "put&/api/contacts/{id}/move&v2": {
       "requestTypeName": "PutContactsIdMoveReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "put&/api/contacts/{id}/top": {
+    "put&/api/contacts/{id}/top&v2": {
       "requestTypeName": "PutContactsIdTopReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/api/contacts/{id}/departmentPaths": {
+    "get&/api/contacts/{id}/departmentPaths&v2": {
       "requestTypeName": "GetContactsIdDepartmentPathsReqTypeByOrgsV2",
       "responsesTypeName": "GetContactsIdDepartmentPathsResTypeByOrgsV2"
     },
-    "get&/api/contacts/{id}/{callerUserId}/departmentPaths": {
+    "get&/api/contacts/{id}/{callerUserId}/departmentPaths&v2": {
       "requestTypeName": "GetContactsIdCallerUserIdDepartmentPathsReqTypeByOrgsV2",
       "responsesTypeName": "GetContactsIdCallerUserIdDepartmentPathsResTypeByOrgsV2"
     },
-    "put&/api/contacts/{id}/department/change": {
+    "put&/api/contacts/{id}/department/change&v2": {
       "requestTypeName": "PutContactsIdDepartmentChangeReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/api/contacts/permission/departments": {
+    "get&/api/contacts/permission/departments&v2": {
       "requestTypeName": "GetContactsPermissionDepartmentsReqTypeByOrgsV2",
       "responsesTypeName": "GetContactsPermissionDepartmentsResTypeByOrgsV2"
     },
-    "put&/api/contacts/{id}/state": {
+    "put&/api/contacts/{id}/state&v2": {
       "requestTypeName": "PutContactsIdStateReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "put&/api/contacts/pinyinAndInitials": {
+    "put&/api/contacts/pinyinAndInitials&v2": {
       "requestTypeName": "PutContactsPinyinAndInitialsReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "post&/api/upload/photo": {
+    "post&/api/upload/photo&v2": {
       "requestTypeName": "PostUploadPhotoReqTypeByOrgsV2",
       "responsesTypeName": "PostUploadPhotoResTypeByOrgsV2"
     },
-    "put&/api/contacts/photos": {
+    "put&/api/contacts/photos&v2": {
       "requestTypeName": "PutContactsPhotosReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "put&/api/contacts/districts": {
+    "put&/api/contacts/districts&v2": {
       "requestTypeName": "PutContactsDistrictsReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "post&/api/contactTypes": {
+    "post&/api/contactTypes&v2": {
       "requestTypeName": "PostContactTypesReqTypeByOrgsV2",
       "responsesTypeName": "PostContactTypesResTypeByOrgsV2"
     },
-    "get&/api/contactTypes": {
+    "get&/api/contactTypes&v2": {
       "requestTypeName": "GetContactTypesReqTypeByOrgsV2",
       "responsesTypeName": "GetContactTypesResTypeByOrgsV2"
     },
-    "put&/api/contactTypes/{id}": {
+    "put&/api/contactTypes/{id}&v2": {
       "requestTypeName": "PutContactTypesIdReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "delete&/api/contactTypes/{id}": {
+    "delete&/api/contactTypes/{id}&v2": {
       "requestTypeName": "DeleteContactTypesIdReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/api/contactTypes/{id}": {
+    "get&/api/contactTypes/{id}&v2": {
       "requestTypeName": "GetContactTypesIdReqTypeByOrgsV2",
       "responsesTypeName": "GetContactTypesIdResTypeByOrgsV2"
     },
-    "post&/api/import/data/organization": {
+    "post&/api/import/data/organization&v2": {
       "requestTypeName": "PostImportDataOrganizationReqTypeByOrgsV2",
       "responsesTypeName": "PostImportDataOrganizationResTypeByOrgsV2"
     },
-    "put&/api/import/data/validation": {
+    "put&/api/import/data/validation&v2": {
       "requestTypeName": "PutImportDataValidationReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "delete&/api/import/data/validation": {
+    "delete&/api/import/data/validation&v2": {
       "requestTypeName": "DeleteImportDataValidationReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "put&/api/import/data": {
+    "put&/api/import/data&v2": {
       "requestTypeName": "PutImportDataReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "delete&/api/import/data": {
+    "delete&/api/import/data&v2": {
       "requestTypeName": "DeleteImportDataReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/api/import/organization/validation": {
+    "get&/api/import/organization/validation&v2": {
       "requestTypeName": "GetImportOrganizationValidationReqTypeByOrgsV2",
       "responsesTypeName": "GetImportOrganizationValidationResTypeByOrgsV2"
     },
-    "get&/api/import/task/progress": {
+    "get&/api/import/task/progress&v2": {
       "requestTypeName": "GetImportTaskProgressReqTypeByOrgsV2",
       "responsesTypeName": "GetImportTaskProgressResTypeByOrgsV2"
     },
-    "get&/api/templateFiles/organization": {
+    "get&/api/templateFiles/organization&v2": {
       "requestTypeName": "GetTemplateFilesOrganizationReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/api/import/task/running": {
+    "get&/api/import/task/running&v2": {
       "requestTypeName": "GetImportTaskRunningReqTypeByOrgsV2",
       "responsesTypeName": "GetImportTaskRunningResTypeByOrgsV2"
     },
-    "post&/api/datasync": {
+    "post&/api/datasync&v2": {
       "requestTypeName": "PostDatasyncReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/progress": {
+    "get&/progress&v2": {
       "requestTypeName": "GetProgressReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/progress/{sessionId}": {
+    "get&/progress/{sessionId}&v2": {
       "requestTypeName": "GetProgressSessionIdReqTypeByOrgsV2",
       "responsesTypeName": "GetProgressSessionIdResTypeByOrgsV2"
     },
-    "post&/report": {
+    "post&/report&v2": {
       "requestTypeName": "PostReportReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "post&/report/{rid}": {
+    "post&/report/{rid}&v2": {
       "requestTypeName": "PostReportRidReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "put&/api/favorites/{favoriteId}/members": {
+    "put&/api/favorites/{favoriteId}/members&v2": {
       "requestTypeName": "PutFavoritesFavoriteIdMembersReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "put&/api/groups/{id}/members": {
+    "put&/api/groups/{id}/members&v2": {
       "requestTypeName": "PutGroupsIdMembersReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "delete&/api/groups/{id}/members": {
+    "delete&/api/groups/{id}/members&v2": {
       "requestTypeName": "DeleteGroupsIdMembersReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/api/groups/{id}/members": {
+    "get&/api/groups/{id}/members&v2": {
       "requestTypeName": "GetGroupsIdMembersReqTypeByOrgsV2",
       "responsesTypeName": "GetGroupsIdMembersResTypeByOrgsV2"
     },
-    "post&/api/groups/{id}/members": {
+    "post&/api/groups/{id}/members&v2": {
       "requestTypeName": "PostGroupsIdMembersReqTypeByOrgsV2",
       "responsesTypeName": "PostGroupsIdMembersResTypeByOrgsV2"
     },
-    "get&/api/groups/self/groups": {
+    "get&/api/groups/self/groups&v2": {
       "requestTypeName": "GetGroupsSelfGroupsReqTypeByOrgsV2",
       "responsesTypeName": "GetGroupsSelfGroupsResTypeByOrgsV2"
     },
-    "put&/api/groups/{id}/move": {
+    "put&/api/groups/{id}/move&v2": {
       "requestTypeName": "PutGroupsIdMoveReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "put&/api/groups/{id}/top": {
+    "put&/api/groups/{id}/top&v2": {
       "requestTypeName": "PutGroupsIdTopReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "put&/api/groups/{id}/move/group": {
+    "put&/api/groups/{id}/move/group&v2": {
       "requestTypeName": "PutGroupsIdMoveGroupReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/api/groups/{id}/contacts": {
+    "post&/api/groups/{pid}&v2": {
+      "requestTypeName": "PostGroupsPidReqTypeByOrgsV2",
+      "responsesTypeName": "PostGroupsPidResTypeByOrgsV2"
+    },
+    "put&/api/groups/{id}&v2": {
+      "requestTypeName": "PutGroupsIdReqTypeByOrgsV2",
+      "responsesTypeName": "CommonResType"
+    },
+    "get&/api/groups&v2": {
+      "requestTypeName": "GetGroupsReqTypeByOrgsV2",
+      "responsesTypeName": "GetGroupsResTypeByOrgsV2"
+    },
+    "get&/api/groups/{id}/contacts&v2": {
       "requestTypeName": "GetGroupsIdContactsReqTypeByOrgsV2",
       "responsesTypeName": "GetGroupsIdContactsResTypeByOrgsV2"
     },
-    "put&/api/organizations/{id}/move": {
+    "get&/api/organizations/{id}&v2": {
+      "requestTypeName": "GetOrganizationsIdReqTypeByOrgsV2",
+      "responsesTypeName": "GetOrganizationsIdResTypeByOrgsV2"
+    },
+    "get&/api/organizations/{pid}/members&v2": {
+      "requestTypeName": "GetOrganizationsPidMembersReqTypeByOrgsV2",
+      "responsesTypeName": "GetOrganizationsPidMembersResTypeByOrgsV2"
+    },
+    "put&/api/organizations/{id}/move&v2": {
       "requestTypeName": "PutOrganizationsIdMoveReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/api/organizations/{id}/departmentPaths": {
+    "get&/api/organizations/{id}/departmentPaths&v2": {
       "requestTypeName": "GetOrganizationsIdDepartmentPathsReqTypeByOrgsV2",
       "responsesTypeName": "GetOrganizationsIdDepartmentPathsResTypeByOrgsV2"
     },
-    "get&/api/organizations/{pid}/descendant/members": {
+    "get&/api/organizations/{pid}/descendant/members&v2": {
       "requestTypeName": "GetOrganizationsPidDescendantMembersReqTypeByOrgsV2",
       "responsesTypeName": "GetOrganizationsPidDescendantMembersResTypeByOrgsV2"
     },
-    "post&/api/search/ContactByPhones": {
+    "get&/api/organizations&v2": {
+      "requestTypeName": "GetOrganizationsReqTypeByOrgsV2",
+      "responsesTypeName": "GetOrganizationsResTypeByOrgsV2"
+    },
+    "get&/api/search&v2": {
+      "requestTypeName": "GetSearchReqTypeByOrgsV2",
+      "responsesTypeName": "GetSearchResTypeByOrgsV2"
+    },
+    "post&/api/search/ContactByPhones&v2": {
       "requestTypeName": "PostSearchContactByPhonesReqTypeByOrgsV2",
       "responsesTypeName": "PostSearchContactByPhonesResTypeByOrgsV2"
     },
-    "post&/api/search/departments/batch": {
+    "post&/api/search/departments/batch&v2": {
       "requestTypeName": "PostSearchDepartmentsBatchReqTypeByOrgsV2",
       "responsesTypeName": "PostSearchDepartmentsBatchResTypeByOrgsV2"
     },
-    "post&/api/search/contacts/batch": {
+    "post&/api/search/contacts/batch&v2": {
       "requestTypeName": "PostSearchContactsBatchReqTypeByOrgsV2",
       "responsesTypeName": "PostSearchContactsBatchResTypeByOrgsV2"
     },
-    "post&/api/search/groups/batch": {
+    "post&/api/search/groups/batch&v2": {
       "requestTypeName": "PostSearchGroupsBatchReqTypeByOrgsV2",
       "responsesTypeName": "PostSearchGroupsBatchResTypeByOrgsV2"
     },
-    "get&/api/search/statistics": {
+    "get&/api/search/statistics&v2": {
       "requestTypeName": "GetSearchStatisticsReqTypeByOrgsV2",
       "responsesTypeName": "GetSearchStatisticsResTypeByOrgsV2"
     },
-    "put&/api/userconfigs/{userId}": {
+    "put&/api/userconfigs/{userId}&v2": {
       "requestTypeName": "PutUserconfigsUserIdReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "put&/api/userconfigs": {
+    "put&/api/userconfigs&v2": {
       "requestTypeName": "PutUserconfigsReqTypeByOrgsV2",
       "responsesTypeName": "CommonResType"
     },
-    "get&/api/userconfigs": {
+    "get&/api/userconfigs&v2": {
       "requestTypeName": "GetUserconfigsReqTypeByOrgsV2",
       "responsesTypeName": "GetUserconfigsResTypeByOrgsV2"
     }
@@ -3183,34 +3211,42 @@
       "responsesTypeName": "CommonResType"
     },
     "get&/api/Gas": {
-      "requestTypeName": "GetGasReqTypeByMasV2",
-      "responsesTypeName": "GetGasResTypeByMasV2"
+      "requestTypeName": "GetGasReqTypeByMas",
+      "responsesTypeName": "GetGasResTypeByMas"
     },
     "get&/api/Gas/{id}": {
-      "requestTypeName": "GetGasIdReqTypeByMasV2",
-      "responsesTypeName": "GetGasIdResTypeByMasV2"
+      "requestTypeName": "GetGasIdReqTypeByMas",
+      "responsesTypeName": "GetGasIdResTypeByMas"
     },
     "get&/api/Gas/Name/{name}": {
       "requestTypeName": "GetGasNameNameReqTypeByMas",
       "responsesTypeName": "GetGasNameNameResTypeByMas"
     },
-    "post&/api/Analysis/gaussian_plume": {
+    "post&/api/Analysis/gaussian_plume&v2": {
       "requestTypeName": "PostAnalysisGaussianPlumeReqTypeByMasV2",
       "responsesTypeName": "CommonResType"
     },
-    "post&/api/Analysis/gaussian_plume/area": {
+    "post&/api/Analysis/gaussian_plume/area&v2": {
       "requestTypeName": "PostAnalysisGaussianPlumeAreaReqTypeByMasV2",
       "responsesTypeName": "PostAnalysisGaussianPlumeAreaResTypeByMasV2"
     },
-    "post&/api/Analysis/gaussian_plume/trend": {
+    "post&/api/Analysis/gaussian_plume/trend&v2": {
       "requestTypeName": "PostAnalysisGaussianPlumeTrendReqTypeByMasV2",
       "responsesTypeName": "PostAnalysisGaussianPlumeTrendResTypeByMasV2"
     },
-    "post&/api/Analysis/vapor_cloud_explosion": {
+    "post&/api/Analysis/vapor_cloud_explosion&v2": {
       "requestTypeName": "PostAnalysisVaporCloudExplosionReqTypeByMasV2",
       "responsesTypeName": "PostAnalysisVaporCloudExplosionResTypeByMasV2"
     },
-    "get&/api/Gas/name": {
+    "get&/api/Gas&v2": {
+      "requestTypeName": "GetGasReqTypeByMasV2",
+      "responsesTypeName": "GetGasResTypeByMasV2"
+    },
+    "get&/api/Gas/{id}&v2": {
+      "requestTypeName": "GetGasIdReqTypeByMasV2",
+      "responsesTypeName": "GetGasIdResTypeByMasV2"
+    },
+    "get&/api/Gas/name&v2": {
       "requestTypeName": "GetGasNameReqTypeByMasV2",
       "responsesTypeName": "GetGasNameResTypeByMasV2"
     }
@@ -3349,7 +3385,7 @@
       "responsesTypeName": "GetCamerasIdResTypeByVfs"
     },
     "put&/api/Cameras/{id}": {
-      "requestTypeName": "PutCamerasIdReqTypeByVfsV2",
+      "requestTypeName": "PutCamerasIdReqTypeByVfs",
       "responsesTypeName": "CommonResType"
     },
     "get&/api/Cameras/area_query": {
@@ -3445,8 +3481,8 @@
       "responsesTypeName": "GetCamerasIdFavoriteGroupsResTypeByVfs"
     },
     "post&/api/Cameras": {
-      "requestTypeName": "PostCamerasReqTypeByVfsV2",
-      "responsesTypeName": "PostCamerasResTypeByVfsV2"
+      "requestTypeName": "PostCamerasReqTypeByVfs",
+      "responsesTypeName": "PostCamerasResTypeByVfs"
     },
     "put&/api/Cameras/{id}/location": {
       "requestTypeName": "PutCamerasIdLocationReqTypeByVfs",
@@ -3665,8 +3701,8 @@
       "responsesTypeName": "GetHistoryCameraPullsResTypeByVfs"
     },
     "get&/api/Label": {
-      "requestTypeName": "GetLabelReqTypeByVfsV2",
-      "responsesTypeName": "GetLabelResTypeByVfsV2"
+      "requestTypeName": "GetLabelReqTypeByVfs",
+      "responsesTypeName": "GetLabelResTypeByVfs"
     },
     "post&/api/Label": {
       "requestTypeName": "PostLabelReqTypeByVfs",
@@ -3801,8 +3837,8 @@
       "responsesTypeName": "GetMediaServersResTypeByVfs"
     },
     "get&/api/MediaSessions": {
-      "requestTypeName": "GetMediaSessionsReqTypeByVfsV2",
-      "responsesTypeName": "GetMediaSessionsResTypeByVfsV2"
+      "requestTypeName": "GetMediaSessionsReqTypeByVfs",
+      "responsesTypeName": "GetMediaSessionsResTypeByVfs"
     },
     "delete&/api/MediaSessions": {
       "requestTypeName": "DeleteMediaSessionsReqTypeByVfs",
@@ -4016,33 +4052,49 @@
       "requestTypeName": "PutVideosPushReqTypeByVfs",
       "responsesTypeName": "CommonResType"
     },
-    "get&/api/Cameras/Search": {
+    "get&/api/Cameras/Search&v2": {
       "requestTypeName": "GetCamerasSearchReqTypeByVfsV2",
       "responsesTypeName": "GetCamerasSearchResTypeByVfsV2"
     },
-    "post&/api/Cameras/advance_search": {
+    "post&/api/Cameras/advance_search&v2": {
       "requestTypeName": "PostCamerasAdvanceSearchReqTypeByVfsV2",
       "responsesTypeName": "PostCamerasAdvanceSearchResTypeByVfsV2"
     },
-    "post&/api/Cameras/nonstandard": {
+    "post&/api/Cameras&v2": {
+      "requestTypeName": "PostCamerasReqTypeByVfsV2",
+      "responsesTypeName": "PostCamerasResTypeByVfsV2"
+    },
+    "put&/api/Cameras/{id}&v2": {
+      "requestTypeName": "PutCamerasIdReqTypeByVfsV2",
+      "responsesTypeName": "CommonResType"
+    },
+    "post&/api/Cameras/nonstandard&v2": {
       "requestTypeName": "PostCamerasNonstandardReqTypeByVfsV2",
       "responsesTypeName": "PostCamerasNonstandardResTypeByVfsV2"
     },
-    "put&/api/Cameras/nonstandard/{id}": {
+    "put&/api/Cameras/nonstandard/{id}&v2": {
       "requestTypeName": "PutCamerasNonstandardIdReqTypeByVfsV2",
       "responsesTypeName": "CommonResType"
     },
-    "post&/api/Cameras/virtual": {
+    "post&/api/Cameras/virtual&v2": {
       "requestTypeName": "PostCamerasVirtualReqTypeByVfsV2",
       "responsesTypeName": "PostCamerasVirtualResTypeByVfsV2"
     },
-    "put&/api/Cameras/virtual/{id}": {
+    "put&/api/Cameras/virtual/{id}&v2": {
       "requestTypeName": "PutCamerasVirtualIdReqTypeByVfsV2",
       "responsesTypeName": "CommonResType"
     },
-    "post&/api/Cameras/id": {
+    "post&/api/Cameras/id&v2": {
       "requestTypeName": "PostCamerasIdReqTypeByVfsV2",
       "responsesTypeName": "PostCamerasIdResTypeByVfsV2"
+    },
+    "get&/api/Label&v2": {
+      "requestTypeName": "GetLabelReqTypeByVfsV2",
+      "responsesTypeName": "GetLabelResTypeByVfsV2"
+    },
+    "get&/api/MediaSessions&v2": {
+      "requestTypeName": "GetMediaSessionsReqTypeByVfsV2",
+      "responsesTypeName": "GetMediaSessionsResTypeByVfsV2"
     }
   },
   "vcsBiz": {
@@ -4105,10 +4157,6 @@
     "get&/api/Conferences/{id}/conventioneers": {
       "requestTypeName": "GetConferencesIdConventioneersReqTypeByVcs",
       "responsesTypeName": "GetConferencesIdConventioneersResTypeByVcs"
-    },
-    "get&/api/Conferences/{id}/conventioneers/inviteRecords": {
-      "requestTypeName": "GetConferencesIdConventioneersInviteRecordsReqTypeByVcs",
-      "responsesTypeName": "GetConferencesIdConventioneersInviteRecordsResTypeByVcs"
     },
     "get&/api/Conferences/{id}/broadcaster": {
       "requestTypeName": "GetConferencesIdBroadcasterReqTypeByVcs",

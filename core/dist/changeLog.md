@@ -1124,7 +1124,6 @@
 |`PutConferencesIdLayoutCascadeReqTypeByVcs`|`CommonResType`|`/api/Conferences/{id}/layout/cascade`|put|设置会议级联画面布局|v1|
 |`GetConferencesIdPresentersReqTypeByVcs`|`GetConferencesIdPresentersResTypeByVcs`|`/api/Conferences/{id}/presenters`|get|获取会议中的主持人列表|v1|
 |`GetConferencesIdConventioneersReqTypeByVcs`|`GetConferencesIdConventioneersResTypeByVcs`|`/api/Conferences/{id}/conventioneers`|get|获取会议中的成员列表|v1|
-|`GetConferencesIdConventioneersInviteRecordsReqTypeByVcs`|`GetConferencesIdConventioneersInviteRecordsResTypeByVcs`|`/api/Conferences/{id}/conventioneers/inviteRecords`|get|获取邀请记录列表|v1|
 |`GetConferencesIdBroadcasterReqTypeByVcs`|`GetConferencesIdBroadcasterResTypeByVcs`|`/api/Conferences/{id}/broadcaster`|get|获取会议正在广播画面的成员|v1|
 |`GetConferencesIdHideConventioneersReqTypeByVcs`|`GetConferencesIdHideConventioneersResTypeByVcs`|`/api/Conferences/{id}/hide_conventioneers`|get|获取会议中隐藏画面的成员列表|v1|
 |`GetConferencesIdRecordReqTypeByVcs`|`GetConferencesIdRecordResTypeByVcs`|`/api/Conferences/{id}/record`|get|获取会议的录制状态|v1|
@@ -1166,7 +1165,7 @@
 |`CommonReqType`|`GetPlatformDataResTypeByVcs`|`/api/PlatformData`|get|获取全部平台信息|v1|
 |`CommonReqType`|`GetPlatformDataHostResTypeByVcs`|`/api/PlatformData/host`|get|获取全部平台的host信息|v1|
 |`CommonReqType`|`GetPlatformDataStrategyResTypeByVcs`|`/api/PlatformData/strategy`|get|获取全部邀请策略|v1|
-|`CommonReqType`|`GetPlatformDataConfigResTypeByVcs`|`/api/PlatformData/config`|get|获取视频会议配置|v1|
+|`CommonReqType`|`GetPlatformDataConfigResTypeByVcs`|`/api/PlatformData/config`|get|获取平台配置|v1|
 |`GetRecordingsReqTypeByVcs`|`GetRecordingsResTypeByVcs`|`/api/Recordings`|get|通过条件查找录制文件|v1|
 |`GetSearchReqTypeByVcs`|`GetSearchResTypeByVcs`|`/api/Search`|get|获取符合查询条件的终端和终端组|v1|
 |`GetTencentConferenceReqTypeByVcs`|`CommonResType`|`/api/TencentConference`|get|腾讯会议使用事件订阅（Webhook）(加密)|v1|
@@ -1183,8 +1182,8 @@
 |`PutTerminalsIdReqTypeByVcs`|`CommonResType`|`/api/Terminals/{id}`|put|更新终端|v1|
 |`DeleteTerminalsIdReqTypeByVcs`|`CommonResType`|`/api/Terminals/{id}`|delete|删除终端|v1|
 |`GetTerminalsNumberNumberReqTypeByVcs`|`GetTerminalsNumberNumberResTypeByVcs`|`/api/Terminals/number/{number}`|get|通过号码获取终端|v1|
-|`PostYealinkConferenceDomainReqTypeByVcs`|`CommonResType`|`/api/YealinkConference/{domain}`|post|亿联平台会议信息回调(2x)|v1|
-|`PostYealinkConferenceReqTypeByVcs`|`CommonResType`|`/api/YealinkConference`|post|亿联平台会议信息回调(4x)|v1|
+|`PostYealinkConferenceDomainReqTypeByVcs`|`CommonResType`|`/api/YealinkConference/{domain}`|post|亿联平台会议信息回调|v1|
+|`PostYealinkConferenceReqTypeByVcs`|`CommonResType`|`/api/YealinkConference`|post|亿联平台会议信息回调|v1|
 
 ### auditBiz
 

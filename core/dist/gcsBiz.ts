@@ -26,10 +26,18 @@ export type PutActiveGpsDeviceReqTypeByGcs = {
  * @bizName gcsBiz
  */
 export type GetActiveGpsReqTypeByGcs = {
-    'up_left.longitude': number;
-    'up_left.latitude': number;
-    'bottom_right.longitude': number;
-    'bottom_right.latitude': number;
+    'up_left.longitude'?: number;
+    'up_left.latitude'?: number;
+    up_left?: {
+        longitude: number;
+        latitude: number;
+    };
+    'bottom_right.longitude'?: number;
+    'bottom_right.latitude'?: number;
+    bottom_right?: {
+        longitude: number;
+        latitude: number;
+    };
     page?: number;
     per_page?: number;
 };
@@ -211,10 +219,18 @@ export type GetHistoryGpsDeviceResTypeByGcs = {
  * @bizName gcsBiz
  */
 export type GetHistoryGpsReqTypeByGcs = {
-    'up_left.Longitude': number;
-    'up_left.Latitude': number;
-    'bottom_right.Longitude': number;
-    'bottom_right.Latitude': number;
+    'up_left.Longitude'?: number;
+    'up_left.Latitude'?: number;
+    up_left?: {
+        Longitude: number;
+        Latitude: number;
+    };
+    'bottom_right.Longitude'?: number;
+    'bottom_right.Latitude'?: number;
+    bottom_right?: {
+        Longitude: number;
+        Latitude: number;
+    };
     start_time: string;
     minute_intervals?: number;
     page?: number;
@@ -262,10 +278,18 @@ export type PutHistoryGpsReqTypeByGcs = {
  * @bizName gcsBiz
  */
 export type GetHistoryGpsDevicesReqTypeByGcs = {
-    'up_left.Longitude': number;
-    'up_left.Latitude': number;
-    'bottom_right.Longitude': number;
-    'bottom_right.Latitude': number;
+    'up_left.Longitude'?: number;
+    'up_left.Latitude'?: number;
+    up_left?: {
+        Longitude: number;
+        Latitude: number;
+    };
+    'bottom_right.Longitude'?: number;
+    'bottom_right.Latitude'?: number;
+    bottom_right?: {
+        Longitude: number;
+        Latitude: number;
+    };
     start_time: string;
     minute_intervals?: number;
     page?: number;

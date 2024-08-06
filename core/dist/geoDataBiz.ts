@@ -896,10 +896,6 @@ export type PostDistrictsAnalysisResTypeByGds = {
 export type GetDistrictsAnalysisAddressReqTypeByGds = {
     'coordinate.Longitude'?: number;
     'coordinate.Latitude'?: number;
-    coordinate?: {
-        Longitude: number;
-        Latitude: number;
-    };
     'X-version'?: string;
 };
 

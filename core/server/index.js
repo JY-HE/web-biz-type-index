@@ -53,7 +53,7 @@ app.post('/api/newApi', async (req, res) => {
             ...params[k].reduce(
                 (obj, item) => ({
                     ...obj,
-                    [`${item.method}&${item.url}`]: {
+                    [`${item.method}&${item.url}${item.version != 'v1' ? `&${item.version}` : ''}`]: {
                         requestTypeName: item.requestTypeName,
                         responsesTypeName: item.responsesTypeName,
                     },

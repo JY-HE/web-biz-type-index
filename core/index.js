@@ -92,6 +92,8 @@ class Initializer {
                 this.schemaDataJson = { ...this.schemaDataJson, [bizName]: schemaData };
                 // 处理 paths 路径数据
                 const ignorePathList = [...this.ignorePaths.common, ...(this.ignorePaths[bizName] || [])];
+                console.error('🚀 ~ index.js:111 ~ version:', version, bizName);
+
                 Object.keys(paths)
                     .filter((url) => !ignorePathList.includes(url))
                     .forEach((url) => {
