@@ -1546,3 +1546,12 @@
 |`PostWeatherAlarmsReqTypeByWxs`|`PostWeatherAlarmsResTypeByWxs`|`/api/WeatherAlarms`|post|按地区返回天气预警|v1|
 |`PostWeatherForecastsReqTypeByWxs`|`PostWeatherForecastsResTypeByWxs`|`/api/WeatherForecasts`|post|按地区返回一周天气预报|v1|
 |`PostWeatherRealtimesReqTypeByWxs`|`PostWeatherRealtimesResTypeByWxs`|`/api/WeatherRealtimes`|post|按地区返回实时天气|v1|
+
+### resourceBiz
+
+|requestTypeName|responsesTypeName|url|methodType|describe|version|
+| --------- | --------- | --------- | --------- | --------- | --------- |
+|`GetResourceApiUrlReqTypeByRes`|`CommonResType`|`/resource/api/{url}`|undefined|获取/resource/api/的json数据|v1|
+|`GetResourceApiCitydataUrlReqTypeByRes`|`CommonResType`|`/resource/api/citydata/{url}`|undefined|获取/resource/api/citydata/的json数据|v1|
+|`GetResourceApiCommondataUrlReqTypeByRes`|`CommonResType`|`/resource/api/commondata/{url}`|undefined|获取/resource/api/commondata/的json数据|v1|
+|`GetResourceApiProjectdataUrlReqTypeByRes`|`CommonResType`|`/resource/api/projectdata/{url}`|undefined|获取/resource/api/projectdata/的json数据|v1|

@@ -1,0 +1,84 @@
+{
+    "resourceBiz": [
+        {
+            "url": "/resource/api/{url}",
+            "tag": null,
+            "method": "get",
+            "summary": "获取/resource/api/的json数据",
+            "version": "v1",
+            "requestTypeName": "GetResourceApiUrlReqTypeByRes",
+            "responsesTypeName": "CommonResType",
+            "parameters": [
+                {
+                    "key": "url",
+                    "type": "string",
+                    "description": "/resource/api/后面的url",
+                    "required": true,
+                    "default": null
+                }
+            ],
+            "responses": null,
+            "requestBody": null
+        },
+        {
+            "url": "/resource/api/citydata/{url}",
+            "tag": null,
+            "method": "get",
+            "summary": "获取/resource/api/citydata/的json数据",
+            "version": "v1",
+            "requestTypeName": "GetResourceApiCitydataUrlReqTypeByRes",
+            "responsesTypeName": "CommonResType",
+            "parameters": [
+                {
+                    "key": "url",
+                    "type": "string",
+                    "description": "/resource/api/citydata/后面的url",
+                    "required": true,
+                    "default": null
+                }
+            ],
+            "responses": null,
+            "requestBody": null
+        },
+        {
+            "url": "/resource/api/commondata/{url}",
+            "tag": null,
+            "method": "get",
+            "summary": "获取/resource/api/commondata/的json数据",
+            "version": "v1",
+            "requestTypeName": "GetResourceApiCommondataUrlReqTypeByRes",
+            "responsesTypeName": "CommonResType",
+            "parameters": [
+                {
+                    "key": "url",
+                    "type": "string",
+                    "description": "/resource/api/commondata/后面的url",
+                    "required": true,
+                    "default": null
+                }
+            ],
+            "responses": null,
+            "requestBody": null
+        },
+        {
+            "url": "/resource/api/projectdata/{url}",
+            "tag": null,
+            "method": "get",
+            "summary": "获取/resource/api/projectdata/的json数据",
+            "version": "v1",
+            "requestTypeName": "GetResourceApiProjectdataUrlReqTypeByRes",
+            "responsesTypeName": "CommonResType",
+            "parameters": [
+                {
+                    "key": "url",
+                    "type": "string",
+                    "description": "/resource/api/projectdata/后面的url",
+                    "required": true,
+                    "default": null
+                }
+            ],
+            "responses": null,
+            "requestBody": null
+        }
+    ]
+}
