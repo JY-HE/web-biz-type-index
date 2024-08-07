@@ -134,7 +134,28 @@ export type PostAssetsCircleAreaReqTypeByAts = {
  */
 export type PostAssetsCircleAreaResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        ip: string;
+        number: string;
+        assetType: 0 | 1 | 2 | 3 | 4 | 5;
+        secondaryAssetType: number;
+        contactID: string;
+        contactName: string;
+        contactPhone: string;
+        contactTitle: string;
+        contactDepartment: string;
+        resourceId: string;
+        areaCode: string;
+        relateTypeId: string;
+        relateCameraId: string;
+        networkID: string;
+        status: 1 | 2;
+        longitude: number;
+        latitude: number;
+        distance: number;
+    }>;
 };
 
 /**
@@ -168,7 +189,27 @@ export type PostAssetsSearchReqTypeByAts = {
  */
 export type PostAssetsSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        ip: string;
+        number: string;
+        assetType: 0 | 1 | 2 | 3 | 4 | 5;
+        secondaryAssetType: number;
+        contactID: string;
+        contactName: string;
+        contactPhone: string;
+        contactTitle: string;
+        contactDepartment: string;
+        resourceId: string;
+        areaCode: string;
+        relateTypeId: string;
+        relateCameraId: string;
+        networkID: string;
+        status: 1 | 2;
+        longitude: number;
+        latitude: number;
+    }>;
 };
 
 /**
@@ -193,7 +234,16 @@ export type PostAssetsContactsReqTypeByAts = {
  */
 export type PostAssetsContactsResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        assetId: string;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+    }>;
 };
 
 /**
@@ -218,7 +268,12 @@ export type GetAssetsIdStatusRecordReqTypeByAts = {
  */
 export type GetAssetsIdStatusRecordResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        assetId: string;
+        status: 1 | 2;
+        createTime: string;
+    }>;
 };
 
 /**
@@ -306,7 +361,15 @@ export type PostAssetTypesSearchReqTypeByAts = {
  */
 export type PostAssetTypesSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        assetType: 0 | 1 | 2 | 3 | 4 | 5;
+        secondaryAssetType: number;
+        functionTypes: 1 | 2 | 4 | 8;
+        configType: 0 | 1 | 2;
+        isSubType: boolean;
+    }>;
 };
 
 /**
@@ -364,7 +427,16 @@ export type PutClientResTypeByAts = {
     onlineCount: number;
     isHaveOnlineState: boolean;
     onlinePercent: number;
-    group: Array<object>;
+    group: Array<{
+        name: string;
+        description: string;
+        totalCount: number;
+        onlineCount: number;
+        isHaveOnlineState: boolean;
+        onlinePercent: number;
+        group: Array<Record<string, any>>;
+        managerAddress: string;
+    }>;
     managerAddress: string;
 };
 
@@ -391,7 +463,40 @@ export type GetClientReqTypeByAts = {
  */
 export type GetClientResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        ip: string;
+        mac: string;
+        model: string;
+        os: string;
+        description: string;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        clientType: 0 | 1 | 2;
+        resourceId: string;
+        createTime: string;
+        network: any;
+        status: 1 | 2;
+        areaCode: string;
+        location: any;
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        maintenance: any;
+    }>;
 };
 
 /**
@@ -600,7 +705,40 @@ export type PostClientSearchReqTypeByAts = {
  */
 export type PostClientSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        ip: string;
+        mac: string;
+        model: string;
+        os: string;
+        description: string;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        clientType: 0 | 1 | 2;
+        resourceId: string;
+        createTime: string;
+        network: any;
+        status: 1 | 2;
+        areaCode: string;
+        location: any;
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        maintenance: any;
+    }>;
 };
 
 /**
@@ -665,7 +803,16 @@ export type PutDeviceResTypeByAts = {
     onlineCount: number;
     isHaveOnlineState: boolean;
     onlinePercent: number;
-    group: Array<object>;
+    group: Array<{
+        name: string;
+        description: string;
+        totalCount: number;
+        onlineCount: number;
+        isHaveOnlineState: boolean;
+        onlinePercent: number;
+        group: Array<Record<string, any>>;
+        managerAddress: string;
+    }>;
     managerAddress: string;
 };
 
@@ -693,7 +840,43 @@ export type GetDeviceReqTypeByAts = {
  */
 export type GetDeviceResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        netInfos: Array<{
+            ipAddress: string;
+            mac: string;
+        }>;
+        description: string;
+        os: string;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        account: string;
+        password: string;
+        resourceId: string;
+        status: 1 | 2;
+        createTime: string;
+        deviceType: 0 | 1 | 2 | 3;
+        network: any;
+        areaCode: string;
+        location: any;
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        maintenance: any;
+    }>;
 };
 
 /**
@@ -914,7 +1097,43 @@ export type PostDeviceSearchReqTypeByAts = {
  */
 export type PostDeviceSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        netInfos: Array<{
+            ipAddress: string;
+            mac: string;
+        }>;
+        description: string;
+        os: string;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        account: string;
+        password: string;
+        resourceId: string;
+        status: 1 | 2;
+        createTime: string;
+        deviceType: 0 | 1 | 2 | 3;
+        network: any;
+        areaCode: string;
+        location: any;
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        maintenance: any;
+    }>;
 };
 
 /**
@@ -979,7 +1198,43 @@ export type GetMachinesReqTypeByAts = {
  */
 export type GetMachinesResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        netInfos: Array<{
+            ipAddress: string;
+            mac: string;
+        }>;
+        description: string;
+        os: string;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        account: string;
+        password: string;
+        resourceId: string;
+        status: 1 | 2;
+        createTime: string;
+        deviceType: 0 | 1 | 2 | 3;
+        network: any;
+        areaCode: string;
+        location: any;
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        maintenance: any;
+    }>;
 };
 
 /**
@@ -1193,7 +1448,16 @@ export type GetMCUReqTypeByAts = {
  */
 export type GetMCUResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        type: number;
+        name: string;
+        accessKeyID: string;
+        accessKeySecret: string;
+        domain: string;
+        description: string;
+        extension: any;
+    }>;
 };
 
 /**
@@ -1250,7 +1514,73 @@ export type GetMCUTerminalReqTypeByAts = {
  */
 export type GetMCUTerminalResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        ip: string;
+        port: string;
+        number: string;
+        description: string;
+        account: string;
+        password: string;
+        resourceId: string;
+        createTime: string;
+        terminalType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+        areaCode: string;
+        protocolType: string;
+        relatePlatform: {
+            id: string;
+            name: string;
+        };
+        extension: any;
+        relateCameraId: string;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        status: 1 | 2;
+        relateType: any;
+        terminalGroup: {
+            id: string;
+            name: string;
+        };
+        network: {
+            id: string;
+            name: string;
+        };
+        terminalLocation: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        source: any;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+            status: 0 | 1 | 2;
+            expiryTime: string;
+        };
+    }>;
 };
 
 /**
@@ -1324,7 +1654,12 @@ export type GetMetricsReqTypeByAts = {
  */
 export type GetMetricsResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        alertTypeId: string;
+        resourceId: string;
+    }>;
 };
 
 /**
@@ -1391,7 +1726,35 @@ export type GetNcReqTypeByAts = {
  */
 export type GetNcResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        connectionState: number;
+        description: string;
+        prefix: string;
+        isKeepAlive: boolean;
+        timeInterval: number;
+        masterNCDevice: {
+            id: string;
+            ip: string;
+            port: number;
+            userName: string;
+            password: string;
+            isSupportDualMode: boolean;
+            isSupportTrunkUser: boolean;
+        };
+        slaveNCDevice: {
+            id: string;
+            ip: string;
+            port: number;
+            userName: string;
+            password: string;
+            isSupportDualMode: boolean;
+            isSupportTrunkUser: boolean;
+        };
+        longitude: number;
+        latitude: number;
+    }>;
 };
 
 /**
@@ -1466,7 +1829,26 @@ export type GetNcIdPhonesReqTypeByAts = {
  */
 export type GetNcIdPhonesResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        number: string;
+        state: number;
+        usn: string;
+        level: number;
+        callRegion: number;
+        connectionState: number;
+        protocol: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 24 | 25 | 254 | 255;
+        configStatus: number;
+        usageType: string;
+        isPhoneLine: boolean;
+        owner: {
+            id: string;
+            name: string;
+            title: string;
+            platformId: string;
+            platformName: string;
+        };
+    }>;
 };
 
 /**
@@ -1491,7 +1873,19 @@ export type GetNcIdTrunkGroupConfigsReqTypeByAts = {
  */
 export type GetNcIdTrunkGroupConfigsResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        trunkGroupNumber: number;
+        trunkGroupDescription: string;
+        dualSystemAttribute: boolean;
+        callAreaInHost: number;
+        trunkGroupType: number;
+        callPriority: number;
+        maxCall: number;
+        effectiveDate: number;
+        effectiveTime: string;
+        physicalState: number;
+        isEnable: boolean;
+    }>;
 };
 
 /**
@@ -1518,7 +1912,16 @@ export type PutNetworksResTypeByAts = {
     onlineCount: number;
     isHaveOnlineState: boolean;
     onlinePercent: number;
-    group: Array<object>;
+    group: Array<{
+        name: string;
+        description: string;
+        totalCount: number;
+        onlineCount: number;
+        isHaveOnlineState: boolean;
+        onlinePercent: number;
+        group: Array<Record<string, any>>;
+        managerAddress: string;
+    }>;
     managerAddress: string;
 };
 
@@ -1544,7 +1947,56 @@ export type GetNetworksReqTypeByAts = {
  */
 export type GetNetworksResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        networkInterface: string;
+        boundWidth: number;
+        description: string;
+        networkType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        resourceId: string;
+        createTime: string;
+        status: 1 | 2;
+        areaCode: string;
+        location: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+            status: 0 | 1 | 2;
+            expiryTime: string;
+        };
+        proxyIp: string;
+        proxyPort: number;
+    }>;
 };
 
 /**
@@ -1811,7 +2263,56 @@ export type PostNetworksSearchReqTypeByAts = {
  */
 export type PostNetworksSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        networkInterface: string;
+        boundWidth: number;
+        description: string;
+        networkType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        resourceId: string;
+        createTime: string;
+        status: 1 | 2;
+        areaCode: string;
+        location: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+            status: 0 | 1 | 2;
+            expiryTime: string;
+        };
+        proxyIp: string;
+        proxyPort: number;
+    }>;
 };
 
 /**
@@ -1822,7 +2323,48 @@ export type PostNetworksSearchResTypeByAts = {
  */
 export type PostNetworksImportReqTypeByAts = {
     'X-version'?: string;
-    importNetworks: Array<object>;
+    importNetworks: Array<{
+        name: string;
+        networkInterface: string;
+        boundWidth: number;
+        description: string;
+        networkType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        resourceId: string;
+        areaCode: string;
+        location: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            jobMetaName: string;
+        }>;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+        };
+        proxyIp: string;
+        proxyPort: number;
+    }>;
 };
 
 /**
@@ -1849,7 +2391,16 @@ export type PutPlatformsResTypeByAts = {
     onlineCount: number;
     isHaveOnlineState: boolean;
     onlinePercent: number;
-    group: Array<object>;
+    group: Array<{
+        name: string;
+        description: string;
+        totalCount: number;
+        onlineCount: number;
+        isHaveOnlineState: boolean;
+        onlinePercent: number;
+        group: Array<Record<string, any>>;
+        managerAddress: string;
+    }>;
     managerAddress: string;
 };
 
@@ -1878,7 +2429,61 @@ export type GetPlatformsReqTypeByAts = {
  */
 export type GetPlatformsResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        ipAddress: string;
+        managerAddress: string;
+        name: string;
+        description: string;
+        status: 1 | 2;
+        account: string;
+        password: string;
+        areaCode: string;
+        department: string;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        accessMethod: string;
+        resourceId: string;
+        createTime: string;
+        network: {
+            id: string;
+            name: string;
+        };
+        location: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+            status: 0 | 1 | 2;
+            expiryTime: string;
+        };
+    }>;
 };
 
 /**
@@ -2022,7 +2627,61 @@ export type PostPlatformsSearchReqTypeByAts = {
  */
 export type PostPlatformsSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        ipAddress: string;
+        managerAddress: string;
+        name: string;
+        description: string;
+        status: 1 | 2;
+        account: string;
+        password: string;
+        areaCode: string;
+        department: string;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        accessMethod: string;
+        resourceId: string;
+        createTime: string;
+        network: {
+            id: string;
+            name: string;
+        };
+        location: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+            status: 0 | 1 | 2;
+            expiryTime: string;
+        };
+    }>;
 };
 
 /**
@@ -2182,7 +2841,50 @@ export type DeletePlatformsBatchReqTypeByAts = {
  */
 export type PostPlatformsImportReqTypeByAts = {
     'X-version'?: string;
-    importThirdPlatforms: Array<object>;
+    importThirdPlatforms: Array<{
+        name: string;
+        description: string;
+        ipAddress: string;
+        managerAddress: string;
+        account: string;
+        password: string;
+        areaCode: string;
+        department: string;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        accessMethod: string;
+        networkID: string;
+        resourceId: string;
+        location: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            jobMetaName: string;
+        }>;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+        };
+    }>;
 };
 
 /**
@@ -2208,7 +2910,55 @@ export type GetPositionEquipmentReqTypeByAts = {
  */
 export type GetPositionEquipmentResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        equipmentType: 0 | 1 | 2;
+        collectionCycle: number;
+        description: string;
+        status: 1 | 2;
+        network: {
+            id: string;
+            name: string;
+        };
+        areaCode: string;
+        resourceId: string;
+        location: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+            status: 0 | 1 | 2;
+            expiryTime: string;
+        };
+    }>;
 };
 
 /**
@@ -2449,7 +3199,45 @@ export type DeletePositionEquipmentIdReqTypeByAts = {
  */
 export type PostPositionEquipmentImportReqTypeByAts = {
     'X-version'?: string;
-    importPositionEquipments: Array<object>;
+    importPositionEquipments: Array<{
+        name: string;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        equipmentType: 0 | 1 | 2;
+        collectionCycle: number;
+        description: string;
+        networkID: string;
+        areaCode: string;
+        resourceId: string;
+        location: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            jobMetaName: string;
+        }>;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+        };
+    }>;
 };
 
 /**
@@ -2472,7 +3260,22 @@ export type GetStatisticsOverviewReqTypeByAts = {
  */
 export type GetStatisticsOverviewResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        assetType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+        totalCount: number;
+        onlineCount: number;
+        audioAndVideo: {
+            totalCount: number;
+            audioCount: number;
+            videoCount: number;
+            days: number;
+        };
+        assetAlarm: {
+            totalCount: number;
+            processedCount: number;
+            unProcessedCount: number;
+        };
+    }>;
 };
 
 /**
@@ -2496,7 +3299,22 @@ export type PostStatisticsOverviewSearchReqTypeByAts = {
  */
 export type PostStatisticsOverviewSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        assetType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+        totalCount: number;
+        onlineCount: number;
+        audioAndVideo: {
+            totalCount: number;
+            audioCount: number;
+            videoCount: number;
+            days: number;
+        };
+        assetAlarm: {
+            totalCount: number;
+            processedCount: number;
+            unProcessedCount: number;
+        };
+    }>;
 };
 
 /**
@@ -2518,7 +3336,11 @@ export type GetStatisticsOverviewClientReqTypeByAts = {
  */
 export type GetStatisticsOverviewClientResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        clientType: 0 | 1 | 2;
+        totalCount: number;
+        onlineCount: number;
+    }>;
 };
 
 /**
@@ -2541,7 +3363,11 @@ export type PostStatisticsOverviewClientSearchReqTypeByAts = {
  */
 export type PostStatisticsOverviewClientSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        clientType: 0 | 1 | 2;
+        totalCount: number;
+        onlineCount: number;
+    }>;
 };
 
 /**
@@ -2563,7 +3389,11 @@ export type GetStatisticsOverviewTerminalReqTypeByAts = {
  */
 export type GetStatisticsOverviewTerminalResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        terminalType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+        totalCount: number;
+        onlineCount: number;
+    }>;
 };
 
 /**
@@ -2586,7 +3416,11 @@ export type PostStatisticsOverviewTerminalSearchReqTypeByAts = {
  */
 export type PostStatisticsOverviewTerminalSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        terminalType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+        totalCount: number;
+        onlineCount: number;
+    }>;
 };
 
 /**
@@ -2609,7 +3443,10 @@ export type PostStatisticsAreaTerminalReqTypeByAts = {
  */
 export type PostStatisticsAreaTerminalResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        prefixAreaCode: string;
+        count: number;
+    }>;
 };
 
 /**
@@ -2631,7 +3468,10 @@ export type PostStatisticsAreaPlatformReqTypeByAts = {
  */
 export type PostStatisticsAreaPlatformResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        prefixAreaCode: string;
+        count: number;
+    }>;
 };
 
 /**
@@ -2653,7 +3493,10 @@ export type PostStatisticsMonitorDeviceReqTypeByAts = {
  */
 export type PostStatisticsMonitorDeviceResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        relateTypeId: string;
+        totalCount: number;
+    }>;
 };
 
 /**
@@ -2679,7 +3522,17 @@ export type PostStatisticsAssetTypeReqTypeByAts = {
  */
 export type PostStatisticsAssetTypeResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        assetType: 0 | 1 | 2 | 3 | 4 | 5;
+        secondaryAssetType: number;
+        relateTypeId: string;
+        totalCount: number;
+        onlineTotalCount: number;
+        isLeaf: boolean;
+        isLeafType: boolean;
+    }>;
 };
 
 /**
@@ -2706,7 +3559,16 @@ export type PutTerminalsResTypeByAts = {
     onlineCount: number;
     isHaveOnlineState: boolean;
     onlinePercent: number;
-    group: Array<object>;
+    group: Array<{
+        name: string;
+        description: string;
+        totalCount: number;
+        onlineCount: number;
+        isHaveOnlineState: boolean;
+        onlinePercent: number;
+        group: Array<Record<string, any>>;
+        managerAddress: string;
+    }>;
     managerAddress: string;
 };
 
@@ -2738,7 +3600,73 @@ export type GetTerminalsReqTypeByAts = {
  */
 export type GetTerminalsResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        ip: string;
+        port: string;
+        number: string;
+        description: string;
+        account: string;
+        password: string;
+        resourceId: string;
+        createTime: string;
+        terminalType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+        areaCode: string;
+        protocolType: string;
+        relatePlatform: {
+            id: string;
+            name: string;
+        };
+        extension: any;
+        relateCameraId: string;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        status: 1 | 2;
+        relateType: any;
+        terminalGroup: {
+            id: string;
+            name: string;
+        };
+        network: {
+            id: string;
+            name: string;
+        };
+        terminalLocation: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        source: any;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+            status: 0 | 1 | 2;
+            expiryTime: string;
+        };
+    }>;
 };
 
 /**
@@ -2906,7 +3834,73 @@ export type PostTerminalsSearchReqTypeByAts = {
  */
 export type PostTerminalsSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        ip: string;
+        port: string;
+        number: string;
+        description: string;
+        account: string;
+        password: string;
+        resourceId: string;
+        createTime: string;
+        terminalType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+        areaCode: string;
+        protocolType: string;
+        relatePlatform: {
+            id: string;
+            name: string;
+        };
+        extension: any;
+        relateCameraId: string;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        status: 1 | 2;
+        relateType: any;
+        terminalGroup: {
+            id: string;
+            name: string;
+        };
+        network: {
+            id: string;
+            name: string;
+        };
+        terminalLocation: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        source: any;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+            status: 0 | 1 | 2;
+            expiryTime: string;
+        };
+    }>;
 };
 
 /**
@@ -3094,7 +4088,56 @@ export type PutTerminalsSyncVcsTerminalReqTypeByAts = {
  */
 export type PostTerminalsImportReqTypeByAts = {
     'X-version'?: string;
-    importTerminals: Array<object>;
+    importTerminals: Array<{
+        name: string;
+        ip: string;
+        port: string;
+        number: string;
+        description: string;
+        account: string;
+        password: string;
+        terminalType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+        areaCode: string;
+        protocolType: string;
+        relatePlatformId: string;
+        extension: any;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        groupId: string;
+        networkID: string;
+        resourceId: string;
+        relateTypeId: string;
+        terminalLocation: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            jobMetaName: string;
+        }>;
+        sourceId: string;
+        relateCameraId: string;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+        };
+    }>;
 };
 
 /**
@@ -3119,7 +4162,10 @@ export type GetTerminalsSourceReqTypeByAts = {
  */
 export type GetTerminalsSourceResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+    }>;
 };
 
 /**
@@ -3145,7 +4191,73 @@ export type GetTerminalsSourceNumberReqTypeByAts = {
  */
 export type GetTerminalsSourceNumberResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        ip: string;
+        port: string;
+        number: string;
+        description: string;
+        account: string;
+        password: string;
+        resourceId: string;
+        createTime: string;
+        terminalType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+        areaCode: string;
+        protocolType: string;
+        relatePlatform: {
+            id: string;
+            name: string;
+        };
+        extension: any;
+        relateCameraId: string;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        status: 1 | 2;
+        relateType: any;
+        terminalGroup: {
+            id: string;
+            name: string;
+        };
+        network: {
+            id: string;
+            name: string;
+        };
+        terminalLocation: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        source: any;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+            status: 0 | 1 | 2;
+            expiryTime: string;
+        };
+    }>;
 };
 
 /**
@@ -3166,7 +4278,73 @@ export type GetTerminalsCameraUpgradeReqTypeByAts = {
  */
 export type GetTerminalsCameraUpgradeResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        ip: string;
+        port: string;
+        number: string;
+        description: string;
+        account: string;
+        password: string;
+        resourceId: string;
+        createTime: string;
+        terminalType: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+        areaCode: string;
+        protocolType: string;
+        relatePlatform: {
+            id: string;
+            name: string;
+        };
+        extension: any;
+        relateCameraId: string;
+        contact: {
+            id: string;
+            name: string;
+            phone: string;
+            department: string;
+            title: string;
+        };
+        status: 1 | 2;
+        relateType: any;
+        terminalGroup: {
+            id: string;
+            name: string;
+        };
+        network: {
+            id: string;
+            name: string;
+        };
+        terminalLocation: {
+            longitude: number;
+            latitude: number;
+            address: string;
+            directionAngle: number;
+            pitchAngle: number;
+            zoom: number;
+            extension: any;
+        };
+        assetMetrics: Array<{
+            metricsId: string;
+            name: string;
+            metricsStatus: 0 | 1;
+            metricsValue: string;
+            alertTypeId: string;
+            jobMetaName: string;
+            resourceId: string;
+        }>;
+        source: any;
+        maintenance: {
+            cron: string;
+            advanceRemindDays: number;
+            lastMaintenanceTime: string;
+            startUseTime: string;
+            lifetime: number;
+            maintenancePeriodType: 0 | 1;
+            status: 0 | 1 | 2;
+            expiryTime: string;
+        };
+    }>;
 };
 
 /**
@@ -3180,8 +4358,21 @@ export type PutTopologysIdReqTypeByAts = {
     'X-version'?: string;
     height?: number;
     width?: number;
-    topologyNodes?: Array<object>;
-    topologyRelationships?: Array<object>;
+    topologyNodes?: Array<{
+        nodeId: string;
+        isAssetResource: boolean;
+        name: string;
+        typeName: string;
+        color: string;
+        height: number;
+        width: number;
+        coordinateX: number;
+        coordinateY: number;
+    }>;
+    topologyRelationships?: Array<{
+        startNodeId: string;
+        endNodeId: string;
+    }>;
 };
 
 /**
@@ -3205,7 +4396,25 @@ export type GetTopologysReqTypeByAts = {
  */
 export type GetTopologysResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        height: number;
+        width: number;
+        topologyNodes: Array<{
+            id: string;
+            nodeId: string;
+            isAssetResource: boolean;
+            name: string;
+            typeName: string;
+            color: string;
+            height: number;
+            width: number;
+            coordinateX: number;
+            coordinateY: number;
+            status: 1 | 2;
+        }>;
+        topologyRelationships: Array<Record<string, any>>;
+    }>;
 };
 
 /**
@@ -3280,7 +4489,12 @@ export type GetTypeConfigsReqTypeByAts = {
  */
 export type GetTypeConfigsResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        resourceId: string;
+        type: 0 | 1 | 2;
+    }>;
 };
 
 /**
@@ -3333,7 +4547,12 @@ export type PostTypeConfigsSearchReqTypeByAts = {
  */
 export type PostTypeConfigsSearchResTypeByAts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        resourceId: string;
+        type: 0 | 1 | 2;
+    }>;
 };
 
 /**
@@ -3354,7 +4573,13 @@ export type PostTypeConfigsExportReqTypeByAts = {
  * @bizName assetBiz
  */
 export type PostTypeConfigsExportResTypeByAts = {
-    typeConfigs: Array<object>;
+    typeConfigs: Array<{
+        id: string;
+        name: string;
+        resourceId: string;
+        type: 0 | 1 | 2;
+        createTime: string;
+    }>;
 };
 
 /**

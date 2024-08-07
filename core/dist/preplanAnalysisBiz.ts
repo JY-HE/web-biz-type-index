@@ -511,7 +511,7 @@ export type GetAlarmFacilitiesStatisticsResTypeByPas = {
             longitude: number;
             latitude: number;
         };
-        subordinateLayers: Array<object>;
+        subordinateLayers: Array<Record<string, any>>;
     }>;
 };
 
@@ -963,7 +963,21 @@ export type GetEventFacilitiesStatisticsResTypeByPas = {
         longitude: number;
         latitude: number;
     };
-    subordinateLayers: Array<object>;
+    subordinateLayers: Array<{
+        layerId: string;
+        layerName: string;
+        facilitiesTotal: number;
+        subordinateLayersTotal: number;
+        bottomRight: {
+            longitude: number;
+            latitude: number;
+        };
+        upLeft: {
+            longitude: number;
+            latitude: number;
+        };
+        subordinateLayers: Array<Record<string, any>>;
+    }>;
 };
 
 /**
@@ -1001,5 +1015,19 @@ export type PostEventFacilitiesStatisticsResTypeByPas = {
         longitude: number;
         latitude: number;
     };
-    subordinateLayers: Array<object>;
+    subordinateLayers: Array<{
+        layerId: string;
+        layerName: string;
+        facilitiesTotal: number;
+        subordinateLayersTotal: number;
+        bottomRight: {
+            longitude: number;
+            latitude: number;
+        };
+        upLeft: {
+            longitude: number;
+            latitude: number;
+        };
+        subordinateLayers: Array<Record<string, any>>;
+    }>;
 };

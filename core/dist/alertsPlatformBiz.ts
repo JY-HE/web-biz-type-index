@@ -29,7 +29,39 @@ export type GetAlertRecordsReqTypeByAps = {
  */
 export type GetAlertRecordsResTypeByAps = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: number;
+        name: string;
+        description: string;
+        typeId: string;
+        typeName: string;
+        typeIdPath: string;
+        typeNamePath: string;
+        level: number;
+        status: 0 | 1 | 2;
+        resolverId: string;
+        resolverName: string;
+        resolveMessage: string;
+        sourceTypeId: string;
+        sourceTypeName: string;
+        source: {
+            instance: string;
+            processorUrl: string;
+        };
+        assetId: string;
+        assetName: string;
+        createTime: string;
+        updateTime: string;
+        startTime: string;
+        endTime: string;
+        resourceId: string;
+        platformId: string;
+        platformName: string;
+        longitude: number;
+        latitude: number;
+        areaCode: string;
+        extension: any;
+    }>;
 };
 
 /**
@@ -145,7 +177,39 @@ export type PostAlertRecordsSearchReqTypeByAps = {
  */
 export type PostAlertRecordsSearchResTypeByAps = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: number;
+        name: string;
+        description: string;
+        typeId: string;
+        typeName: string;
+        typeIdPath: string;
+        typeNamePath: string;
+        level: number;
+        status: 0 | 1 | 2;
+        resolverId: string;
+        resolverName: string;
+        resolveMessage: string;
+        sourceTypeId: string;
+        sourceTypeName: string;
+        source: {
+            instance: string;
+            processorUrl: string;
+        };
+        assetId: string;
+        assetName: string;
+        createTime: string;
+        updateTime: string;
+        startTime: string;
+        endTime: string;
+        resourceId: string;
+        platformId: string;
+        platformName: string;
+        longitude: number;
+        latitude: number;
+        areaCode: string;
+        extension: any;
+    }>;
 };
 
 /**
@@ -241,7 +305,12 @@ export type GetAlertSourceTypesReqTypeByAps = {
  */
 export type GetAlertSourceTypesResTypeByAps = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        createTime: string;
+        updateTime: string;
+    }>;
 };
 
 /**
@@ -298,7 +367,19 @@ export type GetAlertTypesReqTypeByAps = {
  */
 export type GetAlertTypesResTypeByAps = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        description: string;
+        parentId: string;
+        createTime: string;
+        updateTime: string;
+        resourceId: string;
+        platformId: string;
+        idPath: string;
+        namePath: string;
+        isLeaf: boolean;
+    }>;
 };
 
 /**
@@ -353,7 +434,19 @@ export type GetAlertTypesRootReqTypeByAps = {
  */
 export type GetAlertTypesRootResTypeByAps = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        description: string;
+        parentId: string;
+        createTime: string;
+        updateTime: string;
+        resourceId: string;
+        platformId: string;
+        idPath: string;
+        namePath: string;
+        isLeaf: boolean;
+    }>;
 };
 
 /**
@@ -377,7 +470,19 @@ export type GetAlertTypesIdChildrenReqTypeByAps = {
  */
 export type GetAlertTypesIdChildrenResTypeByAps = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        description: string;
+        parentId: string;
+        createTime: string;
+        updateTime: string;
+        resourceId: string;
+        platformId: string;
+        idPath: string;
+        namePath: string;
+        isLeaf: boolean;
+    }>;
 };
 
 /**
@@ -398,7 +503,19 @@ export type PostAlertTypesBatchReqTypeByAps = {
  */
 export type PostAlertTypesBatchResTypeByAps = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        description: string;
+        parentId: string;
+        createTime: string;
+        updateTime: string;
+        resourceId: string;
+        platformId: string;
+        idPath: string;
+        namePath: string;
+        isLeaf: boolean;
+    }>;
 };
 
 /**
@@ -451,7 +568,13 @@ export type PostAlertTypesChildrenMergenceReqTypeByAps = {
  */
 export type PostAlertTypesChildrenMergenceResTypeByAps = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        idPath: string;
+        namePath: string;
+        isLeaf: boolean;
+    }>;
 };
 
 /**
@@ -474,7 +597,19 @@ export type PostAlertTypesSubordinatesReqTypeByAps = {
  */
 export type PostAlertTypesSubordinatesResTypeByAps = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        description: string;
+        parentId: string;
+        createTime: string;
+        updateTime: string;
+        resourceId: string;
+        platformId: string;
+        idPath: string;
+        namePath: string;
+        isLeaf: boolean;
+    }>;
 };
 
 /**
@@ -498,7 +633,20 @@ export type PostAlertTypesChildrenReqTypeByAps = {
  */
 export type PostAlertTypesChildrenResTypeByAps = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        description: string;
+        parentId: string;
+        createTime: string;
+        updateTime: string;
+        resourceId: string;
+        platformId: string;
+        idPath: string;
+        namePath: string;
+        isLeaf: boolean;
+        useStatus: 0 | 1 | 2;
+    }>;
 };
 
 /**
@@ -518,7 +666,18 @@ export type PostAlertTypesExportReqTypeByAps = {
  * @bizName alertsPlatformBiz
  */
 export type PostAlertTypesExportResTypeByAps = {
-    alertTypes: Array<object>;
+    alertTypes: Array<{
+        id: string;
+        name: string;
+        description: string;
+        parentId: string;
+        path: string;
+        createTime: string;
+        updateTime: string;
+        isDelete: boolean;
+        resourceId: string;
+        platformId: string;
+    }>;
 };
 
 /**

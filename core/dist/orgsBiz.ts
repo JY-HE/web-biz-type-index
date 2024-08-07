@@ -18,7 +18,10 @@ export type PostContactsPidReqTypeByOrgs = {
     department?: string;
     title?: string;
     relatedId?: string;
-    phones?: Array<object>;
+    phones?: Array<{
+        type: string;
+        number: string;
+    }>;
     callInformation?: {
         qq: string;
         weixin: string;
@@ -44,7 +47,17 @@ export type PostContactsPidResTypeByOrgs = {
     parentId: string;
     departmentIds: Array<string>;
     memberOf: Array<string>;
-    departmentPaths: Array<object>;
+    departmentPaths: Array<{
+        departmentId: string;
+        path: string;
+        rootPath: any;
+        departmentIDs: Array<string>;
+        pathInfoItems: Array<Record<string, any>>;
+        isContainPresetDepartment: boolean;
+        nearestTypologyNodeId: string;
+        nearestTypologyNodeName: string;
+        pathInfoItemsCount: number;
+    }>;
     photo: string;
     id: string;
     name: string;
@@ -55,7 +68,10 @@ export type PostContactsPidResTypeByOrgs = {
     title: string;
     createTime: string;
     updateTime: string;
-    phones: Array<object>;
+    phones: Array<{
+        type: string;
+        number: string;
+    }>;
     callInformation: {
         qq: string;
         weixin: string;
@@ -97,7 +113,17 @@ export type GetContactsIdResTypeByOrgs = {
     parentId: string;
     departmentIds: Array<string>;
     memberOf: Array<string>;
-    departmentPaths: Array<object>;
+    departmentPaths: Array<{
+        departmentId: string;
+        path: string;
+        rootPath: any;
+        departmentIDs: Array<string>;
+        pathInfoItems: Array<Record<string, any>>;
+        isContainPresetDepartment: boolean;
+        nearestTypologyNodeId: string;
+        nearestTypologyNodeName: string;
+        pathInfoItemsCount: number;
+    }>;
     photo: string;
     id: string;
     name: string;
@@ -108,7 +134,10 @@ export type GetContactsIdResTypeByOrgs = {
     title: string;
     createTime: string;
     updateTime: string;
-    phones: Array<object>;
+    phones: Array<{
+        type: string;
+        number: string;
+    }>;
     callInformation: {
         qq: string;
         weixin: string;
@@ -144,7 +173,10 @@ export type PutContactsIdReqTypeByOrgs = {
     photo?: string;
     department?: string;
     title?: string;
-    phones?: Array<object>;
+    phones?: Array<{
+        type: string;
+        number: string;
+    }>;
     callInformation?: {
         qq: string;
         weixin: string;
@@ -216,7 +248,17 @@ export type PostContactsDetailResTypeByOrgs = {
     parentId: string;
     departmentIds: Array<string>;
     memberOf: Array<string>;
-    departmentPaths: Array<object>;
+    departmentPaths: Array<{
+        departmentId: string;
+        path: string;
+        rootPath: any;
+        departmentIDs: Array<string>;
+        pathInfoItems: Array<Record<string, any>>;
+        isContainPresetDepartment: boolean;
+        nearestTypologyNodeId: string;
+        nearestTypologyNodeName: string;
+        pathInfoItemsCount: number;
+    }>;
     photo: string;
     id: string;
     name: string;
@@ -227,7 +269,10 @@ export type PostContactsDetailResTypeByOrgs = {
     title: string;
     createTime: string;
     updateTime: string;
-    phones: Array<object>;
+    phones: Array<{
+        type: string;
+        number: string;
+    }>;
     callInformation: {
         qq: string;
         weixin: string;
@@ -423,7 +468,7 @@ export type PostFavoritesResTypeByOrgs = {
         title: string;
         photoPath: string;
         photo: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         memberOf: Array<string>;
         platformId: string;
         resourceId: string;
@@ -534,7 +579,7 @@ export type GetFavoritesFavoriteIdResTypeByOrgs = {
         title: string;
         photoPath: string;
         photo: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         memberOf: Array<string>;
         platformId: string;
         resourceId: string;
@@ -626,7 +671,7 @@ export type GetFavoritesFavoriteIdContactsResTypeByOrgs = {
         title: string;
         createTime: string;
         updateTime: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         callInformation: {
             qq: string;
             weixin: string;
@@ -686,7 +731,7 @@ export type PostGroupsPidResTypeByOrgs = {
         title: string;
         photoPath: string;
         photo: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         memberOf: Array<string>;
         platformId: string;
         resourceId: string;
@@ -766,7 +811,7 @@ export type GetGroupsIdResTypeByOrgs = {
         title: string;
         photoPath: string;
         photo: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         memberOf: Array<string>;
         platformId: string;
         resourceId: string;
@@ -921,7 +966,7 @@ export type GetGroupsGroupIdMembersResTypeByOrgs = {
         title: string;
         createTime: string;
         updateTime: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         callInformation: {
             qq: string;
             weixin: string;
@@ -1148,7 +1193,7 @@ export type GetOrganizationsPidMembersResTypeByOrgs = {
             title: string;
             photoPath: string;
             photo: string;
-            phones: Array<object>;
+            phones: Array<Record<string, any>>;
             memberOf: Array<string>;
             platformId: string;
             resourceId: string;
@@ -1223,7 +1268,7 @@ export type GetOrganizationsContactsResTypeByOrgs = {
     records: Array<{
         parentId: string;
         departmentIds: Array<string>;
-        departments: Array<object>;
+        departments: Array<Record<string, any>>;
         id: string;
         name: string;
         account: string;
@@ -1233,7 +1278,7 @@ export type GetOrganizationsContactsResTypeByOrgs = {
         title: string;
         createTime: string;
         updateTime: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         callInformation: {
             qq: string;
             weixin: string;
@@ -1345,7 +1390,7 @@ export type GetSearchResTypeByOrgs = {
             title: string;
             photoPath: string;
             photo: string;
-            phones: Array<object>;
+            phones: Array<Record<string, any>>;
             memberOf: Array<string>;
             platformId: string;
             resourceId: string;
@@ -1406,7 +1451,11 @@ export type GetContactsIdDepartmentPathsReqTypeByOrgsV2 = {
  * @bizName orgsBiz
  */
 export type GetContactsIdDepartmentPathsResTypeByOrgsV2 = {
-    pathInfoItems: Array<object>;
+    pathInfoItems: Array<{
+        id: string;
+        name: string;
+        typologyNodeId: string;
+    }>;
 };
 
 /**
@@ -1428,7 +1477,11 @@ export type GetContactsIdCallerUserIdDepartmentPathsReqTypeByOrgsV2 = {
  * @bizName orgsBiz
  */
 export type GetContactsIdCallerUserIdDepartmentPathsResTypeByOrgsV2 = {
-    pathInfoItems: Array<object>;
+    pathInfoItems: Array<{
+        id: string;
+        name: string;
+        typologyNodeId: string;
+    }>;
 };
 
 /**
@@ -1983,7 +2036,7 @@ export type GetGroupsIdMembersResTypeByOrgsV2 = {
         title: string;
         createTime: string;
         updateTime: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         callInformation: {
             qq: string;
             weixin: string;
@@ -2026,7 +2079,37 @@ export type PostGroupsIdMembersResTypeByOrgsV2 = {
     name: string;
     description: string;
     parentId: string;
-    members: Array<object>;
+    members: Array<{
+        type: number;
+        photo: string;
+        id: string;
+        name: string;
+        account: string;
+        description: string;
+        gender: number;
+        birthday: string;
+        title: string;
+        createTime: string;
+        updateTime: string;
+        phones: Array<Record<string, any>>;
+        callInformation: {
+            qq: string;
+            weixin: string;
+            weibo: string;
+            mail: string;
+            address: string;
+        };
+        resourceId: string;
+        platformId: string;
+        platformName: string;
+        relatedId: string;
+        accountState: number;
+        photoPath: string;
+        extension: string;
+        areaCode: string;
+        identityKey: string;
+        contactTypeId: string;
+    }>;
     createTime: string;
     updateTime: string;
     owner: string;
@@ -2118,7 +2201,11 @@ export type PostGroupsPidReqTypeByOrgsV2 = {
     id?: string;
     name: string;
     description?: string;
-    members?: Array<object>;
+    members?: Array<{
+        id: string;
+        name: string;
+        memberType: any;
+    }>;
     type?: number;
     owner?: string;
     relatedId?: string;
@@ -2135,7 +2222,37 @@ export type PostGroupsPidResTypeByOrgsV2 = {
     name: string;
     description: string;
     parentId: string;
-    members: Array<object>;
+    members: Array<{
+        type: number;
+        photo: string;
+        id: string;
+        name: string;
+        account: string;
+        description: string;
+        gender: number;
+        birthday: string;
+        title: string;
+        createTime: string;
+        updateTime: string;
+        phones: Array<Record<string, any>>;
+        callInformation: {
+            qq: string;
+            weixin: string;
+            weibo: string;
+            mail: string;
+            address: string;
+        };
+        resourceId: string;
+        platformId: string;
+        platformName: string;
+        relatedId: string;
+        accountState: number;
+        photoPath: string;
+        extension: string;
+        areaCode: string;
+        identityKey: string;
+        contactTypeId: string;
+    }>;
     createTime: string;
     updateTime: string;
     owner: string;
@@ -2197,7 +2314,7 @@ export type GetGroupsResTypeByOrgsV2 = {
             id: string;
         }>;
         membersTotal: number;
-        statisticsMembers: Array<object>;
+        statisticsMembers: Array<Record<string, any>>;
     }>;
 };
 
@@ -2235,7 +2352,7 @@ export type GetGroupsIdContactsResTypeByOrgsV2 = {
             title: string;
             photo: string;
             photoPath: string;
-            phones: Array<object>;
+            phones: Array<Record<string, any>>;
             paths: Array<string>;
             memberOf: Array<string>;
             relatedId: string;
@@ -2288,7 +2405,7 @@ export type GetOrganizationsIdResTypeByOrgsV2 = {
         title: string;
         photo: string;
         photoPath: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         paths: Array<string>;
         memberOf: Array<string>;
         relatedId: string;
@@ -2353,7 +2470,7 @@ export type GetOrganizationsPidMembersResTypeByOrgsV2 = {
                 title: string;
                 photo: string;
                 photoPath: string;
-                phones: Array<object>;
+                phones: Array<Record<string, any>>;
                 paths: Array<string>;
                 memberOf: Array<string>;
                 relatedId: string;
@@ -2387,7 +2504,7 @@ export type GetOrganizationsPidMembersResTypeByOrgsV2 = {
             title: string;
             photo: string;
             photoPath: string;
-            phones: Array<object>;
+            phones: Array<Record<string, any>>;
             paths: Array<string>;
             memberOf: Array<string>;
             relatedId: string;
@@ -2433,7 +2550,11 @@ export type GetOrganizationsIdDepartmentPathsReqTypeByOrgsV2 = {
  * @bizName orgsBiz
  */
 export type GetOrganizationsIdDepartmentPathsResTypeByOrgsV2 = {
-    pathInfoItems: Array<object>;
+    pathInfoItems: Array<{
+        id: string;
+        name: string;
+        typologyNodeId: string;
+    }>;
 };
 
 /**
@@ -2467,7 +2588,7 @@ export type GetOrganizationsPidDescendantMembersResTypeByOrgsV2 = {
         title: string;
         createTime: string;
         updateTime: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         callInformation: {
             qq: string;
             weixin: string;
@@ -2573,7 +2694,7 @@ export type GetSearchResTypeByOrgsV2 = {
             title: string;
             photo: string;
             photoPath: string;
-            phones: Array<object>;
+            phones: Array<Record<string, any>>;
             paths: Array<string>;
             memberOf: Array<string>;
             relatedId: string;
@@ -2628,7 +2749,7 @@ export type PostSearchContactByPhonesResTypeByOrgsV2 = {
         title: string;
         photo: string;
         photoPath: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         paths: Array<string>;
         memberOf: Array<string>;
         relatedId: string;
@@ -2702,7 +2823,7 @@ export type PostSearchContactsBatchResTypeByOrgsV2 = {
         title: string;
         photo: string;
         photoPath: string;
-        phones: Array<object>;
+        phones: Array<Record<string, any>>;
         paths: Array<string>;
         memberOf: Array<string>;
         relatedId: string;
@@ -2747,7 +2868,7 @@ export type PostSearchGroupsBatchResTypeByOrgsV2 = {
             id: string;
         }>;
         membersTotal: number;
-        statisticsMembers: Array<object>;
+        statisticsMembers: Array<Record<string, any>>;
     }>;
 };
 
@@ -2796,7 +2917,7 @@ export type GetSearchStatisticsResTypeByOrgsV2 = {
             title: string;
             photo: string;
             photoPath: string;
-            phones: Array<object>;
+            phones: Array<Record<string, any>>;
             paths: Array<string>;
             memberOf: Array<string>;
             relatedId: string;

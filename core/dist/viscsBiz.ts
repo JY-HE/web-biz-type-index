@@ -19,7 +19,13 @@ export type GetComponentsNameReqTypeByVss = {
 export type GetComponentsNameResTypeByVss = {
     name: string;
     type: 0 | 1 | 2 | 3;
-    labels: Array<object>;
+    labels: Array<{
+        id: string;
+        type: 0 | 1 | 2;
+        text: string;
+        relateProjectId: string;
+        createTime: string;
+    }>;
     supportPlatform: number;
     supportSize: Array<{
         row: number;
@@ -42,7 +48,10 @@ export type PutComponentsNameReqTypeByVss = {
     type?: 0 | 1 | 2 | 3;
     labelIds?: Array<string>;
     supportPlatform: number;
-    supportSize: Array<object>;
+    supportSize: Array<{
+        row: number;
+        column: number;
+    }>;
     thumbnail?: string;
     configData: any;
 };
@@ -87,7 +96,7 @@ export type GetComponentsResTypeByVss = {
     records: Array<{
         name: string;
         type: 0 | 1 | 2 | 3;
-        labels: Array<object>;
+        labels: Array<Record<string, any>>;
         supportPlatform: number;
         supportSize: Array<{
             row: number;
@@ -109,7 +118,10 @@ export type PostComponentsReqTypeByVss = {
     type?: 0 | 1 | 2 | 3;
     labelIds?: Array<string>;
     supportPlatform: number;
-    supportSize: Array<object>;
+    supportSize: Array<{
+        row: number;
+        column: number;
+    }>;
     thumbnail?: string;
     configData: any;
     name: string;
@@ -124,7 +136,13 @@ export type PostComponentsReqTypeByVss = {
 export type PostComponentsResTypeByVss = {
     name: string;
     type: 0 | 1 | 2 | 3;
-    labels: Array<object>;
+    labels: Array<{
+        id: string;
+        type: 0 | 1 | 2;
+        text: string;
+        relateProjectId: string;
+        createTime: string;
+    }>;
     supportPlatform: number;
     supportSize: Array<{
         row: number;
@@ -284,7 +302,14 @@ export type GetLabelsReqTypeByVss = {
  */
 export type GetLabelsResTypeByVss = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        type: 0 | 1 | 2;
+        text: string;
+        relateProjectId: string;
+        createTime: string;
+        useCount: number;
+    }>;
 };
 
 /**
@@ -372,7 +397,19 @@ export type GetProjectsIdResTypeByVss = {
     componentBackgroundType: 0 | 1 | 2;
     version: number;
     extension: any;
-    themes: Array<object>;
+    themes: Array<{
+        themeId: string;
+        name: string;
+        projectId: string;
+        relateThemeId: string;
+        label: Array<string>;
+        themeConfigOuts: Array<{
+            isPublish: boolean;
+            isHidden: boolean;
+            layoutType: number;
+            configData: any;
+        }>;
+    }>;
 };
 
 /**
@@ -436,7 +473,29 @@ export type GetProjectsReqTypeByVss = {
  */
 export type GetProjectsResTypeByVss = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        title: string;
+        productId: string;
+        uiStyle: 0 | 1 | 2;
+        mapType: 0 | 1 | 2;
+        layoutType: 0 | 1;
+        screenWidth: number;
+        columnWidth: number;
+        leftColumnCount: number;
+        leftRowCount: number;
+        rightColumnCount: number;
+        rightRowCount: number;
+        isPanelCollapsible: boolean;
+        isPanelPaginated: boolean;
+        isMobileLayoutSupported: boolean;
+        mobileLayoutRowCount: number;
+        componentBackgroundType: 0 | 1 | 2;
+        version: number;
+        extension: any;
+        themes: Array<Record<string, any>>;
+    }>;
 };
 
 /**
@@ -495,7 +554,19 @@ export type PostProjectsResTypeByVss = {
     componentBackgroundType: 0 | 1 | 2;
     version: number;
     extension: any;
-    themes: Array<object>;
+    themes: Array<{
+        themeId: string;
+        name: string;
+        projectId: string;
+        relateThemeId: string;
+        label: Array<string>;
+        themeConfigOuts: Array<{
+            isPublish: boolean;
+            isHidden: boolean;
+            layoutType: number;
+            configData: any;
+        }>;
+    }>;
 };
 
 /**
@@ -625,7 +696,19 @@ export type GetThemesReqTypeByVss = {
  */
 export type GetThemesResTypeByVss = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        themeId: string;
+        name: string;
+        projectId: string;
+        relateThemeId: string;
+        label: Array<string>;
+        themeConfigOuts: Array<{
+            isPublish: boolean;
+            isHidden: boolean;
+            layoutType: number;
+            configData: any;
+        }>;
+    }>;
 };
 
 /**
@@ -820,7 +903,16 @@ export type GetThemesIdHistoryLayoutTypeReqTypeByVss = {
  */
 export type GetThemesIdHistoryLayoutTypeResTypeByVss = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        isValid: boolean;
+        publisher: string;
+        publisherHeaderImg: string;
+        publisherPhotoPath: string;
+        publishTime: string;
+        label: Array<string>;
+        configData: any;
+    }>;
 };
 
 /**

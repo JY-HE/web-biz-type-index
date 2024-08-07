@@ -18,7 +18,11 @@ export type GetMainResourcesReqTypeByRrs = {
  */
 export type GetMainResourcesResTypeByRrs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        type: string;
+        resourceId: string;
+    }>;
 };
 
 /**
@@ -108,7 +112,11 @@ export type PostResourceRelationshipsResourceReqTypeByRrs = {
  */
 export type PostResourceRelationshipsResourceResTypeByRrs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        resourceId: string;
+        type: string;
+    }>;
 };
 
 /**
@@ -136,7 +144,11 @@ export type PutResourceRelationshipsResourceReqTypeByRrs = {
  */
 export type PutResourceRelationshipsResourceResTypeByRrs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        resourceId: string;
+        type: string;
+    }>;
 };
 
 /**
@@ -164,7 +176,10 @@ export type PostResourceRelationshipsResourceSingleReqTypeByRrs = {
  */
 export type PostResourceRelationshipsResourceSingleResTypeByRrs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        resourceId: string;
+    }>;
 };
 
 /**
@@ -174,7 +189,10 @@ export type PostResourceRelationshipsResourceSingleResTypeByRrs = {
  * @bizName rrsBiz
  */
 export type PostResourceRelationshipsResourceDetailsReqTypeByRrs = {
-    resources: Array<object>;
+    resources: Array<{
+        resourceId: string;
+        type: string;
+    }>;
     type?: string;
 };
 
@@ -186,7 +204,14 @@ export type PostResourceRelationshipsResourceDetailsReqTypeByRrs = {
  */
 export type PostResourceRelationshipsResourceDetailsResTypeByRrs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        type: string;
+        resourceId: string;
+        mainResources: Array<{
+            resourceId: string;
+            type: string;
+        }>;
+    }>;
 };
 
 /**
@@ -196,7 +221,10 @@ export type PostResourceRelationshipsResourceDetailsResTypeByRrs = {
  * @bizName rrsBiz
  */
 export type PostResourceRelationshipsMainDetailsReqTypeByRrs = {
-    mainResources?: Array<object>;
+    mainResources?: Array<{
+        resourceId: string;
+        type: string;
+    }>;
     type?: string;
 };
 
@@ -208,7 +236,11 @@ export type PostResourceRelationshipsMainDetailsReqTypeByRrs = {
  */
 export type PostResourceRelationshipsMainDetailsResTypeByRrs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        type: string;
+        resourceId: string;
+        resources: Array<Record<string, any>>;
+    }>;
 };
 
 /**
@@ -265,7 +297,11 @@ export type GetResourcesReqTypeByRrs = {
  */
 export type GetResourcesResTypeByRrs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        resourceId: string;
+        type: string;
+    }>;
 };
 
 /**
@@ -355,7 +391,11 @@ export type GetResourceTypesReqTypeByRrs = {
  */
 export type GetResourceTypesResTypeByRrs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        type: string;
+        source: 1 | 2 | 3;
+    }>;
 };
 
 /**

@@ -20,7 +20,12 @@ export type GetAccountsReqTypeByVcs = {
  */
 export type GetAccountsResTypeByVcs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        accountNum: string;
+        organizations: Array<string>;
+    }>;
 };
 
 /**
@@ -146,6 +151,7 @@ export type GetConferencesIdResTypeByVcs = {
  */
 export type DeleteConferencesIdReqTypeByVcs = {
     id: string;
+    videoDir?: string;
     platformId?: string;
 };
 
@@ -209,7 +215,7 @@ export type GetConferencesIdLayoutResTypeByVcs = {
     id: string;
     isEnable: boolean;
     mode: 0 | 1 | 2 | 3;
-    layoutType: 1 | 2 | 4 | 9 | 16 | 25 | 36 | 49 | 50 | 80 | 100 | 130 | 170 | 210 | 1000;
+    layoutType: 1 | 2 | 4 | 9 | 16 | 25 | 36 | 49 | 50 | 80 | 100 | 130 | 170 | 210 | 615 | 716 | 1000;
     videoRound: {
         isEnable: boolean;
         pictureNumber: number;
@@ -234,11 +240,18 @@ export type GetConferencesIdLayoutResTypeByVcs = {
 export type PutConferencesIdLayoutReqTypeByVcs = {
     id: string;
     platformID?: string;
-    layoutType?: 1 | 2 | 4 | 9 | 16 | 25 | 36 | 49 | 50 | 80 | 100 | 130 | 170 | 210 | 1000;
-    appointScreens?: Array<object>;
+    layoutType?: 1 | 2 | 4 | 9 | 16 | 25 | 36 | 49 | 50 | 80 | 100 | 130 | 170 | 210 | 615 | 716 | 1000;
+    appointScreens?: Array<{
+        screenNumber: number;
+        memberID: string;
+    }>;
     layoutApplicationTargets?: Array<string>;
     sourceMemberIDs?: Array<string>;
-    videoRound?: any;
+    videoRound?: {
+        isEnable: boolean;
+        pictureNumber: number;
+        roundInterval: number;
+    };
 };
 
 /**
@@ -262,7 +275,7 @@ export type GetConferencesIdLayoutCascadeResTypeByVcs = {
     id: string;
     isEnable: boolean;
     mode: 0 | 1 | 2 | 3;
-    layoutType: 1 | 2 | 4 | 9 | 16 | 25 | 36 | 49 | 50 | 80 | 100 | 130 | 170 | 210 | 1000;
+    layoutType: 1 | 2 | 4 | 9 | 16 | 25 | 36 | 49 | 50 | 80 | 100 | 130 | 170 | 210 | 615 | 716 | 1000;
     videoRound: {
         isEnable: boolean;
         pictureNumber: number;
@@ -287,8 +300,11 @@ export type GetConferencesIdLayoutCascadeResTypeByVcs = {
 export type PutConferencesIdLayoutCascadeReqTypeByVcs = {
     id: string;
     platformID?: string;
-    layoutType?: 1 | 2 | 4 | 9 | 16 | 25 | 36 | 49 | 50 | 80 | 100 | 130 | 170 | 210 | 1000;
-    appointScreens?: Array<object>;
+    layoutType?: 1 | 2 | 4 | 9 | 16 | 25 | 36 | 49 | 50 | 80 | 100 | 130 | 170 | 210 | 615 | 716 | 1000;
+    appointScreens?: Array<{
+        screenNumber: number;
+        memberID: string;
+    }>;
     layoutApplicationTargets?: Array<string>;
     sourceMemberIDs?: Array<string>;
 };
@@ -322,6 +338,7 @@ export type GetConferencesIdPresentersResTypeByVcs = {
     isSilence: boolean;
     isBroadcast: boolean;
     isHideScreen: boolean;
+    mediaDevice: any;
 };
 
 /**
@@ -353,6 +370,55 @@ export type GetConferencesIdConventioneersResTypeByVcs = {
     isSilence: boolean;
     isBroadcast: boolean;
     isHideScreen: boolean;
+    mediaDevice: any;
+};
+
+/**
+ * @description 获取邀请记录列表
+ * @summary Request data types
+ * @url [ get ] /api/Conferences/{id}/conventioneers/inviteRecords
+ * @bizName vcsBiz
+ */
+export type GetConferencesIdConventioneersInviteRecordsReqTypeByVcs = {
+    id: string;
+    platformId?: string;
+};
+
+/**
+ * @description 获取邀请记录列表
+ * @summary Response data types
+ * @url [ get ] /api/Conferences/{id}/conventioneers/inviteRecords
+ * @bizName vcsBiz
+ */
+export type GetConferencesIdConventioneersInviteRecordsResTypeByVcs = {
+    callFails: Array<{
+        id: string;
+        name: string;
+        type: 0 | 1 | 2 | 3 | 4;
+        phone: string;
+        requestUri: string;
+        conferenceID: string;
+        isPresenter: boolean;
+        isMute: boolean;
+        isSilence: boolean;
+        isBroadcast: boolean;
+        isHideScreen: boolean;
+        mediaDevice: any;
+    }>;
+    callSucceeds: Array<{
+        id: string;
+        name: string;
+        type: 0 | 1 | 2 | 3 | 4;
+        phone: string;
+        requestUri: string;
+        conferenceID: string;
+        isPresenter: boolean;
+        isMute: boolean;
+        isSilence: boolean;
+        isBroadcast: boolean;
+        isHideScreen: boolean;
+        mediaDevice: any;
+    }>;
 };
 
 /**
@@ -384,6 +450,7 @@ export type GetConferencesIdBroadcasterResTypeByVcs = {
     isSilence: boolean;
     isBroadcast: boolean;
     isHideScreen: boolean;
+    mediaDevice: any;
 };
 
 /**
@@ -415,6 +482,7 @@ export type GetConferencesIdHideConventioneersResTypeByVcs = {
     isSilence: boolean;
     isBroadcast: boolean;
     isHideScreen: boolean;
+    mediaDevice: any;
 };
 
 /**
@@ -502,7 +570,6 @@ export type PutConferencesIdPhoneReqTypeByVcs = {
 export type PutConferencesIdAccountReqTypeByVcs = {
     id: string;
     platformID?: string;
-
     name?: string;
 };
 
@@ -579,6 +646,7 @@ export type PostConferencesReqTypeByVcs = {
     isEnabledSelfView?: boolean;
     isAutoRecording?: boolean;
     isEnabledMute?: boolean;
+    isLayoutSpeechExcitation?: boolean;
     description?: string;
 };
 
@@ -597,6 +665,9 @@ export type PostConferencesResTypeByVcs = {
     isEnableShared: boolean;
     sharedUrl: string;
     isEnabledAutoRecording: boolean;
+    isEnabledMute: boolean;
+    isLayoutSpeechExcitation: boolean;
+    bingSip: string;
 };
 
 /**
@@ -798,7 +869,7 @@ export type PutConferencesIdFocusReqTypeByVcs = {
  * @bizName vcsBiz
  */
 export type GetMCUDataTypeResTypeByVcs = {
-    type: 0 | 1 | 2 | 3 | 4;
+    type: 0 | 1 | 2 | 3;
     name: string;
 };
 
@@ -822,7 +893,16 @@ export type GetMCUDataReqTypeByVcs = {
  */
 export type GetMCUDataResTypeByVcs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        type: 0 | 1 | 2 | 3;
+        name: string;
+        accessKeyID: string;
+        accessKeySecret: string;
+        domain: string;
+        description: string;
+        extension: any;
+    }>;
 };
 
 /**
@@ -832,7 +912,7 @@ export type GetMCUDataResTypeByVcs = {
  * @bizName vcsBiz
  */
 export type PostMCUDataReqTypeByVcs = {
-    type?: 0 | 1 | 2 | 3 | 4;
+    type?: 0 | 1 | 2 | 3;
     name: string;
     accessKeyID: string;
     accessKeySecret: string;
@@ -849,7 +929,7 @@ export type PostMCUDataReqTypeByVcs = {
  */
 export type PostMCUDataResTypeByVcs = {
     id: string;
-    type: 0 | 1 | 2 | 3 | 4;
+    type: 0 | 1 | 2 | 3;
     name: string;
     accessKeyID: string;
     accessKeySecret: string;
@@ -876,7 +956,7 @@ export type GetMCUDataIdReqTypeByVcs = {
  */
 export type GetMCUDataIdResTypeByVcs = {
     id: string;
-    type: 0 | 1 | 2 | 3 | 4;
+    type: 0 | 1 | 2 | 3;
     name: string;
     accessKeyID: string;
     accessKeySecret: string;
@@ -893,7 +973,7 @@ export type GetMCUDataIdResTypeByVcs = {
  */
 export type PutMCUDataIdReqTypeByVcs = {
     id: string;
-    type?: 0 | 1 | 2 | 3 | 4;
+    type?: 0 | 1 | 2 | 3;
     name: string;
     accessKeyID: string;
     accessKeySecret: string;
@@ -919,7 +999,7 @@ export type DeleteMCUDataIdReqTypeByVcs = {
  * @bizName vcsBiz
  */
 export type GetPlatformDataDefaultResTypeByVcs = {
-    type: 0 | 1 | 2 | 3 | 4;
+    type: 0 | 1 | 2 | 3;
     id: string;
     name: string;
 };
@@ -952,7 +1032,7 @@ export type GetPlatformDataTypeTypeIdReqTypeByVcs = {
  * @bizName vcsBiz
  */
 export type GetPlatformDataTypeTypeIdResTypeByVcs = {
-    type: 0 | 1 | 2 | 3 | 4;
+    type: 0 | 1 | 2 | 3;
     id: string;
     name: string;
 };
@@ -975,7 +1055,7 @@ export type GetPlatformDataTypeTypeIpIpReqTypeByVcs = {
  * @bizName vcsBiz
  */
 export type GetPlatformDataTypeTypeIpIpResTypeByVcs = {
-    type: 0 | 1 | 2 | 3 | 4;
+    type: 0 | 1 | 2 | 3;
     id: string;
     name: string;
 };
@@ -987,7 +1067,7 @@ export type GetPlatformDataTypeTypeIpIpResTypeByVcs = {
  * @bizName vcsBiz
  */
 export type GetPlatformDataResTypeByVcs = {
-    type: 0 | 1 | 2 | 3 | 4;
+    type: 0 | 1 | 2 | 3;
     id: string;
     name: string;
 };
@@ -999,7 +1079,7 @@ export type GetPlatformDataResTypeByVcs = {
  * @bizName vcsBiz
  */
 export type GetPlatformDataHostResTypeByVcs = {
-    type: 0 | 1 | 2 | 3 | 4;
+    type: 0 | 1 | 2 | 3;
     id: string;
     name: string;
     host: string;
@@ -1012,18 +1092,17 @@ export type GetPlatformDataHostResTypeByVcs = {
  * @bizName vcsBiz
  */
 export type GetPlatformDataStrategyResTypeByVcs = {
+    strategyType: 0 | 1 | 2 | 3 | 4 | 5 | 6;
     isEnable: boolean;
-    judgmentRule: string;
-    strategyType: 0 | 1 | 2 | 3;
-    platform: {
-        type: any;
-        id: string;
-        name: string;
-    };
+    description: string;
+    strategies: Array<{
+        accessKeyId: string;
+        expression: string;
+    }>;
 };
 
 /**
- * @description 获取平台配置
+ * @description 获取视频会议配置
  * @summary Response data types
  * @url [ get ] /api/PlatformData/config
  * @bizName vcsBiz
@@ -1055,7 +1134,18 @@ export type GetRecordingsReqTypeByVcs = {
  */
 export type GetRecordingsResTypeByVcs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        startTime: string;
+        endTime: string;
+        files: Array<{
+            id: string;
+            fileName: string;
+            fileType: string;
+            url: string;
+        }>;
+    }>;
 };
 
 /**
@@ -1079,11 +1169,11 @@ export type GetSearchReqTypeByVcs = {
 export type GetSearchResTypeByVcs = {
     terminals: {
         totalCount: number;
-        records: Array<object>;
+        records: Array<Record<string, any>>;
     };
     groups: {
         totalCount: number;
-        records: Array<object>;
+        records: Array<Record<string, any>>;
     };
 };
 
@@ -1128,7 +1218,21 @@ export type GetTerminalOrganizationsIdTerminalsReqTypeByVcs = {
  */
 export type GetTerminalOrganizationsIdTerminalsResTypeByVcs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        type: 0 | 1 | 2 | 3 | 4 | -1;
+        miniOrganization: {
+            id: string;
+            name: string;
+        };
+        number: string;
+        isOnline: boolean;
+        paths: Array<{
+            id: string;
+            name: string;
+        }>;
+    }>;
 };
 
 /**
@@ -1305,7 +1409,21 @@ export type GetTerminalsReqTypeByVcs = {
  */
 export type GetTerminalsResTypeByVcs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        type: 0 | 1 | 2 | 3 | 4 | -1;
+        miniOrganization: {
+            id: string;
+            name: string;
+        };
+        number: string;
+        isOnline: boolean;
+        paths: Array<{
+            id: string;
+            name: string;
+        }>;
+    }>;
 };
 
 /**
@@ -1437,7 +1555,7 @@ export type GetTerminalsNumberNumberResTypeByVcs = {
 };
 
 /**
- * @description 亿联平台会议信息回调
+ * @description 亿联平台会议信息回调(2x)
  * @summary Request data types
  * @url [ post ] /api/YealinkConference/{domain}
  * @bizName vcsBiz

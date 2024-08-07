@@ -3128,7 +3128,7 @@ export type PostGeoConfigsLayerReqTypeByGds = {
     isShowAlert?: boolean;
     zoom?: {
         type: number;
-        defaultZoom: Array<object>;
+        defaultZoom: Array<Record<string, any>>;
         customZoom: {
             minZoom: number;
             maxZoom: number;
@@ -3546,7 +3546,7 @@ export type PutGeoConfigsLayersIdReqTypeByGds = {
     isShowAlert?: boolean;
     zoom?: {
         type: number;
-        defaultZoom: Array<object>;
+        defaultZoom: Array<Record<string, any>>;
         customZoom: {
             minZoom: number;
             maxZoom: number;
@@ -4452,7 +4452,7 @@ export type PostGeoConfigsLayersImportReqTypeByGds = {
         isShowAlert: boolean;
         zoom: {
             type: number;
-            defaultZoom: Array<object>;
+            defaultZoom: Array<Record<string, any>>;
             customZoom: {
                 minZoom: number;
                 maxZoom: number;
@@ -5375,7 +5375,7 @@ export type PostLayersExportResTypeByGds = {
         isShowAlert: boolean;
         zoom: {
             type: number;
-            defaultZoom: Array<object>;
+            defaultZoom: Array<Record<string, any>>;
             customZoom: {
                 minZoom: number;
                 maxZoom: number;
@@ -5692,7 +5692,7 @@ export type PostLayersImportReqTypeByGds = {
         isShowAlert: boolean;
         zoom: {
             type: number;
-            defaultZoom: Array<object>;
+            defaultZoom: Array<Record<string, any>>;
             customZoom: {
                 minZoom: number;
                 maxZoom: number;
@@ -5999,7 +5999,7 @@ export type GetLayersTreeResTypeByGds = {
             layerType: string;
             resourceId: string;
         };
-        children: Array<object>;
+        children: Array<Record<string, any>>;
         name: string;
         number: string;
         group: string;
@@ -6032,7 +6032,7 @@ export type PostLayersTreeStatusReqTypeByGds = {
 export type PostLayersTreeStatusResTypeByGds = {
     totalCount: number;
     records: Array<{
-        children: Array<object>;
+        children: Array<Record<string, any>>;
         useStatus: 0 | 1 | 2;
         name: string;
         number: string;
@@ -7306,7 +7306,13 @@ export type PostStatisticalLayersTreeResTypeByGds = {
     layerName: string;
     subordinateLayersTotal: number;
     facilitiesTotal: number;
-    subordinateLayers: Array<object>;
+    subordinateLayers: Array<{
+        layerId: string;
+        layerName: string;
+        subordinateLayersTotal: number;
+        facilitiesTotal: number;
+        subordinateLayers: Array<Record<string, any>>;
+    }>;
 };
 
 /**

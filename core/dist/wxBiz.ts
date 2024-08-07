@@ -49,7 +49,18 @@ export type PostMapJsonDatasReqTypeByWxs = {
  */
 export type PostMapJsonDatasResTypeByWxs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        resourceId: string;
+        statTime: string;
+        jsonData: string;
+        mainType: 0 | 1 | 2;
+        subType: string;
+        extension: string;
+        dataSource: string;
+        createdTime: string;
+        updatedTime: string;
+    }>;
 };
 
 /**
@@ -105,7 +116,20 @@ export type PostMapPicturesReqTypeByWxs = {
  */
 export type PostMapPicturesResTypeByWxs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        resourceId: string;
+        name: string;
+        mainType: 0 | 1 | 2;
+        subType: string;
+        url: string;
+        fssPath: string;
+        statTime: string;
+        extension: string;
+        dataSource: string;
+        createdTime: string;
+        updatedTime: string;
+    }>;
 };
 
 /**
@@ -205,7 +229,40 @@ export type PostTyphoonPathsReqTypeByWxs = {
  */
 export type PostTyphoonPathsResTypeByWxs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        resourceId: string;
+        typhoonCode: string;
+        name: string;
+        level: string;
+        windSpeed: number;
+        moveSpeed: number;
+        moveDirection: string;
+        windCircleRadius: Array<{
+            level: number;
+            radiusMaxWindSpeed: number;
+            northeast: number;
+            southeast: number;
+            southwest: number;
+            northwest: number;
+        }>;
+        predictions: Array<{
+            predictionAgency: string;
+            time: string;
+            longitude: number;
+            latitude: number;
+            maxWindSpeed: number;
+            centerAirPressure: number;
+            type: string;
+        }>;
+        longitude: number;
+        latitude: number;
+        centralPressure: number;
+        createdTime: string;
+        publishedTime: string;
+        updatedTime: string;
+        source: string;
+    }>;
 };
 
 /**
@@ -228,7 +285,22 @@ export type PostTyphoonsReqTypeByWxs = {
  */
 export type PostTyphoonsResTypeByWxs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        resourceId: string;
+        number: string;
+        name: string;
+        englishName: string;
+        sustainedTime: number;
+        startTime: string;
+        source: string;
+        endTime: string;
+        dataSource: string;
+        createdTime: string;
+        updatedTime: string;
+        happenedYear: number;
+        isStopped: boolean;
+    }>;
 };
 
 /**
@@ -285,7 +357,32 @@ export type PostWeatherForecastsReqTypeByWxs = {
  */
 export type PostWeatherForecastsResTypeByWxs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        resourceId: string;
+        areaCode: string;
+        areaName: string;
+        dayWindDirectionAngle: string;
+        dayWindDirection: string;
+        dayWindLevel: string;
+        dayWindSpeed: number;
+        nightWindDirectionAngle: string;
+        nightWindDirection: string;
+        nightWindLevel: string;
+        nightWindSpeed: number;
+        minTemperature: number;
+        maxTemperature: number;
+        pressure: number;
+        humidity: number;
+        rainfall: number;
+        windDirection: string;
+        windSpeedLevel: string;
+        airQuality: number;
+        createdTime: string;
+        time: string;
+        date: string;
+        updatedTime: string;
+    }>;
 };
 
 /**

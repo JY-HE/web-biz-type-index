@@ -1125,6 +1125,20 @@ export type GetDataRequestBizPhonelinesResTypeByEdms = {
 };
 
 /**
+ * @description 获取所有的线路组
+ * @summary Response data types
+ * @url [ get ] /api/DataRequestBiz/phoneline_groups
+ * @bizName edmsBiz
+ */
+export type GetDataRequestBizPhonelineGroupsResTypeByEdms = {
+    totalCount: number;
+    records: Array<{
+        groupNumber: string;
+        lineNumbers: Array<string>;
+    }>;
+};
+
+/**
  * @description 按条件查询会议记录
  * @summary Request data types
  * @url [ get ] /api/DataRequestBiz/conference_record
@@ -2436,6 +2450,38 @@ export type PutMessagesConversationsIdReqTypeByEdms = {
 export type PutMessagesDistrictsReqTypeByEdms = {
     defaultAreaCode?: string;
     isOnlyQueryAreaCodeEmpty: boolean;
+};
+
+/**
+ * @description 发送NC短信
+ * @summary Request data types
+ * @url [ post ] /api/NCMessages
+ * @bizName edmsBiz
+ */
+export type PostNCMessagesReqTypeByEdms = {
+    id?: string;
+    sender: string;
+    recipient: string;
+    content: string;
+    encoder?: number;
+    isStateMessage?: boolean;
+    stateMessageValue?: number;
+    isAreaMessage?: boolean;
+    longitude?: number;
+    latitude?: number;
+    radius?: number;
+};
+
+/**
+ * @description 发送NC短信
+ * @summary Response data types
+ * @url [ post ] /api/NCMessages
+ * @bizName edmsBiz
+ */
+export type PostNCMessagesResTypeByEdms = {
+    id: string;
+    result: boolean;
+    reason: string;
 };
 
 /**

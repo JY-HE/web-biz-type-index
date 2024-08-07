@@ -3001,7 +3001,7 @@ export type PostFacilitiesEventEventIdStatisticsResTypeByAggs = {
         layerName: string;
         facilitiesTotal: number;
         subordinateLayersTotal: number;
-        subordinateLayers: Array<object>;
+        subordinateLayers: Array<Record<string, any>>;
     }>;
 };
 
@@ -3983,7 +3983,13 @@ export type GetLayersStatisticsRootLayersResTypeByAggs = {
     layerName: string;
     subordinateLayersTotal: number;
     facilitiesTotal: number;
-    subordinateLayers: Array<object>;
+    subordinateLayers: Array<{
+        layerId: string;
+        layerName: string;
+        subordinateLayersTotal: number;
+        facilitiesTotal: number;
+        subordinateLayers: Array<Record<string, any>>;
+    }>;
 };
 
 /**
@@ -4018,7 +4024,7 @@ export type GetLayersStatisticsBatchLayersResTypeByAggs = {
             layerName: string;
             subordinateLayersTotal: number;
             facilitiesTotal: number;
-            subordinateLayers: Array<object>;
+            subordinateLayers: Array<Record<string, any>>;
         }>;
         areaCode: string;
     }>;
@@ -5820,7 +5826,7 @@ export type PostStatisticalLayersCircleAreaResTypeByAggs = {
             layerName: string;
             facilitiesTotal: number;
             subordinateLayersTotal: number;
-            subordinateLayers: Array<object>;
+            subordinateLayers: Array<Record<string, any>>;
         }>;
     }>;
 };

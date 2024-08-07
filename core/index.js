@@ -55,6 +55,8 @@ class Initializer {
             ['ntsBiz', 'Nts'],
             ['wxBiz', 'Wxs'],
         ]);
+        // 缓存未处理好的schema
+        this.seenSchemas = new Set();
         this.getJsonFileData();
         this.init();
     }
@@ -71,69 +73,75 @@ class Initializer {
         await this.getSwaggerList();
         const swaggerData = await this.getSwaggerData();
         // 解析 swagger 文档接口数据
-        swaggerData.map(async (bizRes, index) => {
-            try {
-                const {
-                    paths,
-                    components: { schemas },
-                } = bizRes.data;
-                // 当前处理的 biz 名称
-                let bizName = Object.keys(this.swaggerList)[index];
-                console.log('开始处理' + bizName);
-                // 当前处理的 biz 版本
-                let version = 'v1';
-                if (bizName.includes('-v')) {
-                    const [n, v] = bizName.split('-');
-                    bizName = n;
-                    version = v;
-                }
-                // 解析 schema 模型
-                const schemaData = this.schemaDataHandler(schemas);
-                this.schemaDataJson = { ...this.schemaDataJson, [bizName]: schemaData };
-                // 处理 paths 路径数据
-                const ignorePathList = [...this.ignorePaths.common, ...(this.ignorePaths[bizName] || [])];
-                console.error('🚀 ~ index.js:111 ~ version:', version, bizName);
-
-                Object.keys(paths)
-                    .filter((url) => !ignorePathList.includes(url))
-                    .forEach((url) => {
-                        Object.entries(paths[url]).forEach(([methodType, value]) => {
-                            const { operationId, tags, summary, parameters, requestBody, responses } = value;
-                            // 分类
-                            const tag = tags?.at(0) || '';
-                            // 过滤回调型接口
-                            if (tag === 'Callbacks') return;
-                            const transformParams = this.apiParamsHandler(parameters, schemaData);
-                            const transformRequestBody = this.apiRequestBodyHandler(requestBody, schemaData);
-                            const transformResponses = this.apiResponsesHandler(responses, schemaData);
-                            /**
-                             * 处理 requestConfig 请求配置
-                             */
-                            const warehouseTypesDataInfo = this.warehouseTypes[bizName]?.[`${methodType}&${url}${version != 'v1' ? '&' + version : ''}`];
-                            const requestTypeName = warehouseTypesDataInfo?.requestTypeName || this.getNameFromUrl(1, parameters, requestBody, transformResponses, url, methodType, version, bizName);
-                            const responsesTypeName = warehouseTypesDataInfo?.responsesTypeName || this.getNameFromUrl(2, parameters, requestBody, transformResponses, url, methodType, version, bizName);
-                            // 已有的接口不再入库
-                            const canSave = this.buildType == 0 || (this.buildType == 1 && !warehouseTypesDataInfo) || (this.buildType == 2 && !!warehouseTypesDataInfo);
-                            canSave &&
-                                this.requestConfig[bizName].push({
-                                    url,
-                                    tag,
-                                    method: methodType,
-                                    summary,
-                                    version,
-                                    requestTypeName,
-                                    responsesTypeName,
-                                    operationId,
-                                    parameters: transformParams,
-                                    responses: transformResponses,
-                                    requestBody: transformRequestBody,
-                                });
+        await Promise.all(
+            swaggerData.map(async (bizRes, index) => {
+                try {
+                    const {
+                        paths,
+                        components: { schemas },
+                    } = bizRes.data;
+                    // 当前处理的 biz 名称
+                    let bizName = Object.keys(this.swaggerList)[index];
+                    console.log('开始处理' + bizName);
+                    // 当前处理的 biz 版本
+                    let version = 'v1';
+                    if (bizName.includes('-v')) {
+                        const [n, v] = bizName.split('-');
+                        bizName = n;
+                        version = v;
+                    }
+                    this.requestConfig[bizName] = [];
+                    // 解析 schema 模型
+                    let schemaData = {};
+                    schemaData = await this.schemaDataHandler(schemas);
+                    // 处理未解析成功的 schema 模型
+                    if (this.seenSchemas.size) {
+                        schemaData = await this.seenSchemasHandler(schemaData, schemas);
+                    }
+                    this.schemaDataJson = { ...this.schemaDataJson, [bizName]: schemaData };
+                    // 处理 paths 路径数据
+                    const ignorePathList = [...this.ignorePaths.common, ...(this.ignorePaths[bizName] || [])];
+                    Object.keys(paths)
+                        .filter((url) => !ignorePathList.includes(url))
+                        .forEach((url) => {
+                            Object.entries(paths[url]).forEach(([methodType, value]) => {
+                                const { operationId, tags, summary, parameters, requestBody, responses } = value;
+                                // 分类
+                                const tag = tags?.at(0) || '';
+                                // 过滤回调型接口
+                                if (tag === 'Callbacks') return;
+                                const transformParams = this.apiParamsHandler(parameters, schemaData);
+                                const transformRequestBody = this.apiRequestBodyHandler(requestBody, schemaData);
+                                const transformResponses = this.apiResponsesHandler(responses, schemaData);
+                                /**
+                                 * 处理 requestConfig 请求配置
+                                 */
+                                const warehouseTypesDataInfo = this.warehouseTypes[bizName]?.[`${methodType}&${url}${version != 'v1' ? '&' + version : ''}`];
+                                const requestTypeName = warehouseTypesDataInfo?.requestTypeName || this.getNameFromUrl(1, parameters, requestBody, transformResponses, url, methodType, version, bizName);
+                                const responsesTypeName = warehouseTypesDataInfo?.responsesTypeName || this.getNameFromUrl(2, parameters, requestBody, transformResponses, url, methodType, version, bizName);
+                                // 已有的接口不再入库
+                                const canSave = this.buildType == 0 || (this.buildType == 1 && !warehouseTypesDataInfo) || (this.buildType == 2 && !!warehouseTypesDataInfo);
+                                canSave &&
+                                    this.requestConfig[bizName].push({
+                                        url,
+                                        tag,
+                                        method: methodType,
+                                        summary,
+                                        version,
+                                        requestTypeName,
+                                        responsesTypeName,
+                                        operationId,
+                                        parameters: transformParams,
+                                        responses: transformResponses,
+                                        requestBody: transformRequestBody,
+                                    });
+                            });
                         });
-                    });
-            } catch (error) {
-                throw error;
-            }
-        });
+                } catch (error) {
+                    throw error;
+                }
+            })
+        );
 
         // 将 schemaData 写入json文件
         await fs.writeFileSync(path.join(__dirname, `/dist/schema.json`), JSON.stringify(this.schemaDataJson, null, '\t'), 'utf8');
@@ -250,29 +258,32 @@ class Initializer {
      * @param {object} schemas 原始模型数据
      * @returns {object} 处理后的模型数据
      */
-    schemaDataHandler(schemas) {
-        try {
-            return Object.entries(schemas).reduce((pre, [curSchemaName, curSchemaData]) => {
-                if (curSchemaData.type === 'object') {
-                    const { type, properties = {}, description = '', required = [] } = curSchemaData;
-                    const params = Object.entries(properties).map(([key, value]) => {
-                        return this.schemaPropertiesHandler(pre, key, value, required);
-                    });
-                    return { ...pre, [curSchemaName]: { type, description: description.replace(this.descReg, ''), properties: params } };
-                } else {
-                    return {
-                        ...pre,
-                        [curSchemaName]: {
-                            type: curSchemaData.type === 'integer' ? 'number' : curSchemaData.type,
-                            description: curSchemaData.description,
-                            details: curSchemaData.enum || null,
-                        },
-                    };
-                }
-            }, {});
-        } catch (error) {
-            throw error;
-        }
+    async schemaDataHandler(schemas) {
+        return new Promise((resolve, reject) => {
+            try {
+                const resultSchema = Object.entries(schemas).reduce((pre, [curSchemaName, curSchemaData]) => {
+                    if (curSchemaData.type === 'object') {
+                        const { type, properties = {}, description = '', required = [] } = curSchemaData;
+                        const params = Object.entries(properties).map(([key, value]) => {
+                            return this.schemaPropertiesHandler(pre, key, value, required, curSchemaName);
+                        });
+                        return { ...pre, [curSchemaName]: { type, description: description.replace(this.descReg, ''), properties: params } };
+                    } else {
+                        return {
+                            ...pre,
+                            [curSchemaName]: {
+                                type: curSchemaData.type === 'integer' ? 'number' : curSchemaData.type,
+                                description: curSchemaData.description,
+                                details: curSchemaData.enum || null,
+                            },
+                        };
+                    }
+                }, {});
+                resolve(resultSchema);
+            } catch (error) {
+                reject(error);
+            }
+        });
     }
 
     /**
@@ -281,97 +292,139 @@ class Initializer {
      * @param {string} key 属性名
      * @param {object} value 属性值
      * @param {array} requiredList 必填属性集合
+     * @param {string} curSchemaName 当前处理的 schema 名称
      */
-    schemaPropertiesHandler(processedSchemas, key, value, requiredList) {
-        const { type = '', description = '', items = {} } = value || {};
-        // 简单类型
-        if (['number', 'integer', 'string', 'boolean'].includes(type)) {
-            return {
-                key,
-                type: type === 'integer' ? 'number' : type,
-                description: description ? description.replace(this.descReg, '') : '',
-                required: requiredList.includes(key),
-                details: value?.enum ? value.enum : null,
-            };
-        }
-        // 数组类型
-        if (type === 'array') {
-            // 简单类型
-            if (['number', 'integer', 'string', 'boolean'].includes(items?.type)) {
-                return {
-                    key,
-                    type: `Array<${items.type === 'integer' ? 'number' : items.type}>`,
-                    description: description ? description.replace(this.descReg, '') : '',
-                    required: requiredList.includes(key),
-                };
-            }
-            // 复杂类型
-            if (items?.$ref) {
-                const refName = items.$ref.split('/')?.at(-1);
-                const refObj = processedSchemas[refName] || {};
-                const details = (refObj?.properties ? [...refObj.properties] : []).map((item) => {
-                    if (item.allOf || item.items) {
-                        console.log('🚀 ~ index.js:269 ~ item:', item);
-                        return this.schemaPropertiesHandler(processedSchemas, item.key, item, requiredList);
-                    }
-                    return item;
-                });
-                return {
-                    key,
-                    type: 'Array<object>',
-                    description: description ? description.replace(this.descReg, '') : '',
-                    required: requiredList.includes(key),
-                    details: details.length > 0 ? details : null,
-                };
-            }
-            return {
-                key,
-                type: `Array<any>`,
-                description: description ? description.replace(this.descReg, '') : '',
-                required: requiredList.includes(key),
-            };
-        }
-        // 对象类型
-        if (type === 'object') {
-            const { properties = {}, allOf = [] } = value || {};
+    schemaPropertiesHandler(processedSchemas, key, value, requiredList = [], curSchemaName = '') {
+        const { type = '', description = '', items = {}, allOf = [], properties = {} } = value || {};
+        const cleanDescription = description ? description.replace(this.descReg, '') : '';
+        const isRequired = requiredList.includes(key);
+
+        const processSimpleType = (type) => ({
+            key,
+            type: type === 'integer' ? 'number' : type,
+            description: cleanDescription,
+            required: isRequired,
+            details: value?.enum || null,
+        });
+
+        const processArrayType = (itemsType) => ({
+            key,
+            type: `Array<${itemsType === 'integer' ? 'number' : itemsType}>`,
+            description: cleanDescription,
+            required: isRequired,
+        });
+
+        const processComplexType = (refName) => {
+            const refObj = processedSchemas[refName] || null;
             let details = [];
-            const result = {
+            // 如果在处理好的数据中获取到对应的数据
+            if (refObj) {
+                if (Array.isArray(refObj?.properties)) {
+                    details = [...refObj.properties];
+                } else {
+                    details = Object.entries(refObj?.properties || [])?.map(([itemKey, itemValue]) => {
+                        return this.schemaPropertiesHandler(processedSchemas, itemKey, itemValue, requiredList, curSchemaName);
+                    });
+                }
+            } else {
+                // 缓存数据，等 schemas 处理完后，再处理缓存的数据
+                this.seenSchemas.add(curSchemaName);
+            }
+            return {
+                key,
+                type: details.length ? 'Array<object>' : 'Array<Record<string, any>>',
+                description: cleanDescription,
+                required: isRequired,
+                details: details.length ? details : null,
+            };
+        };
+
+        if (['number', 'integer', 'string', 'boolean'].includes(type)) {
+            return processSimpleType(type);
+        }
+
+        if (type === 'array') {
+            if (['number', 'integer', 'string', 'boolean'].includes(items?.type)) {
+                return processArrayType(items.type);
+            }
+            if (items?.$ref) {
+                const refName = items.$ref.split('/').pop();
+                return processComplexType(refName);
+            }
+            return {
+                key,
+                type: 'Array<any>',
+                description: cleanDescription,
+                required: isRequired,
+            };
+        }
+
+        if (type === 'object') {
+            const details = Object.entries(properties).map(([propKey, propValue]) => this.schemaPropertiesHandler(processedSchemas, propKey, propValue, requiredList, curSchemaName));
+            if (details.length > 0) {
+                return {
+                    key,
+                    type: 'object',
+                    description: cleanDescription,
+                    required: isRequired,
+                    details,
+                };
+            }
+            if (allOf.length > 0) {
+                const refName = allOf[0].$ref.split('/').pop();
+                return processComplexType(refName);
+            }
+            return {
                 key,
                 type: 'Record<string, any>',
-                description: description ? description.replace(this.descReg, '') : '',
-                required: requiredList.includes(key),
+                description: cleanDescription,
+                required: isRequired,
             };
-            if (Object.keys(properties).length) {
-                details = Object.entries(properties).map(([proKey, proValue]) => {
-                    return this.schemaPropertiesHandler(processedSchemas, proKey, proValue, requiredList);
-                });
-                result.type = 'object';
-                result.details = details.length > 0 ? details : null;
-            } else if (allOf.length) {
-                const refName = value.allOf?.at(0)?.$ref.split('/')?.at(-1);
-                const refObj = processedSchemas[refName] || {};
-                details = (refObj?.properties ? [...refObj.properties] : []).map((item) => {
-                    if (item.allOf || item.items) {
-                        console.log('🚀 ~ index.js:310 ~ item:', item);
-                        return this.schemaPropertiesHandler(processedSchemas, item.key, item, requiredList);
-                    }
-                    return item;
-                });
-                result.type = 'object';
-                result.details = details.length > 0 ? details : null;
-            }
-            return result;
         }
-        // 未知类型
-        const refName = value.allOf?.at(0)?.$ref.split('/')?.at(-1);
+
+        const refName = allOf[0]?.$ref.split('/').pop();
         const refObj = processedSchemas[refName] || {};
         return {
             key,
             type: refObj.type || 'any',
-            description: description ? description.replace(this.descReg, '') : '',
-            required: requiredList.includes(key),
+            description: cleanDescription,
+            required: isRequired,
             details: refObj.details || refObj.properties || null,
         };
+    }
+
+    /**
+     * 处理未解析成功并缓存的schema数据
+     * @param {object} processedSchemas 已处理好的数据
+     * @param {object} schemas 源数据
+     */
+    async seenSchemasHandler(processedSchemas, schemas) {
+        return new Promise((resolve, reject) => {
+            try {
+                for (const item of this.seenSchemas.values()) {
+                    const schemaData = schemas[item] || null;
+                    if (schemaData) {
+                        if (schemaData.type === 'object') {
+                            const { type, properties = {}, description = '', required = [] } = schemaData;
+                            const params = Object.entries(properties).map(([key, value]) => {
+                                return this.schemaPropertiesHandler(processedSchemas, key, value, required);
+                            });
+                            processedSchemas[item] = { type, description: description.replace(this.descReg, ''), properties: params };
+                        } else {
+                            processedSchemas[item] = {
+                                type: schemaData.type === 'integer' ? 'number' : schemaData.type,
+                                description: schemaData.description,
+                                details: schemaData.enum || null,
+                            };
+                        }
+                        this.seenSchemas.delete(item);
+                    }
+                }
+                resolve(processedSchemas);
+            } catch (error) {
+                reject(error);
+            }
+        });
     }
 
     /**

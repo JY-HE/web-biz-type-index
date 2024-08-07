@@ -2144,7 +2144,7 @@ export type PostMetadataIdRecordsReqTypeByDcs = {
     pageIndex?: number;
     pageSize?: number;
     keyword?: string;
-    isOnlyReturnDisplayField?: boolean;
+    isDisplayColumn?: boolean;
     selectDataItems?: Record<string, any>;
 };
 
@@ -2160,36 +2160,31 @@ export type PostMetadataIdRecordsResTypeByDcs = {
 };
 
 /**
- * @description 分页获取项目列表
+ * @description 获取全部项目列表
  * @summary Request data types
  * @url [ get ] /api/Projects
  * @bizName dcsBiz
  */
 export type GetProjectsReqTypeByDcs = {
     keyword?: string;
-    page?: number;
-    per_page?: number;
 };
 
 /**
- * @description 分页获取项目列表
+ * @description 获取全部项目列表
  * @summary Response data types
  * @url [ get ] /api/Projects
  * @bizName dcsBiz
  */
 export type GetProjectsResTypeByDcs = {
-    totalCount: number;
-    records: Array<{
+    id: string;
+    name: string;
+    resourceId: string;
+    parentId: string;
+    totalMetadataCount: number;
+    description: string;
+    themes: Array<{
         id: string;
         name: string;
-        resourceId: string;
-        parentId: string;
-        totalMetadataCount: number;
-        description: string;
-        themes: Array<{
-            id: string;
-            name: string;
-        }>;
     }>;
 };
 
@@ -2385,7 +2380,7 @@ export type GetResourceDbTreeResTypeByDcs = {
  */
 export type GetResourceDbReqTypeByDcs = {
     keyword?: string;
-    IsOnlyReturnDisplayField?: boolean;
+    IsDisplayColumn?: boolean;
     SelectDataItems?: object;
     page?: number;
     per_page?: number;
@@ -3128,7 +3123,7 @@ export type PostResourceDbIdExternalResourceSearchReqTypeByDcs = {
     pageIndex?: number;
     pageSize?: number;
     keyword?: string;
-    isOnlyReturnDisplayField?: boolean;
+    isDisplayColumn?: boolean;
     selectDataItems?: Record<string, any>;
 };
 

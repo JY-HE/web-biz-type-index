@@ -19,7 +19,15 @@ export type GetMatterTimeConfigsReqTypeByScs = {
  */
 export type GetMatterTimeConfigsResTypeByScs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        startHour: number;
+        startMinute: number;
+        endHour: number;
+        endMinute: number;
+        type: 1 | 2 | 4 | 8 | 16;
+    }>;
 };
 
 /**
@@ -150,7 +158,10 @@ export type PostScheduleMattersResTypeByScs = {
         gender: number;
         description: string;
         mail: string;
-        phones: Array<object>;
+        phones: Array<{
+            type: string;
+            number: string;
+        }>;
         departmentIds: Array<string>;
         departments: Array<{
             id: string;
@@ -167,7 +178,11 @@ export type PostScheduleMattersResTypeByScs = {
         isPast: boolean;
     }>;
     ownerId: string;
-    subScheduleMatters: Array<object>;
+    subScheduleMatters: Array<{
+        id: string;
+        startTime: string;
+        endTime: string;
+    }>;
 };
 
 /**
@@ -195,7 +210,42 @@ export type GetScheduleMattersReqTypeByScs = {
  */
 export type GetScheduleMattersResTypeByScs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        type: 1 | 2 | 4 | 8 | 16;
+        description: string;
+        startTime: string;
+        endTime: string;
+        repeatType: 0 | 1 | 2 | 3 | 4;
+        repeatOverTime: string;
+        assistMembers: Array<{
+            userId: string;
+            account: string;
+            name: string;
+            title: string;
+            gender: number;
+            description: string;
+            mail: string;
+            phones: Array<Record<string, any>>;
+            departmentIds: Array<string>;
+            departments: Array<{
+                id: string;
+                name: string;
+            }>;
+            photoPath: string;
+        }>;
+        isRemind: boolean;
+        remindType: 1 | 2 | 4 | 8 | 16;
+        remindAdvanceMinutes: number;
+        actualSchedules: Array<{
+            startTime: string;
+            endTime: string;
+            isPast: boolean;
+        }>;
+        ownerId: string;
+        subScheduleMatters: Array<Record<string, any>>;
+    }>;
 };
 
 /**
@@ -231,7 +281,10 @@ export type GetScheduleMattersIdResTypeByScs = {
         gender: number;
         description: string;
         mail: string;
-        phones: Array<object>;
+        phones: Array<{
+            type: string;
+            number: string;
+        }>;
         departmentIds: Array<string>;
         departments: Array<{
             id: string;
@@ -248,7 +301,11 @@ export type GetScheduleMattersIdResTypeByScs = {
         isPast: boolean;
     }>;
     ownerId: string;
-    subScheduleMatters: Array<object>;
+    subScheduleMatters: Array<{
+        id: string;
+        startTime: string;
+        endTime: string;
+    }>;
 };
 
 /**
@@ -309,7 +366,22 @@ export type GetScheduleMattersMemberReqTypeByScs = {
  */
 export type GetScheduleMattersMemberResTypeByScs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        userId: string;
+        account: string;
+        name: string;
+        title: string;
+        gender: number;
+        description: string;
+        mail: string;
+        phones: Array<Record<string, any>>;
+        departmentIds: Array<string>;
+        departments: Array<{
+            id: string;
+            name: string;
+        }>;
+        photoPath: string;
+    }>;
 };
 
 /**
@@ -337,7 +409,42 @@ export type GetScheduleMattersOtherReqTypeByScs = {
  */
 export type GetScheduleMattersOtherResTypeByScs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        type: 1 | 2 | 4 | 8 | 16;
+        description: string;
+        startTime: string;
+        endTime: string;
+        repeatType: 0 | 1 | 2 | 3 | 4;
+        repeatOverTime: string;
+        assistMembers: Array<{
+            userId: string;
+            account: string;
+            name: string;
+            title: string;
+            gender: number;
+            description: string;
+            mail: string;
+            phones: Array<Record<string, any>>;
+            departmentIds: Array<string>;
+            departments: Array<{
+                id: string;
+                name: string;
+            }>;
+            photoPath: string;
+        }>;
+        isRemind: boolean;
+        remindType: 1 | 2 | 4 | 8 | 16;
+        remindAdvanceMinutes: number;
+        actualSchedules: Array<{
+            startTime: string;
+            endTime: string;
+            isPast: boolean;
+        }>;
+        ownerId: string;
+        subScheduleMatters: Array<Record<string, any>>;
+    }>;
 };
 
 /**

@@ -1,4 +1,18 @@
 /**
+ * @description 移除目录
+ * @summary Request data types
+ * @url [ delete ] /api/CameraGroups/{id}
+ * @bizName videoFusionServiceBiz
+ */
+export type DeleteCameraGroupsIdReqTypeByVfs = {
+    id: string;
+    'X-version'?: string;
+    parentId: string;
+    currentPath: string;
+    operateGroupType?: 0 | 1 | 2;
+};
+
+/**
  * @description 修改目录
  * @summary Request data types
  * @url [ put ] /api/CameraGroups/{id}
@@ -21,17 +35,51 @@ export type PutCameraGroupsIdReqTypeByVfs = {
 };
 
 /**
- * @description 移除目录
+ * @description 移动目录
  * @summary Request data types
- * @url [ delete ] /api/CameraGroups/{id}
+ * @url [ put ] /api/CameraGroups/parent/{id}
  * @bizName videoFusionServiceBiz
  */
-export type DeleteCameraGroupsIdReqTypeByVfs = {
+export type PutCameraGroupsParentIdReqTypeByVfs = {
     id: string;
     'X-version'?: string;
-    parentId: string;
     currentPath: string;
+    parentPath: string;
+    parentId: string;
     operateGroupType?: 0 | 1 | 2;
+};
+
+/**
+ * @description 挂载目录
+ * @summary Request data types
+ * @url [ post ] /api/CameraGroups/parent/{id}
+ * @bizName videoFusionServiceBiz
+ */
+export type PostCameraGroupsParentIdReqTypeByVfs = {
+    id: string;
+    'X-version'?: string;
+    parentPath: string;
+    groupIds?: Array<string>;
+    operateGroupType?: 0 | 1 | 2;
+};
+
+/**
+ * @description 挂载目录
+ * @summary Response data types
+ * @url [ post ] /api/CameraGroups/parent/{id}
+ * @bizName videoFusionServiceBiz
+ */
+export type PostCameraGroupsParentIdResTypeByVfs = {
+    id: string;
+    name: string;
+    parentId: string;
+    groupType: number;
+    description: string;
+    lastSyncTime: string;
+    comeFrom: string;
+    aliasName: string;
+    operate: 0 | 1 | 2;
+    position: number;
 };
 
 /**
@@ -861,54 +909,6 @@ export type PostCameraGroupsBathReqTypeByVfs = {
  * @bizName videoFusionServiceBiz
  */
 export type PostCameraGroupsBathResTypeByVfs = {
-    id: string;
-    name: string;
-    parentId: string;
-    groupType: number;
-    description: string;
-    lastSyncTime: string;
-    comeFrom: string;
-    aliasName: string;
-    operate: 0 | 1 | 2;
-    position: number;
-};
-
-/**
- * @description 移动目录
- * @summary Request data types
- * @url [ put ] /api/CameraGroups/parent/{id}
- * @bizName videoFusionServiceBiz
- */
-export type PutCameraGroupsParentIdReqTypeByVfs = {
-    id: string;
-    'X-version'?: string;
-    currentPath: string;
-    parentPath: string;
-    parentId: string;
-    operateGroupType?: 0 | 1 | 2;
-};
-
-/**
- * @description 挂载目录
- * @summary Request data types
- * @url [ post ] /api/CameraGroups/parent/{id}
- * @bizName videoFusionServiceBiz
- */
-export type PostCameraGroupsParentIdReqTypeByVfs = {
-    id: string;
-    'X-version'?: string;
-    parentPath: string;
-    groupIds?: Array<string>;
-    operateGroupType?: 0 | 1 | 2;
-};
-
-/**
- * @description 挂载目录
- * @summary Response data types
- * @url [ post ] /api/CameraGroups/parent/{id}
- * @bizName videoFusionServiceBiz
- */
-export type PostCameraGroupsParentIdResTypeByVfs = {
     id: string;
     name: string;
     parentId: string;
@@ -3254,7 +3254,7 @@ export type PostDetectionTasksNewestEffectivesResTypeByVfs = {
 export type PutDetectionTasksRecordsIdReqTypeByVfs = {
     id: string;
     'X-version'?: string;
-    qualities?: Array<object>;
+    qualities?: Array<Record<string, any>>;
 };
 
 /**
@@ -3266,7 +3266,7 @@ export type PutDetectionTasksRecordsIdReqTypeByVfs = {
 export type PutDetectionTasksIdExportReqTypeByVfs = {
     id: string;
     'X-version'?: string;
-    qualities?: Array<object>;
+    qualities?: Array<Record<string, any>>;
     fileName?: string;
     pageIndex?: number;
     pageSize?: number;
@@ -6820,7 +6820,7 @@ export type GetVideoConferencesReqTypeByVfs = {
  */
 export type GetVideoConferencesResTypeByVfs = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<Record<string, any>>;
 };
 
 /**

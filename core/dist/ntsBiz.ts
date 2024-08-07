@@ -74,7 +74,17 @@ export type GetConditionTemplatesReqTypeByNts = {
  */
 export type GetConditionTemplatesResTypeByNts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        scene: string;
+        conditions: Array<{
+            key: string;
+            value: string;
+            operator: any;
+        }>;
+        templateIds: Array<string>;
+    }>;
 };
 
 /**
@@ -178,7 +188,12 @@ export type GetI18NConfigsReqTypeByNts = {
  */
 export type GetI18NConfigsResTypeByNts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        key: string;
+        languageType: 0 | 1;
+        value: Record<string, any>;
+    }>;
 };
 
 /**
@@ -235,8 +250,20 @@ export type GetNotifyConfigsIdResTypeByNts = {
     isEnable: boolean;
     createTime: string;
     updateTime: string;
-    notifyTypes: Array<object>;
-    templates: Array<object>;
+    notifyTypes: Array<{
+        type: 1 | 2 | 4 | 8 | 16 | 32;
+        name: string;
+    }>;
+    templates: Array<{
+        id: string;
+        notifyType: 1 | 2 | 4 | 8 | 16 | 32;
+        content: string;
+        defaultWebHookUrl: string;
+        title: string;
+        secondTitle: string;
+        jumpUrl: string;
+        priorityPhoneType: string;
+    }>;
     recipients: Array<{
         name: string;
         userId: string;
@@ -263,7 +290,15 @@ export type PutNotifyConfigsIdReqTypeByNts = {
         operator: any;
     }>;
     isEnable?: boolean;
-    templates?: Array<object>;
+    templates?: Array<{
+        notifyType: 1 | 2 | 4 | 8 | 16 | 32;
+        content: string;
+        defaultWebHookUrl: string;
+        title: string;
+        secondTitle: string;
+        jumpUrl: string;
+        priorityPhoneType: string;
+    }>;
     recipients?: Array<{
         name: string;
         userId: string;
@@ -304,7 +339,21 @@ export type GetNotifyConfigsReqTypeByNts = {
  */
 export type GetNotifyConfigsResTypeByNts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        scene: string;
+        type: 1 | 2 | 4 | 8 | 16 | 32;
+        conditions: Array<{
+            key: string;
+            value: string;
+            operator: any;
+        }>;
+        isEnable: boolean;
+        createTime: string;
+        updateTime: string;
+        notifyTypes: Array<Record<string, any>>;
+    }>;
 };
 
 /**
@@ -323,7 +372,15 @@ export type PostNotifyConfigsReqTypeByNts = {
         operator: any;
     }>;
     isEnable?: boolean;
-    templates?: Array<object>;
+    templates?: Array<{
+        notifyType: 1 | 2 | 4 | 8 | 16 | 32;
+        content: string;
+        defaultWebHookUrl: string;
+        title: string;
+        secondTitle: string;
+        jumpUrl: string;
+        priorityPhoneType: string;
+    }>;
     recipients?: Array<{
         name: string;
         userId: string;
@@ -352,8 +409,20 @@ export type PostNotifyConfigsResTypeByNts = {
     isEnable: boolean;
     createTime: string;
     updateTime: string;
-    notifyTypes: Array<object>;
-    templates: Array<object>;
+    notifyTypes: Array<{
+        type: 1 | 2 | 4 | 8 | 16 | 32;
+        name: string;
+    }>;
+    templates: Array<{
+        id: string;
+        notifyType: 1 | 2 | 4 | 8 | 16 | 32;
+        content: string;
+        defaultWebHookUrl: string;
+        title: string;
+        secondTitle: string;
+        jumpUrl: string;
+        priorityPhoneType: string;
+    }>;
     recipients: Array<{
         name: string;
         userId: string;
@@ -371,7 +440,10 @@ export type PostNotifyConfigsResTypeByNts = {
  */
 export type GetNotifyConfigsTypesResTypeByNts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        type: 1 | 2 | 4 | 8 | 16 | 32;
+        name: string;
+    }>;
 };
 
 /**
@@ -437,7 +509,21 @@ export type GetNotifyRecordsReqTypeByNts = {
  */
 export type GetNotifyRecordsResTypeByNts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        content: string;
+        type: 1 | 2 | 4 | 8 | 16 | 32;
+        sender: string;
+        webHookUrl: string;
+        title: string;
+        scene: string;
+        recipient: string;
+        traceId: string;
+        resultDescription: string;
+        status: 0 | 1 | 2;
+        arrivalTime: string;
+        createTime: string;
+    }>;
 };
 
 /**
@@ -520,7 +606,19 @@ export type GetPlaceholdersReqTypeByNts = {
  */
 export type GetPlaceholdersResTypeByNts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        type: 0;
+        key: string;
+        value: string;
+        isEnableExpression: boolean;
+        replaceExpressions: Array<{
+            operator: any;
+            value: string;
+            replaceValue: string;
+        }>;
+    }>;
 };
 
 /**
@@ -594,7 +692,13 @@ export type GetScenesIdResTypeByNts = {
  */
 export type GetScenesResTypeByNts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        name: string;
+        tips: string;
+        recipientTips: string;
+        notifyExample: string;
+    }>;
 };
 
 /**
@@ -707,7 +811,22 @@ export type GetSchemesReqTypeByNts = {
  */
 export type GetSchemesResTypeByNts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        scene: string;
+        key: string;
+        type: 0 | 1 | 2;
+        allowNull: boolean;
+        example: string;
+        operator: 1 | 2 | 4 | 8 | 16 | 32 | 64 | 128 | 256 | 512;
+        analysisType: 0 | 1;
+        isDynamicRangeValue: boolean;
+        rangeValues: Array<{
+            id: string;
+            name: string;
+        }>;
+        description: string;
+    }>;
 };
 
 /**
@@ -847,7 +966,27 @@ export type GetTemplatesReqTypeByNts = {
  */
 export type GetTemplatesResTypeByNts = {
     totalCount: number;
-    records: Array<object>;
+    records: Array<{
+        id: string;
+        scene: string;
+        notifyType: 1 | 2 | 4 | 8 | 16 | 32;
+        content: string;
+        isEnable: boolean;
+        isDefault: boolean;
+        sender: string;
+        defaultWebHookUrl: string;
+        title: string;
+        secondTitle: string;
+        jumpUrl: string;
+        recipients: Array<{
+            name: string;
+            userId: string;
+            mobile: string;
+            mail: string;
+            groupId: string;
+        }>;
+        priorityPhoneType: string;
+    }>;
 };
 
 /**
@@ -915,7 +1054,13 @@ export type PostWebHooksReqTypeByNts = {
     scene?: string;
     notifyType?: 1 | 2 | 4 | 8 | 16 | 32;
     notifyContent?: Record<string, any>;
-    recipients?: Array<object>;
+    recipients?: Array<{
+        name: string;
+        userId: string;
+        mobile: string;
+        mail: string;
+        groupId: string;
+    }>;
     jumpUrl?: string;
     title?: string;
     data?: Record<string, any>;

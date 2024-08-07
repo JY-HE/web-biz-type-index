@@ -266,6 +266,7 @@
 |`PutConferencesIdModeReqTypeByEdms`|`CommonResType`|`/api/Conferences/{id}/mode`|put|切换会议模式|v1|
 |`GetConferencesIdMembersReqTypeByEdms`|`GetConferencesIdMembersResTypeByEdms`|`/api/Conferences/{id}/members`|get|获取会议内的成员信息|v1|
 |`GetDataRequestBizPhonelinesReqTypeByEdms`|`GetDataRequestBizPhonelinesResTypeByEdms`|`/api/DataRequestBiz/phonelines`|get|获取所有的线路信息|v1|
+|`CommonReqType`|`GetDataRequestBizPhonelineGroupsResTypeByEdms`|`/api/DataRequestBiz/phoneline_groups`|get|获取所有的线路组|v1|
 |`GetDataRequestBizConferenceRecordReqTypeByEdms`|`GetDataRequestBizConferenceRecordResTypeByEdms`|`/api/DataRequestBiz/conference_record`|get|按条件查询会议记录|v1|
 |`GetDataRequestBizConferenceRecordIdReqTypeByEdms`|`GetDataRequestBizConferenceRecordIdResTypeByEdms`|`/api/DataRequestBiz/conference_record/{id}`|get|通过会议ID获取对应的会议记录|v1|
 |`GetDataRequestBizCallRecordReqTypeByEdms`|`GetDataRequestBizCallRecordResTypeByEdms`|`/api/DataRequestBiz/call_record`|get|按条件查询通话记录|v1|
@@ -312,6 +313,7 @@
 |`DeleteMessagesTemplatesIdReqTypeByEdms`|`CommonResType`|`/api/Messages/templates/{id}`|delete|删除短信模板|v1|
 |`PutMessagesConversationsIdReqTypeByEdms`|`CommonResType`|`/api/Messages/conversations/{id}`|put|修改短信会话名称|v1|
 |`PutMessagesDistrictsReqTypeByEdms`|`CommonResType`|`/api/Messages/districts`|put|更新所有短信记录行政区划（历史数据补全运维接口）|v1|
+|`PostNCMessagesReqTypeByEdms`|`PostNCMessagesResTypeByEdms`|`/api/NCMessages`|post|发送NC短信|v1|
 |`PutNightServicesDutyReqTypeByEdms`|`CommonResType`|`/api/NightServices/duty`|put|开启电话值守夜服服务|v1|
 |`PutNightServicesAutoReqTypeByEdms`|`CommonResType`|`/api/NightServices/auto`|put|开启自动语音夜服服务|v1|
 |`CommonReqType`|`CommonResType`|`/api/NightServices/close`|put|关闭夜服服务|v1|
@@ -890,8 +892,10 @@
 
 |requestTypeName|responsesTypeName|url|methodType|describe|version|
 | --------- | --------- | --------- | --------- | --------- | --------- |
-|`PutCameraGroupsIdReqTypeByVfs`|`CommonResType`|`/api/CameraGroups/{id}`|put|修改目录|v1|
 |`DeleteCameraGroupsIdReqTypeByVfs`|`CommonResType`|`/api/CameraGroups/{id}`|delete|移除目录|v1|
+|`PutCameraGroupsIdReqTypeByVfs`|`CommonResType`|`/api/CameraGroups/{id}`|put|修改目录|v1|
+|`PutCameraGroupsParentIdReqTypeByVfs`|`CommonResType`|`/api/CameraGroups/parent/{id}`|put|移动目录|v1|
+|`PostCameraGroupsParentIdReqTypeByVfs`|`PostCameraGroupsParentIdResTypeByVfs`|`/api/CameraGroups/parent/{id}`|post|挂载目录|v1|
 |`PostCameraGroupsCameraParentIdReqTypeByVfs`|`CommonResType`|`/api/CameraGroups/camera/parent/{id}`|post|添加监控|v1|
 |`PutCameraGroupsCameraParentIdReqTypeByVfs`|`CommonResType`|`/api/CameraGroups/camera/parent/{id}`|put|移动监控|v1|
 |`DeleteCameraGroupsIdCameraReqTypeByVfs`|`CommonResType`|`/api/CameraGroups/{id}/camera`|delete|删除监控|v1|
@@ -916,8 +920,6 @@
 |`PostCameraGroupsSubordinatesReqTypeByVfs`|`PostCameraGroupsSubordinatesResTypeByVfs`|`/api/CameraGroups/subordinates`|post|获取监控组下监控（包含子组监控）|v1|
 |`PostCameraGroupsIdCamerasBatchReqTypeByVfs`|`CommonResType`|`/api/CameraGroups/{id}/cameras/batch`|post|批量添加监控到预案组中（我的资源）|v1|
 |`PostCameraGroupsBathReqTypeByVfs`|`PostCameraGroupsBathResTypeByVfs`|`/api/CameraGroups/bath`|post|批量添加目录|v1|
-|`PutCameraGroupsParentIdReqTypeByVfs`|`CommonResType`|`/api/CameraGroups/parent/{id}`|put|移动目录|v1|
-|`PostCameraGroupsParentIdReqTypeByVfs`|`PostCameraGroupsParentIdResTypeByVfs`|`/api/CameraGroups/parent/{id}`|post|挂载目录|v1|
 |`GetCameraOrGroupDeleteRecordsReqTypeByVfs`|`GetCameraOrGroupDeleteRecordsResTypeByVfs`|`/api/CameraOrGroupDeleteRecords`|get|获取删除记录|v1|
 |`GetCamerasGroupsReqTypeByVfs`|`GetCamerasGroupsResTypeByVfs`|`/api/Cameras/groups`|get|获取全部的分组列表。|v1|
 |`PostCamerasGroupsReqTypeByVfs`|`PostCamerasGroupsResTypeByVfs`|`/api/Cameras/groups`|post|创建组(预案组/自定义组)|v1|
@@ -1124,6 +1126,7 @@
 |`PutConferencesIdLayoutCascadeReqTypeByVcs`|`CommonResType`|`/api/Conferences/{id}/layout/cascade`|put|设置会议级联画面布局|v1|
 |`GetConferencesIdPresentersReqTypeByVcs`|`GetConferencesIdPresentersResTypeByVcs`|`/api/Conferences/{id}/presenters`|get|获取会议中的主持人列表|v1|
 |`GetConferencesIdConventioneersReqTypeByVcs`|`GetConferencesIdConventioneersResTypeByVcs`|`/api/Conferences/{id}/conventioneers`|get|获取会议中的成员列表|v1|
+|`GetConferencesIdConventioneersInviteRecordsReqTypeByVcs`|`GetConferencesIdConventioneersInviteRecordsResTypeByVcs`|`/api/Conferences/{id}/conventioneers/inviteRecords`|get|获取邀请记录列表|v1|
 |`GetConferencesIdBroadcasterReqTypeByVcs`|`GetConferencesIdBroadcasterResTypeByVcs`|`/api/Conferences/{id}/broadcaster`|get|获取会议正在广播画面的成员|v1|
 |`GetConferencesIdHideConventioneersReqTypeByVcs`|`GetConferencesIdHideConventioneersResTypeByVcs`|`/api/Conferences/{id}/hide_conventioneers`|get|获取会议中隐藏画面的成员列表|v1|
 |`GetConferencesIdRecordReqTypeByVcs`|`GetConferencesIdRecordResTypeByVcs`|`/api/Conferences/{id}/record`|get|获取会议的录制状态|v1|
@@ -1165,7 +1168,7 @@
 |`CommonReqType`|`GetPlatformDataResTypeByVcs`|`/api/PlatformData`|get|获取全部平台信息|v1|
 |`CommonReqType`|`GetPlatformDataHostResTypeByVcs`|`/api/PlatformData/host`|get|获取全部平台的host信息|v1|
 |`CommonReqType`|`GetPlatformDataStrategyResTypeByVcs`|`/api/PlatformData/strategy`|get|获取全部邀请策略|v1|
-|`CommonReqType`|`GetPlatformDataConfigResTypeByVcs`|`/api/PlatformData/config`|get|获取平台配置|v1|
+|`CommonReqType`|`GetPlatformDataConfigResTypeByVcs`|`/api/PlatformData/config`|get|获取视频会议配置|v1|
 |`GetRecordingsReqTypeByVcs`|`GetRecordingsResTypeByVcs`|`/api/Recordings`|get|通过条件查找录制文件|v1|
 |`GetSearchReqTypeByVcs`|`GetSearchResTypeByVcs`|`/api/Search`|get|获取符合查询条件的终端和终端组|v1|
 |`GetTencentConferenceReqTypeByVcs`|`CommonResType`|`/api/TencentConference`|get|腾讯会议使用事件订阅（Webhook）(加密)|v1|
@@ -1182,8 +1185,8 @@
 |`PutTerminalsIdReqTypeByVcs`|`CommonResType`|`/api/Terminals/{id}`|put|更新终端|v1|
 |`DeleteTerminalsIdReqTypeByVcs`|`CommonResType`|`/api/Terminals/{id}`|delete|删除终端|v1|
 |`GetTerminalsNumberNumberReqTypeByVcs`|`GetTerminalsNumberNumberResTypeByVcs`|`/api/Terminals/number/{number}`|get|通过号码获取终端|v1|
-|`PostYealinkConferenceDomainReqTypeByVcs`|`CommonResType`|`/api/YealinkConference/{domain}`|post|亿联平台会议信息回调|v1|
-|`PostYealinkConferenceReqTypeByVcs`|`CommonResType`|`/api/YealinkConference`|post|亿联平台会议信息回调|v1|
+|`PostYealinkConferenceDomainReqTypeByVcs`|`CommonResType`|`/api/YealinkConference/{domain}`|post|亿联平台会议信息回调(2x)|v1|
+|`PostYealinkConferenceReqTypeByVcs`|`CommonResType`|`/api/YealinkConference`|post|亿联平台会议信息回调(4x)|v1|
 
 ### auditBiz
 
@@ -1439,7 +1442,7 @@
 |`PostMetadataFindPageBySearchReqTypeByDcs`|`PostMetadataFindPageBySearchResTypeByDcs`|`/api/Metadata/FindPageBySearch`|post|根据（领域、主题、行业、服务、部门、行政区域、标签）查询元数据|v1|
 |`PostMetadataUpdateMetadataCountInfoReqTypeByDcs`|`CommonResType`|`/api/Metadata/UpdateMetadataCountInfo`|post|更新元数据的统计信息|v1|
 |`PostMetadataIdRecordsReqTypeByDcs`|`PostMetadataIdRecordsResTypeByDcs`|`/api/Metadata/{id}/Records`|post|查询元数据对应库表记录|v1|
-|`GetProjectsReqTypeByDcs`|`GetProjectsResTypeByDcs`|`/api/Projects`|get|分页获取项目列表|v1|
+|`GetProjectsReqTypeByDcs`|`GetProjectsResTypeByDcs`|`/api/Projects`|get|获取全部项目列表|v1|
 |`PostProjectsReqTypeByDcs`|`PostProjectsResTypeByDcs`|`/api/Projects`|post|新增项目|v1|
 |`GetProjectsIdReqTypeByDcs`|`GetProjectsIdResTypeByDcs`|`/api/Projects/{id}`|get|获取项目（支持资源Id）|v1|
 |`PutProjectsIdReqTypeByDcs`|`CommonResType`|`/api/Projects/{id}`|put|修改项目|v1|

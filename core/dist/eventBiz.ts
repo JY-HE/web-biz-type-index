@@ -4874,7 +4874,7 @@ export type GetTaskTemplatesIdResTypeByEts = {
             groupId: string;
             expectStartTime: string;
             expectEndTime: string;
-            childTaskTempInfos: Array<object>;
+            childTaskTempInfos: Array<Record<string, any>>;
             platformId: string;
             resourceId: string;
         }>;
@@ -4902,7 +4902,7 @@ export type PutTaskTemplatesIdReqTypeByEts = {
         groupId: string;
         expectStartTime: string;
         expectEndTime: string;
-        childTaskTempInfos: Array<object>;
+        childTaskTempInfos: Array<Record<string, any>>;
         platformId: string;
         resourceId: string;
     }>;
@@ -4960,7 +4960,7 @@ export type GetTaskTemplatesResTypeByEts = {
                 groupId: string;
                 expectStartTime: string;
                 expectEndTime: string;
-                childTaskTempInfos: Array<object>;
+                childTaskTempInfos: Array<Record<string, any>>;
                 platformId: string;
                 resourceId: string;
             }>;
@@ -4988,7 +4988,7 @@ export type PostTaskTemplatesReqTypeByEts = {
         groupId: string;
         expectStartTime: string;
         expectEndTime: string;
-        childTaskTempInfos: Array<object>;
+        childTaskTempInfos: Array<Record<string, any>>;
         platformId: string;
         resourceId: string;
     }>;
@@ -5020,7 +5020,7 @@ export type PostTaskTemplatesResTypeByEts = {
             groupId: string;
             expectStartTime: string;
             expectEndTime: string;
-            childTaskTempInfos: Array<object>;
+            childTaskTempInfos: Array<Record<string, any>>;
             platformId: string;
             resourceId: string;
         }>;
@@ -5052,7 +5052,7 @@ export type PostTaskTemplatesImportReqTypeByEts = {
             groupId: string;
             expectStartTime: string;
             expectEndTime: string;
-            childTaskTempInfos: Array<object>;
+            childTaskTempInfos: Array<Record<string, any>>;
             platformId: string;
             resourceId: string;
         }>;

@@ -954,6 +954,10 @@
       "requestTypeName": "GetDataRequestBizPhonelinesReqTypeByEdms",
       "responsesTypeName": "GetDataRequestBizPhonelinesResTypeByEdms"
     },
+    "get&/api/DataRequestBiz/phoneline_groups": {
+      "requestTypeName": "CommonReqType",
+      "responsesTypeName": "GetDataRequestBizPhonelineGroupsResTypeByEdms"
+    },
     "get&/api/DataRequestBiz/conference_record": {
       "requestTypeName": "GetDataRequestBizConferenceRecordReqTypeByEdms",
       "responsesTypeName": "GetDataRequestBizConferenceRecordResTypeByEdms"
@@ -1137,6 +1141,10 @@
     "put&/api/Messages/districts": {
       "requestTypeName": "PutMessagesDistrictsReqTypeByEdms",
       "responsesTypeName": "CommonResType"
+    },
+    "post&/api/NCMessages": {
+      "requestTypeName": "PostNCMessagesReqTypeByEdms",
+      "responsesTypeName": "PostNCMessagesResTypeByEdms"
     },
     "put&/api/NightServices/duty": {
       "requestTypeName": "PutNightServicesDutyReqTypeByEdms",
@@ -3252,13 +3260,21 @@
     }
   },
   "videoFusionServiceBiz": {
+    "delete&/api/CameraGroups/{id}": {
+      "requestTypeName": "DeleteCameraGroupsIdReqTypeByVfs",
+      "responsesTypeName": "CommonResType"
+    },
     "put&/api/CameraGroups/{id}": {
       "requestTypeName": "PutCameraGroupsIdReqTypeByVfs",
       "responsesTypeName": "CommonResType"
     },
-    "delete&/api/CameraGroups/{id}": {
-      "requestTypeName": "DeleteCameraGroupsIdReqTypeByVfs",
+    "put&/api/CameraGroups/parent/{id}": {
+      "requestTypeName": "PutCameraGroupsParentIdReqTypeByVfs",
       "responsesTypeName": "CommonResType"
+    },
+    "post&/api/CameraGroups/parent/{id}": {
+      "requestTypeName": "PostCameraGroupsParentIdReqTypeByVfs",
+      "responsesTypeName": "PostCameraGroupsParentIdResTypeByVfs"
     },
     "post&/api/CameraGroups/camera/parent/{id}": {
       "requestTypeName": "PostCameraGroupsCameraParentIdReqTypeByVfs",
@@ -3347,14 +3363,6 @@
     "post&/api/CameraGroups/bath": {
       "requestTypeName": "PostCameraGroupsBathReqTypeByVfs",
       "responsesTypeName": "PostCameraGroupsBathResTypeByVfs"
-    },
-    "put&/api/CameraGroups/parent/{id}": {
-      "requestTypeName": "PutCameraGroupsParentIdReqTypeByVfs",
-      "responsesTypeName": "CommonResType"
-    },
-    "post&/api/CameraGroups/parent/{id}": {
-      "requestTypeName": "PostCameraGroupsParentIdReqTypeByVfs",
-      "responsesTypeName": "PostCameraGroupsParentIdResTypeByVfs"
     },
     "get&/api/CameraOrGroupDeleteRecords": {
       "requestTypeName": "GetCameraOrGroupDeleteRecordsReqTypeByVfs",
@@ -4157,6 +4165,10 @@
     "get&/api/Conferences/{id}/conventioneers": {
       "requestTypeName": "GetConferencesIdConventioneersReqTypeByVcs",
       "responsesTypeName": "GetConferencesIdConventioneersResTypeByVcs"
+    },
+    "get&/api/Conferences/{id}/conventioneers/inviteRecords": {
+      "requestTypeName": "GetConferencesIdConventioneersInviteRecordsReqTypeByVcs",
+      "responsesTypeName": "GetConferencesIdConventioneersInviteRecordsResTypeByVcs"
     },
     "get&/api/Conferences/{id}/broadcaster": {
       "requestTypeName": "GetConferencesIdBroadcasterReqTypeByVcs",
