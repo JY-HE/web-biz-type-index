@@ -63,14 +63,19 @@ class Initializer {
 
     /**
      * 获取相关json文件数据
+     * @returns void
      */
     async getJsonFileData() {
         this.warehouseTypes = await readJson(path.join(__dirname, './warehouseTypes.json'));
         this.ignorePaths = await readJson(path.join(__dirname, './ignoreTypes.json'));
     }
 
+    /**
+     * 初始化主方法
+     * @returns void
+     */
     async init() {
-        await this.getSwaggerList();
+        this.swaggerList = await this.getSwaggerList();
         const swaggerData = await this.getSwaggerData();
         // 解析 swagger 文档接口数据
         await Promise.all(
@@ -148,8 +153,9 @@ class Initializer {
 
         this.writeBizJson();
 
+        // 创建Typescript文件
         if (this.buildType == 2) {
-            console.log('json转化成功，开始生成markdown文件');
+            console.log('json转化成功，开始生成Typescript文件');
             // markdown模板生成;
             for (const key in this.requestConfig) {
                 await createTsFile.startup(key, this.requestConfig[key]);
@@ -188,7 +194,7 @@ class Initializer {
     }
 
     /**
-     * 字符串首字母大写
+     * 处理字符串转换为PascalCase格式
      * @param {string} str
      * @returns {string} 转换后的字符串
      */
@@ -207,23 +213,25 @@ class Initializer {
 
     /**
      * 获取 swagger 文档地址列表
+     * @returns Promise
      */
     getSwaggerList() {
         return new Promise((resolve, reject) => {
             try {
+                const res = {};
                 Object.entries(swaggerJSON).forEach(([bizName, swaggerDataConfig]) => {
                     const { primaryName, address, port, url } = swaggerDataConfig;
                     const headers = primaryName ? { 'X-Service-Address': address, 'X-Service-Port': port } : {};
                     if (typeof url === 'string') {
-                        this.swaggerList[bizName] = { url, headers, params: { ip: address, port } };
+                        res[bizName] = { url, headers, params: { ip: address, port } };
                     } else {
                         Object.keys(url).forEach((version) => {
-                            this.swaggerList[`${bizName}-${version}`] = { url: url[version], headers, params: { ip: address, port } };
+                            res[`${bizName}-${version}`] = { url: url[version], headers, params: { ip: address, port } };
                         });
                     }
                     this.requestConfig[bizName] = [];
                 });
-                resolve();
+                resolve(res);
             } catch (error) {
                 reject(error);
             }
@@ -246,7 +254,7 @@ class Initializer {
             })
         ).catch((error) => {
             const errorMsg = `请求错误,错误码:${error.code}，请求url:${error.config.url}`;
-            throw new Error(errorMsg);
+            throw errorMsg;
         });
         swaggerData.forEach((item) => console.log(item.config.url, item.status === 200 ? `success` : 'fail'));
 
