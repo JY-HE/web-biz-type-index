@@ -43,11 +43,11 @@
                                 </template>
                             </el-input>
                         </div>
-                        <div class="absolute top-1/2 right-10 transform -translate-y-2/4">
+                        <!-- <div class="absolute top-1/2 right-10 transform -translate-y-2/4">
                             <el-link type="info" href="https://greasyfork.org/zh-CN/scripts/450328-swaggerskiptocustommethods" target="_blank">油猴脚本工具</el-link>
                             &nbsp;
                             <el-switch v-model="dark" inline-prompt active-text="☀️" inactive-text="🌙" @change="setDefaultShowType" />
-                        </div>
+                        </div> -->
                     </el-header>
                     <el-main class="overflow-hidden">
                         <el-table ref="tableRef" stripe height="100%" :data="tableData" @row-click="clickRowHandle" v-loading="loading">
@@ -133,7 +133,8 @@
                         // 加载
                         loading: true,
                         // 暗黑模式
-                        dark: localStorage.getItem('dark') === 'true',
+                        // dark: localStorage.getItem('dark') === 'true',
+                        dark: true,
                     };
                 },
                 computed: {
