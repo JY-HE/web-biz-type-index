@@ -1,8 +1,8 @@
 :root {
   --base: 255, 255, 255;
   --base-reverse: 0, 0, 0;
-  --color-primary: #18a058;
-  --color-primary-hover: #36ad6a;
+  --color-primary: #4d648d;
+  --color-primary-hover: #5b6d8b;
   --color-success: #63e2b7;
   --color-warning: #f0a020;
   --color-warning-hover: #fcb040;
@@ -14,7 +14,7 @@
   --color-text-regular: #dedede;
   --color-text-secondary: #d9d9d9;
   --color-text-placeholder: #bfbfbf;
-  --background-color-base: #18181c;
+  --background-color-base: #0F1C2E;
   --border-color-light: #e4e4e4;
   --text-color-disabled: rgba(255, 255, 255, 0.05);
   --color-base: rgba(var(--base), 0.8);
@@ -29,7 +29,7 @@
 html[data-theme='light'] {
   --base: 0, 0, 0;
   --base-reverse: 255, 255, 255;
-  --background-color-base: #fff;
+  --background-color-base: #f5f4f1;
   --text-color-disabled: rgba(255, 255, 255, 0.38);
   --color-base: var(--background-color-base);
   --el-fill-color-blank: transparent;
@@ -306,4 +306,10 @@ body .el-overlay-message-box .el-message-box {
 #admin .el-main .dataItem h4 {
   font-size: 16px;
   margin-bottom: 10px;
+}
+.el-button{
+  height: fit-content;
+}
+.el-button span{
+  white-space: break-spaces;
 }
