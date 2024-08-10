@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const pc = require('picocolors');
 const { readFileSync, readJson, writeFileSync, ensureFile, copyFileSync } = require('fs-extra');
 const childProcess = require('child_process');
 const bodyParser = require('body-parser');
@@ -36,15 +37,15 @@ app.get('/api/newApi', async (req, res) => {
 app.post('/api/newApi', async (req, res) => {
     // 方法名获取
     const params = req.body || {};
-    console.log('开始保存数据');
+    console.log(pc.green('开始保存数据...'));
     await writeFileSync(url.API_RESOURCE_PATH, JSON.stringify(params, null, 2));
     // 生成markdowm文档
-    console.log('开始生成文档');
+    console.log(pc.green('开始生成文档...'));
     await childProcess.execSync('npm run md', { cwd: url.SCRIPT_PATH, encoding: 'utf8' });
-    console.log('开始获取文档内容');
+    console.log(pc.green('开始获取文档内容...'));
     // 将markdown文档内容获取并输出
     const data = await readFileSync(url.CHANGELOG_PATH, 'utf8');
-    console.log('开始将新增方法写入仓库');
+    console.log(pc.green('开始将新增方法写入仓库...'));
     // 将新增方法写入仓库
     const warehouseTypes = await readJson(url.WAREHOUSE_API_PATH);
     for (const k in params) {
@@ -53,7 +54,9 @@ app.post('/api/newApi', async (req, res) => {
             ...params[k].reduce(
                 (obj, item) => ({
                     ...obj,
-                    [`${item.method}&${item.url}${item.version != 'v1' ? `&${item.version}` : ''}`]: {
+                    [`${item.method}&${item.url}${
+                        item.version != 'v1' ? `&${item.version}` : ''
+                    }`]: {
                         requestTypeName: item.requestTypeName,
                         responsesTypeName: item.responsesTypeName,
                     },
@@ -97,7 +100,7 @@ app.post('/api/ignore', async (req, res) => {
     const biz = ignoreTypes[bizName];
     // 判断ignorePaths中是否存在bizName，不存在添加，存在则判断url是否存在，不存在则添加,已经存在则忽略
     if (biz && biz.includes(apiUrl)) {
-        console.log('重复操作');
+        console.log(pc.red('重复操作'));
         res.send({
             data: '重复操作',
             status: 403,
@@ -106,7 +109,7 @@ app.post('/api/ignore', async (req, res) => {
     } else {
         const newData = { ...ignoreTypes, [bizName]: biz ? [...biz, apiUrl] : [apiUrl] };
         await writeFileSync(url.IGNORE_API_PATH, JSON.stringify(newData, null, 2));
-        console.log(`${bizName}添加忽略项${apiUrl}成功`);
+        console.log(pc.green(`${bizName}添加忽略项${apiUrl}成功`));
         res.send({
             data: '添加成功',
             status: 200,
@@ -160,14 +163,20 @@ app.post('/api/updateDoc', async (req, res) => {
         if (version) {
             const indexHtml = await readFileSync(url.INDEX_HTML_PATH, 'utf8');
             const reg = /<el-tag class="version" type="danger">版本:(.*)<\/el-tag>/g;
-            const result = indexHtml.replace(reg, `<el-tag class="version" type="danger">版本:${version}</el-tag>`);
+            const result = indexHtml.replace(
+                reg,
+                `<el-tag class="version" type="danger">版本:${version}</el-tag>`
+            );
             await writeFileSync(url.INDEX_HTML_PATH, result);
             await copyFileSync(url.INDEX_HTML_PATH, url.DOC_CODE_STORE_HTML);
         }
         // 将biz.json复制到文档仓库中
         await copyFileSync(url.API_RESOURCE_PATH, url.DOC_CODE_STORE_BIZ);
         // 提交代码
-        await childProcess.execSync('git add . && git commit -m "docs:' + version + '文档更新" && git push', { cwd: url.DOC_CODE_STORE, encoding: 'utf8' });
+        await childProcess.execSync(
+            'git add . && git commit -m "docs:' + version + '文档更新" && git push',
+            { cwd: url.DOC_CODE_STORE, encoding: 'utf8' }
+        );
 
         res.send({
             status: 200,

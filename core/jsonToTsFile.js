@@ -4,7 +4,11 @@ const fs = require('fs');
 class CreateTsFile {
     async startup(bizName, data) {
         const apiTypeMdTemplate = this.getApiType(bizName, data);
-        await fs.writeFileSync(path.join(__dirname, `/dist/${bizName}.ts`), apiTypeMdTemplate, 'utf8');
+        await fs.writeFileSync(
+            path.join(__dirname, `../src/types/${bizName}.ts`),
+            apiTypeMdTemplate,
+            'utf8'
+        );
     }
 
     /**
@@ -47,12 +51,19 @@ class CreateTsFile {
         try {
             return bizData.reduce((pre, item) => {
                 // 处理请求参数类型定义
-                const formatParamsData = item.methods === 'get' ? item.parameters || [] : [].concat(item.parameters || [], item.requestBody || []) || [];
+                const formatParamsData =
+                    item.methods === 'get'
+                        ? item.parameters || []
+                        : [].concat(item.parameters || [], item.requestBody || []) || [];
                 // 请求类型定义头注释
                 const formatReqDescStr = `/**\n * @description ${item.summary} \n * @summary Request data types \n * @url [ ${item.method} ] ${item.url} \n * @bizName ${bizName} \n */`;
                 // 请求类型定义
                 const formatRequestTypeStr = formatParamsData.reduce((str, i) => {
-                    return `${str}      ${i.key.includes('-') || i.key.includes('_') || i.key.includes('.') ? `'${i.key}'` : i.key}${!i.required ? '?:' : ':'} ${this.getType(i)};\n`;
+                    return `${str}      ${
+                        i.key.includes('-') || i.key.includes('_') || i.key.includes('.')
+                            ? `'${i.key}'`
+                            : i.key
+                    }${!i.required ? '?:' : ':'} ${this.getType(i)};\n`;
                 }, '');
 
                 // 处理响应参数类型定义
@@ -66,8 +77,16 @@ class CreateTsFile {
 
                 return (
                     pre +
-                    `${formatParamsData.length > 0 ? `${formatReqDescStr}\nexport type ${item.requestTypeName} = {\n${formatRequestTypeStr}}\n\n` : ''}` +
-                    `${item.responses ? `${formatResDescStr}\nexport type ${item.responsesTypeName} = {\n${formatResponsesTypeStr}}\n\n` : ''}`
+                    `${
+                        formatParamsData.length > 0
+                            ? `${formatReqDescStr}\nexport type ${item.requestTypeName} = {\n${formatRequestTypeStr}}\n\n`
+                            : ''
+                    }` +
+                    `${
+                        item.responses
+                            ? `${formatResDescStr}\nexport type ${item.responsesTypeName} = {\n${formatResponsesTypeStr}}\n\n`
+                            : ''
+                    }`
                 );
             }, '');
         } catch (error) {

@@ -3,13 +3,11 @@
     "version": "1.1.0",
     "description": "web-biz-type插件业务Api接口类型定义查询",
     "main": "core/index.js",
-    "type": "module",
     "private": false,
     "engines": {
         "node": ">=18.18.2"
     },
     "scripts": {
-        "build": "rollup -c",
         "buildAll": "node core/index.js 0",
         "buildNew": "node core/index.js 1",
         "buildOld": "node core/index.js 2",
@@ -29,6 +27,7 @@
         "@babel/core": "^7.24.8",
         "@babel/preset-env": "^7.24.8",
         "@types/node": "^20.14.10",
+        "picocolors": "^1.0.1",
         "prettier": "^1.19.1",
         "ts-node": "^10.9.2",
         "typescript": "^5.5.4"

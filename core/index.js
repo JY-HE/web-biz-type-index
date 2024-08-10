@@ -4,6 +4,8 @@ const path = require('path');
 const fs = require('fs');
 const { readJson } = require('fs-extra');
 const { argv } = require('process');
+const pc = require('picocolors');
+
 const swaggerJSON = require('./swaggerMap');
 
 class Initializer {
@@ -84,10 +86,10 @@ class Initializer {
                     const {
                         paths,
                         components: { schemas },
-                    } = bizRes.data;
+                    } = bizRes;
                     // 当前处理的 biz 名称
                     let bizName = Object.keys(this.swaggerList)[index];
-                    console.log('开始处理' + bizName);
+                    console.log(pc.green(`开始处理——${bizName}`));
                     // 当前处理的 biz 版本
                     let version = 'v1';
                     if (bizName.includes('-v')) {
@@ -105,27 +107,73 @@ class Initializer {
                     }
                     this.schemaDataJson = { ...this.schemaDataJson, [bizName]: schemaData };
                     // 处理 paths 路径数据
-                    const ignorePathList = [...this.ignorePaths.common, ...(this.ignorePaths[bizName] || [])];
+                    const ignorePathList = [
+                        ...this.ignorePaths.common,
+                        ...(this.ignorePaths[bizName] || []),
+                    ];
                     Object.keys(paths)
-                        .filter((url) => !ignorePathList.includes(url))
-                        .forEach((url) => {
+                        .filter(url => !ignorePathList.includes(url))
+                        .forEach(url => {
                             Object.entries(paths[url]).forEach(([methodType, value]) => {
-                                const { operationId, tags, summary, parameters, requestBody, responses } = value;
+                                const {
+                                    operationId,
+                                    tags,
+                                    summary,
+                                    parameters,
+                                    requestBody,
+                                    responses,
+                                } = value;
                                 // 分类
                                 const tag = tags?.at(0) || '';
                                 // 过滤回调型接口
                                 if (tag === 'Callbacks') return;
-                                const transformParams = this.apiParamsHandler(parameters, schemaData);
-                                const transformRequestBody = this.apiRequestBodyHandler(requestBody, schemaData);
-                                const transformResponses = this.apiResponsesHandler(responses, schemaData);
+                                const transformParams = this.apiParamsHandler(
+                                    parameters,
+                                    schemaData
+                                );
+                                const transformRequestBody = this.apiRequestBodyHandler(
+                                    requestBody,
+                                    schemaData
+                                );
+                                const transformResponses = this.apiResponsesHandler(
+                                    responses,
+                                    schemaData
+                                );
                                 /**
                                  * 处理 requestConfig 请求配置
                                  */
-                                const warehouseTypesDataInfo = this.warehouseTypes[bizName]?.[`${methodType}&${url}${version != 'v1' ? '&' + version : ''}`];
-                                const requestTypeName = warehouseTypesDataInfo?.requestTypeName || this.getNameFromUrl(1, parameters, requestBody, transformResponses, url, methodType, version, bizName);
-                                const responsesTypeName = warehouseTypesDataInfo?.responsesTypeName || this.getNameFromUrl(2, parameters, requestBody, transformResponses, url, methodType, version, bizName);
+                                const warehouseTypesDataInfo = this.warehouseTypes[bizName]?.[
+                                    `${methodType}&${url}${version != 'v1' ? '&' + version : ''}`
+                                ];
+                                const requestTypeName =
+                                    warehouseTypesDataInfo?.requestTypeName ||
+                                    this.getNameFromUrl(
+                                        1,
+                                        parameters,
+                                        requestBody,
+                                        transformResponses,
+                                        url,
+                                        methodType,
+                                        version,
+                                        bizName
+                                    );
+                                const responsesTypeName =
+                                    warehouseTypesDataInfo?.responsesTypeName ||
+                                    this.getNameFromUrl(
+                                        2,
+                                        parameters,
+                                        requestBody,
+                                        transformResponses,
+                                        url,
+                                        methodType,
+                                        version,
+                                        bizName
+                                    );
                                 // 已有的接口不再入库
-                                const canSave = this.buildType == 0 || (this.buildType == 1 && !warehouseTypesDataInfo) || (this.buildType == 2 && !!warehouseTypesDataInfo);
+                                const canSave =
+                                    this.buildType == 0 ||
+                                    (this.buildType == 1 && !warehouseTypesDataInfo) ||
+                                    (this.buildType == 2 && !!warehouseTypesDataInfo);
                                 canSave &&
                                     this.requestConfig[bizName].push({
                                         url,
@@ -149,17 +197,21 @@ class Initializer {
         );
 
         // 将 schemaData 写入json文件
-        await fs.writeFileSync(path.join(__dirname, `/dist/schema.json`), JSON.stringify(this.schemaDataJson, null, '\t'), 'utf8');
+        await fs.writeFileSync(
+            path.join(__dirname, `/dist/schema.json`),
+            JSON.stringify(this.schemaDataJson, null, '\t'),
+            'utf8'
+        );
 
         this.writeBizJson();
 
         // 创建Typescript文件
         if (this.buildType == 2) {
-            console.log('json转化成功，开始生成Typescript文件');
-            // markdown模板生成;
+            console.log(pc.green('json转化成功，开始生成Typescript文件...'));
             for (const key in this.requestConfig) {
                 await createTsFile.startup(key, this.requestConfig[key]);
             }
+            console.log(pc.green('生成Typescript文件完成！'));
         }
     }
 
@@ -178,18 +230,26 @@ class Initializer {
     getNameFromUrl(type, parameters, requestBody, responses, url, methodType, version, bizName) {
         const urls = url
             .split('/')
-            .filter((item) => item !== 'api')
-            .map((item) => this.capitalizeFirstLetter(item));
+            .filter(item => item !== 'api')
+            .map(item => this.capitalizeFirstLetter(item));
         if (type === 1) {
             if (!parameters && !requestBody) {
                 return 'CommonReqType';
             }
-            return `${this.capitalizeFirstLetter(methodType)}${urls.join('')}ReqTypeBy${this.bizNameAbbreviation.get(bizName) || ''}${version === 'v1' ? '' : this.capitalizeFirstLetter(version)}`;
+            return `${this.capitalizeFirstLetter(methodType)}${urls.join(
+                ''
+            )}ReqTypeBy${this.bizNameAbbreviation.get(bizName) || ''}${
+                version === 'v1' ? '' : this.capitalizeFirstLetter(version)
+            }`;
         } else {
             if (!responses) {
                 return 'CommonResType';
             }
-            return `${this.capitalizeFirstLetter(methodType)}${urls.join('')}ResTypeBy${this.bizNameAbbreviation.get(bizName) || ''}${version === 'v1' ? '' : this.capitalizeFirstLetter(version)}`;
+            return `${this.capitalizeFirstLetter(methodType)}${urls.join(
+                ''
+            )}ResTypeBy${this.bizNameAbbreviation.get(bizName) || ''}${
+                version === 'v1' ? '' : this.capitalizeFirstLetter(version)
+            }`;
         }
     }
 
@@ -204,11 +264,11 @@ class Initializer {
             res = res.replace(/[{}]/g, '');
         }
         if (res.includes('_')) {
-            return res.replace(/(?:^|_)([a-z])/g, function (_, p1) {
+            return res.replace(/(?:^|_)([a-z])/g, function(_, p1) {
                 return p1.toUpperCase();
             });
         }
-        return res ? res.replace(/^\w/, (c) => c.toUpperCase()) : '';
+        return res ? res.replace(/^\w/, c => c.toUpperCase()) : '';
     }
 
     /**
@@ -221,12 +281,18 @@ class Initializer {
                 const res = {};
                 Object.entries(swaggerJSON).forEach(([bizName, swaggerDataConfig]) => {
                     const { primaryName, address, port, url } = swaggerDataConfig;
-                    const headers = primaryName ? { 'X-Service-Address': address, 'X-Service-Port': port } : {};
+                    const headers = primaryName
+                        ? { 'X-Service-Address': address, 'X-Service-Port': port }
+                        : {};
                     if (typeof url === 'string') {
                         res[bizName] = { url, headers, params: { ip: address, port } };
                     } else {
-                        Object.keys(url).forEach((version) => {
-                            res[`${bizName}-${version}`] = { url: url[version], headers, params: { ip: address, port } };
+                        Object.keys(url).forEach(version => {
+                            res[`${bizName}-${version}`] = {
+                                url: url[version],
+                                headers,
+                                params: { ip: address, port },
+                            };
                         });
                     }
                     this.requestConfig[bizName] = [];
@@ -243,22 +309,26 @@ class Initializer {
      * @returns {array} 获取到的所有文档数据
      */
     async getSwaggerData() {
-        console.log('请求拼装成功，开始请求swagger文档接口数据');
-        const swaggerData = await Promise.all(
-            Object.values(this.swaggerList).map((item) => {
+        console.log(pc.green('请求拼装成功，开始请求swagger文档接口数据...'));
+        const swaggerData = await Promise.allSettled(
+            Object.values(this.swaggerList).map(item => {
                 let requestUrl = item.url;
                 if (item.params.ip && item.params.port) {
                     requestUrl = `${requestUrl}?ip=${item.params.ip}&port=${item.params.port}`;
                 }
                 return axios.get(requestUrl, { headers: item.headers });
             })
-        ).catch((error) => {
-            const errorMsg = `请求错误,错误码:${error.code}，请求url:${error.config.url}`;
-            throw errorMsg;
+        );
+        const res = swaggerData.map(item => {
+            if (item?.value?.status === 200) {
+                return item.value.data;
+            }
+            console.log(
+                pc.red(`请求错误，错误码:${item.value.status}，请求url:${item.value.config.url}`)
+            );
         });
-        swaggerData.forEach((item) => console.log(item.config.url, item.status === 200 ? `success` : 'fail'));
-
-        return swaggerData;
+        console.log(pc.green('请求swagger文档接口数据完成！'));
+        return res;
     }
 
     /**
@@ -269,24 +339,48 @@ class Initializer {
     async schemaDataHandler(schemas) {
         return new Promise((resolve, reject) => {
             try {
-                const resultSchema = Object.entries(schemas).reduce((pre, [curSchemaName, curSchemaData]) => {
-                    if (curSchemaData.type === 'object') {
-                        const { type, properties = {}, description = '', required = [] } = curSchemaData;
-                        const params = Object.entries(properties).map(([key, value]) => {
-                            return this.schemaPropertiesHandler(pre, key, value, required, curSchemaName);
-                        });
-                        return { ...pre, [curSchemaName]: { type, description: description.replace(this.descReg, ''), properties: params } };
-                    } else {
-                        return {
-                            ...pre,
-                            [curSchemaName]: {
-                                type: curSchemaData.type === 'integer' ? 'number' : curSchemaData.type,
-                                description: curSchemaData.description,
-                                details: curSchemaData.enum || null,
-                            },
-                        };
-                    }
-                }, {});
+                const resultSchema = Object.entries(schemas).reduce(
+                    (pre, [curSchemaName, curSchemaData]) => {
+                        if (curSchemaData.type === 'object') {
+                            const {
+                                type,
+                                properties = {},
+                                description = '',
+                                required = [],
+                            } = curSchemaData;
+                            const params = Object.entries(properties).map(([key, value]) => {
+                                return this.schemaPropertiesHandler(
+                                    pre,
+                                    key,
+                                    value,
+                                    required,
+                                    curSchemaName
+                                );
+                            });
+                            return {
+                                ...pre,
+                                [curSchemaName]: {
+                                    type,
+                                    description: description.replace(this.descReg, ''),
+                                    properties: params,
+                                },
+                            };
+                        } else {
+                            return {
+                                ...pre,
+                                [curSchemaName]: {
+                                    type:
+                                        curSchemaData.type === 'integer'
+                                            ? 'number'
+                                            : curSchemaData.type,
+                                    description: curSchemaData.description,
+                                    details: curSchemaData.enum || null,
+                                },
+                            };
+                        }
+                    },
+                    {}
+                );
                 resolve(resultSchema);
             } catch (error) {
                 reject(error);
@@ -303,11 +397,12 @@ class Initializer {
      * @param {string} curSchemaName 当前处理的 schema 名称
      */
     schemaPropertiesHandler(processedSchemas, key, value, requiredList = [], curSchemaName = '') {
-        const { type = '', description = '', items = {}, allOf = [], properties = {} } = value || {};
+        const { type = '', description = '', items = {}, allOf = [], properties = {} } =
+            value || {};
         const cleanDescription = description ? description.replace(this.descReg, '') : '';
         const isRequired = requiredList.includes(key);
 
-        const processSimpleType = (type) => ({
+        const processSimpleType = type => ({
             key,
             type: type === 'integer' ? 'number' : type,
             description: cleanDescription,
@@ -315,14 +410,14 @@ class Initializer {
             details: value?.enum || null,
         });
 
-        const processArrayType = (itemsType) => ({
+        const processArrayType = itemsType => ({
             key,
             type: `Array<${itemsType === 'integer' ? 'number' : itemsType}>`,
             description: cleanDescription,
             required: isRequired,
         });
 
-        const processComplexType = (refName) => {
+        const processComplexType = refName => {
             const refObj = processedSchemas[refName] || null;
             let details = [];
             // 如果在处理好的数据中获取到对应的数据
@@ -330,9 +425,17 @@ class Initializer {
                 if (Array.isArray(refObj?.properties)) {
                     details = [...refObj.properties];
                 } else {
-                    details = Object.entries(refObj?.properties || [])?.map(([itemKey, itemValue]) => {
-                        return this.schemaPropertiesHandler(processedSchemas, itemKey, itemValue, requiredList, curSchemaName);
-                    });
+                    details = Object.entries(refObj?.properties || [])?.map(
+                        ([itemKey, itemValue]) => {
+                            return this.schemaPropertiesHandler(
+                                processedSchemas,
+                                itemKey,
+                                itemValue,
+                                requiredList,
+                                curSchemaName
+                            );
+                        }
+                    );
                 }
             } else {
                 // 缓存数据，等 schemas 处理完后，再处理缓存的数据
@@ -368,7 +471,15 @@ class Initializer {
         }
 
         if (type === 'object') {
-            const details = Object.entries(properties).map(([propKey, propValue]) => this.schemaPropertiesHandler(processedSchemas, propKey, propValue, requiredList, curSchemaName));
+            const details = Object.entries(properties).map(([propKey, propValue]) =>
+                this.schemaPropertiesHandler(
+                    processedSchemas,
+                    propKey,
+                    propValue,
+                    requiredList,
+                    curSchemaName
+                )
+            );
             if (details.length > 0) {
                 return {
                     key,
@@ -413,11 +524,25 @@ class Initializer {
                     const schemaData = schemas[item] || null;
                     if (schemaData) {
                         if (schemaData.type === 'object') {
-                            const { type, properties = {}, description = '', required = [] } = schemaData;
+                            const {
+                                type,
+                                properties = {},
+                                description = '',
+                                required = [],
+                            } = schemaData;
                             const params = Object.entries(properties).map(([key, value]) => {
-                                return this.schemaPropertiesHandler(processedSchemas, key, value, required);
+                                return this.schemaPropertiesHandler(
+                                    processedSchemas,
+                                    key,
+                                    value,
+                                    required
+                                );
                             });
-                            processedSchemas[item] = { type, description: description.replace(this.descReg, ''), properties: params };
+                            processedSchemas[item] = {
+                                type,
+                                description: description.replace(this.descReg, ''),
+                                properties: params,
+                            };
                         } else {
                             processedSchemas[item] = {
                                 type: schemaData.type === 'integer' ? 'number' : schemaData.type,
@@ -442,29 +567,40 @@ class Initializer {
      * @returns {array} 处理后的 params 参数数组
      */
     apiParamsHandler(parameters, schemaData) {
-        const getType = (schema) => {
+        const getType = schema => {
             const { type = '', items = {} } = schema || {};
             if (type === 'array') {
-                return `Array<${items.type ? (items.type === 'integer' ? 'number' : items.type) : 'any'}>`;
+                return `Array<${
+                    items.type ? (items.type === 'integer' ? 'number' : items.type) : 'any'
+                }>`;
             }
             return type === 'integer' ? 'number' : type;
         };
         try {
             return !Array.isArray(parameters)
                 ? null
-                : parameters.map((item) => {
+                : parameters.map(item => {
                       // 基本参数
                       let paramInfo = {
                           key: item.name,
                           type: getType(item.schema),
-                          description: item.description ? item.description.replace(this.descReg, '') : /id$/i.test(item.name) ? item.name : '',
+                          description: item.description
+                              ? item.description.replace(this.descReg, '')
+                              : /id$/i.test(item.name)
+                              ? item.name
+                              : '',
                           required: item.required,
                           default: item.schema?.default || null,
                           in: item.in,
                       };
                       // 走 schema 模型的参数
                       if (!item.type && (item.schema?.$ref || item.schema?.allOf)) {
-                          const refName = item.schema.$ref ? item.schema.$ref.split('/')?.at(-1) : item.schema?.allOf?.at(0)?.$ref.split('/')?.at(-1);
+                          const refName = item.schema.$ref
+                              ? item.schema.$ref.split('/')?.at(-1)
+                              : item.schema?.allOf
+                                    ?.at(0)
+                                    ?.$ref.split('/')
+                                    ?.at(-1);
                           const refData = schemaData?.[refName] || {};
                           paramInfo.type = refData?.type;
                       }
@@ -493,7 +629,7 @@ class Initializer {
                 const schemaRef = schemaWrap?.$ref || schemaWrap?.allOf?.at(0)?.$ref || '';
                 const schemaName = schemaRef.split('/').at(-1);
                 const schema = schemaData[schemaName] || {};
-                return schema.properties?.map((i) => ({ ...i, in: 'requestBody' })) || [];
+                return schema.properties?.map(i => ({ ...i, in: 'requestBody' })) || [];
             }
             return null;
         } catch (error) {
@@ -529,14 +665,20 @@ class Initializer {
     writeBizJson() {
         try {
             // 对空的biz模块进行移除
-            Reflect.ownKeys(this.requestConfig).forEach((key) => {
+            Reflect.ownKeys(this.requestConfig).forEach(key => {
                 if (this.requestConfig[key].length === 0 || key === 'facilityBiz') {
                     Reflect.deleteProperty(this.requestConfig, key);
                 } else {
-                    this.buildType == 1 && key !== 'facilityBiz' && console.log(`${key} 新增接口${this.requestConfig[key].length}个`);
+                    this.buildType == 1 &&
+                        key !== 'facilityBiz' &&
+                        console.log(pc.green(`${key} 新增接口${this.requestConfig[key].length}个`));
                 }
             });
-            fs.writeFileSync(path.join(__dirname, `/dist/biz.json`), JSON.stringify(this.requestConfig, null, '\t'), 'utf8');
+            fs.writeFileSync(
+                path.join(__dirname, `/dist/biz.json`),
+                JSON.stringify(this.requestConfig, null, '\t'),
+                'utf8'
+            );
         } catch (error) {
             throw error;
         }
