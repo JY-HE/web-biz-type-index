@@ -1,0 +1,31 @@
+{
+    "name": "web-biz-type",
+    "version": "1.0.1",
+    "description": "服务层Api接口请求参数和响应参数的类型定义",
+    "private": false,
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "main": "index.ts",
+    "scripts": {
+        "update": "npm version patch",
+        "publish": "npm publish"
+    },
+    "keywords": [
+        "web-biz-type",
+        "biz-type",
+        "api",
+        "biz",
+        "type",
+        "swagger"
+    ],
+    "author": "hjy",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.24.8",
+        "@babel/preset-env": "^7.24.8",
+        "@types/node": "^20.14.10",
+        "typescript": "^5.5.4"
+    }
+}
