@@ -1,6 +1,6 @@
 {
-    "name": "web-biz-type",
-    "version": "1.0.1",
+    "name": "@koihe/web-biz-type",
+    "version": "1.0.0",
     "description": "服务层Api接口请求参数和响应参数的类型定义",
     "private": false,
     "publishConfig": {
@@ -13,14 +13,17 @@
         "publish": "npm publish"
     },
     "keywords": [
+        "@koihe",
+        "@koihe/web-biz-type",
         "web-biz-type",
         "biz-type",
         "api",
         "biz",
         "type",
-        "swagger"
+        "swagger",
+        "typescript"
     ],
-    "author": "hjy",
+    "author": "koihe",
     "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.24.8",

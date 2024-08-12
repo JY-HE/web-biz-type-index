@@ -18,10 +18,10 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
+        "@koihe/web-biz-type": "^1.0.0",
         "axios": "^1.7.2",
         "express": "^4.19.2",
-        "fs-extra": "^11.2.0",
-        "web-biz-type": "^1.0.1"
+        "fs-extra": "^11.2.0"
     },
     "devDependencies": {
         "@babel/core": "^7.24.8",
