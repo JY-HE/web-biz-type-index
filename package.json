@@ -12,7 +12,8 @@
         "buildNew": "node core/index.js 1",
         "buildOld": "node core/index.js 2",
         "md": "node core/mdBash.js",
-        "dev": "node core/server/index.js"
+        "dev": "node core/server/index.js",
+        "publish": "cd src && npm version patch && npm publish"
     },
     "keywords": [],
     "author": "",

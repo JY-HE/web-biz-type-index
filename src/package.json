@@ -1,6 +1,6 @@
 {
     "name": "@koihe/web-biz-type",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "服务层Api接口请求参数和响应参数的类型定义",
     "private": false,
     "publishConfig": {
